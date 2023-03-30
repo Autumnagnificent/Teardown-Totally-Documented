@@ -1,6 +1,12 @@
 ---@diagnostic disable: missing-return
 ---@diagnostic disable: unused-local
 
+--[[
+    Not all function are catagorized how they are in the offical api documentation
+    Some are split up into more catagories, and some are moved
+    into other ones to better represent their functionality
+]]
+
 --#region Types and Classes
 
 ---@class vector: { [1]:number, [2]:number, [3]:number }
