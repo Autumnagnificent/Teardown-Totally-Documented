@@ -219,6 +219,22 @@
 ---| "wheel"
 ---| "water"
 
+---@alias material
+---| "foliage"
+---| "dirt"
+---| "plaster"
+---| "plastic"
+---| "glass"
+---| "wood"
+---| "masonry"
+---| "hardmasonry"
+---| "metal"
+---| "heavymetal"
+---| "hardmetal"
+---| "rock"
+---| "ice"
+---| "unphysical"
+
 --#endregion
 --#region Callbacks
 
@@ -279,7 +295,7 @@ function GetString() end
 ---@param x number|nil X value
 ---@param y number|nil Y value
 ---@param z number|nil Z value
----@return vector vector {x, y, z}
+---@return vector vector
 function Vec(x, y, z) end
 
 ---Copies a vector to prevent multiple references pointing to the same data
@@ -618,6 +634,7 @@ function GetBodyCenterOfMass(body) end
 ---@return boolean
 function IsBodyVisible(body, maxdistance, rejectTransparent) end
 
+---Determine if any shape of a body has been broken. 
 ---@param body body
 ---@return boolean
 function IsBodyBroken(body) end
@@ -649,8 +666,8 @@ function DrawBodyHighlight(body, alpha) end
 ---@param body body
 ---@param origin vector
 ---@return boolean hit If a point was found
----@return vector point Worldspace point
----@return vector normal World space normal
+---@return vector point world-space point
+---@return vector normal world-space normal
 ---@return shape shape The handle to the closest shape 
 function GetBodyClosestPoint(body, origin) end
 
@@ -739,49 +756,108 @@ function GetShapeBounds(shape) end
 ---@param amount number
 function SetShapeEmissiveScale(shape, amount) end
 
----HUSK
+---Return material properties for a particular voxel given a world-space position
 ---@param shape shape
-function GetShapeMaterialAtPosition(shape, pos) end
+---@param position vector
+---@return material|'' type
+---@return number red
+---@return number green
+---@return number blue
+---@return number alpha
+function GetShapeMaterialAtPosition(shape, position) end
 
----HUSK
+---Return material properties for a particular voxel in the voxel grid indexed by integer values.
+---
+---Note that the first index is zero, rather than one.
 ---@param shape shape
-function GetShapeMaterialAtIndex(shape) end
+---@param x integer
+---@param y integer
+---@param z integer
+---@return material|'' type
+---@return number red
+---@return number green
+---@return number blue
+---@return number alpha
+function GetShapeMaterialAtIndex(shape, x, y, z) end
 
----HUSK
 ---@param shape shape
-function GetShapeSize(shape) end
+---@return integer xsize Size in voxels along x axis
+---@return integer ysize Size in voxels along y axis
+---@return integer zsize Size in voxels along z axis
+---@return number scale The size of one voxel in meters (with default scale it is 0.1)
+function GetShapeSize(shape, xsize, ysize, zsize, scale) end
 
----HUSK
+---Returns the voxels in a given shape
+---
+---Well lets see here; 1, 2, 3--, hold still here, 4! ahh ahh ahh ahh!
 ---@param shape shape
+---@return number voxels
 function GetShapeVoxelCount(shape) end
 
----HUSK
+---
+---A very inaccurate way of testing if a shape is visible to the camera.
+---
+---If any level of perscion is needed, It is recommended to use alternative methods such as raycasting or dot products.
+---
+---Offical documentation says :
+---
+---This will check if a shape is currently visible in the camera frustum and not occluded by other objects.
 ---@param shape shape
-function IsShapeVisible(shape) end
+---@param maxdistance number
+---@param rejectTransparent number|nil See through transparent materials, Default is false
+---@return boolean
+function IsShapeVisible(shape, maxdistance, rejectTransparent) end
 
----HUSK
+---Determine if shape has been broken.
+---
+---Note that a shape can be transfered to another body during destruction, but might still not be considered broken if all voxels are intact.
 ---@param shape shape
 function IsShapeBroken(shape) end
 
----HUSK
+---Renders an outline around a shape for the next frame
+---
+---If only the shape is given, { r, g, b, a } will default to { 1, 1, 1, 1 } (white)
 ---@param shape shape
-function DrawShapeOutline(shape) end
+---@param r number|nil Default is 0
+---@param g number|nil Default is 0
+---@param b number|nil Default is 0
+---@param a number|nil Default is 0
+function DrawShapeOutline(shape, r, g, b, a) end
 
----HUSK
+---Renders a solid while color over a shape for this frame
+---
+---This is used for valuables in the game
 ---@param shape shape
-function DrawShapeHighlight(shape) end
+---@param alpha number
+function DrawShapeHighlight(shape, alpha) end
 
----HUSK
+---This is used to filter out collisions with other shapes.
+---
+---Each shape can be given a layer bitmask (8 bits, 0-255) along with a mask (also 8 bits).
+---
+---The layer of one object must be in the mask of the other object and vice versa for the collision to be valid.
+---
+---The default layer for all objects is 1 and the default mask is 255 (collide with all layers).
 ---@param shape shape
-function SetShapeCollisionFilter(shape) end
+---@param layer integer Layer bits (0-255)
+---@param mask integer Mask bits (0-255)
+function SetShapeCollisionFilter(shape, layer, mask) end
 
----HUSK
----@param shape shape
-function GetShapeClosestPoint(shape) end
+---Returns the closest point of a specific shape
+---
+---Usually, the point will be in 0.1 unit (1 voxel) increments of the body's shape
+---@param shape body
+---@param origin vector
+---@return boolean hit If a point was found
+---@return vector point world-space point
+---@return vector normal world-space normal
+function GetShapeClosestPoint(shape, origin) end
 
----HUSK
----@param shape shape
-function IsShapeTouching(shape) end
+---Returns true if two shapes has physical overlap
+---@param a shape
+---@param b shape
+---@return boolean overlap
+function IsShapeTouching(a, b) end
 
 --#endregion
 --#region Locations
