@@ -995,33 +995,165 @@ function DetachJointFromShape(joint, shape) end
 --#endregion
 --#region Lights
 
-function PointLight() end
+---Add a temporary point light to the world for this frame. Call continuously for a steady light.
+---
+---Setting the intensity of the point light to a negative number can have very weird effects,
+---
+---If the intensity is negative infinity (`-1/0`) then it will permantly spread black pixels when looked at until the game is restarted or the render quality options are changed.
+---
+---*when you stare into the void, the void stares back at you*
+---@param position vector
+---@param red number
+---@param green number
+---@param blue number
+---@param intensity number
+function PointLight(position, red, green, blue, intensity) end
 
-function FindLight() end
-function FindLights() end
-function SetLightEnabled() end
-function SetLightColor() end
-function SetLightIntensity() end
-function GetLightTransform() end
-function GetLightShape() end
-function IsLightActive() end
-function IsPointAffectedByLight() end
+---Searches the scene for a light, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return a light regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no light is found, the function returns 0
+---@param tag string|nil
+---@param global boolean|nil
+---@return light light
+function FindLight(tag, global) end
+
+---Searches the scene for any light, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return any light regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no lights are found, the function returns a blank table
+---@param tag string|nil
+---@param global boolean|nil
+---@return table<light> lights
+function FindLights(tag, global) end
+
+---@param light light
+---@param enabled boolean
+function SetLightEnabled(light, enabled) end
+
+---@param light light
+---@param red number
+---@param green number
+---@param blue number
+function SetLightColor(light, red, green, blue) end
+
+---@param light light
+---@param intensity number
+function SetLightIntensity(light, intensity) end
+
+---@param light light
+---@return transform transform
+function GetLightTransform(light) end
+
+---@param light light
+---@return shape shape
+function GetLightShape(light) end
+
+---@param light light
+---@return boolean active
+function IsLightActive(light) end
+
+---Return true if point is in light cone and range
+---@param light light
+---@param point vector
+---@return boolean effected
+function IsPointAffectedByLight(light, point) end
 
 --#endregion
 --#region Trigger
 
-function FindTrigger() end
-function FindTriggers() end
-function GetTriggerTransform() end
-function SetTriggerTransform() end
-function GetTriggerBounds() end
-function IsBodyInTrigger() end
-function IsVehicleInTrigger() end
-function IsShapeInTrigger() end
-function IsPointInTrigger() end
-function IsTriggerEmpty() end
-function GetTriggerDistance() end
-function GetTriggerClosestPoint() end
+---Searches the scene for a trigger, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return a trigger regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no trigger is found, the function returns 0
+---@param tag string|nil
+---@param global boolean|nil
+---@return trigger trigger
+function FindTrigger(tag, global) end
+
+---Searches the scene for any trigger, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return any trigger regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no triggers are found, the function returns a blank table
+---@param tag string|nil
+---@param global boolean|nil
+---@return table<trigger> triggers
+function FindTriggers(tag, global) end
+
+---@param trigger trigger
+---@return transform transform
+function GetTriggerTransform(trigger) end
+
+---@param trigger trigger
+---@param transform transform
+function SetTriggerTransform(trigger, transform) end
+
+---Returns a world space Axis Aligned Bounding Box (AABB) if a trigger
+---
+---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
+---@param trigger trigger
+---@return vector aa The position of the lower bound
+---@return vector bb The position of the upper bound
+function GetTriggerBounds(trigger) end
+
+---Checks if the point is within the trigger's volume
+---@param trigger trigger
+---@param point vector
+---@return boolean inside
+function IsPointInTrigger(trigger, point) end
+
+---Checks if the center point of the body is within the trigger's volume
+---@param trigger trigger
+---@param body body
+---@return boolean inside
+function IsBodyInTrigger(trigger, body) end
+
+---Checks if the origin of the vehicle is within the trigger's volume
+---@param trigger trigger
+---@param body body
+---@return boolean inside
+function IsVehicleInTrigger(trigger, body) end
+
+---Checks if the center of the shape is within the trigger's volume
+---@param trigger trigger
+---@param shape shape
+---@return boolean inside
+function IsShapeInTrigger(trigger, shape) end
+
+---Checks if trigger contains any part of a body
+---
+---The highest point will also be returned, this is used in a few missions in the campagin
+---@param trigger trigger
+---@param demolition boolean|nil If true, small debris and vehicles are ignored
+function IsTriggerEmpty(trigger, demolition) end
+
+---Returns the distance to the surface of a trigger volume.
+---
+---Will return negative distance if inside.
+---@param trigger trigger
+---@param point vector
+---@return number distance
+function GetTriggerDistance(trigger, point) end
+
+---Returns the closest point in trigger volume.
+---
+---Will return the input point itself if inside trigger or closest point on surface of trigger if outside.
+---@param trigger trigger
+---@param point vector
+---@return vector closest_point
+function GetTriggerClosestPoint(trigger, point) end
 
 --#endregion
 --#region Screen
