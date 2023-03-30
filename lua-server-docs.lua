@@ -591,10 +591,10 @@ function GetBodyCenterOfMass(body) end
 ---
 ---This will check if a body is currently visible in the camera frustum and not occluded by other objects.
 ---@param body body_handle
----@param maxdistance number
----@param rejectTransparent number|nil See through transparent materials, Default is false
+---@param max_distance number
+---@param reject_transparent number|nil See through transparent materials, Default is false
 ---@return boolean
-function IsBodyVisible(body, maxdistance, rejectTransparent) end
+function IsBodyVisible(body, max_distance, reject_transparent) end
 
 ---Determine if any shape of a body has been broken. 
 ---@param body body_handle
@@ -766,10 +766,10 @@ function GetShapeVoxelCount(shape) end
 ---
 ---This will check if a shape is currently visible in the camera frustum and not occluded by other objects.
 ---@param shape shape_handle
----@param maxdistance number
----@param rejectTransparent number|nil See through transparent materials, Default is false
+---@param max_distance number
+---@param reject_transparent number|nil See through transparent materials, Default is false
 ---@return boolean
-function IsShapeVisible(shape, maxdistance, rejectTransparent) end
+function IsShapeVisible(shape, max_distance, reject_transparent) end
 
 ---Determine if shape has been broken.
 ---
@@ -1395,18 +1395,48 @@ function LoadSprite(path) end
 ---@param green number
 ---@param blue number
 ---@param alpha number
----@param depth_test boolean
----@param additive boolean
+---@param depth_test boolean|nil Defualt is false
+---@param additive boolean|nil Defualt is false
 function DrawSprite(sprite, transform, width, height, red, green, blue, alpha, depth_test, additive) end
 
 --#endregion
 --#region Scene Queries
 
-function QueryRequire() end
-function QueryRejectVehicle() end
-function QueryRejectBody() end
-function QueryRejectShape() end
-function QueryRaycast() end
+---Sets required layers for next query
+---| Layer | Description |
+---| --- | --- |
+---| physical |   have a physical representation |
+---| dynamic |   part of a dynamic body |
+---| static  |   part of a static body |
+---| large   |   above debris threshold |
+---| small   |   below debris threshold |
+---@param layers string A space separate list of layers
+function QueryRequire(layers) end
+
+---Excludes a body from the next query
+---@param body body_handle
+function QueryRejectBody(body) end
+
+---Excludes a shape from the next query
+---@param shape shape_handle
+function QueryRejectShape(shape) end
+
+---Excludes a vehicle from the next query
+---@param vehicle vehicle_handle
+function QueryRejectVehicle(vehicle) end
+
+---Performs a raycast
+---@param origin vector
+---@param direction vector
+---@param max_distance number
+---@param radius number|nil Default is 0.0
+---@param reject_transparent boolean|nil Default is false
+---@return boolean hit
+---@return number distance
+---@return vector normal
+---@return shape_handle shape
+function QueryRaycast(origin, direction, max_distance, radius, reject_transparent) end
+
 function QueryClosestPoint() end
 function QueryAabbShapes() end
 function QueryAabbBodies() end
