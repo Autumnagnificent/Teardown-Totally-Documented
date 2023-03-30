@@ -1158,22 +1158,96 @@ function GetTriggerClosestPoint(trigger, point) end
 --#endregion
 --#region Screen
 
-function FindScreen() end
-function FindScreens() end
-function SetScreenEnabled() end
-function IsScreenEnabled() end
-function GetScreenShape() end
+---Searches the scene for a screen, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return a screen regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no screen is found, the function returns 0
+---@param tag string|nil
+---@param global boolean|nil
+---@return screen screen
+function FindScreen(tag, global) end
+
+---Searches the scene for any screen, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return any screen regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no screens are found, the function returns a blank table
+---@param tag string|nil
+---@param global boolean|nil
+---@return table<screen> screens
+function FindScreens(tag, global) end
+
+---@param screen screen
+---@param enabled boolean
+function SetScreenEnabled(screen, enabled) end
+
+---@param screen screen
+---@return boolean enabled
+function IsScreenEnabled(screen) end
+
+---@param screen screen
+---@return shape shape
+function GetScreenShape(screen) end
 
 --#endregion
 --#region Vehicle
 
-function FindVehicle() end
-function FindVehicles() end
-function GetVehicleTransform() end
-function GetVehicleBody() end
-function GetVehicleHealth() end
-function GetVehicleDriverPos() end
-function DriveVehicle() end
+---Searches the scene for a vehicle, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return a vehicle regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no vehicle is found, the function returns 0
+---@param tag string|nil
+---@param global boolean|nil
+---@return vehicle vehicle
+function FindVehicle(tag, global) end
+
+---Searches the scene for any vehicle, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return any vehicle regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no vehicles are found, the function returns a blank table
+---@param tag string|nil
+---@param global boolean|nil
+---@return table<vehicle> vehicles
+function FindVehicles(tag, global) end
+
+---@param vehicle vehicle
+---@return transform transform
+function GetVehicleTransform(vehicle) end
+
+---@param vehicle vehicle
+---@return body body
+function GetVehicleBody(vehicle) end
+
+---@param vehicle vehicle
+---@return number number 0 to 1 value
+function GetVehicleHealth(vehicle) end
+
+---Returns the driver position as vector in vehicle space
+---@param vehicle vehicle
+---@return vector position
+function GetVehicleDriverPos(vehicle) end
+
+---Pipes input to vehicles, allowing for autonomous driving.
+---
+---The vehicle will be turned on automatically and turned off when no longer called.
+---
+---It is recommended to call DriveVehicle from the tick function rather than update.
+---@param vehicle vehicle
+---@param drive number Reverse to forward control -1 to 1
+---@param steering number Left to right control -1 to 1
+---@param handbrake boolean Handbrake control
+function DriveVehicle(vehicle, drive, steering, handbrake) end
 
 --#endregion
 --#region Player
