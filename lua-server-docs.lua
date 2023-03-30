@@ -212,19 +212,6 @@
 ---| "mousedy" Mouse vertical diff.
 ---| "mousewheel" Mouse wheel.
 
----@alias entity_type
----| "body"
----| "shape"
----| "joint"
----| "light"
----| "script"
----| "screen"
----| "location"
----| "trigger"
----| "vehicle"
----| "wheel"
----| "water"
-
 ---@alias material
 ---| "foliage"
 ---| "dirt"
@@ -240,6 +227,25 @@
 ---| "rock"
 ---| "ice"
 ---| "unphysical"
+
+---@alias entity_type
+---| "body"
+---| "shape"
+---| "joint"
+---| "light"
+---| "script"
+---| "screen"
+---| "location"
+---| "trigger"
+---| "vehicle"
+---| "wheel"
+---| "water"
+
+---@alias joint_type
+---| "ball"
+---| "hinge"
+---| "prismatic"
+---| "rope"
 
 --#endregion
 --#region Callbacks
@@ -608,6 +614,11 @@ function ApplyBodyImpulse(body, position, impulse) end
 ---@return table<shape> shapes
 function GetBodyShapes(body) end
 
+---Handles to all dynamic bodies in the jointed structure. The input handle will also be included.
+---@param body body
+---@return table<body> bodies
+function GetJointedBodies(body) end
+
 ---Returns the parent vehicle of the given body
 ---
 ---Returns 0 if the body is not a children of a vehicle
@@ -710,6 +721,7 @@ function GetWorldBody() end
 ---@param global boolean|nil
 ---@return shape shape
 function FindShape(tag, global) end
+
 ---Searches the scene for any shape, requiring a specified tag
 ---
 ---If tag is a blank string or nil, then it will return any shape regardless of tag.
@@ -868,25 +880,117 @@ function IsShapeTouching(a, b) end
 --#endregion
 --#region Locations
 
-function FindLocation() end
-function FindLocations() end
-function GetLocationTransform() end
+---Searches the scene for a location, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return a location regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no location is found, the function returns 0
+---@param tag string|nil
+---@param global boolean|nil
+---@return location location
+function FindLocation(tag, global) end
+
+---Searches the scene for any location, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return any location regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no locations are found, the function returns a blank table
+---@param tag string|nil
+---@param global boolean|nil
+---@return table<location> locations
+function FindLocations(tag, global) end
+
+---Returns the transform of the given location
+---
+---Note that *unintuitively* locations' transforms do not follow their respective parents.
+---@param location location
+---@return transform transform
+function GetLocationTransform(location) end
 
 --#endregion
 --#region Joints
 
-function FindJoint() end
-function FindJoints() end
-function IsJointBroken() end
-function GetJointType() end
-function GetJointOtherShape() end
-function GetJointShapes() end
-function SetJointMotor() end
-function SetJointMotorTarget() end
-function GetJointLimits() end
-function GetJointMovement() end
-function GetJointedBodies() end
-function DetachJointFromShape() end
+---Searches the scene for a joint, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return a joint regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no joint is found, the function returns 0
+---@param tag string|nil
+---@param global boolean|nil
+---@return joint joint
+function FindJoint(tag, global) end
+
+---Searches the scene for any joint, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return any joint regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no joints are found, the function returns a blank table
+---@param tag string|nil
+---@param global boolean|nil
+---@return table<joint> joints
+function FindJoints(tag, global) end
+
+---@param joint joint
+---@return boolean broken
+function IsJointBroken(joint) end
+
+---@param joint joint
+---@return joint_type type
+function GetJointType(joint) end
+
+---A joint is always connected to two shapes. Use this function if you know one shape and want to find the other one.
+---@param joint joint
+---@param shape shape
+---@return shape other_shape
+function GetJointOtherShape(joint, shape) end
+
+---@param joint joint
+---@return table<shape> shapes
+function GetJointShapes(joint) end
+
+---Set joint motor target velocity.
+---
+---If joint is of type hinge, velocity is given in radians per second angular velocity. If joint type is prismatic joint velocity is given in meters per second.
+---
+---Calling this function will override and void any previous call to SetJointMotorTarget.
+---@param joint joint
+---@param velocity number Desired velocity
+---@param strength number|nil Desired strength. Default is infinite. Zero to disable
+function SetJointMotor(joint, velocity, strength) end
+
+---If a joint has a motor target, it will try to maintain its relative movement.
+---
+---If joint is of type hinge, target is an angle in degrees (-180 to 180) and velocity is given in radians per second. If joint type is prismatic, target is given in meters and velocity is given in meters per second.
+---
+---Setting a motor target will override any previous call to SetJointMotor.
+---@param joint joint
+---@param target number Desired movement target
+---@param max_velocity number|nil Maximum velocity to reach target. Default is infinite
+---@param strength number|nil Desired strength. Default is infinite. Zero to disable
+function SetJointMotorTarget(joint, target, max_velocity, strength) end
+
+---@param joint joint
+---@return number min Minimum joint limit (angle or distance)
+---@return number max Maximum joint limit (angle or distance)
+function GetJointLimits(joint) end
+
+---Returns the current position or angle or the joint, measured in same way as joint limits.
+---@param joint joint
+---@return number movement
+function GetJointMovement(joint) end
+
+---If the given joint is attached to the given shape, detach it.
+---@param joint joint
+---@param shape shape
+function DetachJointFromShape(joint, shape) end
 
 --#endregion
 --#region Lights
