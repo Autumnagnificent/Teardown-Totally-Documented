@@ -13,6 +13,17 @@
 
 ---@meta _
 
+---Teardown parses paths in a special way :
+---
+---| Starts With | Description |
+---|-|-|
+---| *nothing* | Varies depending on the function, but usually is `<Teardown>/data` or a folder inside it |
+---| `MOD/` | The root folder of the mod |
+---| `LEVEL/` | Only for campagin levels. Finds the folder in the `<Teardown>/data/level/<currently_loaded_xml_file>/` |
+---| `LIBRARY/` | Points to `<Teardown>/data/library>`, this folder is not created when the game is installed, and only exists on the developers end. It can however be created manually to function, though this should not be used |
+---| `RAW:` | Uses an absolute path, the disk volume in which game is installed at. This is techinally a sercurity risk and can be used to execute code not contained within the mod itself. |
+---@class td_path: string
+
 ---@class vector
 ---@feild [1]:number
 ---@feild [2]:number
@@ -228,6 +239,46 @@
 ---|"easein" Slow at beginning
 ---|"easeout" Slow at end
 ---|"bounce" Bounce and overshoot new value
+
+---@alias environment_property
+---| "ambience"
+---| "ambient"
+---| "ambientexponent"
+---| "brightness"
+---| "constant"
+---| "exposure"
+---| "fogcolor"
+---| "fogparams"
+---| "fogscale"
+---| "nightlight"
+---| "puddleamount"
+---| "puddlesize"
+---| "rain"
+---| "skybox"
+---| "skyboxbrightness"
+---| "skyboxrot"
+---| "skyboxtint"
+---| "slippery"
+---| "snowamount"
+---| "snowdir"
+---| "snowonground"
+---| "sunbrightness"
+---| "suncolortint"
+---| "sundir"
+---| "sunfogscale"
+---| "sunglare"
+---| "sunlength"
+---| "sunspread"
+---| "waterhurt"
+---| "wetness"
+---| "wind"
+
+---@alias postprocessing_property
+---| "saturation"
+---| "colorbalance"
+---| "brightness"
+---| "gamma"
+---| "bloom"
 
 --#endregion
 --#region Callbacks
@@ -1377,7 +1428,7 @@ function SetCameraDof(distance, amount) end
 ---Do this only once per tool. You also need to enable the tool in the registry before it can be used.
 ---@param id string
 ---@param name string
----@param file string
+---@param file td_path
 ---@param group integer
 function RegisterTool(id, name, file, group) end
 
@@ -1406,13 +1457,15 @@ function SetToolTransform(transform, sway) end
 ---LoadSound("example-sound")
 ---
 ---"example-sound0.ogg", "example-sound1.ogg", "example-sound2.ogg", ...
----@param path string
+---@param path td_path
 ---@param nominal_distance number|nil The distance in meters this sound is recorded at. Affects attenuation. Default is 10
 ---@return sound_handle
 function LoadSound(path, nominal_distance) end
 
+LoadSound()
+
 ---Loads a Loop and returns the handle for it
----@param path string
+---@param path td_path
 ---@param nominal_distance number|nil The distance in meters this sound is recorded at. Affects attenuation. Default is 10
 ---@return loop_handle
 function LoadLoop(path, nominal_distance) end
@@ -1428,7 +1481,7 @@ function PlaySound(sound, position, volume) end
 ---@param volume number Default is 1.0
 function PlayLoop(loop, position, volume) end
 
----@param path string
+---@param path td_path
 function PlayMusic(path) end
 
 function StopMusic() end
@@ -1734,7 +1787,15 @@ function SpawnParticle(position, velocity, lifetime) end
 --#endregion
 --#region Spawning
 
-function Spawn() end
+---The first argument can be either a prefab XML file in your mod folder or a string with XML content
+---
+---It possible to spawn prefabs from other mods, by using the mod id followed by colon, followed by the prefab path. Spawning prefabs from other mods should be used with causion since the referenced mod might not be installed.
+---@param xml string|td_path Teardown Path or XML content
+---@param transform transform Transform of the spawned XML
+---@param allow_static boolean|nil Allow spawning static shapes and bodies. Default is false
+---@param joint_existing boolean|nil Allow joints to connect to existing scene geometry. Default is false
+---@return table<entity_handle> entities An indexed table of the entities spawned in order
+function Spawn(xml, transform, allow_static, joint_existing) end
 
 --#endregion
 --#region User Interface
@@ -1938,12 +1999,42 @@ function DebugCross(position, red, green, blue, alpha) end
 --#endregion
 --#region Scene Properties
 
+---Reset the environment properties to default. This is often useful before setting up a custom environment.
 function SetEnvironmentDefault() end
-function SetEnvironmentProperty() end
-function GetEnvironmentProperty() end
+
+---The return type could vary depending on the property, could be nil if property does not exist
+---@param property environment_property
+---@return any|nil value0 
+---@return any|nil value1 May be nil if property does not have overloads
+---@return any|nil value2 May be nil if property does not have overloads
+---@return any|nil value3 May be nil if property does not have overloads
+---@return any|nil value4 May be nil if property does not have overloads
+function GetEnvironmentProperty(property) end
+
+---@param property environment_property
+---@param value0 any|nil
+---@param value1 any|nil
+---@param value2 any|nil
+---@param value3 any|nil
+function SetEnvironmentProperty(property, value0, value1, value2, value3) end
+
+---Reset the post proccesing properties to default.
 function SetPostProcessingDefault() end
-function SetPostProcessingProperty() end
-function GetPostProcessingProperty() end
+
+---@param property postprocessing_property
+---@return any|nil value0
+---@return any|nil value1 May be nil if property does not have overloads
+---@return any|nil value2 May be nil if property does not have overloads
+---@return any|nil value3 May be nil if property does not have overloads
+---@return any|nil value4 May be nil if property does not have overloads
+function GetPostProcessingProperty(property) end
+
+---@param property postprocessing_property
+---@param value0 any|nil
+---@param value1 any|nil
+---@param value2 any|nil
+---@param value3 any|nil
+function SetPostProcessingProperty(property, value0, value1, value2, value3) end
 
 --#endregion
 --#region User Input
