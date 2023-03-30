@@ -9,81 +9,54 @@
 
 --#region Types and Classes
 
----@class vector: { [1]:number, [2]:number, [3]:number }
----@type vector
+---@meta _
 
----@class quaternion: { [1]:number, [2]:number, [3]:number, [4]:number }
----@type quaternion
+---@class vector
+---@feild [1]:number
+---@feild [2]:number
+---@feild [3]:number
+---@class quaternion
+---@feild [1]:number
+---@feild [2]:number
+---@feild [3]:number
+---@feild [4]:number
 
----@class transform: { pos:vector, rot:quaternion }
----@type transform
+---@class transform
+---@field pos vector
+---@field rot quaternion
 
+---A non-negative interger that represents an index to a entity of any type in the World/Entity Table
+---@class entity_handle: integer
 
----A non-negative interger that represents an index
----@class handle: integer
----@type handle
-
----@class entity: handle
----@type entity
-
-
----A non-negative interger that represents the index/handle to a entity in the World/Entity Table
----@class body: entity
----@type body
-
+---A non-negative interger that represents the index/handle to a body in the World/Entity Table
+---@class body_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a shape in the World/Entity Table
----@class shape: entity
----@type shape
-
+---@class shape_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a joint in the World/Entity Table
----@class joint: entity
----@type joint
-
+---@class joint_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a light in the World/Entity Table
----@class light: entity
----@type light
-
+---@class light_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a script in the World/Entity Table
----@class script: entity
----@type script
-
+---@class script_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a screen in the World/Entity Table
----@class screen: entity
----@type screen
-
+---@class screen_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a location in the World/Entity Table
----@class location: entity
----@type location
-
+---@class location_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a trigger in the World/Entity Table
----@class trigger: entity
----@type trigger
-
+---@class trigger_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a vehicle in the World/Entity Table
----@class vehicle: entity
----@type vehicle
-
+---@class vehicle_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a wheel in the World/Entity Table
----@class wheel: entity
----@type wheel
-
+---@class wheel_handle: entity_handle
 ---A non-negative interger that represents the index/handle to a water in the World/Entity Table
----@class water: entity
----@type water
-
+---@class water_handle: entity_handle
 
 ---A non-negative interger that represents the index/handle to a sprite in the Sprite Table
----@class sprite: handle
----@type sprite
-
+---@class sprite_handle: integer
 ---A non-negative interger that represents the index/handle to a sound in the Sound Table
----@class sound: handle
----@type sound
-
+---@class sound_handle: integer
 ---A non-negative interger that represents the index/handle to a sound loop in the Sound Table
----@class soundloop: handle
----@type soundloop
-
+---@class loop_handle: integer
 
 ---@alias key
 ---| "1"
@@ -455,49 +428,49 @@ function TransformToLocalVec(relation, vector) end
 --#region Entities
 
 ---
----@param entity entity
+---@param entity entity_handle
 ---@param tag string
 ---@param value nil|string
 function SetTag(entity, tag, value) end
 
 ---
----@param entity entity
+---@param entity entity_handle
 ---@param tag string
 function RemoveTag(entity, tag) end
 
 ---
----@param entity entity
+---@param entity entity_handle
 ---@param tag string
 ---@return boolean
 function HasTag(entity, tag) end
 
 ---
----@param entity entity
+---@param entity entity_handle
 ---@param tag string
 ---@return string value
 function GetTagValue(entity, tag) end
 
 ---
----@param entity entity
+---@param entity entity_handle
 ---@return string description
 function GetDescription(entity) end
 
 ---
----@param entity entity
+---@param entity entity_handle
 ---@param description string
 function SetDescription(entity, description) end
 
 ---
----@param entity entity
+---@param entity entity_handle
 function Delete(entity) end
 
 ---
----@param entity entity
+---@param entity entity_handle
 ---@return boolean
 function IsHandleValid(entity) end
 
 ---
----@param entity entity
+---@param entity entity_handle
 ---@return entity_type type
 function GetEntityType(entity) end
 
@@ -513,7 +486,7 @@ function GetEntityType(entity) end
 ---If no body is found, the function returns 0
 ---@param tag string|nil
 ---@param global boolean|nil
----@return body body
+---@return body_handle body
 function FindBody(tag, global) end
 
 ---Searches the scene for any body, requiring a specified tag
@@ -525,88 +498,88 @@ function FindBody(tag, global) end
 ---If no bodies are found, the function returns a blank table
 ---@param tag string|nil
 ---@param global boolean|nil
----@return table<body> bodies A table contraining the handle for each body found
+---@return table<body_handle> bodies A table contraining the handle for each body found
 function FindBodies(tag, global) end
 
----@param body body
+---@param body body_handle
 ---@return transform transform
 function GetBodyTransform(body) end
 
----@param body body
+---@param body body_handle
 ---@param transform transform
 function SetBodyTransform(body, transform) end
 
----@param body body
+---@param body body_handle
 ---@return number mass
 function GetBodyMass(body) end
 
----@param body body
+---@param body body_handle
 ---@return boolean dynamic
 function IsBodyDynamic(body) end
 
----@param body body
+---@param body body_handle
 ---@param dynamic boolean
 function SetBodyDynamic(body, dynamic) end
 
----@param body body
+---@param body body_handle
 ---@return boolean active
 function IsBodyActive(body) end
 
----@param body body
+---@param body body_handle
 ---@param active boolean
 function SetBodyActive(body, active) end
 
----@param body body
+---@param body body_handle
 ---@param velocity vector
 function SetBodyVelocity(body, velocity) end
 
----@param body body
+---@param body body_handle
 ---@return vector velocity
 function GetBodyVelocity(body) end
 
----@param body body
+---@param body body_handle
 ---@param position vector
 ---@return vector velocity
 function GetBodyVelocityAtPos(body, position) end
 
----@param body body
+---@param body body_handle
 ---@param velocity vector
 function SetBodyAngularVelocity(body, velocity) end
 
----@param body body
+---@param body body_handle
 ---@return vector velocity
 function GetBodyAngularVelocity(body) end
 
----@param body body
+---@param body body_handle
 ---@param position vector
 ---@param impulse vector
 function ApplyBodyImpulse(body, position, impulse) end
 
----@param body body
----@return table<shape> shapes
+---@param body body_handle
+---@return table<shape_handle> shapes
 function GetBodyShapes(body) end
 
 ---Handles to all dynamic bodies in the jointed structure. The input handle will also be included.
----@param body body
----@return table<body> bodies
+---@param body body_handle
+---@return table<body_handle> bodies
 function GetJointedBodies(body) end
 
 ---Returns the parent vehicle of the given body
 ---
 ---Returns 0 if the body is not a children of a vehicle
----@param body body
----@return vehicle
+---@param body body_handle
+---@return vehicle_handle
 function GetBodyVehicle(body) end
 
 ---Returns a world space Axis Aligned Bounding Box (AABB) if a body
 ---
 ---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
----@param body body
+---@param body body_handle
 ---@return vector aa The position of the lower bound
 ---@return vector bb The position of the upper bound
 function GetBodyBounds(body) end
 
----@param body body
+---@param body body_handle
 ---@return vector position
 function GetBodyCenterOfMass(body) end
 
@@ -617,25 +590,25 @@ function GetBodyCenterOfMass(body) end
 ---Offical documentation says :
 ---
 ---This will check if a body is currently visible in the camera frustum and not occluded by other objects.
----@param body body
+---@param body body_handle
 ---@param maxdistance number
 ---@param rejectTransparent number|nil See through transparent materials, Default is false
 ---@return boolean
 function IsBodyVisible(body, maxdistance, rejectTransparent) end
 
 ---Determine if any shape of a body has been broken. 
----@param body body
+---@param body body_handle
 ---@return boolean
 function IsBodyBroken(body) end
 
----@param body body
+---@param body body_handle
 ---@return boolean
 function IsBodyJointedToStatic(body) end
 
 ---Renders an outline around a body for the next frame
 ---
 ---If only the body is given, { r, g, b, a } will default to { 1, 1, 1, 1 } (white)
----@param body body
+---@param body body_handle
 ---@param r number|nil Default is 0
 ---@param g number|nil Default is 0
 ---@param b number|nil Default is 0
@@ -645,38 +618,38 @@ function DrawBodyOutline(body, r, g, b, a) end
 ---Renders a solid while color over a body for this frame
 ---
 ---This is used for valuables in the game
----@param body body
+---@param body body_handle
 ---@param alpha number
 function DrawBodyHighlight(body, alpha) end
 
 ---Returns the closest point of a specific body
 ---
 ---Usually, the point will be in 0.1 unit (1 voxel) increments of the body's shape
----@param body body
+---@param body body_handle
 ---@param origin vector
 ---@return boolean hit If a point was found
 ---@return vector point world-space point
 ---@return vector normal world-space normal
----@return shape shape The handle to the closest shape 
+---@return shape_handle shape The handle to the closest shape 
 function GetBodyClosestPoint(body, origin) end
 
 ---HUSK
----@param body body
+---@param body body_handle
 function ConstrainVelocity(body) end
 
 ---HUSK
----@param body body
+---@param body body_handle
 function ConstrainAngularVelocity(body) end
 
 ---HUSK
----@param body body
+---@param body body_handle
 function ConstrainPosition(body) end
 
 ---HUSK
----@param body body
+---@param body body_handle
 function ConstrainOrientation(body) end
 
----@return body world_body
+---@return body_handle world_body
 function GetWorldBody() end
 
 --#endregion
@@ -691,7 +664,7 @@ function GetWorldBody() end
 ---If no shape is found, the function returns 0
 ---@param tag string|nil
 ---@param global boolean|nil
----@return shape shape
+---@return shape_handle shape
 function FindShape(tag, global) end
 
 ---Searches the scene for any shape, requiring a specified tag
@@ -703,51 +676,51 @@ function FindShape(tag, global) end
 ---If no bodies are found, the function returns a blank table
 ---@param tag string|nil
 ---@param global boolean|nil
----@return table<shape> bodies A table contraining the handle for each shape found
+---@return table<shape_handle> bodies A table contraining the handle for each shape found
 function FindShapes(tag, global) end
 
 ---Gets the transform of the shape realative to the body it is attached to.
----@param shape shape
+---@param shape shape_handle
 ---@return transform local_transform
 function GetShapeLocalTransform(shape) end
 
 ---Sets the transform of the shape realative to the body it is attached to.
----@param shape shape
+---@param shape shape_handle
 ---@param transform transform
 function SetShapeLocalTransform(shape, transform) end
 
 ---Gets the transform of the shape in the world space
----@param shape shape
----@param transform world_transform
+---@param shape shape_handle
+---@return transform world_transform
 function GetShapeWorldTransform(shape) end
 
----@param shape shape
----@return body shapebody
+---@param shape shape_handle
+---@return body_handle shapebody
 function GetShapeBody(shape) end
 
----@param shape shape
----@return table<joint> joints
+---@param shape shape_handle
+---@return table<joint_handle> joints
 function GetShapeJoints(shape) end
 
----@param shape shape
----@return table<light> lights
+---@param shape shape_handle
+---@return table<light_handle> lights
 function GetShapeLights(shape) end
 
 ---Returns a world space Axis Aligned Bounding Box (AABB) if a shape
 ---
 ---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
----@param shape shape
+---@param shape shape_handle
 ---@return vector aa The position of the lower bound
 ---@return vector bb The position of the upper bound
 function GetShapeBounds(shape) end
 
 ---Scale emissiveness for shape. If the shape has light sources attached, their intensity will be scaled by the same amount.
----@param shape shape
+---@param shape shape_handle
 ---@param amount number
 function SetShapeEmissiveScale(shape, amount) end
 
 ---Return material properties for a particular voxel given a world-space position
----@param shape shape
+---@param shape shape_handle
 ---@param position vector
 ---@return material|'' type
 ---@return number red
@@ -759,7 +732,7 @@ function GetShapeMaterialAtPosition(shape, position) end
 ---Return material properties for a particular voxel in the voxel grid indexed by integer values.
 ---
 ---Note that the first index is zero, rather than one.
----@param shape shape
+---@param shape shape_handle
 ---@param x integer
 ---@param y integer
 ---@param z integer
@@ -770,7 +743,7 @@ function GetShapeMaterialAtPosition(shape, position) end
 ---@return number alpha
 function GetShapeMaterialAtIndex(shape, x, y, z) end
 
----@param shape shape
+---@param shape shape_handle
 ---@return integer xsize Size in voxels along x axis
 ---@return integer ysize Size in voxels along y axis
 ---@return integer zsize Size in voxels along z axis
@@ -780,7 +753,7 @@ function GetShapeSize(shape, xsize, ysize, zsize, scale) end
 ---Returns the voxels in a given shape
 ---
 ---Well lets see here; 1, 2, 3--, hold still here, 4! ahh ahh ahh ahh!
----@param shape shape
+---@param shape shape_handle
 ---@return number voxels
 function GetShapeVoxelCount(shape) end
 
@@ -792,7 +765,7 @@ function GetShapeVoxelCount(shape) end
 ---Offical documentation says :
 ---
 ---This will check if a shape is currently visible in the camera frustum and not occluded by other objects.
----@param shape shape
+---@param shape shape_handle
 ---@param maxdistance number
 ---@param rejectTransparent number|nil See through transparent materials, Default is false
 ---@return boolean
@@ -801,13 +774,13 @@ function IsShapeVisible(shape, maxdistance, rejectTransparent) end
 ---Determine if shape has been broken.
 ---
 ---Note that a shape can be transfered to another body during destruction, but might still not be considered broken if all voxels are intact.
----@param shape shape
+---@param shape shape_handle
 function IsShapeBroken(shape) end
 
 ---Renders an outline around a shape for the next frame
 ---
 ---If only the shape is given, { r, g, b, a } will default to { 1, 1, 1, 1 } (white)
----@param shape shape
+---@param shape shape_handle
 ---@param r number|nil Default is 0
 ---@param g number|nil Default is 0
 ---@param b number|nil Default is 0
@@ -817,7 +790,7 @@ function DrawShapeOutline(shape, r, g, b, a) end
 ---Renders a solid while color over a shape for this frame
 ---
 ---This is used for valuables in the game
----@param shape shape
+---@param shape shape_handle
 ---@param alpha number
 function DrawShapeHighlight(shape, alpha) end
 
@@ -828,7 +801,7 @@ function DrawShapeHighlight(shape, alpha) end
 ---The layer of one object must be in the mask of the other object and vice versa for the collision to be valid.
 ---
 ---The default layer for all objects is 1 and the default mask is 255 (collide with all layers).
----@param shape shape
+---@param shape shape_handle
 ---@param layer integer Layer bits (0-255)
 ---@param mask integer Mask bits (0-255)
 function SetShapeCollisionFilter(shape, layer, mask) end
@@ -836,7 +809,7 @@ function SetShapeCollisionFilter(shape, layer, mask) end
 ---Returns the closest point of a specific shape
 ---
 ---Usually, the point will be in 0.1 unit (1 voxel) increments of the body's shape
----@param shape body
+---@param shape body_handle
 ---@param origin vector
 ---@return boolean hit If a point was found
 ---@return vector point world-space point
@@ -844,8 +817,8 @@ function SetShapeCollisionFilter(shape, layer, mask) end
 function GetShapeClosestPoint(shape, origin) end
 
 ---Returns true if two shapes has physical overlap
----@param a shape
----@param b shape
+---@param a shape_handle
+---@param b shape_handle
 ---@return boolean overlap
 function IsShapeTouching(a, b) end
 
@@ -861,7 +834,7 @@ function IsShapeTouching(a, b) end
 ---If no location is found, the function returns 0
 ---@param tag string|nil
 ---@param global boolean|nil
----@return location location
+---@return location_handle location
 function FindLocation(tag, global) end
 
 ---Searches the scene for any location, requiring a specified tag
@@ -873,13 +846,13 @@ function FindLocation(tag, global) end
 ---If no locations are found, the function returns a blank table
 ---@param tag string|nil
 ---@param global boolean|nil
----@return table<location> locations
+---@return table<location_handle> locations
 function FindLocations(tag, global) end
 
 ---Returns the transform of the given location
 ---
 ---Note that *unintuitively* locations' transforms do not follow their respective parents.
----@param location location
+---@param location location_handle
 ---@return transform transform
 function GetLocationTransform(location) end
 
@@ -895,7 +868,7 @@ function GetLocationTransform(location) end
 ---If no joint is found, the function returns 0
 ---@param tag string|nil
 ---@param global boolean|nil
----@return joint joint
+---@return joint_handle joint
 function FindJoint(tag, global) end
 
 ---Searches the scene for any joint, requiring a specified tag
@@ -907,25 +880,25 @@ function FindJoint(tag, global) end
 ---If no joints are found, the function returns a blank table
 ---@param tag string|nil
 ---@param global boolean|nil
----@return table<joint> joints
+---@return table<joint_handle> joints
 function FindJoints(tag, global) end
 
----@param joint joint
+---@param joint joint_handle
 ---@return boolean broken
 function IsJointBroken(joint) end
 
----@param joint joint
+---@param joint joint_handle
 ---@return joint_type type
 function GetJointType(joint) end
 
 ---A joint is always connected to two shapes. Use this function if you know one shape and want to find the other one.
----@param joint joint
----@param shape shape
----@return shape other_shape
+---@param joint joint_handle
+---@param shape shape_handle
+---@return shape_handle other_shape
 function GetJointOtherShape(joint, shape) end
 
----@param joint joint
----@return table<shape> shapes
+---@param joint joint_handle
+---@return table<shape_handle> shapes
 function GetJointShapes(joint) end
 
 ---Set joint motor target velocity.
@@ -933,7 +906,7 @@ function GetJointShapes(joint) end
 ---If joint is of type hinge, velocity is given in radians per second angular velocity. If joint type is prismatic joint velocity is given in meters per second.
 ---
 ---Calling this function will override and void any previous call to SetJointMotorTarget.
----@param joint joint
+---@param joint joint_handle
 ---@param velocity number Desired velocity
 ---@param strength number|nil Desired strength. Default is infinite. Zero to disable
 function SetJointMotor(joint, velocity, strength) end
@@ -943,25 +916,25 @@ function SetJointMotor(joint, velocity, strength) end
 ---If joint is of type hinge, target is an angle in degrees (-180 to 180) and velocity is given in radians per second. If joint type is prismatic, target is given in meters and velocity is given in meters per second.
 ---
 ---Setting a motor target will override any previous call to SetJointMotor.
----@param joint joint
+---@param joint joint_handle
 ---@param target number Desired movement target
 ---@param max_velocity number|nil Maximum velocity to reach target. Default is infinite
 ---@param strength number|nil Desired strength. Default is infinite. Zero to disable
 function SetJointMotorTarget(joint, target, max_velocity, strength) end
 
----@param joint joint
+---@param joint joint_handle
 ---@return number min Minimum joint limit (angle or distance)
 ---@return number max Maximum joint limit (angle or distance)
 function GetJointLimits(joint) end
 
 ---Returns the current position or angle or the joint, measured in same way as joint limits.
----@param joint joint
+---@param joint joint_handle
 ---@return number movement
 function GetJointMovement(joint) end
 
 ---If the given joint is attached to the given shape, detach it.
----@param joint joint
----@param shape shape
+---@param joint joint_handle
+---@param shape shape_handle
 function DetachJointFromShape(joint, shape) end
 
 --#endregion
@@ -990,7 +963,7 @@ function PointLight(position, red, green, blue, intensity) end
 ---If no light is found, the function returns 0
 ---@param tag string|nil
 ---@param global boolean|nil
----@return light light
+---@return light_handle light
 function FindLight(tag, global) end
 
 ---Searches the scene for any light, requiring a specified tag
@@ -1002,37 +975,37 @@ function FindLight(tag, global) end
 ---If no lights are found, the function returns a blank table
 ---@param tag string|nil
 ---@param global boolean|nil
----@return table<light> lights
+---@return table<light_handle> lights
 function FindLights(tag, global) end
 
----@param light light
+---@param light light_handle
 ---@param enabled boolean
 function SetLightEnabled(light, enabled) end
 
----@param light light
+---@param light light_handle
 ---@param red number
 ---@param green number
 ---@param blue number
 function SetLightColor(light, red, green, blue) end
 
----@param light light
+---@param light light_handle
 ---@param intensity number
 function SetLightIntensity(light, intensity) end
 
----@param light light
+---@param light light_handle
 ---@return transform transform
 function GetLightTransform(light) end
 
----@param light light
----@return shape shape
+---@param light light_handle
+---@return shape_handle shape
 function GetLightShape(light) end
 
----@param light light
+---@param light light_handle
 ---@return boolean active
 function IsLightActive(light) end
 
 ---Return true if point is in light cone and range
----@param light light
+---@param light light_handle
 ---@param point vector
 ---@return boolean effected
 function IsPointAffectedByLight(light, point) end
@@ -1049,7 +1022,7 @@ function IsPointAffectedByLight(light, point) end
 ---If no trigger is found, the function returns 0
 ---@param tag string|nil
 ---@param global boolean|nil
----@return trigger trigger
+---@return trigger_handle trigger
 function FindTrigger(tag, global) end
 
 ---Searches the scene for any trigger, requiring a specified tag
@@ -1061,60 +1034,60 @@ function FindTrigger(tag, global) end
 ---If no triggers are found, the function returns a blank table
 ---@param tag string|nil
 ---@param global boolean|nil
----@return table<trigger> triggers
+---@return table<trigger_handle> triggers
 function FindTriggers(tag, global) end
 
----@param trigger trigger
+---@param trigger trigger_handle
 ---@return transform transform
 function GetTriggerTransform(trigger) end
 
----@param trigger trigger
+---@param trigger trigger_handle
 ---@param transform transform
 function SetTriggerTransform(trigger, transform) end
 
 ---Returns a world space Axis Aligned Bounding Box (AABB) if a trigger
 ---
 ---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
----@param trigger trigger
+---@param trigger trigger_handle
 ---@return vector aa The position of the lower bound
 ---@return vector bb The position of the upper bound
 function GetTriggerBounds(trigger) end
 
 ---Checks if the point is within the trigger's volume
----@param trigger trigger
+---@param trigger trigger_handle
 ---@param point vector
 ---@return boolean inside
 function IsPointInTrigger(trigger, point) end
 
 ---Checks if the center point of the body is within the trigger's volume
----@param trigger trigger
----@param body body
+---@param trigger trigger_handle
+---@param body body_handle
 ---@return boolean inside
 function IsBodyInTrigger(trigger, body) end
 
 ---Checks if the origin of the vehicle is within the trigger's volume
----@param trigger trigger
----@param body body
+---@param trigger trigger_handle
+---@param body body_handle
 ---@return boolean inside
 function IsVehicleInTrigger(trigger, body) end
 
 ---Checks if the center of the shape is within the trigger's volume
----@param trigger trigger
----@param shape shape
+---@param trigger trigger_handle
+---@param shape shape_handle
 ---@return boolean inside
 function IsShapeInTrigger(trigger, shape) end
 
 ---Checks if trigger contains any part of a body
 ---
 ---The highest point will also be returned, this is used in a few missions in the campagin
----@param trigger trigger
+---@param trigger trigger_handle
 ---@param demolition boolean|nil If true, small debris and vehicles are ignored
 function IsTriggerEmpty(trigger, demolition) end
 
 ---Returns the distance to the surface of a trigger volume.
 ---
 ---Will return negative distance if inside.
----@param trigger trigger
+---@param trigger trigger_handle
 ---@param point vector
 ---@return number distance
 function GetTriggerDistance(trigger, point) end
@@ -1122,7 +1095,7 @@ function GetTriggerDistance(trigger, point) end
 ---Returns the closest point in trigger volume.
 ---
 ---Will return the input point itself if inside trigger or closest point on surface of trigger if outside.
----@param trigger trigger
+---@param trigger trigger_handle
 ---@param point vector
 ---@return vector closest_point
 function GetTriggerClosestPoint(trigger, point) end
@@ -1139,7 +1112,7 @@ function GetTriggerClosestPoint(trigger, point) end
 ---If no screen is found, the function returns 0
 ---@param tag string|nil
 ---@param global boolean|nil
----@return screen screen
+---@return screen_handle screen
 function FindScreen(tag, global) end
 
 ---Searches the scene for any screen, requiring a specified tag
@@ -1151,19 +1124,19 @@ function FindScreen(tag, global) end
 ---If no screens are found, the function returns a blank table
 ---@param tag string|nil
 ---@param global boolean|nil
----@return table<screen> screens
+---@return table<screen_handle> screens
 function FindScreens(tag, global) end
 
----@param screen screen
+---@param screen screen_handle
 ---@param enabled boolean
 function SetScreenEnabled(screen, enabled) end
 
----@param screen screen
+---@param screen screen_handle
 ---@return boolean enabled
 function IsScreenEnabled(screen) end
 
----@param screen screen
----@return shape shape
+---@param screen screen_handle
+---@return shape_handle shape
 function GetScreenShape(screen) end
 
 --#endregion
@@ -1178,7 +1151,7 @@ function GetScreenShape(screen) end
 ---If no vehicle is found, the function returns 0
 ---@param tag string|nil
 ---@param global boolean|nil
----@return vehicle vehicle
+---@return vehicle_handle vehicle
 function FindVehicle(tag, global) end
 
 ---Searches the scene for any vehicle, requiring a specified tag
@@ -1190,23 +1163,23 @@ function FindVehicle(tag, global) end
 ---If no vehicles are found, the function returns a blank table
 ---@param tag string|nil
 ---@param global boolean|nil
----@return table<vehicle> vehicles
+---@return table<vehicle_handle> vehicles
 function FindVehicles(tag, global) end
 
----@param vehicle vehicle
+---@param vehicle vehicle_handle
 ---@return transform transform
 function GetVehicleTransform(vehicle) end
 
----@param vehicle vehicle
----@return body body
+---@param vehicle vehicle_handle
+---@return body_handle body
 function GetVehicleBody(vehicle) end
 
----@param vehicle vehicle
+---@param vehicle vehicle_handle
 ---@return number number 0 to 1 value
 function GetVehicleHealth(vehicle) end
 
 ---Returns the driver position as vector in vehicle space
----@param vehicle vehicle
+---@param vehicle vehicle_handle
 ---@return vector position
 function GetVehicleDriverPos(vehicle) end
 
@@ -1215,7 +1188,7 @@ function GetVehicleDriverPos(vehicle) end
 ---The vehicle will be turned on automatically and turned off when no longer called.
 ---
 ---It is recommended to call DriveVehicle from the tick function rather than update.
----@param vehicle vehicle
+---@param vehicle vehicle_handle
 ---@param drive number Reverse to forward control -1 to 1
 ---@param steering number Left to right control -1 to 1
 ---@param handbrake boolean Handbrake control
@@ -1273,18 +1246,18 @@ function GetPlayerVelocity() end
 ---@param velocity vector
 function SetPlayerVelocity(velocity) end
 
----@return vehicle vehicle
+---@return vehicle_handle vehicle
 function GetPlayerVehicle() end
 
----@param vehicle vehicle
+---@param vehicle vehicle_handle
 function SetPlayerVehicle(vehicle) end
 
 ---Returns the handle to grabbed shape or zero if not grabbing.
----@return shape shape
+---@return shape_handle shape
 function GetPlayerGrabShape() end
 
 ---Returns the handle to grabbed body or zero if not grabbing.
----@return body body
+---@return body_handle body
 
 function GetPlayerGrabBody() end
 
@@ -1294,11 +1267,11 @@ function GetPlayerGrabBody() end
 function ReleasePlayerGrab() end
 
 ---Returns a handle to the picked shape or zero if nothing is picked
----@return shape shape
+---@return shape_handle shape
 function GetPlayerPickShape() end
 
 ---Returns a handle to the picked body or zero if nothing is picked
----@return body body
+---@return body_handle body
 function GetPlayerPickBody() end
 
 ---Returns a handle to the interacted shape or zero if nothing is interacted with
@@ -1306,7 +1279,7 @@ function GetPlayerPickBody() end
 ---Interactable shapes has to be tagged with "interact".
 ---
 ---The engine determines which interactable shape is currently interactable.
----@return shape shape
+---@return shape_handle shape
 function GetPlayerInteractShape() end
 
 ---Returns a handle to the interacted body or zero if nothing is interacted with
@@ -1314,15 +1287,15 @@ function GetPlayerInteractShape() end
 ---Interactable shapes has to be tagged with "interact".
 ---
 ---The engine determines which interactable shape is currently interactable.
----@return body body
+---@return body_handle body
 function GetPlayerInteractBody() end
 
 ---Returns the handle to interacted screen or zero if none
----@return screen screen
+---@return screen_handle screen
 function GetPlayerScreen() end
 
 ---Handle to interacted screen or zero if none
----@param screen screen
+---@param screen screen_handle
 function SetPlayerScreen(screen) end
 
 ---@return number number 0 to 1 value representing the players health
@@ -1337,25 +1310,94 @@ function RespawnPlayer() end
 --#endregion
 --#region Tools
 
-function RegisterTool() end
+---Register a custom tool that will show up in the player inventory and can be selected with scroll wheel.
+---
+---Do this only once per tool. You also need to enable the tool in the registry before it can be used.
+---@param id string
+---@param name string
+---@param file string
+---@param group integer
+function RegisterTool(id, name, file, group) end
+
+---Returns the spawned body of the currently held tool
+---
+---You can use this to retrieve tool shapes and animate them, change emissiveness, etc. Do not attempt to set the tool body transform, since it is controlled by the engine. Use SetToolTranform for that.
+---
+---If you are interested in complex animations, Unoffical Modding Framework can help
+---@return body_handle tool_body
 function GetToolBody() end
-function SetToolTransform() end
+
+---Apply an additional transform on the visible tool body. This can be used to create tool animations.
+---
+---You need to set this every frame from the tick function. The optional sway parameter control the amount of tool swaying when walking. Set to zero to disable completely.
+---@param transform transform
+---@param sway number|nil Default is 1
+function SetToolTransform(transform, sway) end
 
 --#endregion
 --#region Sound
 
-function LoadSound() end
-function LoadLoop() end
-function PlaySound() end
-function PlayLoop() end
-function PlayMusic() end
+---Loads a Sound and returns the handle for it
+---
+---Multiple sounds can be loaded into the same handle to be played at random.
+---
+---LoadSound("example-sound")
+---
+---"example-sound0.ogg", "example-sound1.ogg", "example-sound2.ogg", ...
+---@param path string
+---@param nominal_distance number|nil The distance in meters this sound is recorded at. Affects attenuation. Default is 10
+---@return sound_handle
+function LoadSound(path, nominal_distance) end
+
+---Loads a Loop and returns the handle for it
+---@param path string
+---@param nominal_distance number|nil The distance in meters this sound is recorded at. Affects attenuation. Default is 10
+---@return loop_handle
+function LoadLoop(path, nominal_distance) end
+
+---@param sound sound_handle
+---@param position vector|nil Default is player position
+---@param volume number Default is 1.0
+function PlaySound(sound, position, volume) end
+
+---Call continuously
+---@param loop loop_handle
+---@param position vector|nil Default is player position
+---@param volume number Default is 1.0
+function PlayLoop(loop, position, volume) end
+
+---@param path string
+function PlayMusic(path) end
+
 function StopMusic() end
 
 --#endregion
 --#region Sprite
 
-function LoadSprite() end
-function DrawSprite() end
+---Loads a sprite into the Sprite Table and returns the handle
+---
+---If LoadSprite is called with a nil path, then when the handle is drawn, it will use the last drawn sprite on the screen.
+---
+---If no sprite have been drawn on screen before this one, it will default to the Render Texture 0, albedo/color buffer
+---
+---https://acko.net/files/teardown-teardown/01-color-pass-albedo.png
+---@param path string
+function LoadSprite(path) end
+
+---Draws a sprite handle at a transform, stetching the texture/sprite to fill the given width and height
+---
+---While depth testing/culling/occlusion does work in general, it easily breaks with larger sprites at shallow angles
+---@param sprite sprite_handle
+---@param transform transform
+---@param width number
+---@param height number
+---@param red number
+---@param green number
+---@param blue number
+---@param alpha number
+---@param depth_test boolean
+---@param additive boolean
+function DrawSprite(sprite, transform, width, height, red, green, blue, alpha, depth_test, additive) end
 
 --#endregion
 --#region Scene Queries
