@@ -280,6 +280,7 @@
 ---| "gamma"
 ---| "bloom"
 
+
 --#endregion
 --#region Callbacks
 
@@ -309,25 +310,83 @@ end
 --#endregion
 --#region XML Parameters
 
-function GetIntParam() end
-function GetFloatParam() end
-function GetBoolParam() end
-function GetStringParam() end
+---Scripts can have parameters defined in the level XML file. This can be used to configure various options and parameters of the script.
+---
+---While these parameters can be read at any time in the script, it's recommended to copy them to a global variable in or outside the init function. 
+---@param name string Parameter name
+---@param default integer Default parameter value
+function GetIntParam(name, default) end
+---Scripts can have parameters defined in the level XML file. This can be used to configure various options and parameters of the script.
+---
+---While these parameters can be read at any time in the script, it's recommended to copy them to a global variable in or outside the init function. 
+---@param name string Parameter name
+---@param default number Default parameter value
+function GetFloatParam(name, default) end
+---Scripts can have parameters defined in the level XML file. This can be used to configure various options and parameters of the script.
+---
+---While these parameters can be read at any time in the script, it's recommended to copy them to a global variable in or outside the init function. 
+---@param name string Parameter name
+---@param default boolean Default parameter value
+function GetBoolParam(name, default) end
+---Scripts can have parameters defined in the level XML file. This can be used to configure various options and parameters of the script.
+---
+---While these parameters can be read at any time in the script, it's recommended to copy them to a global variable in or outside the init function. 
+---@param name string Parameter name
+---@param default string Default parameter value
+function GetStringParam(name, default) end
 
 --#endregion
 --#region Registry
 
-function ClearKey() end
-function ListKeys() end
-function HasKey() end
-function SetInt() end
-function GetInt() end
-function SetFloat() end
-function GetFloat() end
-function SetBool() end
-function GetBool() end
-function SetString() end
-function GetString() end
+---Remove registry node, including all child nodes.
+---@param key string
+function ClearKey(key) end
+
+---List all child keys of a registry node.
+---@param key string
+---@return table<string> keys
+function ListKeys(key) end
+
+---Returns true if the registry contains a certain key
+---@param key string
+---@return boolean exists
+function HasKey(key) end
+
+---Returns an integer value of registry node or zero if not found
+---@param key string
+---@return integer value
+function GetInt(key) end
+
+---@param key string
+---@param value number
+function SetInt(key, value) end
+
+---Returns an float value of registry node or zero if not found
+---@param key string
+---@return number value
+function GetFloat(key) end
+
+---@param key string
+---@param value number
+function SetFloat(key, value) end
+
+---Returns an boolean value of registry node or false if not found
+---@param key string
+---@return boolean value
+function GetBool(key) end
+
+---@param key string
+---@param value boolean
+function SetBool(key, value) end
+
+---Returns the value of registry node or a blank string (`""`) if not found
+---@param key string
+---@return integer value
+function GetString(key) end
+
+---@param key string
+---@param value string
+function SetString(key, value) end
 
 --#endregion
 --#region Vector Math
