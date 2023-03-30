@@ -13,53 +13,96 @@
 ---@type transform
 
 
----@class handle: integer -- non-negative
+---A non-negative interger that represents an index
+---@class handle: integer
 ---@type handle
 
 ---@class entity: handle
 ---@type entity
 
 
+---A non-negative interger that represents the index/handle to a entity in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class body: entity
 ---@type body
 
+---A non-negative interger that represents the index/handle to a shape in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class shape: entity
 ---@type shape
 
+---A non-negative interger that represents the index/handle to a joint in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class joint: entity
 ---@type joint
 
+---A non-negative interger that represents the index/handle to a light in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class light: entity
 ---@type light
 
+---A non-negative interger that represents the index/handle to a script in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class script: entity
 ---@type script
 
+---A non-negative interger that represents the index/handle to a screen in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class screen: entity
 ---@type screen
 
+---A non-negative interger that represents the index/handle to a location in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class location: entity
 ---@type location
 
+---A non-negative interger that represents the index/handle to a trigger in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class trigger: entity
 ---@type trigger
 
+---A non-negative interger that represents the index/handle to a vehicle in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class vehicle: entity
 ---@type vehicle
 
+---A non-negative interger that represents the index/handle to a wheel in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class wheel: entity
 ---@type wheel
 
+---A non-negative interger that represents the index/handle to a water in the World/Entity Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class water: entity
 ---@type water
 
 
+---A non-negative interger that represents the index/handle to a sprite in the Sprite Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class sprite: handle
 ---@type sprite
 
+---A non-negative interger that represents the index/handle to a sound in the Sound Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class sound: handle
 ---@type sound
 
+---A non-negative interger that represents the index/handle to a sound loop in the Sound Table
+---
+---May not be accurate, still waiting on a comfirmation
 ---@class soundloop: handle
 ---@type soundloop
 
@@ -485,82 +528,82 @@ function FindBody(tag, global) end
 ---@return table<body> bodies A table contraining the handle for each body found
 function FindBodies(tag, global) end
 
----@param handle body
+---@param body body
 ---@return transform transform
-function GetBodyTransform(handle) end
+function GetBodyTransform(body) end
 
----@param handle body
+---@param body body
 ---@param transform transform
-function SetBodyTransform(handle, transform) end
+function SetBodyTransform(body, transform) end
 
----@param handle body
+---@param body body
 ---@return number mass
-function GetBodyMass(handle) end
+function GetBodyMass(body) end
 
----@param handle body
+---@param body body
 ---@return boolean dynamic
-function IsBodyDynamic(handle) end
+function IsBodyDynamic(body) end
 
----@param handle body
+---@param body body
 ---@param dynamic boolean
-function SetBodyDynamic(handle, dynamic) end
+function SetBodyDynamic(body, dynamic) end
 
----@param handle body
+---@param body body
 ---@return boolean active
-function IsBodyActive(handle) end
+function IsBodyActive(body) end
 
----@param handle body
+---@param body body
 ---@param active boolean
-function SetBodyActive(handle, active) end
+function SetBodyActive(body, active) end
 
----@param handle body
+---@param body body
 ---@param velocity vector
-function SetBodyVelocity(handle, velocity) end
+function SetBodyVelocity(body, velocity) end
 
----@param handle body
+---@param body body
 ---@return vector velocity
-function GetBodyVelocity(handle) end
+function GetBodyVelocity(body) end
 
----@param handle body
+---@param body body
 ---@param position vector
 ---@return vector velocity
-function GetBodyVelocityAtPos(handle, position) end
+function GetBodyVelocityAtPos(body, position) end
 
----@param handle body
+---@param body body
 ---@param velocity vector
-function SetBodyAngularVelocity(handle, velocity) end
+function SetBodyAngularVelocity(body, velocity) end
 
----@param handle body
+---@param body body
 ---@return vector velocity
-function GetBodyAngularVelocity(handle) end
+function GetBodyAngularVelocity(body) end
 
----@param handle body
+---@param body body
 ---@param position vector
 ---@param impulse vector
-function ApplyBodyImpulse(handle, position, impulse) end
+function ApplyBodyImpulse(body, position, impulse) end
 
----@param handle body
+---@param body body
 ---@return table<shape> shapes
-function GetBodyShapes(handle) end
+function GetBodyShapes(body) end
 
 ---Returns the parent vehicle of the given body
 ---
 ---Returns 0 if the body is not a children of a vehicle
----@param handle body
+---@param body body
 ---@return vehicle
-function GetBodyVehicle(handle) end
+function GetBodyVehicle(body) end
 
 ---Returns a world space Axis Aligned Bounding Box (AABB) if a body
 ---
 ---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
----@param handle body
+---@param body body
 ---@return vector aa The position of the lower bound
 ---@return vector bb The position of the upper bound
-function GetBodyBounds(handle) end
+function GetBodyBounds(body) end
 
----@param handle body
+---@param body body
 ---@return vector position
-function GetBodyCenterOfMass(handle) end
+function GetBodyCenterOfMass(body) end
 
 ---A very inaccurate way of testing if a body is visible to the camera.
 ---
@@ -569,95 +612,176 @@ function GetBodyCenterOfMass(handle) end
 ---Offical documentation says :
 ---
 ---This will check if a body is currently visible in the camera frustum and not occluded by other objects.
----@param handle body
+---@param body body
 ---@param maxdistance number
 ---@param rejectTransparent number|nil See through transparent materials, Default is false
 ---@return boolean
-function IsBodyVisible(handle, maxdistance, rejectTransparent) end
+function IsBodyVisible(body, maxdistance, rejectTransparent) end
 
----@param handle body
+---@param body body
 ---@return boolean
-function IsBodyBroken(handle) end
+function IsBodyBroken(body) end
 
----@param handle body
+---@param body body
 ---@return boolean
-function IsBodyJointedToStatic(handle) end
+function IsBodyJointedToStatic(body) end
 
 ---Renders an outline around a body for the next frame
 ---
----If only the handle is given, { r, g, b, a } will default to { 1, 1, 1, 1 } (white)
----@param handle body
+---If only the body is given, { r, g, b, a } will default to { 1, 1, 1, 1 } (white)
+---@param body body
 ---@param r number|nil Default is 0
 ---@param g number|nil Default is 0
 ---@param b number|nil Default is 0
 ---@param a number|nil Default is 0
-function DrawBodyOutline(handle, r, g, b, a) end
+function DrawBodyOutline(body, r, g, b, a) end
 
 ---Renders a solid while color over a body for this frame
 ---
 ---This is used for valuables in the game
----@param handle body
+---@param body body
 ---@param alpha number
-function DrawBodyHighlight(handle, alpha) end
+function DrawBodyHighlight(body, alpha) end
 
 ---Returns the closest point of a specific body
 ---
 ---Usually, the point will be in 0.1 unit (1 voxel) increments of the body's shape
----@param handle body
+---@param body body
 ---@param origin vector
 ---@return boolean hit If a point was found
 ---@return vector point Worldspace point
 ---@return vector normal World space normal
 ---@return shape shape The handle to the closest shape 
-function GetBodyClosestPoint(handle, origin) end
+function GetBodyClosestPoint(body, origin) end
 
 ---HUSK
----@param handle body
-function ConstrainVelocity(handle) end
+---@param body body
+function ConstrainVelocity(body) end
 
 ---HUSK
----@param handle body
-function ConstrainAngularVelocity(handle) end
+---@param body body
+function ConstrainAngularVelocity(body) end
 
 ---HUSK
----@param handle body
-function ConstrainPosition(handle) end
+---@param body body
+function ConstrainPosition(body) end
 
 ---HUSK
----@param handle body
-function ConstrainOrientation(handle) end
+---@param body body
+function ConstrainOrientation(body) end
 
----@return body worldbody
+---@return body world_body
 function GetWorldBody() end
 
 --#endregion
 --#region Shapes
 
-function FindShape() end
-function FindShapes() end
-function GetShapeLocalTransform() end
-function SetShapeLocalTransform() end
-function GetShapeWorldTransform() end
+---Searches the scene for a shape, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return a shape regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no shape is found, the function returns 0
+---@param tag string|nil
+---@param global boolean|nil
+---@return shape shape
+function FindShape(tag, global) end
+---Searches the scene for any shape, requiring a specified tag
+---
+---If tag is a blank string or nil, then it will return any shape regardless of tag.
+---
+---If global, then the script will search the entire scene, not the children of this script.
+---
+---If no bodies are found, the function returns a blank table
+---@param tag string|nil
+---@param global boolean|nil
+---@return table<shape> bodies A table contraining the handle for each shape found
+function FindShapes(tag, global) end
+
+---Gets the transform of the shape realative to the body it is attached to.
+---@param shape shape
+---@return transform local_transform
+function GetShapeLocalTransform(shape) end
+
+---Sets the transform of the shape realative to the body it is attached to.
+---@param shape shape
+---@param transform transform
+function SetShapeLocalTransform(shape, transform) end
+
+---Gets the transform of the shape in the world space
+---@param shape shape
+---@param transform world_transform
+function GetShapeWorldTransform(shape) end
 
 ---@param shape shape
 ---@return body shapebody
 function GetShapeBody(shape) end
 
-function GetShapeJoints() end
-function GetShapeLights() end
-function GetShapeBounds() end
-function SetShapeEmissiveScale() end
-function GetShapeMaterialAtPosition() end
-function GetShapeMaterialAtIndex() end
-function GetShapeSize() end
-function GetShapeVoxelCount() end
-function IsShapeVisible() end
-function IsShapeBroken() end
-function DrawShapeOutline() end
-function DrawShapeHighlight() end
-function SetShapeCollisionFilter() end
-function GetShapeClosestPoint() end
-function IsShapeTouching() end
+---@param shape shape
+---@return table<joint> joints
+function GetShapeJoints(shape) end
+
+---@param shape shape
+---@return table<light> lights
+function GetShapeLights(shape) end
+
+---Returns a world space Axis Aligned Bounding Box (AABB) if a shape
+---
+---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
+---@param shape shape
+---@return vector aa The position of the lower bound
+---@return vector bb The position of the upper bound
+function GetShapeBounds(shape) end
+
+---Scale emissiveness for shape. If the shape has light sources attached, their intensity will be scaled by the same amount.
+---@param shape shape
+---@param amount number
+function SetShapeEmissiveScale(shape, amount) end
+
+---HUSK
+---@param shape shape
+function GetShapeMaterialAtPosition(shape, pos) end
+
+---HUSK
+---@param shape shape
+function GetShapeMaterialAtIndex(shape) end
+
+---HUSK
+---@param shape shape
+function GetShapeSize(shape) end
+
+---HUSK
+---@param shape shape
+function GetShapeVoxelCount(shape) end
+
+---HUSK
+---@param shape shape
+function IsShapeVisible(shape) end
+
+---HUSK
+---@param shape shape
+function IsShapeBroken(shape) end
+
+---HUSK
+---@param shape shape
+function DrawShapeOutline(shape) end
+
+---HUSK
+---@param shape shape
+function DrawShapeHighlight(shape) end
+
+---HUSK
+---@param shape shape
+function SetShapeCollisionFilter(shape) end
+
+---HUSK
+---@param shape shape
+function GetShapeClosestPoint(shape) end
+
+---HUSK
+---@param shape shape
+function IsShapeTouching(shape) end
 
 --#endregion
 --#region Locations
