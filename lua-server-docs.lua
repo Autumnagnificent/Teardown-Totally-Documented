@@ -22,6 +22,8 @@
 ---| `LEVEL/` | Only for campagin levels. Finds the folder in the `<Teardown>/data/level/<currently_loaded_xml_file>/` |
 ---| `LIBRARY/` | Points to `<Teardown>/data/library>`, this folder is not created when the game is installed, and only exists on the developers end. It can however be created manually to function, though this should not be used |
 ---| `RAW:` | Uses an absolute path, the disk volume in which game is installed at. This is techinally a sercurity risk and can be used to execute code not contained within the mod itself. |
+---
+---If you wish you include an encypted teardown file, do not inculde `.tde`, and teardown will decrypt and parse it.
 ---@class td_path: string
 
 ---@class vector
@@ -280,7 +282,6 @@
 ---| "gamma"
 ---| "bloom"
 
-
 --#endregion
 --#region Callbacks
 
@@ -299,13 +300,21 @@ function update(dt) end
 ---@param dt number
 function draw(dt) end
 
----1ssnl's documentation for now :
----
----https://x4fx77x4f.github.io/dennispedia/teardown/g/handleCommand.html
+---<u>underlined</u> parts represent varying values
+---| Command | Description |
+---|-|-|
+---| activate | |
+---| exit | Unused |
+---| explosion <u>strength</u> <u>x</u> <u>y</u> <u>z</u> | Called when an explosion happens. |
+---| quickload | Called instead of init after a quicksave is loaded. |
+---| quicksave | Called after the <u>game.quicksave</u> command is run. |
+---| resolutionchanged | Called after the <u>game.applydisplay</u> command is run. |
+---| shot <u>strength</u> <u>x</u> <u>y</u> <u>z</u> <u>dx</u> <u>dy</u> <u>dz</u> | Called when a gunshot hits a surface.|
+---| updatemods |  |
 ---
 ---NOT IN OFFICAL DOCUMENTATION
-function handleCommand(command)
-end
+---@param command string
+function handleCommand(command) end
 
 --#endregion
 --#region XML Parameters
@@ -1158,7 +1167,7 @@ function IsLightActive(light) end
 function IsPointAffectedByLight(light, point) end
 
 --#endregion
---#region Trigger
+--#region Triggers
 
 ---Searches the scene for a trigger, requiring a specified tag
 ---
@@ -1248,7 +1257,7 @@ function GetTriggerDistance(trigger, point) end
 function GetTriggerClosestPoint(trigger, point) end
 
 --#endregion
---#region Screen
+--#region Screens
 
 ---Searches the scene for a screen, requiring a specified tag
 ---
@@ -1287,7 +1296,7 @@ function IsScreenEnabled(screen) end
 function GetScreenShape(screen) end
 
 --#endregion
---#region Vehicle
+--#region Vehicles
 
 ---Searches the scene for a vehicle, requiring a specified tag
 ---
@@ -1507,7 +1516,7 @@ function GetToolBody() end
 function SetToolTransform(transform, sway) end
 
 --#endregion
---#region Sound
+--#region Sounds
 
 ---Loads a Sound and returns the handle for it
 ---
@@ -1546,7 +1555,7 @@ function PlayMusic(path) end
 function StopMusic() end
 
 --#endregion
---#region Sprite
+--#region Sprites
 
 ---Loads a sprite into the Sprite Table and returns the handle
 ---
@@ -1579,11 +1588,11 @@ function DrawSprite(sprite, transform, width, height, red, green, blue, alpha, d
 ---Sets required layers for next query
 ---| Layer | Description |
 ---| --- | --- |
----| physical |   have a physical representation |
----| dynamic |   part of a dynamic body |
----| static  |   part of a static body |
----| large   |   above debris threshold |
----| small   |   below debris threshold |
+---| physical | have a physical representation |
+---| dynamic | part of a dynamic body |
+---| static | part of a static body |
+---| large | above debris threshold |
+---| small | below debris threshold |
 ---@param layers string A space separate list of layers
 function QueryRequire(layers) end
 
@@ -2134,7 +2143,13 @@ function SetTimeScale() end
 ---
 ---NOT IN OFFICAL DOCUMENTATION
 ---@param intensity number
-function ShakeCamera(intensity)
-end
+function ShakeCamera(intensity) end
+
+---Checks if a file exists at the specified path. Respects teardown's path parsing, meaning `MOD/`, `LEVEL/`, and `RAW:` will all work
+---
+---NOT IN OFFICAL DOCUMENTATION
+---@param path td_path
+---@return boolean
+function HasFile(path) end
 
 --#endregion
