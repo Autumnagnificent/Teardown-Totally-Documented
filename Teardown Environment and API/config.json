@@ -1,0 +1,8 @@
+{
+  "name" : "Teardown Environment and API",
+  "settings": {
+    "Lua.diagnostics.neededFileStatus": {
+      "lowercase-global": "None"
+    }
+  }
+}
