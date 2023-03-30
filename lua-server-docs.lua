@@ -1,9 +1,7 @@
 ---@diagnostic disable: missing-return
 ---@diagnostic disable: unused-local
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------Classes--------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--#region Types and Classes
 
 ---@class vector: { [1]:number, [2]:number, [3]:number }
 ---@type vector
@@ -157,11 +155,13 @@
 ---| "vehicleraise" Raise vehicle parts
 ---| "vehiclelower" Lower vehicle parts
 ---| "vehicleaction" Vehicle action
----| "camerax" Camera x movement, scaled by sensitivity. Only valid in InputValue.
----| "cameray" Camera y movement, scaled by sensitivity. Only valid in InputValue
----| "mousedx" Mouse horizontal diff. Only valid in InputValue.
----| "mousedy" Mouse vertical diff. Only valid in InputValue.
----| "mousewheel" Mouse wheel. Only valid in InputValue.
+
+---@alias key_value
+---| "camerax" Camera x movement, scaled by sensitivity.
+---| "cameray" Camera y movement, scaled by sensitivit
+---| "mousedx" Mouse horizontal diff.
+---| "mousedy" Mouse vertical diff.
+---| "mousewheel" Mouse wheel.
 
 ---@alias entity_type
 ---| "body"
@@ -176,9 +176,34 @@
 ---| "wheel"
 ---| "water"
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------Vector Math--------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--#endregion
+--#region Callbacks
+
+---Called once at load time
+function init() end
+
+---Called exactly once per frame. The time step is variable but always between 0.0 and 0.0333333
+---@param dt number between 0.0 and 0.0333333
+function tick(dt) end
+
+---Called at a fixed update rate, but at the most two times per frame. Time step is always 0.0166667 (60 updates per second). Depending on frame rate it might not be called at all for a particular frame.
+---@param dt number 0.0166667
+function update(dt) end
+
+---Called when the 2D overlay is being draw, after the scene but before the standard HUD. Ui functions are only injected into the environment if this function is provided.
+---@param dt number
+function draw(dt) end
+
+---1ssnl's documentation for now :
+---
+---https://x4fx77x4f.github.io/dennispedia/teardown/g/handleCommand.html
+---
+---NOT IN OFFICAL DOCUMENTATION
+function handleCommand(command)
+end
+
+--#endregion
+--#region Vector Math
 
 ---Returns a standard lua table of 3 numbers.
 ---
@@ -245,9 +270,8 @@ function VecCross(a, b) end
 ---@return vector interpolated_vector
 function VecLerp(a, b, t) end
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------Quaternion Math--------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--#endregion
+--#region Quaternion Math
 
 ---Returns a standard lua table of 4 numbers.
 ---
@@ -302,9 +326,8 @@ function QuatAxisAngle(axis, angle) end
 ---@return quaternion created_quaternion
 function QuatLookAt(eye, target) end
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------Transforms--------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--#endregion
+--#region Transforms
 
 ---Returns a standard lua table representing a transform.
 ---
@@ -362,9 +385,8 @@ function TransformToLocalPoint(relation, position) end
 ---@param vector vector
 function TransformToLocalVec(relation, vector) end
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------Entities--------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--#endregion
+--#region Entities
 
 ---
 ---@param entity entity
@@ -413,9 +435,8 @@ function IsHandleValid(entity) end
 ---@return entity_type type
 function GetEntityType(entity) end
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------Bodies--------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--#endregion
+--#region Bodies
 
 ---Searches the scene for a body, requiring a specified tag
 ---
@@ -567,32 +588,34 @@ function DrawBodyHighlight(handle, alpha) end
 ---@return shape shape The handle to the closest shape 
 function GetBodyClosestPoint(handle, origin) end
 
--- ---@param handle body
--- function ConstrainVelocity(handle) end
+---HUSK
+---@param handle body
+function ConstrainVelocity(handle) end
 
--- ---@param handle body
--- function ConstrainAngularVelocity(handle) end
+---HUSK
+---@param handle body
+function ConstrainAngularVelocity(handle) end
 
--- ---@param handle body
--- function ConstrainPosition(handle) end
+---HUSK
+---@param handle body
+function ConstrainPosition(handle) end
 
--- ---@param handle body
--- function ConstrainOrientation(handle) end
+---HUSK
+---@param handle body
+function ConstrainOrientation(handle) end
 
 ---@return body worldbody
 function GetWorldBody() end
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------Shapes--------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--#endregion
+--#region Shapes
 
 ---@param shape shape
 ---@return body shapebody
 function GetShapeBody(shape) end
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
-----------------User Input--------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--#endregion
+--#region UserInput
 
 ---@param key key
 ---@return boolean key_pressed
@@ -606,9 +629,22 @@ function InputDown(key) end
 ---@return boolean key_pressed
 function InputReleased(key) end
 
----@param key key
+---@param key_value key_value
 ---@return number value
-function InputValue(key) end
+function InputValue(key_value) end
 
 ---@return key key
 function InputLastPressedKey() end
+
+--#endregion
+--#region Misc - Undocummented
+
+---Shakes the Camera
+---
+---Camera Shake will persist through levels
+---
+---NOT IN OFFICAL DOCUMENTATION
+---@param intensity number
+function ShakeCamera(intensity) end
+
+--#endregion
