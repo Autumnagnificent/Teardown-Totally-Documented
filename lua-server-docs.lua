@@ -28,87 +28,59 @@
 
 
 ---A non-negative interger that represents the index/handle to a entity in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class body: entity
 ---@type body
 
 ---A non-negative interger that represents the index/handle to a shape in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class shape: entity
 ---@type shape
 
 ---A non-negative interger that represents the index/handle to a joint in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class joint: entity
 ---@type joint
 
 ---A non-negative interger that represents the index/handle to a light in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class light: entity
 ---@type light
 
 ---A non-negative interger that represents the index/handle to a script in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class script: entity
 ---@type script
 
 ---A non-negative interger that represents the index/handle to a screen in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class screen: entity
 ---@type screen
 
 ---A non-negative interger that represents the index/handle to a location in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class location: entity
 ---@type location
 
 ---A non-negative interger that represents the index/handle to a trigger in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class trigger: entity
 ---@type trigger
 
 ---A non-negative interger that represents the index/handle to a vehicle in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class vehicle: entity
 ---@type vehicle
 
 ---A non-negative interger that represents the index/handle to a wheel in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class wheel: entity
 ---@type wheel
 
 ---A non-negative interger that represents the index/handle to a water in the World/Entity Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class water: entity
 ---@type water
 
 
 ---A non-negative interger that represents the index/handle to a sprite in the Sprite Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class sprite: handle
 ---@type sprite
 
 ---A non-negative interger that represents the index/handle to a sound in the Sound Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class sound: handle
 ---@type sound
 
 ---A non-negative interger that represents the index/handle to a sound loop in the Sound Table
----
----May not be accurate, still waiting on a comfirmation
 ---@class soundloop: handle
 ---@type soundloop
 
@@ -1252,34 +1224,124 @@ function DriveVehicle(vehicle, drive, steering, handbrake) end
 --#endregion
 --#region Player
 
+---Returns center point of player
+---@return vector position
+---@deprecated Use GetPlayerTransform().pos instead
 function GetPlayerPos() end
-function GetPlayerTransform() end
-function SetPlayerTransform() end
-function SetPlayerGroundVelocity() end
+
+---Returns the player's transform
+---
+---Can optionaly include the pitch of the player's camera
+---@param includePitch boolean|nil Default is false
+---@return vector position
+function GetPlayerTransform(includePitch) end
+
+---Sets the player's transform
+---
+---Can optionaly include the pitch of the player's camera
+---
+---Note that this will also reset the player's velocity, to keep it you will need to store it, and reapply it after the function has been called.
+---
+---Also Note that if you are trying to move the player on level load, use SetPlayerSpawnTransform() instead.
+---@param transform transform
+---@param includePitch boolean|nil Default is false
+function SetPlayerTransform(transform, includePitch) end
+
+---Make the ground act as a conveyor belt, pushing the player even if ground shape is static.
+---@param velocity vector
+function SetPlayerGroundVelocity(velocity) end
+
+---The player camera transform is usually the same as what you get from GetCameraTransform(), but if you have set a camera transform manually with SetCameraTransform(), you can retrieve the standard player camera transform with this function.
+---@return transform transform
 function GetPlayerCameraTransform() end
-function SetPlayerCameraOffsetTransform() end
-function SetPlayerSpawnTransform() end
+
+---Apply an offset to the player camera for this frame. Can be used for camera effects such as shake and wobble.
+---
+---Note that this does not stack, and will clash if multiple mods are trying to set an offset.
+---
+---Also Note that calling SetPlayerTransform() in the same tick as SetPlayerCameraOffsetTransform() will cause absolutely nothing to happen ~~because dennis hates us.~~
+---@param transform transform
+function SetPlayerCameraOffsetTransform(transform ) end
+
+--Call this function during init to alter the player's spawn transform. 
+---@param transform transform
+function SetPlayerSpawnTransform(transform) end
+
+---@return vector velocity
 function GetPlayerVelocity() end
-function SetPlayerVehicle() end
-function SetPlayerVelocity() end
+
+---@param velocity vector
+function SetPlayerVelocity(velocity) end
+
+---@return vehicle vehicle
 function GetPlayerVehicle() end
+
+---@param vehicle vehicle
+function SetPlayerVehicle(vehicle) end
+
+---Returns the handle to grabbed shape or zero if not grabbing.
+---@return shape shape
 function GetPlayerGrabShape() end
+
+---Returns the handle to grabbed body or zero if not grabbing.
+---@return body body
+
 function GetPlayerGrabBody() end
+
+---Release what the player is currently holding
+---
+---This can be called continuously to prevent the player from grabbing, but they will still be able to grab for a single frame
 function ReleasePlayerGrab() end
+
+---Returns a handle to the picked shape or zero if nothing is picked
+---@return shape shape
 function GetPlayerPickShape() end
+
+---Returns a handle to the picked body or zero if nothing is picked
+---@return body body
 function GetPlayerPickBody() end
+
+---Returns a handle to the interacted shape or zero if nothing is interacted with
+---
+---Interactable shapes has to be tagged with "interact".
+---
+---The engine determines which interactable shape is currently interactable.
+---@return shape shape
 function GetPlayerInteractShape() end
+
+---Returns a handle to the interacted body or zero if nothing is interacted with
+---
+---Interactable shapes has to be tagged with "interact".
+---
+---The engine determines which interactable shape is currently interactable.
+---@return body body
 function GetPlayerInteractBody() end
-function SetPlayerScreen() end
+
+---Returns the handle to interacted screen or zero if none
+---@return screen screen
 function GetPlayerScreen() end
-function SetPlayerHealth() end
+
+---Handle to interacted screen or zero if none
+---@param screen screen
+function SetPlayerScreen(screen) end
+
+---@return number number 0 to 1 value representing the players health
 function GetPlayerHealth() end
+
+---@param health number
+function SetPlayerHealth(health) end
+
+---Respawn player at spawn position without modifying the scene
 function RespawnPlayer() end
+
+--#endregion
+---region Tools
+
 function RegisterTool() end
 function GetToolBody() end
 function SetToolTransform() end
 
---#endregion
+---endregion
 --#region Sound
 
 function LoadSound() end
@@ -1553,7 +1615,7 @@ function SetPostProcessingProperty() end
 function GetPostProcessingProperty() end
 
 --#endregion
---#region UserInput
+--#region User Input
 
 ---@param key key
 ---@return boolean key_pressed
