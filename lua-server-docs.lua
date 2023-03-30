@@ -1335,13 +1335,13 @@ function SetPlayerHealth(health) end
 function RespawnPlayer() end
 
 --#endregion
----region Tools
+--#region Tools
 
 function RegisterTool() end
 function GetToolBody() end
 function SetToolTransform() end
 
----endregion
+--#endregion
 --#region Sound
 
 function LoadSound() end
