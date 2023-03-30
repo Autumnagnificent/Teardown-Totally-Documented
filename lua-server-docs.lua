@@ -203,6 +203,29 @@ function handleCommand(command)
 end
 
 --#endregion
+--#region XML Parameters
+
+function GetIntParam() end
+function GetFloatParam() end
+function GetBoolParam() end
+function GetStringParam() end
+
+--#endregion
+--#region Registry
+
+function ClearKey() end
+function ListKeys() end
+function HasKey() end
+function SetInt() end
+function GetInt() end
+function SetFloat() end
+function GetFloat() end
+function SetBool() end
+function GetBool() end
+function SetString() end
+function GetString() end
+
+--#endregion
 --#region Vector Math
 
 ---Returns a standard lua table of 3 numbers.
@@ -610,9 +633,366 @@ function GetWorldBody() end
 --#endregion
 --#region Shapes
 
+function FindShape() end
+function FindShapes() end
+function GetShapeLocalTransform() end
+function SetShapeLocalTransform() end
+function GetShapeWorldTransform() end
+
 ---@param shape shape
 ---@return body shapebody
 function GetShapeBody(shape) end
+
+function GetShapeJoints() end
+function GetShapeLights() end
+function GetShapeBounds() end
+function SetShapeEmissiveScale() end
+function GetShapeMaterialAtPosition() end
+function GetShapeMaterialAtIndex() end
+function GetShapeSize() end
+function GetShapeVoxelCount() end
+function IsShapeVisible() end
+function IsShapeBroken() end
+function DrawShapeOutline() end
+function DrawShapeHighlight() end
+function SetShapeCollisionFilter() end
+function GetShapeClosestPoint() end
+function IsShapeTouching() end
+
+--#endregion
+--#region Locations
+
+function FindLocation() end
+function FindLocations() end
+function GetLocationTransform() end
+
+--#endregion
+--#region Joints
+
+function FindJoint() end
+function FindJoints() end
+function IsJointBroken() end
+function GetJointType() end
+function GetJointOtherShape() end
+function GetJointShapes() end
+function SetJointMotor() end
+function SetJointMotorTarget() end
+function GetJointLimits() end
+function GetJointMovement() end
+function GetJointedBodies() end
+function DetachJointFromShape() end
+
+--#endregion
+--#region Lights
+
+function PointLight() end
+
+function FindLight() end
+function FindLights() end
+function SetLightEnabled() end
+function SetLightColor() end
+function SetLightIntensity() end
+function GetLightTransform() end
+function GetLightShape() end
+function IsLightActive() end
+function IsPointAffectedByLight() end
+
+--#endregion
+--#region Trigger
+
+function FindTrigger() end
+function FindTriggers() end
+function GetTriggerTransform() end
+function SetTriggerTransform() end
+function GetTriggerBounds() end
+function IsBodyInTrigger() end
+function IsVehicleInTrigger() end
+function IsShapeInTrigger() end
+function IsPointInTrigger() end
+function IsTriggerEmpty() end
+function GetTriggerDistance() end
+function GetTriggerClosestPoint() end
+
+--#endregion
+--#region Screen
+
+function FindScreen() end
+function FindScreens() end
+function SetScreenEnabled() end
+function IsScreenEnabled() end
+function GetScreenShape() end
+
+--#endregion
+--#region Vehicle
+
+function FindVehicle() end
+function FindVehicles() end
+function GetVehicleTransform() end
+function GetVehicleBody() end
+function GetVehicleHealth() end
+function GetVehicleDriverPos() end
+function DriveVehicle() end
+
+--#endregion
+--#region Player
+
+function GetPlayerPos() end
+function GetPlayerTransform() end
+function SetPlayerTransform() end
+function SetPlayerGroundVelocity() end
+function GetPlayerCameraTransform() end
+function SetPlayerCameraOffsetTransform() end
+function SetPlayerSpawnTransform() end
+function GetPlayerVelocity() end
+function SetPlayerVehicle() end
+function SetPlayerVelocity() end
+function GetPlayerVehicle() end
+function GetPlayerGrabShape() end
+function GetPlayerGrabBody() end
+function ReleasePlayerGrab() end
+function GetPlayerPickShape() end
+function GetPlayerPickBody() end
+function GetPlayerInteractShape() end
+function GetPlayerInteractBody() end
+function SetPlayerScreen() end
+function GetPlayerScreen() end
+function SetPlayerHealth() end
+function GetPlayerHealth() end
+function RespawnPlayer() end
+function RegisterTool() end
+function GetToolBody() end
+function SetToolTransform() end
+
+--#endregion
+--#region Sound
+
+function LoadSound() end
+function LoadLoop() end
+function PlaySound() end
+function PlayLoop() end
+function PlayMusic() end
+function StopMusic() end
+
+--#endregion
+--#region Sprite
+
+function LoadSprite() end
+function DrawSprite() end
+
+--#endregion
+--#region Scene Queries
+
+function QueryRequire() end
+function QueryRejectVehicle() end
+function QueryRejectBody() end
+function QueryRejectShape() end
+function QueryRaycast() end
+function QueryClosestPoint() end
+function QueryAabbShapes() end
+function QueryAabbBodies() end
+function QueryPath() end
+function AbortPath() end
+function GetPathState() end
+function GetPathLength() end
+function GetPathPoint() end
+function GetLastSound() end
+function IsPointInWater() end
+function GetWindVelocity() end
+function QueryClosestFire() end
+function QueryAabbFireCount() end
+function RemoveAabbFires() end
+
+
+--#endregion
+--#region Particles
+
+function ParticleReset() end
+function ParticleType() end
+function ParticleTile() end
+function ParticleColor() end
+function ParticleRadius() end
+function ParticleAlpha() end
+function ParticleGravity() end
+function ParticleDrag() end
+function ParticleEmissive() end
+function ParticleRotation() end
+function ParticleStretch() end
+function ParticleSticky() end
+function ParticleCollide() end
+function ParticleFlags() end
+function SpawnParticle() end
+
+--#endregion
+--#region Spawning
+
+function Spawn() end
+
+--#endregion
+--#region User Interface
+
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiMakeInteractive() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiPush() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiPop() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiWidth() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiHeight() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiCenter() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiMiddle() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiColor() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiColorFilter() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiTranslate() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiRotate() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiScale() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiWindow() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiSafeMargins() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiAlign() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiModalBegin() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiModalEnd() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiDisableInput() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiEnableInput() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiReceivesInput() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiGetMousePos() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiIsMouseInRect() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiWorldToPixel() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiPixelToWorld() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiBlur() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiFont() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiFontHeight() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiText() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiGetTextSize() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiWordWrap() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiTextOutline() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiTextShadow() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiRect() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiImage() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiGetImageSize() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiImageBox() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiSound() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiSoundLoop() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiMute() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiButtonImageBox() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiButtonHoverColor() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiButtonPressColor() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiButtonPressDist() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiTextButton() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiImageButton() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiBlankButton() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiSlider() end
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+function UiGetScreen() end
+
+--#endregion
+--#region Debug
+
+function DrawLine() end
+function DebugLine() end
+function DebugCross() end
+function DebugWatch() end
+function DebugPrint() end
+
+--#endregion
+--#region Scene Properties
+
+function SetEnvironmentDefault() end
+function SetEnvironmentProperty() end
+function GetEnvironmentProperty() end
+function SetPostProcessingDefault() end
+function SetPostProcessingProperty() end
+function GetPostProcessingProperty() end
 
 --#endregion
 --#region UserInput
@@ -635,6 +1015,21 @@ function InputValue(key_value) end
 
 ---@return key key
 function InputLastPressedKey() end
+
+--#endregion
+--#region Misc
+
+function Shoot() end
+function Paint() end
+function MakeHole() end
+function Explosion() end
+function SpawnFire() end
+function GetFireCount() end
+function GetCameraTransform() end
+function SetCameraTransform() end
+function SetCameraFov() end
+function SetCameraDof() end
+function SetTimeScale() end
 
 --#endregion
 --#region Misc - Undocummented
