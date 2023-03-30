@@ -200,6 +200,35 @@
 ---| "fail" Failed to find path. You can still get the resulting path
 ---| "done" Path planning completed and a path was found. Get it with GetPathLength and GetPathPoint)
 
+---@alias particle_type
+---| "plain" No collision with other particles
+---| "smoke" Light collision with other smoke particles
+
+---@alias particle_tile
+---| 0 smokey
+---| 1 splattery
+---| 2 bubbles
+---| 3 explosion
+---| 4 circle
+---| 5 flame
+---| 6 solid square
+---| 7 blank_texture
+---| 8 random dots
+---| 9 blank_texture
+---| 10 blank_texture
+---| 11 blank_texture
+---| 12 rainfall
+---| 13 rainfall blurry
+---| 14 water splash
+---| 15 water ripple
+
+---@alias transition_method
+---|"linear" Linear transition
+---|"cosine" Slow at beginning and end
+---|"easein" Slow at beginning
+---|"easeout" Slow at end
+---|"bounce" Bounce and overshoot new value
+
 --#endregion
 --#region Callbacks
 
@@ -1578,21 +1607,129 @@ function GetPathPoint(distance) end
 --#endregion
 --#region Particles
 
+---Reset to default particle state:
+---
+---plain, white particle of radius 0.5. Collision is enabled and it alpha animates from 1 to 0.
 function ParticleReset() end
-function ParticleType() end
-function ParticleTile() end
-function ParticleColor() end
-function ParticleRadius() end
-function ParticleAlpha() end
-function ParticleGravity() end
-function ParticleDrag() end
-function ParticleEmissive() end
-function ParticleRotation() end
-function ParticleStretch() end
-function ParticleSticky() end
-function ParticleCollide() end
-function ParticleFlags() end
-function SpawnParticle() end
+
+---@param particle_type particle_type Changes the behaviour of the particle
+function ParticleType(particle_type) end
+
+---@param particle_tile particle_tile Tile in the particle texture atlas (*0-15*)
+function ParticleTile(particle_tile) end
+
+---Set particle color to either constant (*three arguments*) or linear interpolation (*six arguments*)
+---@param red number
+---@param green number
+---@param blue number
+---@param red_end number|nil interpolated to over the particle's life
+---@param green_end number|nil interpolated to over the particle's life
+---@param blue_end number|nil interpolated to over the particle's life
+function ParticleColor(red, green, blue, red_end, green_end, blue_end) end
+
+---Set the particle radius. Max radius for smoke particles is 1.0. 
+---@param radius number
+---@param radius_end number|nil
+---@param interpolation transition_method|nil
+---@param fadein number|nil
+---@param fadeout number|nil
+function ParticleRadius(radius, radius_end, interpolation, fadein, fadeout) end
+
+---@param alpha number
+---@param alpha_end number|nil
+---@param interpolation transition_method|nil
+---@param fadein number|nil
+---@param fadeout number|nil
+function ParticleAlpha(alpha, alpha_end, interpolation, fadein, fadeout) end
+
+---Set particle gravity. It will be applied along the world Y axis. A negative value will move the particle downwards.
+---@param gravity number
+---@param gravity_end number|nil
+---@param interpolation transition_method|nil
+---@param fadein number|nil
+---@param fadeout number|nil
+function ParticleGravity(gravity, gravity_end, interpolation, fadein, fadeout) end
+
+---@param drag number
+---@param drag_end number|nil
+---@param interpolation transition_method|nil
+---@param fadein number|nil
+---@param fadeout number|nil
+function ParticleDrag(drag, drag_end, interpolation, fadein, fadeout) end
+
+---Draw particle as emissive (glow in the dark). This is useful for fire and embers. 
+---@param emissive number
+---@param emissive_end number|nil
+---@param interpolation transition_method|nil
+---@param fadein number|nil
+---@param fadeout number|nil
+function ParticleEmissive(emissive, emissive_end, interpolation, fadein, fadeout) end
+
+---Makes the particle rotate. Positive values is counter-clockwise rotation.
+---@param rotation number - radians per second
+---@param rotation_end number|nil - radians per second
+---@param interpolation transition_method|nil
+---@param fadein number|nil
+---@param fadeout number|nil
+function ParticleRotation(rotation, rotation_end, interpolation, fadein, fadeout) end
+
+---Stretch particle along with velocity.
+---
+---0.0 means no stretching. 1.0 stretches with the particle motion over one frame. Larger values stretches the particle even more.
+---@param stretch number
+---@param stretch_end number|nil
+---@param interpolation transition_method|nil
+---@param fadein number|nil
+---@param fadeout number|nil
+function ParticleStretch(stretch, stretch_end, interpolation, fadein, fadeout) end
+
+---Make particle stick when in contact with objects. This can be used for friction. 
+---@param sticky number
+---@param sticky_end number|nil
+---@param interpolation transition_method|nil
+---@param fadein number|nil
+---@param fadeout number|nil
+function ParticleSticky(sticky, sticky_end, interpolation, fadein, fadeout) end
+
+---Control particle collisions.
+---
+---A value of zero means that collisions are ignored. One means full collision.
+---
+---It is sometimes useful to animate this value from zero to one in order to not collide with objects around the emitter.
+---@param collision number
+---@param collision_end number|nil
+---@param interpolation transition_method|nil
+---@param fadein number|nil
+---@param fadeout number|nil
+function ParticleCollide(collision, collision_end, interpolation, fadein, fadeout) end
+
+---Set particle bitmask.
+---
+---The value 256 means fire extinguishing particles and is currently the only flag in use.
+---
+---There might be support for custom flags and queries in the future.
+---@param bitmask number
+function ParticleFlags(bitmask) end
+
+---Set orientation of particles to be spawned.
+---
+---| Flag | Description |
+---|-|-|
+---| `normalup` | Face the camera, with a random roll each frame
+---| `up` | Face up.
+---| `fixed` | Face the camera, but with a constant roll.
+---| `flat` | The particle will be flat instead of a pyramid shape.
+---(*mutually exclusive, prioritized in that order*)
+---
+---NOT IN OFFICAL DOCUMENTATION
+---@param flags string
+function ParticleOrientation(flags) end
+
+---Spawns a particle using the previously set up particle state. You can call this multiple times using the same particle state, but with different position, velocity and lifetime. You can also modify individual properties in the particle state in between calls to to this function.
+---@param position vector
+---@param velocity vector
+---@param lifetime number
+function SpawnParticle(position, velocity, lifetime) end
 
 --#endregion
 --#region Spawning
@@ -1841,15 +1978,13 @@ function SpawnFire() end
 function GetFireCount() end
 function SetTimeScale() end
 
---#endregion
---#region Misc - Undocummented
-
 ---Shakes the Camera
 ---
 ---Camera Shake will persist through levels
 ---
 ---NOT IN OFFICAL DOCUMENTATION
 ---@param intensity number
-function ShakeCamera(intensity) end
+function ShakeCamera(intensity)
+end
 
 --#endregion
