@@ -2,6 +2,8 @@
 ---@diagnostic disable: unused-local
 
 --[[
+    Created by Λutumnatic,
+
     Not all function are catagorized how they are in the offical api documentation
     Some are split up into more catagories, and some are moved
     into other ones to better represent their functionality
@@ -1308,6 +1310,31 @@ function SetPlayerHealth(health) end
 function RespawnPlayer() end
 
 --#endregion
+--#region Camera
+
+---Returns the transform of the current camera
+---@return transform camera_transform
+function GetCameraTransform() end
+
+---Sets the transform of the camera, Call continuously
+---
+---Has an optional parameter for setting fiewld of view
+---@param transform transform
+---@param field_of_view number|nil Default is 90, regardless of player's set fov in the options menu
+function SetCameraTransform(transform, field_of_view) end
+
+---Override field of view for the next frame for all camera modes, except when explicitly set in SetCameraTransform
+---
+---Call continuously
+---@param field_of_view number
+function SetCameraFov(field_of_view) end
+
+---Override depth of field for the next frame for all camera modes. Depth of field will be used even if turned off in options.
+---@param distance number
+---@param amount number|nil Default is 1.0
+function SetCameraDof(distance, amount) end
+
+--#endregion
 --#region Tools
 
 ---Register a custom tool that will show up in the player inventory and can be selected with scroll wheel.
@@ -1425,7 +1452,12 @@ function QueryRejectShape(shape) end
 ---@param vehicle vehicle_handle
 function QueryRejectVehicle(vehicle) end
 
----Performs a raycast
+---To retrieve the intersected point, you can add the distance multipled by the direction
+---
+---```lua
+---local _, distance = QueryRaycast(origin, direction, max_distance)
+---local intersection = VecAdd(origin, VecScale(direction, distance))
+---```
 ---@param origin vector
 ---@param direction vector
 ---@param max_distance number
@@ -1437,21 +1469,79 @@ function QueryRejectVehicle(vehicle) end
 ---@return shape_handle shape
 function QueryRaycast(origin, direction, max_distance, radius, reject_transparent) end
 
-function QueryClosestPoint() end
-function QueryAabbShapes() end
-function QueryAabbBodies() end
+---Querys the closest point to all shapes in the world
+---@param origin vector
+---@param max_dist number
+---@return boolean hit
+---@return vector point
+---@return vector normal
+---@return shape_handle shape
+function QueryClosestPoint(origin, max_dist) end
+
+
+---Return all shapes in which there origins are witin the provided world space, axis-aligned bounding box 
+---
+---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
+---@param lower_bound vector
+---@param upper_bound vector
+function QueryAabbShapes(lower_bound, upper_bound) end
+
+---Return all bodies in which there origins are witin the provided world space, axis-aligned bounding box 
+---
+---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
+---@param lower_bound vector
+---@param upper_bound vector
+function QueryAabbBodies(lower_bound, upper_bound) end
+
+---@param origin vector
+---@param max_distance number
+---@return boolean hit
+---@return vector position
+function QueryClosestFire(origin, max_distance) end
+
+---Counts how many fires are within the given Axis Aligned Bounding Box
+---
+---If you are trying to find the position of fires within a large range, one method is to use an octree
+---
+---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
+---@param lower_bound vector
+---@param upper_bound vector
+---@return number count
+function QueryAabbFireCount(lower_bound, upper_bound) end
+
+---Removes all fires within the given Axis Aligned Bounding Box, returns how many were removed
+---
+---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
+---@param lower_bound vector
+---@param upper_bound vector
+---@return number count 
+function RemoveAabbFires(lower_bound, upper_bound) end
+
+---Returns the loudest sound played last frame
+---@return number volume volume of the loudest sound of last frame
+---@return vector world_position position of the loudest sound of last frame
+function GetLastSound() end
+
+---@param point vector
+---@return boolean in_water
+---@return number depth Depth of point into water, or zero if not in water
+function IsPointInWater(point) end
+
+---Get the wind velocity at provided point.
+---
+---The wind will be determined by wind property of the environment, but it varies with position procedurally.
+---@param point vector
+---@return vector velocity
+function GetWindVelocity(point) end
+
+--#endregion
+--#region Path finding
+
 function QueryPath() end
 function AbortPath() end
 function GetPathState() end
 function GetPathLength() end
 function GetPathPoint() end
-function GetLastSound() end
-function IsPointInWater() end
-function GetWindVelocity() end
-function QueryClosestFire() end
-function QueryAabbFireCount() end
-function RemoveAabbFires() end
-
 
 --#endregion
 --#region Particles
@@ -1717,10 +1807,6 @@ function MakeHole() end
 function Explosion() end
 function SpawnFire() end
 function GetFireCount() end
-function GetCameraTransform() end
-function SetCameraTransform() end
-function SetCameraFov() end
-function SetCameraDof() end
 function SetTimeScale() end
 
 --#endregion
