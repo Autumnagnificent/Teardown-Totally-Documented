@@ -1178,11 +1178,53 @@ function UiGetScreen() end
 --#endregion
 --#region Debug
 
-function DrawLine() end
-function DebugLine() end
-function DebugCross() end
-function DebugWatch() end
-function DebugPrint() end
+
+---Dispalys a string in the bottom left corner of the screen
+---
+---Only the last 20 lines can be displayed, and more will be cut off and removed
+---@param string string
+function DebugPrint(string) end
+
+---Permantly displays a value in the top left corner of the screen
+---
+---Follows the format "name = value"
+---
+---Vectors, Quaternions, and Transforms are converted to strings
+---
+---Values updated the current frame are drawn opaque. Old values are drawn transparent in white.
+---@param name string
+---@param value number|string|vector|quaternion|transform
+function DebugWatch(name, value) end
+
+---Renders a line between two points
+---@param p1 vector
+---@param p2 vector
+---@param red number
+---@param green number
+---@param blue number
+---@param alpha number
+function DebugLine(p1, p2, red, green, blue, alpha) end
+
+---Draws a line between two points using Drawsprite()
+---
+---Will occlude behind walls (*as well as sprites occlude that is*)
+---@param p1 vector
+---@param p2 vector
+---@param red number
+---@param green number
+---@param blue number
+---@param alpha number
+function DrawLine(p1, p2, red, green, blue, alpha) end
+
+---Will draw 2 lines using DebugLine() in the form of a cross on the position of a point
+---
+---Useful for checking the position of a vector
+---@param position vector
+---@param red number
+---@param green number
+---@param blue number
+---@param alpha number
+function DebugCross(position, red, green, blue, alpha) end
 
 --#endregion
 --#region Scene Properties
