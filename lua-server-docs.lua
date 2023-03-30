@@ -194,6 +194,12 @@
 ---| "prismatic"
 ---| "rope"
 
+---@alias path_state
+---| "idle" No recent query
+---| "busy" Busy computing. No path found yet
+---| "fail" Failed to find path. You can still get the resulting path
+---| "done" Path planning completed and a path was found. Get it with GetPathLength and GetPathPoint)
+
 --#endregion
 --#region Callbacks
 
@@ -1537,11 +1543,37 @@ function GetWindVelocity(point) end
 --#endregion
 --#region Path finding
 
-function QueryPath() end
+---Initiate path planning query.
+---
+---The result will run asynchronously as long as GetPathState retuns "busy". An ongoing path query can be aborted with AbortPath.
+---
+---The path planning query will use the currently set up query filter, just like the other query functions.
+---@param start vector
+---@param target vector
+---@param max_distance number|nil Maximum path length before giving up. Default is infinite.
+---@param target_radius number|nil Maximum allowed distance to target in meters. Default is 2.0
+function QueryPath(start, target, max_distance, target_radius) end
+
+---Abort current path query, regardless of what state it is currently in.
+---
+---This is a way to save computing resources if the result of the current query is no longer of interest.
 function AbortPath() end
+
+---Return the current state of the last path planning query.
+---@return path_state path_state
 function GetPathState() end
+
+---Return the path length (*in meters*) of the most recently computed path query.
+---
+---Note that the result can often be retrieved even if the path query failed.
+---@return number length Length of last path planning result (in meters)
 function GetPathLength() end
-function GetPathPoint() end
+
+---Return a point along the path for the most recently computed path query
+---
+---If the target point couldn't be reached, the path endpoint will be the point closest to the target.
+---@param distance number A distance (*in meters*) of how far along the path should the point be sampled
+function GetPathPoint(distance) end
 
 --#endregion
 --#region Particles
