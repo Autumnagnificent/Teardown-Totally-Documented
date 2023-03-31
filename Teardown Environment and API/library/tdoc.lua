@@ -2,11 +2,11 @@
 ---@diagnostic disable: unused-local
 
 --[[
-    Created by Λutumnatic,
+	Created by Λutumnatic,
 
-    Not all function are catagorized how they are in the offical api documentation
-    Some are split up into more catagories, and some are moved
-    into other ones to better represent their functionality
+	Not all function are catagorized how they are in the offical api documentation
+	Some are split up into more catagories, and some are moved
+	into other ones to better represent their functionality
 ]]
 
 --#region Types and Classes
@@ -281,6 +281,17 @@
 ---| "brightness"
 ---| "gamma"
 ---| "bloom"
+
+---@alias ui_alignment
+---| "left top"
+---| "center top"
+---| "right top"
+---| "left middle"
+---| "center middle"
+---| "right middle"
+---| "left bottom"
+---| "center bottom"
+---| "right bottom"
 
 --#endregion
 --#region Callbacks
@@ -908,12 +919,11 @@ function GetShapeSize(shape, xsize, ysize, zsize, scale) end
 
 ---Returns the voxels in a given shape
 ---
----Well lets see here; 1, 2, 3--, hold still here, 4! ahh ahh ahh ahh!
+---Well lets see here; 1, 2, 3, hold still here, 4! ahh ahh ahh ahh!
 ---@param shape shape_handle
 ---@return number voxels
 function GetShapeVoxelCount(shape) end
 
----
 ---A very inaccurate way of testing if a shape is visible to the camera.
 ---
 ---If any level of perscion is needed, It is recommended to use alternative methods such as raycasting or dot products.
@@ -1295,6 +1305,12 @@ function IsScreenEnabled(screen) end
 ---@return shape_handle shape
 function GetScreenShape(screen) end
 
+---Returns the handle to the screen running this script or zero if none.
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@return screen_handle screen
+function UiGetScreen() end
+
 --#endregion
 --#region Vehicles
 
@@ -1530,8 +1546,6 @@ function SetToolTransform(transform, sway) end
 ---@return sound_handle
 function LoadSound(path, nominal_distance) end
 
-LoadSound()
-
 ---Loads a Loop and returns the handle for it
 ---@param path td_path
 ---@param nominal_distance number|nil The distance in meters this sound is recorded at. Affects attenuation. Default is 10
@@ -1553,6 +1567,36 @@ function PlayLoop(loop, position, volume) end
 function PlayMusic(path) end
 
 function StopMusic() end
+
+---UI sounds are not affected by acoustics simulation.
+---
+---Use LoadSound / PlaySound for that.
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param path td_path
+---@param volume number|nil Default is 1.0
+---@param pitch number|nil Default is 1.0
+---@param pan number|nil Stero panning (*-1.0 to 1.0*) Default is 0.0
+function UiSound(path, volume, pitch, pan)
+end
+
+---Call this continuously to keep playing loop.
+---
+---UI sounds are not affected by acoustics simulation.
+---
+---Use LoadLoop / PlayLoop for that.
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param path td_path
+---@param volume number|nil Default is 1.0
+function UiSoundLoop(path, volume)
+end
+
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param amount number Mute by this amount (*-1.0 to 1.0*)
+---@param mute_music boolean|nil Mute the music as well. Default is false
+function UiMute(amount, mute_music)
+end
 
 --#endregion
 --#region Sprites
@@ -1868,150 +1912,363 @@ function Spawn(xml, transform, allow_static, joint_existing) end
 --#endregion
 --#region User Interface
 
+---Calling this function will disable game input, bring up the mouse pointer and allow Ui interaction with the calling script without pausing the game. This can be useful to make interactive user interfaces from scripts while the game is running. Call this continuously every frame as long as Ui interaction is desired.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 function UiMakeInteractive() end
+
+---Push state onto stack. This is used in combination with `UiPop` to remember a state and restore to that state later.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 function UiPush() end
+
+---Pop state from stack and make it the current one. This is used in combination with UiPush to remember a previous state and go back to it later.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 function UiPop() end
+
+---Width of draw context
+---
+---Can be effected by UiWindow; *but otherwise will usally be 1920*
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@return number width
 function UiWidth() end
+
+---Height of draw context
+---
+---Can be effected by UiWindow; *but otherwise will usally be 1080*
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@return number height
 function UiHeight() end
+
+---Half of the width of the draw context, equivalent to
+---```
+---UiWidth() / 2
+---```
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@return number halfwidth
 function UiCenter() end
+
+---Half of the height of the draw context, equivalent to
+---```
+---UiHeight() / 2
+---```
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@return number halfheight
 function UiMiddle() end
+
+---Sets the color of the scope
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiColor() end
+---@param red number|nil Default is 0.0
+---@param green number|nil Default is 0.0
+---@param blue number|nil Default is 0.0
+---@param alpha number|nil Default is 1.0
+function UiColor(red, green, blue, alpha) end
+
+---Multiplies every color by these values within this scope
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiColorFilter() end
+---@param red number|nil Default is 0.0
+---@param green number|nil Default is 0.0
+---@param blue number|nil Default is 0.0
+---@param alpha number|nil Default is 1.0
+function UiColorFilter(red, green, blue, alpha) end
+
+---Translates/Moves the draw cursor around
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiTranslate() end
+---@param x number
+---@param y number
+function UiTranslate(x, y) end
+
+---Rotates the cursor
+---
+---When combined with UiScale, this can be used to skew the Ui
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiRotate() end
+---@param degrees number
+function UiRotate(degrees) end
+
+---Scales the cursor
+---
+---If y is nil, then the cursor will be scaled uniformly, otherwise the x and y axis will be scaled independently
+---
+---When combined with UiRotate, this can be used to skew the Ui
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiScale() end
+---@param x number
+---@param y number|nil
+function UiScale(x, y) end
+
+---Set up new bounds. Calls to UiWidth, UiHeight, UiCenter and UiMiddle will operate in the context of the window size.
+---
+---If clip is set to true, contents of window will be clipped to bounds (only works properly for non-rotated windows).
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiWindow() end
+---@param width number Window width
+---@param height number Window height
+---@param clip boolean|nil boolean Clip content outside window. Default is false.
+---@param inherit boolean|nil boolean Inherit current clip region (for nested clip regions)
+function UiWindow(width, height, clip, inherit) end
+
+---Return a safe drawing area that will always be visible regardless of display aspect ratio.
+---
+---The safe drawing area will always be 1920 by 1080 in size. This is useful for setting up a fixed size UI.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 function UiSafeMargins() end
+
+---The alignment determines how content is aligned with respect to the cursor.
+---| Alignment | Description |
+---|-|-|
+---| left | Horizontally align to the left |
+---| right | Horizontally align to the right |
+---| center | Horizontally align to the center |
+---| top | Vertically align to the top |
+---| bottom | Veritcally align to the bottom |
+---| middle | Vertically align to the middle |
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiAlign() end
+---@param alignment ui_alignment
+function UiAlign(alignment) end
+
+---Disable input for everything, except what's between UiModalBegin and UiModalEnd (or if modal state is popped)
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 function UiModalBegin() end
+
+---Disable input for everything, except what's between UiModalBegin and UiModalEnd Calling this function is optional. Modality is part of the current state and will be lost if modal state is popped.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 function UiModalEnd() end
+
+---Disables input
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 function UiDisableInput() end
+
+---Enables input that has been previously disabled
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 function UiEnableInput() end
+
+---This function will check current state receives input. This is the case if input is not explicitly disabled with (with UiDisableInput) and no other state is currently modal (with UiModalBegin). Input functions and UI elements already do this check internally, but it can sometimes be useful to read the input state manually to trigger things in the UI.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@return boolean received
 function UiReceivesInput() end
+
+---Returns the mouse pointer position relative to the cursor
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@return number x
+---@return number y
 function UiGetMousePos() end
+
+---Returns true if the mouse pointer is within a specified rectangle.
+---
+---Note that this function respects alignment.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiIsMouseInRect() end
+---@param width number
+---@param height number
+---@return boolean inside
+function UiIsMouseInRect(width, height) end
+
+---Convert world space position to user interface X and Y coordinate relative to the cursor.
+---
+---The distance is in meters and positive if in front of camera, negative otherwise.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiWorldToPixel() end
+---@param position vector
+---@return number x X coordinate
+---@return number y Y coordinate
+---@return number distance Distance to point
+function UiWorldToPixel(position) end
+
+---Convert X and Y UI coordinate to a world direction, as seen from current camera.
+---
+---This can be used to raycast into the scene from the mouse pointer position.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiPixelToWorld() end
+---@param x number
+---@param y number
+---@return vector direction world-space direction
+function UiPixelToWorld(x ,y) end
+
+---Perform a gaussian blur on current screen content
+---
+---Using an amount of zero will still effect the screen, using UiBlur serveral times can give some interesting screen effects
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiBlur() end
+---@param amount number
+function UiBlur(amount) end
+
+---Sets the font for the current scope
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiFont() end
----
+---@param path td_path
+---@param size number
+function UiFont(path, size) end
+
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@return number size Current font size
 function UiFontHeight() end
+
+---Renders text at the cursor position
+---
+---If auto_move is enabled, then the cursor will be translated moved back and down like a typewriter
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiText() end
+---@param text string|number
+---@param auto_move boolean|nil
+---@return number width
+---@return number height
+function UiText(text, auto_move) end
+
+---Gets the space that the text will take up without rendering it
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiGetTextSize() end
+---@param text string|number
+---@return number width
+---@return number height
+function UiGetTextSize(text) end
+
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param width number
+function UiWordWrap(width) end
+
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param red number|nil Default is 0
+---@param green number|nil Default is 0
+---@param blue number|nil Default is 0
+---@param alpha number|nil Default is 0
+---@param thickness number|nil Default is 0.1
+function UiTextOutline(red, green, blue, alpha, thickness) end
+
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param red number|nil Default is 0
+---@param green number|nil Default is 0
+---@param blue number|nil Default is 0
+---@param alpha number|nil Default is 0
+---@param distance number|nil Default is 1.0
+---@param blur number|nil Default is 0.5
+function UiTextShadow(red, green, blue, alpha, distance, blur) end
+
+---Draw solid rectangle at cursor position
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiWordWrap() end
+---@param width number
+---@param height number
+function UiRect(width, height) end
+
+---Draw image at cursor position.
+---
+---If x0, y0, x1, y1 is provided a cropped version will be drawn in that coordinate range.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiTextOutline() end
+---@param x0 number|nil Lower x coordinate. Default is 0
+---@param y0 number|nil Lower y coordinate. Default is 0
+---@param x1 number|nil Upper x coordinate. Default is image width
+---@param y1 number|nil Upper y coordinate. Default is image height
+---@return number width
+---@return number height
+function UiImage(x0, y0, x1, y1) end
+
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param path td_path
+---@return number width
+---@return number height
+function UiGetImageSize(path) end
+
+---Draw 9-slice image at cursor position.
+---
+---Width should be at least 2*border_width. Height should be at least 2*border_height.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiTextShadow() end
+---@param path td_path
+---@param width number
+---@param height number
+---@param border_width number
+---@param border_height number
+function UiImageBox(path, width, height, border_width, border_height) end
+
+---Set up 9-slice image to be used as background for buttons.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiRect() end
+---@param path td_path
+---@param border_width number
+---@param border_height number
+---@param red number|nil Default is 1.0
+---@param green number|nil Default is 1.0
+---@param blue number|nil Default is 1.0
+---@param alpha number|nil Default is 1.0
+function UiButtonImageBox(path, border_width, border_height, red, green, blue, alpha) end
+
+---Button color filter when hovering mouse pointer.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiImage() end
+---@param red number|nil Default is 0.0
+---@param green number|nil Default is 0.0
+---@param blue number|nil Default is 0.0
+---@param alpha number|nil Default is 1.0
+function UiButtonHoverColor(red, green, blue, alpha) end
+
+---Button color filter when pressing down.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiGetImageSize() end
+---@param red number|nil Default is 0.0
+---@param green number|nil Default is 0.0
+---@param blue number|nil Default is 0.0
+---@param alpha number|nil Default is 1.0
+function UiButtonPressColor(red, green, blue, alpha) end
+
+---The button offset when being pressed
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiImageBox() end
+---@param distance number
+function UiButtonPressDist(distance) end
+
+---Renders a button on screen displaing the text, returns true if it was pressed
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiSound() end
+---@return boolean pressed
+---@param display_text string
+---@param width number|nil If not specified, will be the width of the displayed text
+---@param height number|nil If not specified, will be the height of the displayed text
+function UiTextButton(display_text, width, height) end
+
+---Renders a image on screen, returns true if it was pressed
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiSoundLoop() end
+---@param path td_path
+function UiImageButton(path) end
+
+---Creates a button without rendering anything on the screen
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiMute() end
+---@param width number
+---@param height number
+function UiBlankButton(width, height) end
+
+---Renders a dragable slider on the screen
+---
+---The range is in pixels
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiButtonImageBox() end
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiButtonHoverColor() end
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiButtonPressColor() end
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiButtonPressDist() end
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiTextButton() end
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiImageButton() end
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiBlankButton() end
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiSlider() end
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
-function UiGetScreen() end
+---@param slider_image td_path
+---@param axis 'x'|'y'
+---@param current number Current value
+---@param minimum number Minimum value
+---@param maximum number Maximum value
+---@return number updated_value
+---@return boolean slider_released
+function UiSlider(slider_image, axis, current, minimum, maximum) end
 
 --#endregion
 --#region Debug
@@ -2129,13 +2386,60 @@ function InputLastPressedKey() end
 --#endregion
 --#region Misc
 
-function Shoot() end
-function Paint() end
-function MakeHole() end
-function Explosion() end
-function SpawnFire() end
+---Creates a projectile.
+---
+---"bullet" and "rocket" are the only projectiles that can hurt the player.
+---
+---For backwards compatability, a number will be accepted for the `type` parameter
+---
+---@param origin vector
+---@param direction vector
+---@param type  "bullet"|"rocket"|"gun"|"shotgun"|number
+---@param strength number
+---@param max_distance number
+function Shoot(origin, direction, type, strength, max_distance) end
+
+---@param origin vector Origin in world space as vector
+---@param radius number Affected radius, in range 0.0 to 5.0
+---@param type "spraycan"|"explosion"|nil Default is spraycan.
+---@param probability number|nil Dithering probability between zero and one. Default is 1.0
+function Paint(origin, radius, type, probability) end
+
+---Makes a hole in the environment
+---| Type | Materials |
+---|-|-|
+---| Soft | <u>glass</u>, <u>foliage</u>, <u>dirt</u>, <u>wood</u>, <u>plaster</u>, <u>plastic</u> |
+---| Medium | <u>concrete</u>, <u>brick</u>, <u>weak metal</u> |
+---| Hard | <u>hard metal</u>, <u>hard masonry</u> |
+---@param position vector
+---@param soft_radius number Hole radius for soft materials.
+---@param medium_radius number|nil Hole radius for medium materials. Defualt is 0
+---@param hard_radius number|nil Hole radius for hard materials. Defualt is 0
+---@param silent boolean|nil Disables the breaking sound. Default is false
+---@return number voxels_removed Number of voxels removed from all effected shapes, zero if no shapes were effected.
+function MakeHole(position, soft_radius, medium_radius, hard_radius, silent) end
+
+---Creates an explosion at the specified location
+---
+---Explosion sizes are clamped to values ranging from 0.5 to 4.0, if you need to create a bigger explosion, you can use multiple calls to Explosion(), use Shoot() with a large strength, or use MakeHole()
+---@param position vector
+---@param size number (0.5 to 4.0) Default is 1.0
+function Explosion(position, size) end
+
+---@param position vector
+function SpawnFire(position) end
+
+---@return number count The number of active fires in the level
 function GetFireCount() end
-function SetTimeScale() end
+
+---Sets the time scale for the next frame
+---
+---Call continuously
+---
+---Note that this can and will effect physical behaviors
+---
+---@param scale number (0.1 to 1.0)
+function SetTimeScale(scale) end
 
 ---Shakes the Camera
 ---
