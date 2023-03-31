@@ -8,8 +8,8 @@
 	Motivation from ... wait a second, I swear I left it right here, where did it go?
 
 	Not all function are catagorized how they are in the offical api documentation
-	Some are split up into more catagories, and some are moved
-	into other ones to better represent their functionality
+	Some are split up into more catagories, and some
+	are moved to better represent their functionality
 ]]
 
 --#region Types and Classes
