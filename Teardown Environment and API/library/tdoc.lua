@@ -1,8 +1,11 @@
+---@meta _
 ---@diagnostic disable: missing-return
 ---@diagnostic disable: unused-local
 
 --[[
-	Created by Λutumnatic,
+	Manually created/hand typed by Λutumnatic,
+	Help from Thomasims
+	Motivation from ... wait a second, I swear I left it right here, where did it go?
 
 	Not all function are catagorized how they are in the offical api documentation
 	Some are split up into more catagories, and some are moved
@@ -10,8 +13,6 @@
 ]]
 
 --#region Types and Classes
-
----@meta _
 
 ---Teardown parses paths in a special way :
 ---
