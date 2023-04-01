@@ -531,14 +531,22 @@ function QuatAxisAngle(axis, angle) end
 ---@return quaternion created_quaternion
 function QuatLookAt(eye, target) end
 
----Multiplies two quaternions together (effectively rotates one by another)
+---Interpolates between two quaternions.
+---
+---@param quatA quaternion
+---@param quatB quaternion
+---@param t number
+---@return quaternion quaternion
+function QuatSlerp(quatA, quatB, t) end
+
+---Multiplies two quaternions together (effectively rotates one by another.)
 ---
 ---@param quatA quaternion
 ---@param quatB quaternion
 ---@return quaternion quaternion
 function QuatRotateQuat(quatA, quatB) end
 
----Rotates a vector using a quaternion
+---Rotates a vector using a quaternion.
 ---
 ---@param quaternion quaternion
 ---@param vector vector
@@ -819,21 +827,42 @@ function DrawBodyHighlight(body, alpha) end
 ---@return shape_handle shape The handle to the closest shape 
 function GetBodyClosestPoint(body, origin) end
 
----HUSK
----@param body body_handle
-function ConstrainVelocity(body) end
+---TODO: explain this
+---@param bodyA body_handle
+---@param bodyB body_handle
+---@param point vector
+---@param dir vector
+---@param relative_velocity number
+---@param min_impulse? number
+---@param max_impulse? number
+function ConstrainVelocity(bodyA, bodyB, point, dir, relative_velocity, min_impulse, max_impulse) end
 
----HUSK
----@param body body_handle
-function ConstrainAngularVelocity(body) end
+---TODO: explain this
+---@param bodyA body_handle
+---@param bodyB body_handle
+---@param dir vector
+---@param relative_angular_velocity number
+---@param min_angular_impulse? number
+---@param max_angular_impulse? number
+function ConstrainAngularVelocity(bodyA, bodyB, dir, relative_angular_velocity, min_angular_impulse, max_angular_impulse) end
 
----HUSK
----@param body body_handle
-function ConstrainPosition(body) end
+---TODO: explain this
+---@param bodyA body_handle
+---@param bodyB body_handle
+---@param pointA vector
+---@param pointB vector
+---@param max_velocity? number
+---@param max_impulse? number
+function ConstrainPosition(bodyA, bodyB, pointA, pointB, max_velocity, max_impulse) end
 
----HUSK
----@param body body_handle
-function ConstrainOrientation(body) end
+---TODO: explain this
+---@param bodyA body_handle
+---@param bodyB body_handle
+---@param quatA quaternion
+---@param quatB quaternion
+---@param max_angular_velocity? number
+---@param max_angular_impulse? number
+function ConstrainOrientation(bodyA, bodyB, quatA, quatB, max_angular_velocity, max_angular_impulse) end
 
 ---@return body_handle world_body
 function GetWorldBody() end
@@ -2324,20 +2353,20 @@ function DebugLine(p1, p2, red, green, blue, alpha) end
 ---Will occlude behind walls (*as well as sprites occlude that is*)
 ---@param p1 vector
 ---@param p2 vector
----@param red number
----@param green number
----@param blue number
----@param alpha number
+---@param red? number
+---@param green? number
+---@param blue? number
+---@param alpha? number
 function DrawLine(p1, p2, red, green, blue, alpha) end
 
 ---Will draw 2 lines using DebugLine() in the form of a cross on the position of a point
 ---
 ---Useful for checking the position of a vector
 ---@param position vector
----@param red number
----@param green number
----@param blue number
----@param alpha number
+---@param red? number
+---@param green? number
+---@param blue? number
+---@param alpha? number
 function DebugCross(position, red, green, blue, alpha) end
 
 --#endregion
@@ -2404,6 +2433,29 @@ function InputLastPressedKey() end
 
 --#endregion
 --#region Misc
+
+---Get the time in seconds since the script was created.
+---
+---@return number time
+function GetTime() end
+
+---Get the time in seconds since the last frame.
+---
+---This is the same as the `dt` parameter from the tick/draw/update callbacks.
+---
+---@return number time
+function GetTimeStep() end
+
+---Get the version of the game.
+---
+---@return string version
+function GetVersion() end
+
+---Tests whether or not the game version is greater or equal to the provided one.
+---
+---@param version string
+---@return boolean match
+function HasVersion(version) end
 
 ---Creates a projectile.
 ---
