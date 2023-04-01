@@ -1,5 +1,5 @@
 function OnSetText(uri, text)
-    local diffs = {{start=1,finish=1,text="\n"}} -- Avoid the first line not getting the right syntax highlight
+    local diffs = {{start=1,finish=0,text="\n"}} -- Avoid the first line not getting the right syntax highlight
     for startp, _, file, endp in ("\n" .. text):gmatch("\n()#include *([\"'])([^\r\n]+)%2()") do
         diffs[#diffs + 1] = {
             start = startp - 1,
