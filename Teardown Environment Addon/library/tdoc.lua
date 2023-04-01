@@ -1,6 +1,4 @@
 ---@meta _
----@diagnostic disable: missing-return
----@diagnostic disable: unused-local
 
 --[[
 	Manually created/hand typed by Λutumnatic,
@@ -28,14 +26,14 @@
 ---@class td_path: string
 
 ---@class vector
----@feild [1]:number
----@feild [2]:number
----@feild [3]:number
+---@feild [1] number
+---@feild [2] number
+---@feild [3] number
 ---@class quaternion
----@feild [1]:number
----@feild [2]:number
----@feild [3]:number
----@feild [4]:number
+---@feild [1] number
+---@feild [2] number
+---@feild [3] number
+---@feild [4] number
 
 ---@class transform
 ---@field pos vector
@@ -456,7 +454,7 @@ function VecAdd(a, b) end
 ---@param a vector
 ---@param b vector
 ---@return vector subtracted_vector
-function VecSubtract(a, b) end
+function VecSub(a, b) end
 
 ---Gets the dot product between two vectors
 ---@param a vector
@@ -533,6 +531,20 @@ function QuatAxisAngle(axis, angle) end
 ---@return quaternion created_quaternion
 function QuatLookAt(eye, target) end
 
+---Multiplies two quaternions together (effectively rotates one by another)
+---
+---@param quatA quaternion
+---@param quatB quaternion
+---@return quaternion quaternion
+function QuatRotateQuat(quatA, quatB) end
+
+---Rotates a vector using a quaternion
+---
+---@param quaternion quaternion
+---@param vector vector
+---@return vector vector
+function QuatRotateVec(quaternion, vector) end
+
 --#endregion
 --#region Transforms
 
@@ -559,6 +571,7 @@ function TransformCopy(orginal) end
 ---One way to think about this is getting the world transform of the second parameter realative to the given transform.
 ---@param relation transform
 ---@param transform transform
+---@return transform transform
 function TransformToParentTransform(relation, transform) end
 
 ---Transfom a position out of the parent space of another transform
@@ -566,11 +579,13 @@ function TransformToParentTransform(relation, transform) end
 ---One way to think about this is getting the world position of the second parameter realative to the given transform.
 ---@param relation transform
 ---@param position vector
+---@return vector point
 function TransformToParentPoint(relation, position) end
 
 ---Transfom a vector out of the parent space of another transform only considering rotation
 ---@param relation transform
 ---@param vector vector
+---@return vector vector
 function TransformToParentVec(relation, vector) end
 
 ---Transform one transform into the local space of another transform
@@ -578,6 +593,7 @@ function TransformToParentVec(relation, vector) end
 ---One way to think about this is getting the local transform of the second parameter realative to the given transform.
 ---@param relation transform
 ---@param transform transform
+---@return transform transform
 function TransformToLocalTransform(relation, transform) end
 
 ---Transfom a position into the local space of another transform
@@ -585,11 +601,13 @@ function TransformToLocalTransform(relation, transform) end
 ---One way to think about this is getting the local position of the second parameter realative to the given transform.
 ---@param relation transform
 ---@param position vector
+---@return vector point
 function TransformToLocalPoint(relation, position) end
 
 ---Transfom a vector into the local space of another transform only considering rotation
 ---@param relation transform
 ---@param vector vector
+---@return vector vector
 function TransformToLocalVec(relation, vector) end
 
 --#endregion
@@ -2295,10 +2313,10 @@ function DebugWatch(name, value) end
 ---Renders a line between two points
 ---@param p1 vector
 ---@param p2 vector
----@param red number
----@param green number
----@param blue number
----@param alpha number
+---@param red? number
+---@param green? number
+---@param blue? number
+---@param alpha? number
 function DebugLine(p1, p2, red, green, blue, alpha) end
 
 ---Draws a line between two points using Drawsprite()
