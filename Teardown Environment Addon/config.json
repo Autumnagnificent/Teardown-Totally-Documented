@@ -1,6 +1,6 @@
 {
   "name" : "Teardown Environment and API",
-  "words": [ "#include *\"[^\"]*\"" ],
+  "words": [ "#include " ],
   "settings": {
     "Lua.diagnostics.neededFileStatus": {
       "lowercase-global": "None"
