@@ -1426,7 +1426,7 @@ function GetPlayerPos() end
 ---
 ---Can optionaly include the pitch of the player's camera
 ---@param includePitch boolean|nil Default is false
----@return vector position
+---@return transform transform
 function GetPlayerTransform(includePitch) end
 
 ---Sets the player's transform
