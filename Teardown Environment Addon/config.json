@@ -4,6 +4,8 @@
   "settings": {
     "Lua.diagnostics.neededFileStatus": {
       "lowercase-global": "None"
-    }
+    },
+    // "Lua.completion.showWord": "Disable",
+    // "Lua.completion.workspaceWord": false
   }
 }
