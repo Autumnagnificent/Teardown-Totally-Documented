@@ -1602,7 +1602,7 @@ function LoadLoop(path, nominal_distance) end
 
 ---@param sound sound_handle
 ---@param position vector|nil Default is player position
----@param volume number Default is 1.0
+---@param volume number|nil Default is 1.0
 function PlaySound(sound, position, volume) end
 
 ---Call continuously
