@@ -8,7 +8,7 @@ async function format(data) {
 
 	for (const func of data.functions) {
 		func.description = func.description.split("\n");
-		func.example = func.example.split("\n");
+		func.examples = func.examples.map(ex => ex.split("\n"));
 	}
 
 	return data;

@@ -1,4 +1,4 @@
-const { writeFile } = require("fs/promises");
+const { writeFile, readFile, appendFile } = require("fs/promises");
 const path = require("path");
 
 function matchTag(text, tag) {
@@ -99,8 +99,7 @@ function parseCategory(text) {
 
 async function scrapeAPI(url) {
 	const data = await fetch(url).then(data => data.text());
-	const name = data.match(/<h1>(.*?)<\/h1>/)[1];
-	const version = name.match(/\(([\d\.]+)\)/)[1];
+	const version = data.match(/<h1>.*?\(([\d\.]+)\)<\/h1>/)[1];
 	const categories = [];
 	const functions = [];
 
@@ -118,7 +117,6 @@ async function scrapeAPI(url) {
 	}
 
 	return {
-		name,
 		version,
 		categories,
 		functions
@@ -126,6 +124,17 @@ async function scrapeAPI(url) {
 }
 
 async function outputData(root, data) {
+	const localVersion = (
+		await readFile(path.join(root, "version")).catch(() => "")
+	).toString();
+	if (localVersion === data.version) {
+		console.log("Up to date");
+		process.exit(1);
+	}
+	if (process.env.GITHUB_OUTPUT) {
+		await appendFile(process.env.GITHUB_OUTPUT, `version=${data.version}`)
+	}
+
 	await writeFile(path.join(root, "version"), data.version || data.name);
 	for (const category of data.categories) {
 		const fileName = path.join(root, `category.${category.name.replace(/\W/g, '-')}.json`);
