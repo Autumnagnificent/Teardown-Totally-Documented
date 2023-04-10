@@ -1,0 +1,27 @@
+{
+  "name": "SetBool",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Registry key",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "desc": "Desired value",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetBool(\"level.robots.enabled\", true)"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

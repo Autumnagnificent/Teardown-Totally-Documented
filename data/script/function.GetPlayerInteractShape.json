@@ -1,0 +1,25 @@
+{
+  "name": "GetPlayerInteractShape",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to interactable shape or zero",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local shape = GetPlayerInteractShape()",
+      "if shape ~= 0 then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    "Interactable shapes has to be tagged with \"interact\". The engine",
+    "determines which interactable shape is currently interactable."
+  ],
+  "tables": {}
+}

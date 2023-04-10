@@ -1,0 +1,28 @@
+{
+  "name": "IsBodyBroken",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "broken",
+      "desc": "Return true if body is broken",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local broken = IsBodyBroken(body)"
+    ]
+  ],
+  "description": [
+    "Determine if any shape of a body has been broken."
+  ],
+  "tables": {}
+}

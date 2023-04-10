@@ -1,0 +1,28 @@
+{
+  "name": "GetVehicleTransform",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "Transform of vehicle",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local t = GetVehicleTransform(vehicle)"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

@@ -1,0 +1,35 @@
+{
+  "name": "QuatAxisAngle",
+  "arguments": [
+    {
+      "name": "axis",
+      "desc": "Rotation axis, unit vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "angle",
+      "desc": "Rotation angle in degrees",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "quat",
+      "desc": "New quaternion",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--Create quaternion representing rotation 30 degrees around Y axis",
+      "local q = QuatAxisAngle(Vec(0,1,0), 30)"
+    ]
+  ],
+  "description": [
+    "Create a quaternion representing a rotation around a specific axis"
+  ],
+  "tables": {}
+}

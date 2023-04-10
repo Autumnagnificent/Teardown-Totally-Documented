@@ -1,0 +1,35 @@
+{
+  "name": "CreateBrush",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Vox file path and optional object",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "local",
+      "desc": "Use local coordinates for all operations. Default false.",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "example": [
+    "brickWall = CreateBrush(\"MOD/brickwall.vox\")",
+    "SetMaterial(brickWall)",
+    "Box(0, 0, 0, 10, 10, 10)",
+    "",
+    "swedishFlag = CreateBrush(\"MOD/flags.vox:sweden\")",
+    "SetMaterial(swedishFlag)",
+    "Box(0, 0, 0, 20, 15, 1)"
+  ],
+  "description": [
+    "Create a brush that can be used as material. An objec tin the vox file ",
+    "can be specified using colon (:) delimiter.",
+    "If a brush uses local coordinates, the brush offset will be relative the ",
+    "current drawn Box or Sphere. Global coordinates will be relative the current",
+    "Vox origo."
+  ],
+  "tables": {}
+}

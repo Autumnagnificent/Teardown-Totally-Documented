@@ -1,0 +1,21 @@
+{
+  "name": "GetFireCount",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "count",
+      "desc": "Number of active fires in level",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local c = GetFireCount()"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

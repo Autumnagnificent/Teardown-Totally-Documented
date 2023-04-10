@@ -1,0 +1,55 @@
+{
+  "name": "GetBodyClosestPoint",
+  "arguments": [
+    {
+      "name": "body",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "origin",
+      "desc": "World space point",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "hit",
+      "desc": "True if a point was found",
+      "optional": false,
+      "type": "boolean"
+    },
+    {
+      "name": "point",
+      "desc": "World space closest point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "normal",
+      "desc": "World space normal at closest point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "shape",
+      "desc": "Handle to closest shape",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local hit, p, n, s = GetBodyClosestPoint(body, Vec(0, 5, 0))",
+      "if hit then",
+      "\t--Point p of shape s is closest",
+      "end"
+    ]
+  ],
+  "description": [
+    "This will return the closest point of a specific body"
+  ],
+  "tables": {}
+}

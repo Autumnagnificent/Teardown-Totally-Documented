@@ -1,0 +1,43 @@
+{
+  "name": "UiColorFilter",
+  "arguments": [
+    {
+      "name": "r",
+      "desc": "Red channel",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Green channel",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Blue channel",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Alpha channel. Default 1.0",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiPush()",
+      "\t--Draw menu in transparent, yellow color tint",
+      "\tUiColorFilter(1, 1, 0, 0.5)",
+      "\tdrawMenu()",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Color filter, multiplied to all future colors in this scope"
+  ],
+  "tables": {}
+}

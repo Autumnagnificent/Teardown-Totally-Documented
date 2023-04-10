@@ -1,0 +1,30 @@
+{
+  "name": "InputPressed",
+  "arguments": [
+    {
+      "name": "input",
+      "desc": "The input identifier",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "pressed",
+      "desc": "True if input was pressed during last frame",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if InputPressed(\"interact\") then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

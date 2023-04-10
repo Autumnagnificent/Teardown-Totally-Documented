@@ -1,0 +1,47 @@
+{
+  "name": "Vec",
+  "arguments": [
+    {
+      "name": "x",
+      "desc": "X value",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y value",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "z",
+      "desc": "Z value",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "vec",
+      "desc": "New vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--These are equivalent",
+      "local a1 = Vec()",
+      "local a2 = {0, 0, 0}",
+      "",
+      "--These are equivalent",
+      "local b1 = Vec(0, 1, 0)",
+      "local b2 = {0, 1, 0}"
+    ]
+  ],
+  "description": [
+    "Create new vector and optionally initializes it to the provided values.",
+    "A Vec is equivalent to a regular lua table with three numbers."
+  ],
+  "tables": {}
+}

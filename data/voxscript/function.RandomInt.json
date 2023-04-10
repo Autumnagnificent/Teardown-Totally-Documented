@@ -1,0 +1,25 @@
+{
+  "name": "RandomInt",
+  "arguments": [
+    {
+      "name": "lower",
+      "desc": "",
+      "optional": false,
+      "type": "[number]"
+    },
+    {
+      "name": "upper",
+      "desc": "",
+      "optional": false,
+      "type": "[number]"
+    }
+  ],
+  "returns": [],
+  "example": [
+    "local r = RandomInt(1, 3) --Returns 1, 2, or 3"
+  ],
+  "description": [
+    "Returns random integer from lower to (and including) upper bound."
+  ],
+  "tables": {}
+}

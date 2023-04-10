@@ -1,0 +1,25 @@
+{
+  "name": "GetFloat",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Parameter name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "defaultValue",
+      "desc": "Default value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "example": [
+    "radius = GetFloat(\"radius\", 5.2)"
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

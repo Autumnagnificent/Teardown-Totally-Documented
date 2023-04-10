@@ -1,0 +1,28 @@
+{
+  "name": "InputValue",
+  "arguments": [
+    {
+      "name": "input",
+      "desc": "The input identifier",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Depends on input type",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "scrollPos = scrollPos + InputValue(\"mousewheel\")"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

@@ -1,0 +1,24 @@
+{
+  "name": "GetPlayerPickBody",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to picked body or zero if nothing is picked",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local body = GetPlayerPickBody()",
+      "if body ~= 0 then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

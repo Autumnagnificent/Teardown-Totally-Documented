@@ -1,0 +1,49 @@
+{
+  "name": "ParticleRadius",
+  "arguments": [
+    {
+      "name": "r0",
+      "desc": "Radius",
+      "optional": false,
+      "type": "float"
+    },
+    {
+      "name": "r1",
+      "desc": "End radius",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "interpolation",
+      "desc": "Interpolation method: linear, smooth, easein, easeout or constant. Default is linear.",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "fadein",
+      "desc": "Fade in between t=0 and t=fadein. Default is zero.",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "fadeout",
+      "desc": "Fade out between t=fadeout and t=1. Default is one.",
+      "optional": true,
+      "type": "float"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Constant radius 0.4 meters",
+      "ParticleRadius(0.4)",
+      "",
+      "--Interpolate from small to large",
+      "ParticleRadius(0.1, 0.7)"
+    ]
+  ],
+  "description": [
+    "Set the particle radius. Max radius for smoke particles is 1.0."
+  ],
+  "tables": {}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "UiCenter",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "center",
+      "desc": "Half width of draw context",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local c = UiCenter()",
+      "--Same as ",
+      "local c = UiWidth()/2"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

@@ -1,0 +1,45 @@
+{
+  "name": "DriveVehicle",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "drive",
+      "desc": "Reverse/forward control -1 to 1",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "steering",
+      "desc": "Left/right control -1 to 1",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "handbrake",
+      "desc": "Handbrake control",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\t--Drive mycar forwards",
+      "\tlocal v = FindVehicle(\"mycar\")",
+      "\tDriveVehicle(v, 1, 0, false)",
+      "end"
+    ]
+  ],
+  "description": [
+    "This function applies input to vehicles, allowing for autonomous driving. The vehicle",
+    "will be turned on automatically and turned off when no longer called. Call this from",
+    "the tick function, not update."
+  ],
+  "tables": {}
+}

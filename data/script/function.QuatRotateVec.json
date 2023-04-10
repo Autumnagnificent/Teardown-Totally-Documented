@@ -1,0 +1,38 @@
+{
+  "name": "QuatRotateVec",
+  "arguments": [
+    {
+      "name": "a",
+      "desc": "Quaternion",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "vec",
+      "desc": "Vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "vec",
+      "desc": "Rotated vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local q = QuatEuler(0, 10, 0)",
+      "local v = Vec(1, 0, 0)",
+      "local r = QuatRotateVec(q, v)",
+      "",
+      "--r is now vector a rotated 10 degrees around the Y axis"
+    ]
+  ],
+  "description": [
+    "Rotate a vector by a quaternion"
+  ],
+  "tables": {}
+}

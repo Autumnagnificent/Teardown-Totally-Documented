@@ -1,0 +1,41 @@
+{
+  "name": "ListKeys",
+  "arguments": [
+    {
+      "name": "parent",
+      "desc": "The parent registry key",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "children",
+      "desc": "Indexed table of strings with child keys",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--If the registry looks like this:",
+      "--\tscore",
+      "--\t\tlevels",
+      "--\t\t\tlevel1 = 5",
+      "--\t\t\tlevel2 = 4",
+      "",
+      "local list = ListKeys(\"score.levels\")",
+      "for i=1, #list do",
+      "\tprint(list[i])",
+      "end",
+      "",
+      "--This will output:",
+      "--level1",
+      "--level2"
+    ]
+  ],
+  "description": [
+    "List all child keys of a registry node."
+  ],
+  "tables": {}
+}

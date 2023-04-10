@@ -1,0 +1,72 @@
+{
+  "name": "GetShapeMaterialAtIndex",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "x",
+      "desc": "X integer coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y integer coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z",
+      "desc": "Z integer coordinate",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "type",
+      "desc": "Material type",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "r",
+      "desc": "Red",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Green",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Blue",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Alpha",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local mat = GetShapeMaterialAtIndex(shape, 0, 0, 0)",
+      "DebugPrint(\"The voxel closest to origo is of material: \" .. mat)"
+    ]
+  ],
+  "description": [
+    "Return material properties for a particular voxel in the voxel grid indexed by integer values.",
+    "The first index is zero (not one, as opposed to a lot of lua related things)"
+  ],
+  "tables": {}
+}

@@ -1,0 +1,48 @@
+{
+  "name": "QueryRequire",
+  "arguments": [
+    {
+      "name": "layers",
+      "desc": "Space separate list of layers",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Raycast dynamic, physical objects above debris threshold, but not specific vehicle",
+      "QueryRequire(\"physical dynamic large\")",
+      "QueryRejectVehicle(vehicle)",
+      "QueryRaycast(...)"
+    ]
+  ],
+  "description": [
+    "Set required layers for next query. Available layers are: ",
+    "${table:Layer}"
+  ],
+  "tables": {
+    "Layer": [
+      [
+        "physical",
+        "have a physical representation"
+      ],
+      [
+        "dynamic",
+        "part of a dynamic body"
+      ],
+      [
+        "static",
+        "part of a static body"
+      ],
+      [
+        "large",
+        "above debris threshold"
+      ],
+      [
+        "small",
+        "below debris threshold"
+      ]
+    ]
+  }
+}

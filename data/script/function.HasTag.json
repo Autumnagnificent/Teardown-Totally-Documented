@@ -1,0 +1,36 @@
+{
+  "name": "HasTag",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "exists",
+      "desc": "Returns true if entity has tag",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "SetTag(handle, \"special\")",
+      "local hasSpecial = HasTag(handle, \"special\") ",
+      "-- hasSpecial will be true"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

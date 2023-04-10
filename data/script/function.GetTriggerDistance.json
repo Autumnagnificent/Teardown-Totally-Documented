@@ -1,0 +1,35 @@
+{
+  "name": "GetTriggerDistance",
+  "arguments": [
+    {
+      "name": "trigger",
+      "desc": "Trigger handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "point",
+      "desc": "Word space point as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "distance",
+      "desc": "Positive if point is outside, negative if inside",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local p = Vec(0, 10, 0)",
+      "local dist = GetTriggerDistance(trigger, p)"
+    ]
+  ],
+  "description": [
+    "Get distance to the surface of trigger volume. Will return negative distance if inside."
+  ],
+  "tables": {}
+}

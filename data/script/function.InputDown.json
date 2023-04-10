@@ -1,0 +1,30 @@
+{
+  "name": "InputDown",
+  "arguments": [
+    {
+      "name": "input",
+      "desc": "The input identifier",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "pressed",
+      "desc": "True if input is currently held down",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if InputDown(\"interact\") then",
+      "...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

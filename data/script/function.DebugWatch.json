@@ -1,0 +1,33 @@
+{
+  "name": "DebugWatch",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "desc": "Value",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local t = 5",
+      "DebugWatch(\"time\", t)"
+    ]
+  ],
+  "description": [
+    "Show a named valued on screen for debug purposes.",
+    "Up to 32 values can be shown simultaneously. Values updated the current",
+    "frame are drawn opaque. Old values are drawn transparent in white.",
+    "",
+    "The function will also recognize vectors, quaternions and transforms as",
+    "second argument and convert them to strings automatically."
+  ],
+  "tables": {}
+}

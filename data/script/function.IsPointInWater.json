@@ -1,0 +1,37 @@
+{
+  "name": "IsPointInWater",
+  "arguments": [
+    {
+      "name": "point",
+      "desc": "World point as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "inWater",
+      "desc": "True if point is in water",
+      "optional": false,
+      "type": "boolean"
+    },
+    {
+      "name": "depth",
+      "desc": "Depth of point into water, or zero if not in water",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local wet, d = IsPointInWater(Vec(10, 0, 0))",
+      "if wet then",
+      "\t...point d meters into water",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

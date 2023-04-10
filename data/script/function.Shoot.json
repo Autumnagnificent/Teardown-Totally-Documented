@@ -1,0 +1,48 @@
+{
+  "name": "Shoot",
+  "arguments": [
+    {
+      "name": "origin",
+      "desc": "Origin in world space as vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "direction",
+      "desc": "Unit length direction as world space vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "type",
+      "desc": "Shot type, see description, default is \"bullet\"",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "strength",
+      "desc": "Strength scaling, default is 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "maxDist",
+      "desc": "Maximum distance, default is 100.0",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "Shoot(Vec(0, 10, 0), Vec(0, 0, 1), \"shotgun\")"
+    ]
+  ],
+  "description": [
+    "Fire projectile. Type can be one of \"bullet\", \"rocket\", \"gun\" or \"shotgun\".",
+    "For backwards compatilbility, type also accept a number, where 1 is same as \"rocket\" and anything else \"bullet\"",
+    "Note that this function will only spawn the projectile, not make any sound",
+    "Also note that \"bullet\" and \"rocket\" are the only projectiles that can hurt the player."
+  ],
+  "tables": {}
+}

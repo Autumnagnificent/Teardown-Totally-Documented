@@ -1,0 +1,38 @@
+{
+  "name": "QueryAabbBodies",
+  "arguments": [
+    {
+      "name": "min",
+      "desc": "Aabb minimum point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "max",
+      "desc": "Aabb maximum point",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with handles to all bodies in the aabb",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local list = QueryAabbBodies(Vec(0, 0, 0), Vec(10, 10, 10))",
+      "for i=1, #list do",
+      "\tlocal body = list[i]",
+      "\t..",
+      "end"
+    ]
+  ],
+  "description": [
+    "Return all bodies within the provided world space, axis-aligned bounding box"
+  ],
+  "tables": {}
+}

@@ -1,0 +1,32 @@
+{
+  "name": "GetShapeJoints",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with joints connected to shape",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local hinges = GetShapeJoints(door)",
+      "for i=1, #hinges do",
+      "\tlocal joint = hinges[i]",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

@@ -1,0 +1,30 @@
+{
+  "name": "UiMute",
+  "arguments": [
+    {
+      "name": "amount",
+      "desc": "Mute by this amount (0.0 to 1.0)",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "music",
+      "desc": "Mute music as well",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "if menuOpen then",
+      "\tUiMute(1.0)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Mute game audio and optionally music for the next frame. Call",
+    "continuously to stay muted."
+  ],
+  "tables": {}
+}

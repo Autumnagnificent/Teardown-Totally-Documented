@@ -1,0 +1,45 @@
+{
+  "name": "DebugCross",
+  "arguments": [
+    {
+      "name": "p0",
+      "desc": "World space point as vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "r",
+      "desc": "Red",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Green",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Blue",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Alpha",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "DebugCross(Vec(10, 5, 5))"
+    ]
+  ],
+  "description": [
+    "Draw a debug cross in the world to highlight a location. Default color is white."
+  ],
+  "tables": {}
+}

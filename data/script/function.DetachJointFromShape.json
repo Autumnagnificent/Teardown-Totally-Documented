@@ -1,0 +1,27 @@
+{
+  "name": "DetachJointFromShape",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Joint handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "DetachJointFromShape(hinge, door)"
+    ]
+  ],
+  "description": [
+    "Detach joint from shape. If joint is not connected to shape, nothing happens."
+  ],
+  "tables": {}
+}

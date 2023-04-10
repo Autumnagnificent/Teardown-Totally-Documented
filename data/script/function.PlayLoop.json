@@ -1,0 +1,40 @@
+{
+  "name": "PlayLoop",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Loop handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "pos",
+      "desc": "World position as vector. Default is player position.",
+      "optional": true,
+      "type": "table"
+    },
+    {
+      "name": "volume",
+      "desc": "Playback volume. Default is 1.0",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tloop = LoadLoop(\"siren.ogg\")",
+      "end",
+      "",
+      "function tick()",
+      "\tlocal pos = Vec(100, 0, 0)",
+      "\tPlayLoop(loop, pos, 0.5)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Call this function continuously to play loop"
+  ],
+  "tables": {}
+}

@@ -1,0 +1,21 @@
+{
+  "name": "SpawnFire",
+  "arguments": [
+    {
+      "name": "pos",
+      "desc": "Position in world space as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SpawnFire(Vec(0, 10, 0))"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "SetCameraFov",
+  "arguments": [
+    {
+      "name": "degrees",
+      "desc": "Horizontal field of view in degrees (10-170)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tSetCameraFov(60)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Override field of view for the next frame for all camera modes, except when explicitly set in SetCameraTransform"
+  ],
+  "tables": {}
+}

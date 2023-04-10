@@ -1,0 +1,43 @@
+{
+  "name": "TransformToParentTransform",
+  "arguments": [
+    {
+      "name": "parent",
+      "desc": "Transform",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "child",
+      "desc": "Transform",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "New transform",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local b = GetBodyTransform(body)",
+      "local s = GetShapeLocalTransform(shape)",
+      "",
+      "--b represents the location of body in world space",
+      "--s represents the location of shape in body space",
+      "",
+      "local w = TransformToParentTransform(b, s)",
+      "",
+      "--w now represents the location of shape in world space"
+    ]
+  ],
+  "description": [
+    "Transform child transform out of the parent transform.",
+    "This is the opposite of TransformToLocalTransform."
+  ],
+  "tables": {}
+}

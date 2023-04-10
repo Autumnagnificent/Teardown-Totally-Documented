@@ -1,0 +1,36 @@
+{
+  "name": "IsVehicleInTrigger",
+  "arguments": [
+    {
+      "name": "trigger",
+      "desc": "Trigger handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "inside",
+      "desc": "True if vehicle is in trigger volume",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if IsVehicleInTrigger(trigger, vehicle) then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    "This function will only check origo of vehicle"
+  ],
+  "tables": {}
+}

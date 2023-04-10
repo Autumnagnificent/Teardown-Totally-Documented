@@ -1,0 +1,47 @@
+{
+  "name": "ParticleDrag",
+  "arguments": [
+    {
+      "name": "d0",
+      "desc": "Drag",
+      "optional": false,
+      "type": "float"
+    },
+    {
+      "name": "d1",
+      "desc": "End drag",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "interpolation",
+      "desc": "Interpolation method: linear, smooth, easein, easeout or constant. Default is linear.",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "fadein",
+      "desc": "Fade in between t=0 and t=fadein. Default is zero.",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "fadeout",
+      "desc": "Fade out between t=fadeout and t=1. Default is one.",
+      "optional": true,
+      "type": "float"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Slow down fast moving particles",
+      "ParticleDrag(0.5)"
+    ]
+  ],
+  "description": [
+    "Particle drag will slow down fast moving particles. It's implemented slightly different for",
+    "smoke and plain particles. Drag must be positive, and usually look good between zero and one."
+  ],
+  "tables": {}
+}

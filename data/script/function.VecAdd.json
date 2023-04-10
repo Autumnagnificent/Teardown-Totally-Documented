@@ -1,0 +1,38 @@
+{
+  "name": "VecAdd",
+  "arguments": [
+    {
+      "name": "a",
+      "desc": "Vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "b",
+      "desc": "Vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "c",
+      "desc": "New vector with sum of a and b",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local a = Vec(1,2,3)",
+      "local b = Vec(3,0,0)",
+      "local c = VecAdd(a, b)",
+      "",
+      "--c now equals {4,2,3}"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

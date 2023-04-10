@@ -1,0 +1,24 @@
+{
+  "name": "UiButtonPressDist",
+  "arguments": [
+    {
+      "name": "dist",
+      "desc": "Press distance",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiButtonPressDistance(4)",
+      "if UiTextButton(\"Test\") then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    "The button offset when being pressed"
+  ],
+  "tables": {}
+}

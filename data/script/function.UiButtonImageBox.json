@@ -1,0 +1,60 @@
+{
+  "name": "UiButtonImageBox",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to image (PNG or JPG format)",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "borderWidth",
+      "desc": "Border width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "borderHeight",
+      "desc": "Border height",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "r",
+      "desc": "Red multiply. Default 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Green multiply. Default 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Blue multiply. Default 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Alpha channel. Default 1.0",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiButtonImageBox(\"button-9slice.png\", 10, 10)",
+      "if UiTextButton(\"Test\") then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    "Set up 9-slice image to be used as background for buttons."
+  ],
+  "tables": {}
+}

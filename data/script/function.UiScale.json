@@ -1,0 +1,30 @@
+{
+  "name": "UiScale",
+  "arguments": [
+    {
+      "name": "x",
+      "desc": "X component",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y component. Default value is x.",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiPush()",
+      "\tUiScale(2)",
+      "\tUiText(\"Double size\")",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Scale cursor either uniformly (one argument) or non-uniformly (two arguments)"
+  ],
+  "tables": {}
+}

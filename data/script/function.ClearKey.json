@@ -1,0 +1,30 @@
+{
+  "name": "ClearKey",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Registry key to clear",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--If the registry looks like this:",
+      "--\tscore",
+      "--\t\tlevels",
+      "--\t\t\tlevel1 = 5",
+      "--\t\t\tlevel2 = 4",
+      "",
+      "ClearKey(\"score.levels\")",
+      "",
+      "--Afterwards, the registry will look like this:",
+      "--\tscore"
+    ]
+  ],
+  "description": [
+    "Remove registry node, including all child nodes."
+  ],
+  "tables": {}
+}

@@ -1,0 +1,24 @@
+{
+  "name": "GetPlayerGrabBody",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to grabbed body or zero if not grabbing.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local body = GetPlayerGrabBody()",
+      "if body ~= 0 then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

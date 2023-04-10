@@ -1,0 +1,28 @@
+{
+  "name": "UiFont",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to TTF font file",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "size",
+      "desc": "Font size (10 to 100)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiFont(\"bold.ttf\", 24)",
+      "UiText(\"Hello\")"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

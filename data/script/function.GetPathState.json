@@ -1,0 +1,44 @@
+{
+  "name": "GetPathState",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "state",
+      "desc": "Current path planning state",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "local s = GetPathState()",
+      "if s == \"done\" then",
+      "\tDoSomething()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Return the current state of the last path planning query.",
+    "${table:State}"
+  ],
+  "tables": {
+    "State": [
+      [
+        "idle",
+        "No recent query"
+      ],
+      [
+        "busy",
+        "Busy computing. No path found yet."
+      ],
+      [
+        "fail",
+        "Failed to find path. You can still get the resulting path (even though it won't reach the target)."
+      ],
+      [
+        "done",
+        "Path planning completed and a path was found. Get it with GetPathLength and GetPathPoint)"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "UiReceivesInput",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "receives",
+      "desc": "True if current context receives input",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if UiReceivesInput() then",
+      "\thighlightItemAtMousePointer()",
+      "end"
+    ]
+  ],
+  "description": [
+    "This function will check current state receives input. This is the case ",
+    "if input is not explicitly disabled with (with UiDisableInput) and no other",
+    "state is currently modal (with UiModalBegin). Input functions and UI",
+    "elements already do this check internally, but it can sometimes be useful ",
+    "to read the input state manually to trigger things in the UI."
+  ],
+  "tables": {}
+}

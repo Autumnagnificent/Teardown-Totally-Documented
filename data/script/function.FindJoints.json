@@ -1,0 +1,39 @@
+{
+  "name": "FindJoints",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "global",
+      "desc": "Search in entire scene",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with handles to all joints with specified tag",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--Search for locations tagged \"doorhinge\" in script scope",
+      "local hinges = FindJoints(\"doorhinge\")",
+      "for i=1, #hinges do",
+      "\tlocal joint = hinges[i]",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

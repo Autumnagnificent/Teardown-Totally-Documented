@@ -1,0 +1,14 @@
+{
+  "name": "RespawnPlayer",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "RespawnPlayer()"
+    ]
+  ],
+  "description": [
+    "Respawn player at spawn position without modifying the scene"
+  ],
+  "tables": {}
+}

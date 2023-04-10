@@ -1,0 +1,37 @@
+{
+  "name": "IsPointInTrigger",
+  "arguments": [
+    {
+      "name": "trigger",
+      "desc": "Trigger handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "point",
+      "desc": "Word space point as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "inside",
+      "desc": "True if point is in trigger volume",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local p = Vec(0, 10, 0)",
+      "if IsPointInTrigger(trigger, p) then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

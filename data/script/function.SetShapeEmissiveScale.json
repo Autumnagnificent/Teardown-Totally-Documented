@@ -1,0 +1,30 @@
+{
+  "name": "SetShapeEmissiveScale",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "scale",
+      "desc": "Scale factor for emissiveness",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Pulsate emissiveness and light intensity for shape",
+      "local scale = math.sin(GetTime())*0.5 + 0.5",
+      "SetShapeEmissiveScale(shape, scale)"
+    ]
+  ],
+  "description": [
+    "Scale emissiveness for shape. If the shape has light sources attached,",
+    "their intensity will be scaled by the same amount."
+  ],
+  "tables": {}
+}

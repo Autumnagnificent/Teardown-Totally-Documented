@@ -1,0 +1,17 @@
+{
+  "name": "Parameters",
+  "description": [
+    "Scripts can have parameters defined in the level XML file. These serve as",
+    "input to a specific instance of the script and can be used to configure",
+    "various options and parameters of the script. While these parameters can",
+    "be read at any time in the script, it's recommended to copy them to a global",
+    "variable in or outside the init function."
+  ],
+  "tables": {},
+  "entries": [
+    "GetBoolParam",
+    "GetFloatParam",
+    "GetIntParam",
+    "GetStringParam"
+  ]
+}

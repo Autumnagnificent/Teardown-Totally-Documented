@@ -1,0 +1,35 @@
+{
+  "name": "Miscellaneous",
+  "description": [
+    "Functions of peripheral nature that doesn't fit in anywhere else"
+  ],
+  "tables": {},
+  "entries": [
+    "DebugCross",
+    "DebugLine",
+    "DebugPrint",
+    "DebugWatch",
+    "DrawLine",
+    "Explosion",
+    "GetCameraTransform",
+    "GetEnvironmentProperty",
+    "GetFireCount",
+    "GetPostProcessingProperty",
+    "MakeHole",
+    "Paint",
+    "PointLight",
+    "QueryAabbFireCount",
+    "QueryClosestFire",
+    "RemoveAabbFires",
+    "SetCameraDof",
+    "SetCameraFov",
+    "SetCameraTransform",
+    "SetEnvironmentDefault",
+    "SetEnvironmentProperty",
+    "SetPostProcessingDefault",
+    "SetPostProcessingProperty",
+    "SetTimeScale",
+    "Shoot",
+    "SpawnFire"
+  ]
+}

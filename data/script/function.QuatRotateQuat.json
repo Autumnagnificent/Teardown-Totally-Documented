@@ -1,0 +1,40 @@
+{
+  "name": "QuatRotateQuat",
+  "arguments": [
+    {
+      "name": "a",
+      "desc": "Quaternion",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "b",
+      "desc": "Quaternion",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "c",
+      "desc": "New quaternion",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local a = QuatEuler(0, 10, 0)",
+      "local b = QuatEuler(0, 0, 45)",
+      "local q = QuatRotateQuat(a, b)",
+      "",
+      "--q now represents a rotation first 10 degrees around",
+      "--the Y axis and then 45 degrees around the Z axis."
+    ]
+  ],
+  "description": [
+    "Rotate one quaternion with another quaternion. This is mathematically",
+    "equivalent to c = a * b using quaternion multiplication."
+  ],
+  "tables": {}
+}

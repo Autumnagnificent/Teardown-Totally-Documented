@@ -1,0 +1,27 @@
+{
+  "name": "RemoveTag",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "RemoveTag(handle, \"special\")"
+    ]
+  ],
+  "description": [
+    "Remove tag from an entity. If the tag had a value it is removed too."
+  ],
+  "tables": {}
+}

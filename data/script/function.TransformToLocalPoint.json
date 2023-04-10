@@ -1,0 +1,38 @@
+{
+  "name": "TransformToLocalPoint",
+  "arguments": [
+    {
+      "name": "t",
+      "desc": "Transform",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "p",
+      "desc": "Vector representing position",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "r",
+      "desc": "Transformed position",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local t = GetBodyTransform(body)",
+      "local worldOrigo = Vec(0, 0, 0)",
+      "local p = TransformToLocalPoint(t, worldOrigo)",
+      "",
+      "--p now represents the position of world origo in local body space"
+    ]
+  ],
+  "description": [
+    "Transfom position p into transform t."
+  ],
+  "tables": {}
+}

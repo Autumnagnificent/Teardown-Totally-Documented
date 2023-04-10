@@ -1,0 +1,28 @@
+{
+  "name": "SetTimeScale",
+  "arguments": [
+    {
+      "name": "scale",
+      "desc": "Time scale 0.1 to 1.0",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Slow down time when holding down a key",
+      "if InputDown('t') then",
+      "SetTimeScale(0.2)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Experimental. Scale time in order to make a slow-motion effect. Audio will",
+    "also be affected. Note that this will affect physics behavior and is not",
+    "intended for gameplay purposes. Calling this function will slow down time",
+    "for the next frame only. Call every frame from tick function to get steady",
+    "slow-motion."
+  ],
+  "tables": {}
+}

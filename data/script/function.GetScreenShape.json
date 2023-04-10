@@ -1,0 +1,28 @@
+{
+  "name": "GetScreenShape",
+  "arguments": [
+    {
+      "name": "screen",
+      "desc": "Screen handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "shape",
+      "desc": "Shape handle or zero if none",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local shape = GetScreenShape(screen)"
+    ]
+  ],
+  "description": [
+    "Return handle to the parent shape of a screen"
+  ],
+  "tables": {}
+}

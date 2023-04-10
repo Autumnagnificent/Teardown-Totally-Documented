@@ -1,0 +1,16 @@
+{
+  "name": "Menu",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "if shouldExitLevel then",
+      "Menu()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Go to main menu"
+  ],
+  "tables": {}
+}

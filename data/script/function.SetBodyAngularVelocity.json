@@ -1,0 +1,29 @@
+{
+  "name": "SetBodyAngularVelocity",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle (should be a dynamic body)",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "angVel",
+      "desc": "Vector with angular velocity",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local angVel = Vec(2,0,0)",
+      "SetBodyAngularVelocity(body, angVel)"
+    ]
+  ],
+  "description": [
+    "This can be used for animating bodies with preserved physical interaction,",
+    "but in most cases you are better off with a motorized joint instead."
+  ],
+  "tables": {}
+}

@@ -1,0 +1,25 @@
+{
+  "name": "GetPlayerInteractBody",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to interactable body or zero",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local body = GetPlayerInteractBody()",
+      "if body ~= 0 then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    "Interactable shapes has to be tagged with \"interact\". The engine",
+    "determines which interactable body is currently interactable."
+  ],
+  "tables": {}
+}

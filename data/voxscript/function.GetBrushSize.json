@@ -1,0 +1,38 @@
+{
+  "name": "GetBrushSize",
+  "arguments": [
+    {
+      "name": "brush",
+      "desc": "Brush handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "x",
+      "desc": "Size along x axis",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Size along y axis",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z",
+      "desc": "Size along z axis",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "example": [
+    "local xs, ys, zs = GetBrushSize(brush)"
+  ],
+  "description": [
+    "Return brush size in voxels"
+  ],
+  "tables": {}
+}

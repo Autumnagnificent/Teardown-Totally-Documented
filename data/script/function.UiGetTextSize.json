@@ -1,0 +1,34 @@
+{
+  "name": "UiGetTextSize",
+  "arguments": [
+    {
+      "name": "text",
+      "desc": "A text string",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "w",
+      "desc": "Width of text",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Height of text",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local w, h = UiGetTextSize(\"Some text\")"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

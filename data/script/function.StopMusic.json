@@ -1,0 +1,14 @@
+{
+  "name": "StopMusic",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "StopMusic()"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

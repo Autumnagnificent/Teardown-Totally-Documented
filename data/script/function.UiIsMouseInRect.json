@@ -1,0 +1,37 @@
+{
+  "name": "UiIsMouseInRect",
+  "arguments": [
+    {
+      "name": "w",
+      "desc": "Width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Height",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "inside",
+      "desc": "True if mouse pointer is within rectangle",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if UiIsMouseInRect(100, 100) then",
+      "\t-- mouse pointer is in rectangle",
+      "end"
+    ]
+  ],
+  "description": [
+    "Check if mouse pointer is within rectangle. Note that this function respects",
+    "alignment."
+  ],
+  "tables": {}
+}

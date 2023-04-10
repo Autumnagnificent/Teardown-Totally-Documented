@@ -1,0 +1,77 @@
+{
+  "name": "QueryRaycast",
+  "arguments": [
+    {
+      "name": "origin",
+      "desc": "Raycast origin as world space vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "direction",
+      "desc": "Unit length raycast direction as world space vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "maxDist",
+      "desc": "Raycast maximum distance. Keep this as low as possible for good performance.",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "radius",
+      "desc": "Raycast thickness. Default zero.",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "rejectTransparent",
+      "desc": "Raycast through transparent materials. Default false.",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "hit",
+      "desc": "True if raycast hit something",
+      "optional": false,
+      "type": "boolean"
+    },
+    {
+      "name": "dist",
+      "desc": "Hit distance from origin",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "normal",
+      "desc": "World space normal at hit point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "shape",
+      "desc": "Handle to hit shape",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "--Raycast from a high point straight downwards, excluding a specific vehicle",
+      "QueryRejectVehicle(vehicle)",
+      "local hit, d = QueryRaycast(Vec(0, 100, 0), Vec(0, -1, 0), 100)",
+      "if hit then",
+      "\t...hit something at distance d",
+      "end"
+    ]
+  ],
+  "description": [
+    "This will perform a raycast or spherecast (if radius is more than zero) query.",
+    "If you want to set up a filter for the query you need to do so before every call",
+    "to this function."
+  ],
+  "tables": {}
+}

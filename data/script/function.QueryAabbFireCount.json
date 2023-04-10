@@ -1,0 +1,34 @@
+{
+  "name": "QueryAabbFireCount",
+  "arguments": [
+    {
+      "name": "min",
+      "desc": "Aabb minimum point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "max",
+      "desc": "Aabb maximum point",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "count",
+      "desc": "Number of active fires in bounding box",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local count = QueryAabbFireCount(Vec(0,0,0), Vec(10,10,10))"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

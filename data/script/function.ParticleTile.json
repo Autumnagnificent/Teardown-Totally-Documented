@@ -1,0 +1,25 @@
+{
+  "name": "ParticleTile",
+  "arguments": [
+    {
+      "name": "type",
+      "desc": "Tile in the particle texture atlas (0-15)",
+      "optional": false,
+      "type": "int"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Smoke particle",
+      "ParticleTile(0)",
+      "",
+      "--Fire particle",
+      "ParticleTile(5)"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

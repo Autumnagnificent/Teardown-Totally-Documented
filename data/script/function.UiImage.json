@@ -1,0 +1,64 @@
+{
+  "name": "UiImage",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to image (PNG or JPG format)",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "x0",
+      "desc": "Lower x coordinate (default is 0)",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "y0",
+      "desc": "Lower y coordinate (default is 0)",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "x1",
+      "desc": "Upper x coordinate (default is image width)",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "y1",
+      "desc": "Upper y coordinate (default is image height)",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "w",
+      "desc": "Width of drawn image",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Height of drawn image",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "--Draw image in center of screen",
+      "UiPush()",
+      "\tUiTranslate(UiCenter(), UiMiddle())",
+      "\tUiAlign(\"center middle\")",
+      "\tUiImage(\"test.png\")",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Draw image at cursor position. If x0, y0, x1, y1 is provided a cropped version",
+    "will be drawn in that coordinate range."
+  ],
+  "tables": {}
+}

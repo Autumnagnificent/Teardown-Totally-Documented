@@ -1,0 +1,35 @@
+{
+  "name": "IsPointAffectedByLight",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Light handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "point",
+      "desc": "World space point as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "affected",
+      "desc": "Return true if point is in light cone and range",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local point = Vec(0, 10, 0)",
+      "local affected = IsPointAffectedByLight(light, point)"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

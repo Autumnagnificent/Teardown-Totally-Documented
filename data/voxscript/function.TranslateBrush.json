@@ -1,0 +1,39 @@
+{
+  "name": "TranslateBrush",
+  "arguments": [
+    {
+      "name": "brush",
+      "desc": "Brush handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "x",
+      "desc": "Offset along x axis",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Offset along y axis",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z",
+      "desc": "Offset along z axis",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "example": [
+    "TranslateBrush(brush, 5, 0, 0)",
+    "Material(brush)",
+    "Box(0, 0, 0, 10, 10, 10)"
+  ],
+  "description": [
+    "Apply a translation on the brush"
+  ],
+  "tables": {}
+}

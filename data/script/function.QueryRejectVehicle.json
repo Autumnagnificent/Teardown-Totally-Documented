@@ -1,0 +1,23 @@
+{
+  "name": "QueryRejectVehicle",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Do not include vehicle in next raycast",
+      "QueryRejectVehicle(vehicle)",
+      "QueryRaycast(...)"
+    ]
+  ],
+  "description": [
+    "Exclude vehicle from the next query"
+  ],
+  "tables": {}
+}

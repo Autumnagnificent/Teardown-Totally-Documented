@@ -1,0 +1,34 @@
+{
+  "name": "FindTrigger",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "global",
+      "desc": "Search in entire scene",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to first trigger with specified tag or zero if not found",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local goal = FindTrigger(\"goal\")"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

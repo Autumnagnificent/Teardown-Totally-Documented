@@ -1,0 +1,28 @@
+{
+  "name": "GetTriggerTransform",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Trigger handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "Current trigger transform in world space",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local t = GetTriggerTransform(trigger)"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

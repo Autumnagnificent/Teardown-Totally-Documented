@@ -1,0 +1,45 @@
+{
+  "name": "QuatSlerp",
+  "arguments": [
+    {
+      "name": "a",
+      "desc": "Quaternion",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "b",
+      "desc": "Quaternion",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "t",
+      "desc": "fraction (usually between 0.0 and 1.0)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "c",
+      "desc": "New quaternion",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local a = QuatEuler(0, 10, 0)",
+      "local b = QuatEuler(0, 0, 45)",
+      "",
+      "--Create quaternion half way between a and b",
+      "local q = QuatSlerp(a, b, 0.5)"
+    ]
+  ],
+  "description": [
+    "Spherical, linear interpolation between a and b, using t. This is",
+    "very useful for animating between two rotations."
+  ],
+  "tables": {}
+}

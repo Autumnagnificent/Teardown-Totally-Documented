@@ -1,0 +1,19 @@
+{
+  "name": "UiDisableInput",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "UiPush()",
+      "\tUiDisableInput()",
+      "\tif UiTextButton(\"Okay\") then",
+      "\t\t--Will never happen",
+      "\tend",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Disable input"
+  ],
+  "tables": {}
+}

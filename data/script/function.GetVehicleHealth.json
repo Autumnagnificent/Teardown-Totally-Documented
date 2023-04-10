@@ -1,0 +1,28 @@
+{
+  "name": "GetVehicleHealth",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "health",
+      "desc": "Vehicle health (zero to one)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local health = GetVehicleHealth(vehicle)"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

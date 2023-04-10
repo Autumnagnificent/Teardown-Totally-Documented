@@ -1,0 +1,21 @@
+{
+  "name": "GetPlayerHealth",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "health",
+      "desc": "Current player health",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local health = GetPlayerHealth()"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

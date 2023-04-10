@@ -1,0 +1,49 @@
+{
+  "name": "GetJointShapes",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Joint handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "shapes",
+      "desc": "Shape handles",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "-- Check to see if joint chain is still connected to vehicle main body",
+      "-- If not then disable motors",
+      "",
+      "local mainBody = GetVehicleBody(vehicle)",
+      "local shapes = GetJointShapes(joint)",
+      "",
+      "local connected = false",
+      "for i=1,#shapes do",
+      "",
+      "\tlocal body = GetShapeBody(shapes[i])",
+      "",
+      "\tif body == mainBody then",
+      "\t\tconnected = true",
+      "\tend",
+      "",
+      "end",
+      "",
+      "if connected then",
+      "\tSetJointMotor(joint, 0.5)",
+      "else",
+      "\tSetJointMotor(joint, 0.0)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Get shapes connected to the joint."
+  ],
+  "tables": {}
+}

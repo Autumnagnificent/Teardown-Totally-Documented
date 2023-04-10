@@ -1,0 +1,23 @@
+{
+  "name": "UiGetScreen",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to the screen running this script or zero if none.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "--Turn off screen running current script",
+      "screen = UiGetScreen()",
+      "SetScreenEnabled(screen, false)"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

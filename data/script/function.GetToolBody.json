@@ -1,0 +1,26 @@
+{
+  "name": "GetToolBody",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to currently visible tool body or zero if none",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local toolBody = GetToolBody()",
+      "if toolBody~=0 then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    "Return body handle of the visible tool. You can use this to retrieve tool shapes",
+    "and animate them, change emissiveness, etc. Do not attempt to set the tool body",
+    "transform, since it is controlled by the engine. Use SetToolTranform for that."
+  ],
+  "tables": {}
+}

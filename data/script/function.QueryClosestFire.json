@@ -1,0 +1,44 @@
+{
+  "name": "QueryClosestFire",
+  "arguments": [
+    {
+      "name": "origin",
+      "desc": "World space position as vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "maxDist",
+      "desc": "Maximum search distance",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "hit",
+      "desc": "A fire was found within search distance",
+      "optional": false,
+      "type": "boolean"
+    },
+    {
+      "name": "pos",
+      "desc": "Position of closest fire",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local hit, pos = QueryClosestFire(GetPlayerTransform().pos, 5.0)",
+      "if hit then",
+      "\t--There is a fire within 5 meters to the player. Mark it with a debug cross.",
+      "\tDebugCross(pos)",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

@@ -1,0 +1,25 @@
+{
+  "name": "GetString",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Parameter name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "defaultValue",
+      "desc": "Default value",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "example": [
+    "file = GetString(\"file\", \"MOD/test.vox\")"
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

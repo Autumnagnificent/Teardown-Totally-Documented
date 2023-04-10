@@ -1,0 +1,22 @@
+{
+  "name": "UiEnableInput",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "UiDisableInput()",
+      "if UiTextButton(\"Okay\") then",
+      "\t--Will never happen",
+      "end",
+      "",
+      "UiEnableInput()",
+      "if UiTextButton(\"Okay\") then",
+      "\t--This can happen",
+      "end"
+    ]
+  ],
+  "description": [
+    "Enable input that has been previously disabled"
+  ],
+  "tables": {}
+}

@@ -1,0 +1,47 @@
+{
+  "name": "ParticleStretch",
+  "arguments": [
+    {
+      "name": "s0",
+      "desc": "Stretch",
+      "optional": false,
+      "type": "float"
+    },
+    {
+      "name": "s1",
+      "desc": "End stretch",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "interpolation",
+      "desc": "Interpolation method: linear, smooth, easein, easeout or constant. Default is linear.",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "fadein",
+      "desc": "Fade in between t=0 and t=fadein. Default is zero.",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "fadeout",
+      "desc": "Fade out between t=fadeout and t=1. Default is one.",
+      "optional": true,
+      "type": "float"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Stretch particle along direction of motion",
+      "ParticleStretch(1.0)"
+    ]
+  ],
+  "description": [
+    "Stretch particle along with velocity. 0.0 means no stretching. 1.0 stretches with the particle motion over",
+    "one frame. Larger values stretches the particle even more."
+  ],
+  "tables": {}
+}

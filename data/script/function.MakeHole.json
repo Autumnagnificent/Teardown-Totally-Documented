@@ -1,0 +1,55 @@
+{
+  "name": "MakeHole",
+  "arguments": [
+    {
+      "name": "position",
+      "desc": "Hole center point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "r0",
+      "desc": "Hole radius for soft materials",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "r1",
+      "desc": "Hole radius for medium materials. May not be bigger than r0. Default zero.",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "r2",
+      "desc": "Hole radius for hard materials. May not be bigger than r1. Default zero.",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "silent",
+      "desc": "Make hole without playing any break sounds.",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "count",
+      "desc": "Number of voxels that was cut out. This will be zero if there were no changes to any shape.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "MakeHole(pos, 1.2, 1.0)"
+    ]
+  ],
+  "description": [
+    "Make a hole in the environment. Radius is given in meters. ",
+    "Soft materials: glass, foliage, dirt, wood, plaster and plastic. ",
+    "Medium materials: concrete, brick and weak metal. ",
+    "Hard materials: hard metal and hard masonry."
+  ],
+  "tables": {}
+}

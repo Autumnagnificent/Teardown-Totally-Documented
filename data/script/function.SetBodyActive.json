@@ -1,0 +1,32 @@
+{
+  "name": "SetBodyActive",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "active",
+      "desc": "Set to tru if body should be active (simulated)",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Wake up body",
+      "SetBodyActive(body, true)",
+      "",
+      "--Put body to sleep",
+      "SetBodyActive(body, false)"
+    ]
+  ],
+  "description": [
+    "This function makes it possible to manually activate and deactivate bodies to include or",
+    "exclude in simulation. The engine normally handles this automatically, so use with care."
+  ],
+  "tables": {}
+}

@@ -1,0 +1,38 @@
+{
+  "name": "UiRect",
+  "arguments": [
+    {
+      "name": "w",
+      "desc": "Width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Height",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Draw full-screen black rectangle",
+      "UiColor(0, 0, 0)",
+      "UiRect(UiWidth(), UiHeight())",
+      "",
+      "--Draw smaller, red, rotating rectangle in center of screen",
+      "UiPush()",
+      "\tUiColor(1, 0, 0)",
+      "\tUiTranslate(UiCenter(), UiMiddle())",
+      "\tUiRotate(GetTime())",
+      "\tUiAlign(\"center middle\")",
+      "\tUiRect(100, 100)",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Draw solid rectangle at cursor position"
+  ],
+  "tables": {}
+}

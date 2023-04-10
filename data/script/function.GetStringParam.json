@@ -1,0 +1,35 @@
+{
+  "name": "GetStringParam",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Parameter name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "default",
+      "desc": "Default parameter value",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "--Retrieve mode parameter, or \"idle\" if omitted",
+      "parameterMode = GetSrtingParam(\"mode\", \"idle\")"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

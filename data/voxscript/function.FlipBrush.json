@@ -1,0 +1,27 @@
+{
+  "name": "FlipBrush",
+  "arguments": [
+    {
+      "name": "brush",
+      "desc": "Brush handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "axes",
+      "desc": "Any combination of x, y and z",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "example": [
+    "FlipBrush(brush, \"x\")",
+    "Material(brush)",
+    "Box(0, 0, 0, 20, 15, 5)"
+  ],
+  "description": [
+    "Apply a flip transformation on the brush"
+  ],
+  "tables": {}
+}

@@ -1,0 +1,38 @@
+{
+  "name": "TransformToParentVec",
+  "arguments": [
+    {
+      "name": "t",
+      "desc": "Transform",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "v",
+      "desc": "Vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "r",
+      "desc": "Transformed vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local t = GetBodyTransform(body)",
+      "local localUp = Vec(0, 1, 0)",
+      "local up = TransformToParentVec(t, localUp)",
+      "",
+      "--up now represents the local body up direction in world space"
+    ]
+  ],
+  "description": [
+    "Transfom vector v out of transform t only considering rotation."
+  ],
+  "tables": {}
+}

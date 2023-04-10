@@ -1,0 +1,32 @@
+{
+  "name": "HasVersion",
+  "arguments": [
+    {
+      "name": "version",
+      "desc": "Reference version",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "match",
+      "desc": "True if current version is at least provided one",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if HasVersion(\"0.6.0\") then",
+      "\t--conditional code that only works on 0.6.0 or above",
+      "else",
+      "\t--legacy code that works on earlier versions",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}

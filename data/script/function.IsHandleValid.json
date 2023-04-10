@@ -1,0 +1,35 @@
+{
+  "name": "IsHandleValid",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "exists",
+      "desc": "Returns true if the entity pointed to by handle still exists",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "valid = IsHandleValid(body)",
+      "",
+      "--valid is true if body still exists",
+      "",
+      "Delete(body)",
+      "valid = IsHandleValid(body)",
+      "",
+      "--valid will now be false"
+    ]
+  ],
+  "description": [
+    ""
+  ],
+  "tables": {}
+}
