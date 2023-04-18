@@ -981,7 +981,7 @@ function GetShapeVoxelCount(shape) end
 ---This will check if a shape is currently visible in the camera frustum and not occluded by other objects.
 ---@param shape shape_handle
 ---@param max_distance number
----@param reject_transparent number|nil See through transparent materials, Default is false
+---@param reject_transparent boolean|nil See through transparent materials, Default is false
 ---@return boolean
 function IsShapeVisible(shape, max_distance, reject_transparent) end
 
@@ -989,6 +989,7 @@ function IsShapeVisible(shape, max_distance, reject_transparent) end
 ---
 ---Note that a shape can be transfered to another body during destruction, but might still not be considered broken if all voxels are intact.
 ---@param shape shape_handle
+---@return boolean
 function IsShapeBroken(shape) end
 
 ---Renders an outline around a shape for the next frame
@@ -1281,9 +1282,9 @@ function IsBodyInTrigger(trigger, body) end
 
 ---Checks if the origin of the vehicle is within the trigger's volume
 ---@param trigger trigger_handle
----@param body body_handle
+---@param vehicle vehicle_handle
 ---@return boolean inside
-function IsVehicleInTrigger(trigger, body) end
+function IsVehicleInTrigger(trigger, vehicle) end
 
 ---Checks if the center of the shape is within the trigger's volume
 ---@param trigger trigger_handle
@@ -1296,6 +1297,8 @@ function IsShapeInTrigger(trigger, shape) end
 ---The highest point will also be returned, this is used in a few missions in the campagin
 ---@param trigger trigger_handle
 ---@param demolition boolean|nil If true, small debris and vehicles are ignored
+---@return boolean empty
+---@return vector? maxpoint
 function IsTriggerEmpty(trigger, demolition) end
 
 ---Returns the distance to the surface of a trigger volume.
@@ -1478,7 +1481,6 @@ function GetPlayerGrabShape() end
 
 ---Returns the handle to grabbed body or zero if not grabbing.
 ---@return body_handle body
-
 function GetPlayerGrabBody() end
 
 ---Release what the player is currently holding
@@ -1732,6 +1734,7 @@ function QueryClosestPoint(origin, max_dist) end
 ---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
 ---@param lower_bound vector
 ---@param upper_bound vector
+---@return shape_handle[]
 function QueryAabbShapes(lower_bound, upper_bound) end
 
 ---Return all bodies in which there origins are witin the provided world space, axis-aligned bounding box 
@@ -1739,6 +1742,7 @@ function QueryAabbShapes(lower_bound, upper_bound) end
 ---This is seperate from a Oriented Bounding Box (OBB) which supports rotations
 ---@param lower_bound vector
 ---@param upper_bound vector
+---@return body_handle[]
 function QueryAabbBodies(lower_bound, upper_bound) end
 
 ---@param origin vector
