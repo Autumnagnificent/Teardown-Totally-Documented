@@ -240,6 +240,7 @@
 ---|"easein" Slow at beginning
 ---|"easeout" Slow at end
 ---|"bounce" Bounce and overshoot new value
+---|"constant" Instant transition
 
 ---@alias environment_property
 ---| "ambience"
@@ -527,7 +528,7 @@ function QuatAxisAngle(axis, angle) end
 ---
 ---
 ---@param eye vector A vector representing the origin
----@param target vector A vector representing the point to look at
+---@param target vector? A vector representing the point to look at
 ---@return quaternion created_quaternion
 function QuatLookAt(eye, target) end
 
@@ -1024,7 +1025,7 @@ function SetShapeCollisionFilter(shape, layer, mask) end
 ---Returns the closest point of a specific shape
 ---
 ---Usually, the point will be in 0.1 unit (1 voxel) increments of the body's shape
----@param shape body_handle
+---@param shape shape_handle
 ---@param origin vector
 ---@return boolean hit If a point was found
 ---@return vector point world-space point
@@ -2224,13 +2225,14 @@ function UiRect(width, height) end
 ---If x0, y0, x1, y1 is provided a cropped version will be drawn in that coordinate range.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param path td_path
 ---@param x0 number|nil Lower x coordinate. Default is 0
 ---@param y0 number|nil Lower y coordinate. Default is 0
 ---@param x1 number|nil Upper x coordinate. Default is image width
 ---@param y1 number|nil Upper y coordinate. Default is image height
 ---@return number width
 ---@return number height
-function UiImage(x0, y0, x1, y1) end
+function UiImage(path, x0, y0, x1, y1) end
 
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@param path td_path
