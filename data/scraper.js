@@ -146,42 +146,27 @@ async function scrapeAPI(url) {
 }
 
 async function outputData(root, data) {
-    const localVersion = (
-      await readFile(path.join(root, "version")).catch(() => "")
-    ).toString();
-    if (localVersion === data.version) {
-      console.log("Up to date");
-      process.exit(1);
-    }
-    if (process.env.GITHUB_OUTPUT) {
-      await appendFile(process.env.GITHUB_OUTPUT, `version=${data.version}`)
-    }
-  
-    await writeFile(path.join(root, "version"), data.version || data.name);
-  
-    // Save only the functions in a single JSON file
-    const combinedData = {
-      version: data.version,
-      functions: data.functions
-    };
-    const fileName = path.join(root, 'teardown_api2.json');
-    await writeFile(fileName, JSON.stringify(combinedData, null, 2));
-  }
-  
-  
+	const localVersion = (
+		await readFile(path.join(root, "version")).catch(() => "")
+	).toString();
+	if (localVersion === data.version) {
+		console.log("Up to date");
+		process.exit(1);
+	}
+	if (process.env.GITHUB_OUTPUT) {
+		await appendFile(process.env.GITHUB_OUTPUT, `version=${data.version}`)
+	}
+
+	await writeFile(path.join(root, "version"), data.version || data.name);
+	for (const category of data.categories) {
+		const fileName = path.join(root, `category.${category.name.replace(/\W/g, '-')}.json`);
+		await writeFile(fileName, JSON.stringify(category, null, 2));
+	}
+	for (const func of data.functions) {
+		const fileName = path.join(root, `function.${func.name.replace(/\W/g, '-')}.json`);
+		await writeFile(fileName, JSON.stringify(func, null, 2));
+	}
+}
 
 exports.scrapeAPI = scrapeAPI;
 exports.outputData = outputData;
-
-const root = './output'; // Change this to the desired output directory
-const url = 'https://teardowngame.com/modding/api.html'; // The URL of the Teardown API site
-
-(async () => {
-  try {
-    const data = await scrapeAPI(url);
-    await outputData(root, data);
-    console.log('Scraping completed successfully.');
-  } catch (error) {
-    console.error('Error while scraping:', error);
-  }
-})();
