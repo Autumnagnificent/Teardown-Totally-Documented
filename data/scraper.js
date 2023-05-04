@@ -50,25 +50,25 @@ function extractTables(textInput) {
 }
 
 function formatDescription(description) {
-    const words = description.split(/\s+/);
-    let currentLine = "";
-    let formattedDescription = "";
-  
-    for (const word of words) {
-      if (currentLine.length + word.length + 1 <= 80) {
-        currentLine += (currentLine ? " " : "") + word;
-      } else {
-        formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
-        currentLine = word;
-      }
-    }
-  
-    if (currentLine) {
-      formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
-    }
-  
-    return formattedDescription;
-  }
+	const words = description.split(/\s+/);
+	let currentLine = "";
+	let formattedDescription = "";
+
+	for (const word of words) {
+		if (currentLine.length + word.length + 1 <= 80) {
+			currentLine += (currentLine ? " " : "") + word;
+		} else {
+			formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
+			currentLine = word;
+		}
+	}
+
+	if (currentLine) {
+		formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
+	}
+
+	return formattedDescription;
+}
   
 
 function parseFunction(text) {
@@ -79,16 +79,16 @@ function parseFunction(text) {
 	if (paragraphs.length > 5) {
 		rawDescription += '\n\n' + paragraphs[4].trim();
 	}
-    const { textPart, tablesPart } = extractTables(rawDescription);
+	const {textPart, tablesPart} = extractTables(rawDescription);
 
-    return {
-      name: name[2],
-      arguments: parseArgs(paragraphs[1]),
-      returns: parseArgs(paragraphs[2]),
-      examples: [parseExample(paragraphs[paragraphs.length - 1])],
-      description: formatDescription(textPart),
-      tables: tablesPart,
-    };
+	return {
+		name: name[2],
+		arguments: parseArgs(paragraphs[1]),
+		returns: parseArgs(paragraphs[2]),
+		examples: [parseExample(paragraphs[paragraphs.length - 1])],
+		description: formatDescription(textPart),
+		tables: tablesPart,
+	};
   }
 
 function parseCategory(text) {
