@@ -138,7 +138,7 @@ async function outputData(root, version, files) {
 	await writeFile(path.join(root, "version"), version);
 
 	for (const [name, data] of Object.entries(files)) {
-		const fileName = path.join(root, `${name.replace(/[^\w\.]/g, '-')}.json`);
+		const fileName = path.join(root, `${name.replace(/[\x00-\x20\x80-\x9f\/?<>\\:*|"]/g, '-')}.json`);
 		await writeFile(fileName, JSON.stringify(data, null, 2));
 	}
 }
