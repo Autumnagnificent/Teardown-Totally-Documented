@@ -123,26 +123,23 @@ async function scrapeAPI(url) {
 	}
 }
 
-async function outputData(root, data) {
+async function outputData(root, version, files) {
 	const localVersion = (
 		await readFile(path.join(root, "version")).catch(() => "")
 	).toString();
-	if (localVersion === data.version) {
+	if (localVersion === version) {
 		console.log("Up to date");
 		process.exit(1);
 	}
 	if (process.env.GITHUB_OUTPUT) {
-		await appendFile(process.env.GITHUB_OUTPUT, `version=${data.version}`)
+		await appendFile(process.env.GITHUB_OUTPUT, `version=${version}`)
 	}
 
-	await writeFile(path.join(root, "version"), data.version || data.name);
-	for (const category of data.categories) {
-		const fileName = path.join(root, `category.${category.name.replace(/\W/g, '-')}.json`);
-		await writeFile(fileName, JSON.stringify(category, null, 2));
-	}
-	for (const func of data.functions) {
-		const fileName = path.join(root, `function.${func.name.replace(/\W/g, '-')}.json`);
-		await writeFile(fileName, JSON.stringify(func, null, 2));
+	await writeFile(path.join(root, "version"), version);
+
+	for (const [name, data] of Object.entries(files)) {
+		const fileName = path.join(root, `${name.replace(/[^\w\.]/g, '-')}.json`);
+		await writeFile(fileName, JSON.stringify(data, null, 2));
 	}
 }
 
