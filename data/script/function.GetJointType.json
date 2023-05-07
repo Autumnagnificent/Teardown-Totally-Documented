@@ -26,6 +26,5 @@
   "description": [
     "Joint type is one of the following: \"ball\", \"hinge\", \"prismatic\" or \"rope\".",
     "An empty string is returned if joint handle is invalid."
-  ],
-  "tables": {}
+  ]
 }

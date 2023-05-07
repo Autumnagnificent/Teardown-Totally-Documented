@@ -24,6 +24,5 @@
     "Change the dynamic state of a body. There is very limited use for this",
     "function. In most situations you should leave it up to the engine to decide.",
     "Use with caution."
-  ],
-  "tables": {}
+  ]
 }

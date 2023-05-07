@@ -4,7 +4,6 @@
     "A body represents a rigid body in the scene. It can be either static or dynamic. Only dynamic bodies are",
     "affected by physics."
   ],
-  "tables": {},
   "entries": [
     "ApplyBodyImpulse",
     "ConstrainAngularVelocity",

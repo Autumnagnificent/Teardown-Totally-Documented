@@ -22,6 +22,5 @@
   ],
   "description": [
     "Get mouse pointer position relative to the cursor"
-  ],
-  "tables": {}
+  ]
 }

@@ -56,6 +56,5 @@
     "This will tell the physics solver to constrain the velocity between two bodies. The physics solver",
     "will try to reach the desired goal, while not applying an impulse bigger than the min and max values.",
     "This function should only be used from the update callback."
-  ],
-  "tables": {}
+  ]
 }

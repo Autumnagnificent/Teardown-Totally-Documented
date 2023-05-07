@@ -39,6 +39,5 @@
   "description": [
     "This function will check if trigger is empty. If trigger contains any part of a body",
     "it will return false and the highest point as second return value."
-  ],
-  "tables": {}
+  ]
 }

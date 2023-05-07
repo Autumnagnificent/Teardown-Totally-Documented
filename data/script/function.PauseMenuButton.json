@@ -51,6 +51,5 @@
     "Use this as a way to bring up mod settings or other user interfaces while the game is running. ",
     "Call this function every frame from the tick function for as long as the pause menu button",
     "should still be visible."
-  ],
-  "tables": {}
+  ]
 }

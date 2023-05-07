@@ -41,6 +41,5 @@
   ],
   "description": [
     "Make particle stick when in contact with objects. This can be used for friction."
-  ],
-  "tables": {}
+  ]
 }

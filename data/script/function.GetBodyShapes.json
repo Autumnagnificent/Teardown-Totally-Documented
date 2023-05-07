@@ -26,6 +26,5 @@
   ],
   "description": [
     "Return handles to all shapes owned by a body"
-  ],
-  "tables": {}
+  ]
 }

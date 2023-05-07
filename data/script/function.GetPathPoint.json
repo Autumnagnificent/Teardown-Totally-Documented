@@ -30,6 +30,5 @@
     "Return a point along the path for the most recently computed path query. Note that the result can often be retrieved even",
     "if the path query failed. If the target point couldn't be reached, the path endpoint will be the point closest",
     "to the target."
-  ],
-  "tables": {}
+  ]
 }

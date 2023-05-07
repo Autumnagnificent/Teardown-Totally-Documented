@@ -15,12 +15,13 @@
       "type": "number"
     }
   ],
-  "example": [
-    "LoadImage(\"MOD/image.png\")",
-    "local w, h = GetImageSize()"
+  "examples": [
+    [
+      "LoadImage(\"MOD/image.png\")",
+      "local w, h = GetImageSize()"
+    ]
   ],
   "description": [
     "Return image size"
-  ],
-  "tables": {}
+  ]
 }

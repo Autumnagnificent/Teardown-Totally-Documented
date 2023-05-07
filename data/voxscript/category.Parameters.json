@@ -3,7 +3,6 @@
   "description": [
     "Parameter outside the init function will show up in the editor"
   ],
-  "tables": {},
   "entries": [
     "GetFloat",
     "GetInt",

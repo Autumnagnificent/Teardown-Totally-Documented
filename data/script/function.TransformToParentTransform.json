@@ -38,6 +38,5 @@
   "description": [
     "Transform child transform out of the parent transform.",
     "This is the opposite of TransformToLocalTransform."
-  ],
-  "tables": {}
+  ]
 }

@@ -38,6 +38,5 @@
   "description": [
     "This will check if a shape is currently visible in the camera frustum and",
     "not occluded by other objects."
-  ],
-  "tables": {}
+  ]
 }

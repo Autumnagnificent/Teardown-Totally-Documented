@@ -19,30 +19,6 @@
   ],
   "description": [
     "Set required layers for next query. Available layers are: ",
-    "${table:Layer}"
-  ],
-  "tables": {
-    "Layer": [
-      [
-        "physical",
-        "have a physical representation"
-      ],
-      [
-        "dynamic",
-        "part of a dynamic body"
-      ],
-      [
-        "static",
-        "part of a static body"
-      ],
-      [
-        "large",
-        "above debris threshold"
-      ],
-      [
-        "small",
-        "below debris threshold"
-      ]
-    ]
-  }
+    "${table:QueryLayer}"
+  ]
 }

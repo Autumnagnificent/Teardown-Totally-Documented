@@ -42,6 +42,5 @@
   "description": [
     "Stretch particle along with velocity. 0.0 means no stretching. 1.0 stretches with the particle motion over",
     "one frame. Larger values stretches the particle even more."
-  ],
-  "tables": {}
+  ]
 }

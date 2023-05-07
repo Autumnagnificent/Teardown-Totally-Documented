@@ -25,6 +25,5 @@
   ],
   "description": [
     "Scale cursor either uniformly (one argument) or non-uniformly (two arguments)"
-  ],
-  "tables": {}
+  ]
 }

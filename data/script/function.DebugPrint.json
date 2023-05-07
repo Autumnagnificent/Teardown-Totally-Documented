@@ -16,6 +16,5 @@
   ],
   "description": [
     "Display message on screen. The last 20 lines are displayed."
-  ],
-  "tables": {}
+  ]
 }

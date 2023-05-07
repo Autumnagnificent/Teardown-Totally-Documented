@@ -33,6 +33,5 @@
   ],
   "description": [
     "Rotate a vector by a quaternion"
-  ],
-  "tables": {}
+  ]
 }

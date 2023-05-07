@@ -44,6 +44,5 @@
   "description": [
     "This function is used for manipulating the environment properties. The available properties are ",
     "exactly the same as in the editor, except for \"snowonground\" which is not currently supported."
-  ],
-  "tables": {}
+  ]
 }

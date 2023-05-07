@@ -16,6 +16,5 @@
   "description": [
     "Push state onto stack. This is used in combination with UiPop to",
     "remember a state and restore to that state later."
-  ],
-  "tables": {}
+  ]
 }

@@ -20,6 +20,5 @@
   "description": [
     "Return center point of player. This function is deprecated. ",
     "Use GetPlayerTransform instead."
-  ],
-  "tables": {}
+  ]
 }

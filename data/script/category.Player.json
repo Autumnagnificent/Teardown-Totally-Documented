@@ -3,7 +3,6 @@
   "description": [
     "The player functions expose certain information about the player."
   ],
-  "tables": {},
   "entries": [
     "GetPlayerCameraTransform",
     "GetPlayerGrabBody",

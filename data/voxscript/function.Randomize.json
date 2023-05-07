@@ -9,11 +9,12 @@
     }
   ],
   "returns": [],
-  "example": [
-    "Randomize(5)"
+  "examples": [
+    [
+      "Randomize(5)"
+    ]
   ],
   "description": [
     ""
-  ],
-  "tables": {}
+  ]
 }

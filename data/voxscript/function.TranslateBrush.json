@@ -27,13 +27,14 @@
     }
   ],
   "returns": [],
-  "example": [
-    "TranslateBrush(brush, 5, 0, 0)",
-    "Material(brush)",
-    "Box(0, 0, 0, 10, 10, 10)"
+  "examples": [
+    [
+      "TranslateBrush(brush, 5, 0, 0)",
+      "Material(brush)",
+      "Box(0, 0, 0, 10, 10, 10)"
+    ]
   ],
   "description": [
     "Apply a translation on the brush"
-  ],
-  "tables": {}
+  ]
 }

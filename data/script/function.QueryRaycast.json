@@ -72,6 +72,5 @@
     "This will perform a raycast or spherecast (if radius is more than zero) query.",
     "If you want to set up a filter for the query you need to do so before every call",
     "to this function."
-  ],
-  "tables": {}
+  ]
 }

@@ -41,6 +41,5 @@
     "Convert world space position to user interface X and Y coordinate relative",
     "to the cursor. The distance is in meters and positive if in front of camera,",
     "negative otherwise."
-  ],
-  "tables": {}
+  ]
 }

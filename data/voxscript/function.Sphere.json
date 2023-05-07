@@ -27,12 +27,13 @@
     }
   ],
   "returns": [],
-  "example": [
-    "Material(mat)",
-    "Sphere(0, 0, 0, 15)"
+  "examples": [
+    [
+      "Material(mat)",
+      "Sphere(0, 0, 0, 15)"
+    ]
   ],
   "description": [
     "Draw solid sphere into current vox shape using the current material"
-  ],
-  "tables": {}
+  ]
 }

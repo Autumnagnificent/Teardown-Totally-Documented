@@ -25,6 +25,5 @@
   "description": [
     "Call this continuously to keep playing loop. ",
     "UI sounds are not affected by acoustics simulation. Use LoadLoop / PlayLoop for that."
-  ],
-  "tables": {}
+  ]
 }

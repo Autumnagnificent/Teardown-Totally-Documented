@@ -42,6 +42,5 @@
   "description": [
     "Particle drag will slow down fast moving particles. It's implemented slightly different for",
     "smoke and plain particles. Drag must be positive, and usually look good between zero and one."
-  ],
-  "tables": {}
+  ]
 }

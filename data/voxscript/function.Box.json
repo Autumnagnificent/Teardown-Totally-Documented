@@ -39,12 +39,13 @@
     }
   ],
   "returns": [],
-  "example": [
-    "Material(mat)",
-    "Box(0, 0, 0, 10, 10, 10)"
+  "examples": [
+    [
+      "Material(mat)",
+      "Box(0, 0, 0, 10, 10, 10)"
+    ]
   ],
   "description": [
     "Draw solid box into the current vox shape using the current material"
-  ],
-  "tables": {}
+  ]
 }

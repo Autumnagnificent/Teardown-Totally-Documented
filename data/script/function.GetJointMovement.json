@@ -24,6 +24,5 @@
   "description": [
     "Return the current position or angle or the joint, measured in same way",
     "as joint limits."
-  ],
-  "tables": {}
+  ]
 }

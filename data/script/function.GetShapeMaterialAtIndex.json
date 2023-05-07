@@ -67,6 +67,5 @@
   "description": [
     "Return material properties for a particular voxel in the voxel grid indexed by integer values.",
     "The first index is zero (not one, as opposed to a lot of lua related things)"
-  ],
-  "tables": {}
+  ]
 }

@@ -25,6 +25,5 @@
   "description": [
     "Mute game audio and optionally music for the next frame. Call",
     "continuously to stay muted."
-  ],
-  "tables": {}
+  ]
 }

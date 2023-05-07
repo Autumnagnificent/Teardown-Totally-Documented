@@ -4,7 +4,6 @@
     "Triggers can be placed in the scene and queried by scripts to see if something is within a certain part",
     "of the scene."
   ],
-  "tables": {},
   "entries": [
     "FindTrigger",
     "FindTriggers",

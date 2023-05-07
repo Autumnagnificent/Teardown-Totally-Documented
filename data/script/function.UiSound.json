@@ -34,6 +34,5 @@
   ],
   "description": [
     "UI sounds are not affected by acoustics simulation. Use LoadSound / PlaySound for that."
-  ],
-  "tables": {}
+  ]
 }

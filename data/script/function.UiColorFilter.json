@@ -38,6 +38,5 @@
   ],
   "description": [
     "Color filter, multiplied to all future colors in this scope"
-  ],
-  "tables": {}
+  ]
 }

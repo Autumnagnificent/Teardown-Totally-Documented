@@ -43,6 +43,5 @@
   "description": [
     "Add a temporary point light to the world for this frame. Call continuously",
     "for a steady light."
-  ],
-  "tables": {}
+  ]
 }

@@ -31,6 +31,5 @@
     "Transforms should never be assigned like regular numbers. Since they are",
     "implemented with lua tables assignment means two references pointing to",
     "the same data. Use this function instead."
-  ],
-  "tables": {}
+  ]
 }

@@ -41,6 +41,5 @@
     "will operate in the context of the window size. ",
     "If clip is set to true, contents of window will be clipped to ",
     "bounds (only works properly for non-rotated windows)."
-  ],
-  "tables": {}
+  ]
 }

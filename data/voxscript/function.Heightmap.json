@@ -33,15 +33,16 @@
     }
   ],
   "returns": [],
-  "example": [
-    "LoadImage(\"MOD/heightmap.png\")",
-    "Heightmap(0, 0, 100, 100, 255)"
+  "examples": [
+    [
+      "LoadImage(\"MOD/heightmap.png\")",
+      "Heightmap(0, 0, 100, 100, 255)"
+    ]
   ],
   "description": [
     "Special function to create heightmap based on loaded image into current vox shape",
     "Red channel = height",
     "Green channel = grass amount",
     "Blue channel = special"
-  ],
-  "tables": {}
+  ]
 }

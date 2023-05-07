@@ -38,6 +38,5 @@
   "description": [
     "Transform one transform into the local space of another transform.",
     "This is the opposite of TransformToParentTransform."
-  ],
-  "tables": {}
+  ]
 }

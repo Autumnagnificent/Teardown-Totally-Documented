@@ -36,6 +36,5 @@
   "description": [
     "This will only set the color tint of the light. Use SetLightIntensity for brightness.",
     "Setting the light color will not affect the emissive color of a parent shape."
-  ],
-  "tables": {}
+  ]
 }

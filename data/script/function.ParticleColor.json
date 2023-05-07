@@ -50,6 +50,5 @@
   ],
   "description": [
     "Set particle color to either constant (three arguments) or linear interpolation (six arguments)"
-  ],
-  "tables": {}
+  ]
 }

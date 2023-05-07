@@ -23,6 +23,5 @@
   "description": [
     "All entities can have an associated description. The description for ",
     "bodies and shapes will show up on the HUD when looking at them."
-  ],
-  "tables": {}
+  ]
 }

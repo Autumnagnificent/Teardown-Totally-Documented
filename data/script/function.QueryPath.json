@@ -36,6 +36,5 @@
     "Initiate path planning query. The result will run asynchronously as long as GetPathState",
     "retuns \"busy\". An ongoing path query can be aborted with AbortPath. The path planning query",
     "will use the currently set up query filter, just like the other query functions."
-  ],
-  "tables": {}
+  ]
 }

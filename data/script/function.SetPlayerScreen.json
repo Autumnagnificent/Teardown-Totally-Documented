@@ -22,6 +22,5 @@
     "Set the screen the player should interact with. For the screen",
     "to feature a mouse pointer and receieve input, the screen also",
     "needs to have interactive property."
-  ],
-  "tables": {}
+  ]
 }

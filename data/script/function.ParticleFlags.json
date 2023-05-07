@@ -19,6 +19,5 @@
   "description": [
     "Set particle bitmask. The value 256 means fire extinguishing particles and is currently the only ",
     "flag in use. There might be support for custom flags and queries in the future."
-  ],
-  "tables": {}
+  ]
 }

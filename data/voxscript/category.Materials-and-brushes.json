@@ -5,7 +5,6 @@
     "Material function to set current material. This material will then be used for all subsequent calls",
     "to Box and Sphere."
   ],
-  "tables": {},
   "entries": [
     "CreateBrush",
     "CreateMaterial",

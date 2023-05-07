@@ -21,14 +21,15 @@
     }
   ],
   "returns": [],
-  "example": [
-    "--Draw box with brush rotated 90 degrees around y axis",
-    "RotateBrush(brush, \"y\", 90)",
-    "Material(brush)",
-    "Box(0, 0, 0, 10, 10, 10)"
+  "examples": [
+    [
+      "--Draw box with brush rotated 90 degrees around y axis",
+      "RotateBrush(brush, \"y\", 90)",
+      "Material(brush)",
+      "Box(0, 0, 0, 10, 10, 10)"
+    ]
   ],
   "description": [
     "Apply a rotation transformation on the brush"
-  ],
-  "tables": {}
+  ]
 }

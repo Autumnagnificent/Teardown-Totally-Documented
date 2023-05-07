@@ -28,6 +28,5 @@
     "",
     "The function will also recognize vectors, quaternions and transforms as",
     "second argument and convert them to strings automatically."
-  ],
-  "tables": {}
+  ]
 }

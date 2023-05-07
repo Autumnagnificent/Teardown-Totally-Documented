@@ -36,6 +36,5 @@
   "description": [
     "A joint is always connected to two shapes. Use this function if you know ",
     "one shape and want to find the other one."
-  ],
-  "tables": {}
+  ]
 }

@@ -54,6 +54,5 @@
     "This will query the closest point to all shapes in the world. If you ",
     "want to set up a filter for the query you need to do so before every call",
     "to this function."
-  ],
-  "tables": {}
+  ]
 }

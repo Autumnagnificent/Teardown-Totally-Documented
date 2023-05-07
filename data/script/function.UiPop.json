@@ -17,6 +17,5 @@
     "Pop state from stack and make it the current one. This is used in",
     "combination with UiPush to remember a previous state and go back to",
     "it later."
-  ],
-  "tables": {}
+  ]
 }

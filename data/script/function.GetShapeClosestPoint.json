@@ -44,6 +44,5 @@
   ],
   "description": [
     "This will return the closest point of a specific shape"
-  ],
-  "tables": {}
+  ]
 }

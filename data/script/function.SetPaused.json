@@ -17,6 +17,5 @@
   ],
   "description": [
     "Set paused state of the game"
-  ],
-  "tables": {}
+  ]
 }

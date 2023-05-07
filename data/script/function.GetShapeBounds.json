@@ -31,6 +31,5 @@
   ],
   "description": [
     "Return the world space, axis-aligned bounding box for a shape."
-  ],
-  "tables": {}
+  ]
 }

@@ -5,7 +5,6 @@
     "Make sure to keep the number of empty voxels in a vox shape as low as possible for better performance. For large,",
     "hollow objects, use multiple vox shapes instead."
   ],
-  "tables": {},
   "entries": [
     "Box",
     "Heightmap",

@@ -34,6 +34,5 @@
     "Create a quaternion pointing the negative Z axis (forward) towards",
     "a specific point, keeping the Y axis upwards. This is very useful",
     "for creating camera transforms."
-  ],
-  "tables": {}
+  ]
 }

@@ -20,6 +20,5 @@
   "description": [
     "Interactable shapes has to be tagged with \"interact\". The engine",
     "determines which interactable body is currently interactable."
-  ],
-  "tables": {}
+  ]
 }

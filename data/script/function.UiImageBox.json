@@ -41,6 +41,5 @@
   "description": [
     "Draw 9-slice image at cursor position. Width should be at least 2*borderWidth.",
     "Height should be at least 2*borderHeight."
-  ],
-  "tables": {}
+  ]
 }

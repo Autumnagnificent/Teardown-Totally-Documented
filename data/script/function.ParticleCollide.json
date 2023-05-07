@@ -49,6 +49,5 @@
     "Control particle collisions. A value of zero means that collisions are ignored. One means full collision.",
     "It is sometimes useful to animate this value from zero to one in order to not collide with objects around",
     "the emitter."
-  ],
-  "tables": {}
+  ]
 }

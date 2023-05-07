@@ -24,6 +24,5 @@
   "description": [
     "Get the wind velocity at provided point. The wind will be determined by wind property of",
     "the environment, but it varies with position procedurally."
-  ],
-  "tables": {}
+  ]
 }

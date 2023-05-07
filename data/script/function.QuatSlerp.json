@@ -40,6 +40,5 @@
   "description": [
     "Spherical, linear interpolation between a and b, using t. This is",
     "very useful for animating between two rotations."
-  ],
-  "tables": {}
+  ]
 }

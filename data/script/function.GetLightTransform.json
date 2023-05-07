@@ -23,6 +23,5 @@
   ],
   "description": [
     "Lights that are owned by a dynamic shape are automatcially moved with that shape"
-  ],
-  "tables": {}
+  ]
 }

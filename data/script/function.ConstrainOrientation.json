@@ -55,6 +55,5 @@
     "angular velocity and maximum angular impulse. In other words: physically rotate the",
     "bodies so that quatA and quatB are aligned in world space. This is useful for ",
     "physically animating objects. This function should only be used from the update callback."
-  ],
-  "tables": {}
+  ]
 }

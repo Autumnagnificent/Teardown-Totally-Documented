@@ -23,6 +23,5 @@
   ],
   "description": [
     "Returns true if the registry contains a certain key"
-  ],
-  "tables": {}
+  ]
 }

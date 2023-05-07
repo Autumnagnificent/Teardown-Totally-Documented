@@ -42,6 +42,5 @@
     "<li>Rotation around Z axis (pitch or attitude)</li>",
     "<li>Rotation around X axis (roll or bank)</li>",
     "</ol>"
-  ],
-  "tables": {}
+  ]
 }

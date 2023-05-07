@@ -15,11 +15,12 @@
     }
   ],
   "returns": [],
-  "example": [
-    "steps = GetInt(\"steps\", 5)"
+  "examples": [
+    [
+      "steps = GetInt(\"steps\", 5)"
+    ]
   ],
   "description": [
     ""
-  ],
-  "tables": {}
+  ]
 }

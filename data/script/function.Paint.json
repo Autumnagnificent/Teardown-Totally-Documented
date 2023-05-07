@@ -34,6 +34,5 @@
   ],
   "description": [
     "Tint the color of objects within radius to either black or yellow."
-  ],
-  "tables": {}
+  ]
 }

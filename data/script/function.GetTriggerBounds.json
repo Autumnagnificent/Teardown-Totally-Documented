@@ -30,6 +30,5 @@
   ],
   "description": [
     "Return the lower and upper points in world space of the trigger axis aligned bounding box"
-  ],
-  "tables": {}
+  ]
 }

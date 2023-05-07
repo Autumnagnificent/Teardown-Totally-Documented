@@ -39,6 +39,5 @@
     "bitmask (8 bits, 0-255) along with a mask (also 8 bits). The layer of one object must be in",
     "the mask of the other object and vice versa for the collision to be valid. The default layer",
     "for all objects is 1 and the default mask is 255 (collide with all layers)."
-  ],
-  "tables": {}
+  ]
 }

@@ -50,6 +50,5 @@
   ],
   "description": [
     "Draw a 3D debug overlay line in the world. Default color is white."
-  ],
-  "tables": {}
+  ]
 }

@@ -35,6 +35,5 @@
   ],
   "description": [
     "Call this function continuously to play loop"
-  ],
-  "tables": {}
+  ]
 }

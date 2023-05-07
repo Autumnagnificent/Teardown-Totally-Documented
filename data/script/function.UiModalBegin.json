@@ -23,6 +23,5 @@
   "description": [
     "Disable input for everything, except what's between UiModalBegin and UiModalEnd ",
     "(or if modal state is popped)"
-  ],
-  "tables": {}
+  ]
 }

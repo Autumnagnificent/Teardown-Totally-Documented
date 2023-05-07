@@ -43,6 +43,5 @@
     "For backwards compatilbility, type also accept a number, where 1 is same as \"rocket\" and anything else \"bullet\"",
     "Note that this function will only spawn the projectile, not make any sound",
     "Also note that \"bullet\" and \"rocket\" are the only projectiles that can hurt the player."
-  ],
-  "tables": {}
+  ]
 }

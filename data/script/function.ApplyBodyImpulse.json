@@ -30,6 +30,5 @@
   ],
   "description": [
     "Apply impulse to dynamic body at position (give body a push)."
-  ],
-  "tables": {}
+  ]
 }

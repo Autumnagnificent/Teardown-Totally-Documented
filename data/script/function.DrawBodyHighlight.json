@@ -23,6 +23,5 @@
   "description": [
     "Flash the appearance of a body when rendering this frame. This is",
     "used for valuables in the game."
-  ],
-  "tables": {}
+  ]
 }

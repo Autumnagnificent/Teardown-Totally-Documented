@@ -44,6 +44,5 @@
   ],
   "description": [
     "Set the particle radius. Max radius for smoke particles is 1.0."
-  ],
-  "tables": {}
+  ]
 }

@@ -10,6 +10,5 @@
   "description": [
     "Reset the environment properties to default. This is often useful before ",
     "setting up a custom environment."
-  ],
-  "tables": {}
+  ]
 }

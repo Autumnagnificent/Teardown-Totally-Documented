@@ -16,6 +16,5 @@
   ],
   "description": [
     "Make the ground act as a conveyor belt, pushing the player even if ground shape is static."
-  ],
-  "tables": {}
+  ]
 }

@@ -50,6 +50,5 @@
   ],
   "description": [
     "Draw a 3D line. In contrast to DebugLine, it will not show behind objects. Default color is white."
-  ],
-  "tables": {}
+  ]
 }

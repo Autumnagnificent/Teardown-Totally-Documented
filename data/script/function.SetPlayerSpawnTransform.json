@@ -17,6 +17,5 @@
   ],
   "description": [
     "Call this function during init to alter the player spawn transform."
-  ],
-  "tables": {}
+  ]
 }

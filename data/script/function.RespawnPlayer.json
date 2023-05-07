@@ -9,6 +9,5 @@
   ],
   "description": [
     "Respawn player at spawn position without modifying the scene"
-  ],
-  "tables": {}
+  ]
 }

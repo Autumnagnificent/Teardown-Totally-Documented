@@ -64,11 +64,12 @@
       "type": "number"
     }
   ],
-  "example": [
-    "brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)"
+  "examples": [
+    [
+      "brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)"
+    ]
   ],
   "description": [
     ""
-  ],
-  "tables": {}
+  ]
 }

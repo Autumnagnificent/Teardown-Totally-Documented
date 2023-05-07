@@ -18,6 +18,5 @@
     "Returns timestep of the last frame. If called from update, this returns",
     "the simulation time step, which is always one 60th of a second (0.0166667).",
     "If called from tick or draw it returns the actual time since last frame."
-  ],
-  "tables": {}
+  ]
 }

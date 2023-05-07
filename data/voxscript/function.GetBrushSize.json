@@ -28,11 +28,12 @@
       "type": "number"
     }
   ],
-  "example": [
-    "local xs, ys, zs = GetBrushSize(brush)"
+  "examples": [
+    [
+      "local xs, ys, zs = GetBrushSize(brush)"
+    ]
   ],
   "description": [
     "Return brush size in voxels"
-  ],
-  "tables": {}
+  ]
 }

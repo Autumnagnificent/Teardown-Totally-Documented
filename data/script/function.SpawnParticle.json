@@ -34,6 +34,5 @@
     "Spawn particle using the previously set up particle state. You can call this multiple times",
     "using the same particle state, but with different position, velocity and lifetime. You can",
     "also modify individual properties in the particle state in between calls to to this function."
-  ],
-  "tables": {}
+  ]
 }

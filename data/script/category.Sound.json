@@ -5,7 +5,6 @@
     "alwyas positioned and will be affected by acoustics simulation. If you want to play dry sounds",
     "without acoustics you should use UiSound and UiSoundLoop in the User Interface section."
   ],
-  "tables": {},
   "entries": [
     "LoadLoop",
     "LoadSound",
