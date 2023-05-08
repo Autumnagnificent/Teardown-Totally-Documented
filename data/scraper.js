@@ -7,7 +7,7 @@ function matchTag(text, tag) {
 
 const argRegex = /<span class='[^']+name'>([^<]+)<\/span> <span class='argtype'>\(([^<]+)\)<\/span> &ndash; (.*?)<br\/>/g;
 function parseArgs(paragraph) {
-    const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+	const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 	return [...decodedParagraph.matchAll(argRegex)].map(([_, name, type, desc]) => {
 		const optional = type.indexOf(', optional');
 		return {
@@ -20,13 +20,13 @@ function parseArgs(paragraph) {
 }
 
 function parseExample(paragraph) {
-    const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+	const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 	const m = decodedParagraph.match(/<pre class='example'>([\s\S]*?)<\/pre>/m);
 	return m && m[1].trim();
 }
 
 function extractTables(textInput) {
-    const decodedTextInput = textInput.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+	const decodedTextInput = textInput.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 	const tablesPart = {};
 	const textResult = [];
 	let pos = 0;
@@ -51,7 +51,7 @@ function extractTables(textInput) {
 		tablesPart,
 	}
 }
-  
+
 function parseFunction(text) {
 	const name = matchTag(text, 'h3');
 	if (!name) return;
@@ -70,7 +70,7 @@ function parseFunction(text) {
 		description: formatDescription(textPart),
 		tables: tablesPart,
 	};
-  }
+}
 
 function parseCategory(text) {
 	const name = matchTag(text, 'h2');
