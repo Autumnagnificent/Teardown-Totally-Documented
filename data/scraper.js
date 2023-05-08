@@ -135,6 +135,27 @@ async function scrapeAPI(url) {
 	};
 }
 
+function formatDescription(description) {
+	const words = description.split(/\s+/);
+	let currentLine = "";
+	let formattedDescription = "";
+	
+	for (const word of words) {
+		if (currentLine.length + word.length + 1 <= 80) {
+			currentLine += (currentLine ? " " : "") + word;
+		} else {
+			formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
+			currentLine = word;
+		}
+	}
+	
+	if (currentLine) {
+		formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
+	}
+	
+	return formattedDescription;
+}
+
 async function outputData(root, version, files) {
 	const localVersion = (await readFile(path.join(root, "version")).catch(() => "")).toString();
 	if (localVersion === version) {
@@ -154,4 +175,5 @@ async function outputData(root, version, files) {
 }
 
 exports.scrapeAPI = scrapeAPI;
+exports.formatDescription = formatDescription;
 exports.outputData = outputData;
