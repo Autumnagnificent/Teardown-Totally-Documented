@@ -5,13 +5,24 @@ function matchTag(text, tag) {
 	return text.match(`<${tag}([^>]*)>(.*?)</${tag}>`);
 }
 
+const escMap = {
+	["amp"]: "&",
+	["lt"]: "<",
+	["gt"]: ">",
+	["nbsp"]: " ",
+	["quot"]: "\"",
+};
+function decodeEntities(str) {
+	return str.replace(/&([^;]{1,4});/g, (match,code) => escMap[code] ?? match)
+}
+
 const argRegex = /<span class='[^']+name'>([^<]+)<\/span> <span class='argtype'>\(([^<]+)\)<\/span> &ndash; (.*?)<br\/>/g;
 function parseArgs(paragraph) {
 	return [...paragraph.matchAll(argRegex)].map(([_, name, type, desc]) => {
 		const optional = type.indexOf(', optional');
 		return {
 			name,
-			desc,
+			desc: decodeEntities(desc),
 			optional: optional > -1,
 			type: optional > -1 ? type.substring(0, optional) : type
 		};
@@ -20,7 +31,7 @@ function parseArgs(paragraph) {
 
 function parseExample(paragraph) {
 	const m = paragraph.match(/<pre class='example'>([\s\S]*?)<\/pre>/m);
-	return m && m[1].trim();
+	return m && decodeEntities(m[1]).trim();
 }
 
 function extractTables(textInput) {
@@ -29,11 +40,11 @@ function extractTables(textInput) {
 	let pos = 0;
 
 	for (const match of textInput.matchAll(/<table[^>]*>([\s\S]*?)<\/?table\/?>/gm)) {
-		textResult.push(textInput.substring(pos, match.index));
+		textResult.push(decodeEntities(textInput.substring(pos, match.index)));
 		pos = match.index + match[0].length;
 		const table = [];
 		for (const [_, row] of match[1].matchAll(/<tr>(.*?)<\/tr>/g)) {
-			table.push([...row.matchAll(/<td[^>]*>(.*?)<\/td>/g)].map(([_, column]) => column.replace(/&nbsp;/gm, ' ').trim()));
+			table.push([...row.matchAll(/<td[^>]*>(.*?)<\/td>/g)].map(([_, column]) => decodeEntities(column).trim()));
 		}
 		const name = table[0][0];
 		textResult.push(`\${table:${name}}`);
@@ -41,7 +52,7 @@ function extractTables(textInput) {
 		tablesPart[name] = table;
 	}
 
-	textResult.push(textInput.substring(pos));
+	textResult.push(decodeEntities(textInput.substring(pos)));
 
 	return {
 		textPart: textResult.join('').trim(),
