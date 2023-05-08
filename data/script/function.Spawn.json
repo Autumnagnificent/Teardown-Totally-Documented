@@ -37,7 +37,7 @@
   "examples": [
     [
       "Spawn(\"MOD/prefab/mycar.xml\", Transform(Vec(0, 5, 0)))",
-      "Spawn(\"&lt;voxbox size='10 10 10' prop='true' material='wood'/&gt;\", Transform(Vec(0, 10, 0)))"
+      "Spawn(\"<voxbox size='10 10 10' prop='true' material='wood'/>\", Transform(Vec(0, 10, 0)))"
     ]
   ],
   "description": [
