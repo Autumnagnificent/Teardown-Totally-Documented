@@ -1,4 +1,4 @@
-const { writeFile, readFile, appendFile } = require("fs/promises");
+const { writeFile, readFile } = require("fs/promises");
 const path = require("path");
 
 function matchTag(text, tag) {
@@ -7,7 +7,7 @@ function matchTag(text, tag) {
 
 const argRegex = /<span class='[^']+name'>([^<]+)<\/span> <span class='argtype'>\(([^<]+)\)<\/span> &ndash; (.*?)<br\/>/g;
 function parseArgs(paragraph) {
-	const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 	return [...decodedParagraph.matchAll(argRegex)].map(([_, name, type, desc]) => {
 		const optional = type.indexOf(', optional');
 		return {
@@ -20,13 +20,13 @@ function parseArgs(paragraph) {
 }
 
 function parseExample(paragraph) {
-	const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 	const m = decodedParagraph.match(/<pre class='example'>([\s\S]*?)<\/pre>/m);
 	return m && m[1].trim();
 }
 
 function extractTables(textInput) {
-	const decodedTextInput = textInput.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    const decodedTextInput = textInput.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 	const tablesPart = {};
 	const textResult = [];
 	let pos = 0;
@@ -52,6 +52,28 @@ function extractTables(textInput) {
 	}
 }
 
+function formatDescription(description) {
+    const words = description.split(/\s+/);
+    let currentLine = "";
+    let formattedDescription = "";
+  
+    for (const word of words) {
+      if (currentLine.length + word.length + 1 <= 80) {
+        currentLine += (currentLine ? " " : "") + word;
+      } else {
+        formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
+        currentLine = word;
+      }
+    }
+  
+    if (currentLine) {
+      formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
+    }
+  
+    return formattedDescription;
+}
+  
+
 function parseFunction(text) {
 	const name = matchTag(text, 'h3');
 	if (!name) return;
@@ -60,18 +82,18 @@ function parseFunction(text) {
 	if (paragraphs.length > 5) {
 		rawDescription += '\n\n' + paragraphs[4].trim();
 	}
-	const {textPart, tablesPart} = extractTables(rawDescription);
+	const { textPart, tablesPart } = extractTables(rawDescription);
 
 	return {
-		name: name[2],
-		arguments: parseArgs(paragraphs[1]),
-		returns: parseArgs(paragraphs[2]),
-		examples: [parseExample(paragraphs[paragraphs.length - 1])],
-		description: formatDescription(textPart),
-		tables: tablesPart,
+	  name: name[2],
+	  arguments: parseArgs(paragraphs[1]),
+	  returns: parseArgs(paragraphs[2]),
+	  examples: [parseExample(paragraphs[paragraphs.length - 1])],
+	  description: formatDescription(textPart),
+	  tables: tablesPart,
 	};
 }
-
+  
 function parseCategory(text) {
 	const name = matchTag(text, 'h2');
 	if (!name) return;
@@ -79,75 +101,73 @@ function parseCategory(text) {
 	const description = [];
 	const entries = [];
 	for (const part of text.split('<p>').slice(1)) {
-		const a = matchTag(part, 'a');
-		if (a) {
-			for (const [_, name] of part.matchAll(/<a href='#([^']*)'/g)) {
-				entries.push(name);
-			}
-		} else {
-			const {textPart, tablesPart} = extractTables(part);
-			tables = { ...tables, ...tablesPart };
-			if (textPart !== '') {
-				description.push(textPart);
-			}
+	  const a = matchTag(part, 'a');
+	  if (a) {
+		for (const [_, name] of part.matchAll(/<a href='#([^']*)'/g)) {
+		  entries.push(name);
 		}
+	  } else {
+		const {textPart, tablesPart} = extractTables(part);
+		tables = { ...tables, ...tablesPart };
+		if (textPart !== '') {
+		  description.push(textPart);
+		}
+	  }
 	}
 	return {
-		name: name[2],
-		description: description.join('\n\n'),
-		tables,
-		entries,
+	  name: name[2],
+	  description: description.join('\n\n'),
+	  tables,
+	  entries,
 	}
 }
-
-async function scrapeAPI(url) {
+  
+async function scrapeAPI(url, options = {}) {
 	const data = await fetch(url).then(data => data.text());
 	const version = data.match(/<h1>.*?\(([\d\.]+)\)<\/h1>/)[1];
 	const categories = [];
 	const functions = [];
-
+  
 	for (const part of data.split("<hr/>")) {
-		const category = parseCategory(part);
-		if (category) {
-			category.entries.sort();
-			categories.push(category);
-			continue;
-		}
-		const func = parseFunction(part);
-		if (func) {
-			functions.push(func);
-		}
+	  const category = parseCategory(part);
+	  if (category) {
+		category.entries.sort();
+		categories.push(category);
+		continue;
+	  }
+	  const func = parseFunction(part);
+	  if (func) {
+		functions.push(func);
+	  }
 	}
-
+  
 	return {
-		version,
-		categories,
-		functions
-	}
+	  version,
+	  categories,
+	  functions,
+	};
 }
-
-async function outputData(root, data) {
+  
+async function outputData(root, version, files) {
 	const localVersion = (
 		await readFile(path.join(root, "version")).catch(() => "")
 	).toString();
-	if (localVersion === data.version) {
-		console.log("Up to date");
-		process.exit(1);
+	if (localVersion === version) {
+	  console.log("Up to date");
+	  process.exit(1);
 	}
 	if (process.env.GITHUB_OUTPUT) {
-		await appendFile(process.env.GITHUB_OUTPUT, `version=${data.version}`)
+	  await appendFile(process.env.GITHUB_OUTPUT, `version=${version}`)
 	}
-
-	await writeFile(path.join(root, "version"), data.version || data.name);
-	for (const category of data.categories) {
-		const fileName = path.join(root, `category.${category.name.replace(/\W/g, '-')}.json`);
-		await writeFile(fileName, JSON.stringify(category, null, 2));
-	}
-	for (const func of data.functions) {
-		const fileName = path.join(root, `function.${func.name.replace(/\W/g, '-')}.json`);
-		await writeFile(fileName, JSON.stringify(func, null, 2));
+  
+	await writeFile(path.join(root, "version"), version);
+  
+	for (const [name, data] of Object.entries(files)) {
+	  const fileName = path.join(root, `${name.replace(/[\x00-\x20\x80-\x9f\/?<>\\:*|"]/g, '-')}.json`);
+	  console.log(`Data for ${name}:`, JSON.stringify(data, null, 2));
 	}
 }
-
+  
 exports.scrapeAPI = scrapeAPI;
 exports.outputData = outputData;
+  
