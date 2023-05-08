@@ -25,6 +25,5 @@
   ],
   "description": [
     "Remove registry node, including all child nodes."
-  ],
-  "tables": {}
+  ]
 }

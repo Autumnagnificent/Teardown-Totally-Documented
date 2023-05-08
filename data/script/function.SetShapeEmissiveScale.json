@@ -25,6 +25,5 @@
   "description": [
     "Scale emissiveness for shape. If the shape has light sources attached,",
     "their intensity will be scaled by the same amount."
-  ],
-  "tables": {}
+  ]
 }

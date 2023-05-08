@@ -45,6 +45,5 @@
   "description": [
     "Render next frame with an outline around specified shape.",
     "If no color is given, a white outline will be drawn."
-  ],
-  "tables": {}
+  ]
 }

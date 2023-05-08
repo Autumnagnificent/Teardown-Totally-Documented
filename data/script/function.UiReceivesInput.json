@@ -22,6 +22,5 @@
     "state is currently modal (with UiModalBegin). Input functions and UI",
     "elements already do this check internally, but it can sometimes be useful ",
     "to read the input state manually to trigger things in the UI."
-  ],
-  "tables": {}
+  ]
 }

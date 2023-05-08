@@ -23,6 +23,5 @@
     "intended for gameplay purposes. Calling this function will slow down time",
     "for the next frame only. Call every frame from tick function to get steady",
     "slow-motion."
-  ],
-  "tables": {}
+  ]
 }

@@ -18,6 +18,5 @@
   "description": [
     "Call this function continously to apply a camera offset. Can be used for camera effects ",
     "such as shake and wobble."
-  ],
-  "tables": {}
+  ]
 }

@@ -40,6 +40,5 @@
   ],
   "description": [
     "Draw a debug cross in the world to highlight a location. Default color is white."
-  ],
-  "tables": {}
+  ]
 }

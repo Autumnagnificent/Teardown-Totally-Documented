@@ -10,6 +10,5 @@
   "description": [
     "Abort current path query, regardless of what state it is currently in. This is a way to",
     "save computing resources if the result of the current query is no longer of interest."
-  ],
-  "tables": {}
+  ]
 }

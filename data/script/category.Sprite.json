@@ -6,7 +6,6 @@
     "but they will go through post processing. If you want to display positioned information to the player as ",
     "an overlay, you probably want to use the Ui functions in combination with UiWorldToPixel instead."
   ],
-  "tables": {},
   "entries": [
     "DrawSprite",
     "LoadSprite"

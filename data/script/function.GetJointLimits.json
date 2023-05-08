@@ -30,6 +30,5 @@
   "description": [
     "Return joint limits for hinge or prismatic joint. Returns angle or distance",
     "depending on joint type."
-  ],
-  "tables": {}
+  ]
 }

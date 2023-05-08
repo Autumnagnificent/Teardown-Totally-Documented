@@ -40,6 +40,5 @@
     "This function applies input to vehicles, allowing for autonomous driving. The vehicle",
     "will be turned on automatically and turned off when no longer called. Call this from",
     "the tick function, not update."
-  ],
-  "tables": {}
+  ]
 }

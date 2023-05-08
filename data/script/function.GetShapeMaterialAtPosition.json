@@ -58,6 +58,5 @@
   ],
   "description": [
     "Return material properties for a particular voxel"
-  ],
-  "tables": {}
+  ]
 }

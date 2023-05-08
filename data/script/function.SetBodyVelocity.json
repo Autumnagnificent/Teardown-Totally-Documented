@@ -24,6 +24,5 @@
   "description": [
     "This can be used for animating bodies with preserved physical interaction,",
     "but in most cases you are better off with a motorized joint instead."
-  ],
-  "tables": {}
+  ]
 }

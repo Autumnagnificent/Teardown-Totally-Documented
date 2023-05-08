@@ -17,6 +17,5 @@
   ],
   "description": [
     "Perform a gaussian blur on current screen content"
-  ],
-  "tables": {}
+  ]
 }

@@ -13,6 +13,5 @@
     "This can be useful to make interactive user interfaces from scripts while",
     "the game is running. Call this continuously every frame as long as Ui ",
     "interaction is desired."
-  ],
-  "tables": {}
+  ]
 }

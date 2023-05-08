@@ -15,6 +15,5 @@
     "Disable input for everything, except what's between UiModalBegin and UiModalEnd",
     "Calling this function is optional. Modality is part of the current state and will",
     "be lost if modal state is popped."
-  ],
-  "tables": {}
+  ]
 }

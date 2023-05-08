@@ -41,6 +41,5 @@
   ],
   "description": [
     "Draw particle as emissive (glow in the dark). This is useful for fire and embers."
-  ],
-  "tables": {}
+  ]
 }

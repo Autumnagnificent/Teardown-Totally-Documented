@@ -37,6 +37,5 @@
   "description": [
     "Convert X and Y UI coordinate to a world direction, as seen from current camera.",
     "This can be used to raycast into the scene from the mouse pointer position."
-  ],
-  "tables": {}
+  ]
 }

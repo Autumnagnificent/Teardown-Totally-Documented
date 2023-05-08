@@ -32,6 +32,5 @@
     "given in radians per second angular velocity. If joint type is prismatic joint",
     "velocity is given in meters per second. Calling this function will override and",
     "void any previous call to SetJointMotorTarget."
-  ],
-  "tables": {}
+  ]
 }

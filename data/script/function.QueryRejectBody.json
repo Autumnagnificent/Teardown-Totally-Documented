@@ -18,6 +18,5 @@
   ],
   "description": [
     "Exclude body from the next query"
-  ],
-  "tables": {}
+  ]
 }

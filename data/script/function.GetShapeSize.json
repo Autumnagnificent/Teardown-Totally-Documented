@@ -41,6 +41,5 @@
   ],
   "description": [
     "Return the size of a shape in voxels"
-  ],
-  "tables": {}
+  ]
 }

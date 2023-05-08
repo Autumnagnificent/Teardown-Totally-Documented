@@ -25,6 +25,5 @@
     "Determine if shape has been broken. Note that a shape can be transfered",
     "to another body during destruction, but might still not be considered",
     "broken if all voxels are intact."
-  ],
-  "tables": {}
+  ]
 }

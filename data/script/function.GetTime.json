@@ -17,6 +17,5 @@
   "description": [
     "Returns running time of this script. If called from update, this returns",
     "the simulated time, otherwise it returns wall time."
-  ],
-  "tables": {}
+  ]
 }

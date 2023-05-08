@@ -15,11 +15,12 @@
     }
   ],
   "returns": [],
-  "example": [
-    "local r = RandomFloat(-1.0, 1.0)"
+  "examples": [
+    [
+      "local r = RandomFloat(-1.0, 1.0)"
+    ]
   ],
   "description": [
     "Returns random floating point number between lower and upper bound"
-  ],
-  "tables": {}
+  ]
 }

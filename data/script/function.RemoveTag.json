@@ -22,6 +22,5 @@
   ],
   "description": [
     "Remove tag from an entity. If the tag had a value it is removed too."
-  ],
-  "tables": {}
+  ]
 }

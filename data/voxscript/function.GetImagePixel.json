@@ -40,12 +40,13 @@
       "type": "number"
     }
   ],
-  "example": [
-    "LoadImage(\"MOD/image.png\")",
-    "local r,g,b,a = GetImagePixel(50, 50)"
+  "examples": [
+    [
+      "LoadImage(\"MOD/image.png\")",
+      "local r,g,b,a = GetImagePixel(50, 50)"
+    ]
   ],
   "description": [
     "Return color value for image pixel"
-  ],
-  "tables": {}
+  ]
 }

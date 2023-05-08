@@ -23,6 +23,5 @@
   ],
   "description": [
     "Override depth of field for the next frame for all camera modes. Depth of field will be used even if turned off in options."
-  ],
-  "tables": {}
+  ]
 }

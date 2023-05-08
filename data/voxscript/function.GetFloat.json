@@ -15,11 +15,12 @@
     }
   ],
   "returns": [],
-  "example": [
-    "radius = GetFloat(\"radius\", 5.2)"
+  "examples": [
+    [
+      "radius = GetFloat(\"radius\", 5.2)"
+    ]
   ],
   "description": [
     ""
-  ],
-  "tables": {}
+  ]
 }

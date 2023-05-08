@@ -30,6 +30,5 @@
   ],
   "description": [
     "Get distance to the surface of trigger volume. Will return negative distance if inside."
-  ],
-  "tables": {}
+  ]
 }

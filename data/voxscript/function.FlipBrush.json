@@ -15,13 +15,14 @@
     }
   ],
   "returns": [],
-  "example": [
-    "FlipBrush(brush, \"x\")",
-    "Material(brush)",
-    "Box(0, 0, 0, 20, 15, 5)"
+  "examples": [
+    [
+      "FlipBrush(brush, \"x\")",
+      "Material(brush)",
+      "Box(0, 0, 0, 20, 15, 5)"
+    ]
   ],
   "description": [
     "Apply a flip transformation on the brush"
-  ],
-  "tables": {}
+  ]
 }

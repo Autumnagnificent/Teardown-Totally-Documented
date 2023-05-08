@@ -15,11 +15,12 @@
     }
   ],
   "returns": [],
-  "example": [
-    "file = GetString(\"file\", \"MOD/test.vox\")"
+  "examples": [
+    [
+      "file = GetString(\"file\", \"MOD/test.vox\")"
+    ]
   ],
   "description": [
     ""
-  ],
-  "tables": {}
+  ]
 }

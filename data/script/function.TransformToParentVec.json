@@ -33,6 +33,5 @@
   ],
   "description": [
     "Transfom vector v out of transform t only considering rotation."
-  ],
-  "tables": {}
+  ]
 }

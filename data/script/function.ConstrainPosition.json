@@ -55,6 +55,5 @@
     "maximum relative velocity and maximum impulse. In other words: physically push on",
     "the bodies so that pointA and pointB are aligned in world space. This is useful for ",
     "physically animating objects. This function should only be used from the update callback."
-  ],
-  "tables": {}
+  ]
 }

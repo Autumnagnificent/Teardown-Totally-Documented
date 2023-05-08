@@ -51,6 +51,5 @@
   "description": [
     "This function is used for querying the current environment properties. The available properties are",
     "exactly the same as in the editor."
-  ],
-  "tables": {}
+  ]
 }

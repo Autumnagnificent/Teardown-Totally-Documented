@@ -37,6 +37,5 @@
   "description": [
     "A transform is a regular lua table with two entries: pos and rot,",
     "a vector and quaternion representing transform position and rotation."
-  ],
-  "tables": {}
+  ]
 }

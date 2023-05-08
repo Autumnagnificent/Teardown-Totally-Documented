@@ -28,6 +28,5 @@
     "bodies that don't move are taken out of the simulation. This function",
     "can be used to query the active state of a specific body. Only dynamic",
     "bodies can be active."
-  ],
-  "tables": {}
+  ]
 }

@@ -4,27 +4,7 @@
     "The Teardown API uses only native lua types. Handles to objects are plain Lua numbers. Vector types are represented",
     "as plain Lua tables, and so on. Each script has four callback functions.",
     "",
-    "${table:Function}"
+    "${table:Callbacks}"
   ],
-  "tables": {
-    "Function": [
-      [
-        "function init()",
-        "Called once at load time"
-      ],
-      [
-        "function tick(dt)",
-        "Called exactly once per frame. The time step is variable but always between 0.0 and 0.0333333"
-      ],
-      [
-        "function update(dt)",
-        "Called at a fixed update rate, but at the most two times per frame. Time step is always 0.0166667 (60 updates per second). Depending on frame rate it might not be called at all for a particular frame."
-      ],
-      [
-        "function draw()",
-        "Called when the 2D overlay is being draw, after the scene but before the standard HUD. Ui functions can only be used from this callback."
-      ]
-    ]
-  },
   "entries": []
 }

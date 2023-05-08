@@ -31,6 +31,5 @@
   "description": [
     "Return closest point in trigger volume. Will return the input point itself if inside trigger",
     "or closest point on surface of trigger if outside."
-  ],
-  "tables": {}
+  ]
 }

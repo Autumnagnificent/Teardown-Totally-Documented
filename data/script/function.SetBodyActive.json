@@ -27,6 +27,5 @@
   "description": [
     "This function makes it possible to manually activate and deactivate bodies to include or",
     "exclude in simulation. The engine normally handles this automatically, so use with care."
-  ],
-  "tables": {}
+  ]
 }

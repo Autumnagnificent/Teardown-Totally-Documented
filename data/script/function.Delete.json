@@ -18,6 +18,5 @@
   "description": [
     "Remove an entity from the scene. All entities owned by this entity",
     "will also be removed."
-  ],
-  "tables": {}
+  ]
 }

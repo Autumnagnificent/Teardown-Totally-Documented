@@ -30,6 +30,5 @@
   ],
   "description": [
     "Create a quaternion representing a rotation around a specific axis"
-  ],
-  "tables": {}
+  ]
 }

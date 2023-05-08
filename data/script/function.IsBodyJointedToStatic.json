@@ -24,6 +24,5 @@
   "description": [
     "Determine if a body is in any way connected to a static object, either by being static itself or",
     "be being directly or indirectly jointed to something static."
-  ],
-  "tables": {}
+  ]
 }

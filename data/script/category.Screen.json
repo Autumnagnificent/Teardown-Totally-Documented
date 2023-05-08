@@ -3,7 +3,6 @@
   "description": [
     "Screens display the content of UI scripts and can be made interactive."
   ],
-  "tables": {},
   "entries": [
     "FindScreen",
     "FindScreens",

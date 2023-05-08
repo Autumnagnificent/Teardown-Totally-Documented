@@ -35,6 +35,5 @@
   "description": [
     "Rotate one quaternion with another quaternion. This is mathematically",
     "equivalent to c = a * b using quaternion multiplication."
-  ],
-  "tables": {}
+  ]
 }

@@ -23,6 +23,5 @@
   ],
   "description": [
     "Return the number of voxels in a shape, not including empty space"
-  ],
-  "tables": {}
+  ]
 }

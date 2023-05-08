@@ -23,6 +23,5 @@
   ],
   "description": [
     "Return handle to the parent shape of a screen"
-  ],
-  "tables": {}
+  ]
 }

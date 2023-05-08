@@ -28,6 +28,5 @@
   ],
   "description": [
     "This is a convenience function, transforming the shape out of body space"
-  ],
-  "tables": {}
+  ]
 }

@@ -41,6 +41,5 @@
   ],
   "description": [
     "Makes the particle rotate. Positive values is counter-clockwise rotation."
-  ],
-  "tables": {}
+  ]
 }

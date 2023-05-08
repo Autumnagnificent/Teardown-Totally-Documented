@@ -24,6 +24,5 @@
   "description": [
     "Get handle to the body this shape is owned by. A shape is always owned by a body,",
     "but can be transfered to a new body during destruction."
-  ],
-  "tables": {}
+  ]
 }

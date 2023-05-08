@@ -47,6 +47,5 @@
     "what you are doing. Use QuatEuler or QuatAxisAngle instead.",
     "If no arguments are given, a unit quaternion will be created: {0, 0, 0, 1}.",
     "A quaternion is equivalent to a regular lua table with four numbers."
-  ],
-  "tables": {}
+  ]
 }

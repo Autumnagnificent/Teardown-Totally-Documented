@@ -3,7 +3,6 @@
   "description": [
     "Query the level in various ways."
   ],
-  "tables": {},
   "entries": [
     "AbortPath",
     "GetLastSound",

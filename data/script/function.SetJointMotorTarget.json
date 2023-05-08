@@ -40,6 +40,5 @@
     "is given in radians per second. If joint type is prismatic, target is given",
     "in meters and velocity is given in meters per second. Setting a motor target will",
     "override any previous call to SetJointMotor."
-  ],
-  "tables": {}
+  ]
 }

@@ -29,6 +29,5 @@
   ],
   "description": [
     "Return the velocity on a body taking both linear and angular velocity into account."
-  ],
-  "tables": {}
+  ]
 }

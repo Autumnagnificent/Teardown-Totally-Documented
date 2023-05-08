@@ -33,6 +33,5 @@
   ],
   "description": [
     "Return all bodies within the provided world space, axis-aligned bounding box"
-  ],
-  "tables": {}
+  ]
 }

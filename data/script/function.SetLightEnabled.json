@@ -23,6 +23,5 @@
   "description": [
     "If light is owned by a shape, the emissive scale of that shape will be set",
     "to 0.0 when light is disabled and 1.0 when light is enabled."
-  ],
-  "tables": {}
+  ]
 }

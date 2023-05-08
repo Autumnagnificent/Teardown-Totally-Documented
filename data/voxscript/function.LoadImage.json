@@ -9,11 +9,12 @@
     }
   ],
   "returns": [],
-  "example": [
-    "LoadImage(\"MOD/image.png\")"
+  "examples": [
+    [
+      "LoadImage(\"MOD/image.png\")"
+    ]
   ],
   "description": [
     "Load PNG image from file"
-  ],
-  "tables": {}
+  ]
 }

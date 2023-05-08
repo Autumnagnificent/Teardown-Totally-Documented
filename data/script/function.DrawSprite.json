@@ -80,6 +80,5 @@
   ],
   "description": [
     "Draw sprite in world at next frame. Call this function from the tick callback."
-  ],
-  "tables": {}
+  ]
 }

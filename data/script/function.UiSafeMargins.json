@@ -42,6 +42,5 @@
     "Return a safe drawing area that will always be visible regardless of",
     "display aspect ratio. The safe drawing area will always be 1920 by 1080",
     "in size. This is useful for setting up a fixed size UI."
-  ],
-  "tables": {}
+  ]
 }

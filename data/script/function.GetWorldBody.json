@@ -16,6 +16,5 @@
   ],
   "description": [
     "Every scene in Teardown has an implicit static world body that contains all shapes that are not explicitly assigned a body in the editor."
-  ],
-  "tables": {}
+  ]
 }

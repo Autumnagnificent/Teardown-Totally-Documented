@@ -22,6 +22,5 @@
   ],
   "description": [
     "Detach joint from shape. If joint is not connected to shape, nothing happens."
-  ],
-  "tables": {}
+  ]
 }

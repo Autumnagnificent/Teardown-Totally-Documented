@@ -36,6 +36,5 @@
   ],
   "description": [
     "List all child keys of a registry node."
-  ],
-  "tables": {}
+  ]
 }

@@ -25,6 +25,5 @@
     "If the shape is owned by a shape you most likely want to use",
     "SetShapeEmissiveScale instead, which will affect both the emissiveness ",
     "of the shape and the brightness of the light at the same time."
-  ],
-  "tables": {}
+  ]
 }

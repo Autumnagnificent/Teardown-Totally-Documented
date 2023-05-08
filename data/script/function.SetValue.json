@@ -40,29 +40,5 @@
     "If a transition is provided the value will animate from current value to the new value during the transition time.",
     "Transition can be one of the following:",
     "${table:Transition}"
-  ],
-  "tables": {
-    "Transition": [
-      [
-        "linear",
-        "Linear transition"
-      ],
-      [
-        "cosine",
-        "Slow at beginning and end"
-      ],
-      [
-        "easein",
-        "Slow at beginning"
-      ],
-      [
-        "easeout",
-        "Slow at end"
-      ],
-      [
-        "bounce",
-        "Bounce and overshoot new value"
-      ]
-    ]
-  }
+  ]
 }

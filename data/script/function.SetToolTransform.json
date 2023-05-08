@@ -27,6 +27,5 @@
     "create tool animations. You need to set this every frame from the tick function.",
     "The optional sway parameter control the amount of tool swaying when walking.",
     "Set to zero to disable completely."
-  ],
-  "tables": {}
+  ]
 }

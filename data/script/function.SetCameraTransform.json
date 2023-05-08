@@ -22,6 +22,5 @@
   ],
   "description": [
     "Override current camera transform for this frame. Call continuously to keep overriding."
-  ],
-  "tables": {}
+  ]
 }

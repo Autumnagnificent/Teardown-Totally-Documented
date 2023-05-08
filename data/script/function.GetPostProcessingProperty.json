@@ -37,6 +37,5 @@
   "description": [
     "This function is used for querying the current post processing properties. ",
     "The available properties are exactly the same as in the editor."
-  ],
-  "tables": {}
+  ]
 }

@@ -41,6 +41,5 @@
   ],
   "description": [
     "Set particle gravity. It will be applied along the world Y axis. A negative value will move the particle downwards."
-  ],
-  "tables": {}
+  ]
 }

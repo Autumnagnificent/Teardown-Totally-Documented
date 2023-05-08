@@ -25,6 +25,5 @@
     "Instantly teleport the player to desired transform. Unless includePitch is",
     "set to true, up/down look angle will be set to zero during this process.",
     "Player velocity will be reset to zero."
-  ],
-  "tables": {}
+  ]
 }

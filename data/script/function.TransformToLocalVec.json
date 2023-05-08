@@ -33,6 +33,5 @@
   ],
   "description": [
     "Transfom vector v into transform t only considering rotation."
-  ],
-  "tables": {}
+  ]
 }

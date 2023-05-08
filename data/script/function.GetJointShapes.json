@@ -44,6 +44,5 @@
   ],
   "description": [
     "Get shapes connected to the joint."
-  ],
-  "tables": {}
+  ]
 }

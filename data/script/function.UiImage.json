@@ -59,6 +59,5 @@
   "description": [
     "Draw image at cursor position. If x0, y0, x1, y1 is provided a cropped version",
     "will be drawn in that coordinate range."
-  ],
-  "tables": {}
+  ]
 }

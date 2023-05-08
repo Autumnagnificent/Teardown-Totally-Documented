@@ -7,7 +7,6 @@
     "be read at any time in the script, it's recommended to copy them to a global",
     "variable in or outside the init function."
   ],
-  "tables": {},
   "entries": [
     "GetBoolParam",
     "GetFloatParam",

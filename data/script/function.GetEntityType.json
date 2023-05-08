@@ -26,6 +26,5 @@
   ],
   "description": [
     "Returns the type name of provided entity, for example \"body\", \"shape\", \"light\", etc."
-  ],
-  "tables": {}
+  ]
 }
