@@ -7,7 +7,8 @@ function matchTag(text, tag) {
 
 const argRegex = /<span class='[^']+name'>([^<]+)<\/span> <span class='argtype'>\(([^<]+)\)<\/span> &ndash; (.*?)<br\/>/g;
 function parseArgs(paragraph) {
-	return [...paragraph.matchAll(argRegex)].map(([_, name, type, desc]) => {
+    const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+	return [...decodedParagraph.matchAll(argRegex)].map(([_, name, type, desc]) => {
 		const optional = type.indexOf(', optional');
 		return {
 			name,
@@ -19,17 +20,19 @@ function parseArgs(paragraph) {
 }
 
 function parseExample(paragraph) {
-	const m = paragraph.match(/<pre class='example'>([\s\S]*?)<\/pre>/m);
+    const decodedParagraph = paragraph.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+	const m = decodedParagraph.match(/<pre class='example'>([\s\S]*?)<\/pre>/m);
 	return m && m[1].trim();
 }
 
 function extractTables(textInput) {
+    const decodedTextInput = textInput.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 	const tablesPart = {};
 	const textResult = [];
 	let pos = 0;
 
-	for (const match of textInput.matchAll(/<table[^>]*>([\s\S]*?)<\/?table\/?>/gm)) {
-		textResult.push(textInput.substring(pos, match.index));
+	for (const match of decodedTextInput.matchAll(/<table[^>]*>([\s\S]*?)<\/?table\/?>/gm)) {
+		textResult.push(decodedTextInput.substring(pos, match.index));
 		pos = match.index + match[0].length;
 		const table = [];
 		for (const [_, row] of match[1].matchAll(/<tr>(.*?)<\/tr>/g)) {
@@ -41,36 +44,14 @@ function extractTables(textInput) {
 		tablesPart[name] = table;
 	}
 
-	textResult.push(textInput.substring(pos));
+	textResult.push(decodedTextInput.substring(pos));
 
 	return {
 		textPart: textResult.join('').trim(),
 		tablesPart,
 	}
 }
-
-function formatDescription(description) {
-	const words = description.split(/\s+/);
-	let currentLine = "";
-	let formattedDescription = "";
-
-	for (const word of words) {
-		if (currentLine.length + word.length + 1 <= 80) {
-			currentLine += (currentLine ? " " : "") + word;
-		} else {
-			formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
-			currentLine = word;
-		}
-	}
-
-	if (currentLine) {
-		formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
-	}
-
-	return formattedDescription;
-}
   
-
 function parseFunction(text) {
 	const name = matchTag(text, 'h3');
 	if (!name) return;
