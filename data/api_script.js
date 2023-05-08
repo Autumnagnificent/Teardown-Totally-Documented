@@ -2,16 +2,16 @@ const URL = "https://teardowngame.com/modding/api.html";
 const OUT = "script";
 
 const tableRenames = {
-	['Alignment']: 'UiAlignment',
-	['Function']: 'Callbacks',
-	['Key']: 'RegistryRoots',
-	['Layer']: 'QueryLayer',
-	['Logical input']: 'InputLogical',
-	['Physical input']: 'InputPhysical',
-	['State']: 'PathState',
-}
+	["Alignment"]: "UiAlignment",
+	["Function"]: "Callbacks",
+	["Key"]: "RegistryRoots",
+	["Layer"]: "QueryLayer",
+	["Logical input"]: "InputLogical",
+	["Physical input"]: "InputPhysical",
+	["State"]: "PathState",
+};
 const tableRenamesRegex = /\$\{table:([^}]+)\}/g;
-const tableRenamesFunc = (_, name) => `\${table:${tableRenames[name] ?? name}}`
+const tableRenamesFunc = (_, name) => `\${table:${tableRenames[name] ?? name}}`;
 
 async function format(data) {
 	const files = {};
