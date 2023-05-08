@@ -141,7 +141,7 @@ function formatDescription(description, options) {
 	let formattedDescription = "";
 
 	for (const word of words) {
-		if (currentLine.length + word.length + 1 <= options?.printWidth ?? 80) {
+		if (currentLine.length + word.length + 1 <= (options?.printWidth ?? 80)) {
 			currentLine += (currentLine ? " " : "") + word;
 		} else {
 			formattedDescription += (formattedDescription ? "\n" : "") + currentLine;
