@@ -1,0 +1,15 @@
+{
+	"script": {
+		"description": "Documentation related to general Teardown scripting. (typical script context)"
+	},
+	"voxscript": {
+		"description": "Documentation related to voxscript scripting."
+	},
+	"editor": {
+		"description": "Documentation related to the ingame editor."
+	},
+	"third_party": {
+		"description": "Documentation related to third-party libraries and tools.",
+		"children": {}
+	}
+}
