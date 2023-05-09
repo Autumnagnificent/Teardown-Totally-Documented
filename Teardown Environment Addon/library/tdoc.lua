@@ -166,7 +166,7 @@
 
 ---@alias key_value
 ---| "camerax" Camera x movement, scaled by sensitivity.
----| "cameray" Camera y movement, scaled by sensitivit
+---| "cameray" Camera y movement, scaled by sensitivity.
 ---| "mousedx" Mouse horizontal diff.
 ---| "mousedy" Mouse vertical diff.
 ---| "mousewheel" Mouse wheel.
@@ -283,6 +283,12 @@
 ---| "bloom"
 
 ---@alias ui_alignment
+---| "left"
+---| "center"
+---| "right"
+---| "top"
+---| "middle"
+---| "bottom"
 ---| "left top"
 ---| "center top"
 ---| "right top"
@@ -334,25 +340,29 @@ function handleCommand(command) end
 ---
 ---While these parameters can be read at any time in the script, it's recommended to copy them to a global variable in or outside the init function. 
 ---@param name string Parameter name
----@param default integer Default parameter value
+---@param default integer? Default parameter value
+---@return integer
 function GetIntParam(name, default) end
 ---Scripts can have parameters defined in the level XML file. This can be used to configure various options and parameters of the script.
 ---
 ---While these parameters can be read at any time in the script, it's recommended to copy them to a global variable in or outside the init function. 
 ---@param name string Parameter name
----@param default number Default parameter value
+---@param default number? Default parameter value
+---@return number
 function GetFloatParam(name, default) end
 ---Scripts can have parameters defined in the level XML file. This can be used to configure various options and parameters of the script.
 ---
 ---While these parameters can be read at any time in the script, it's recommended to copy them to a global variable in or outside the init function. 
 ---@param name string Parameter name
----@param default boolean Default parameter value
+---@param default boolean? Default parameter value
+---@return boolean
 function GetBoolParam(name, default) end
 ---Scripts can have parameters defined in the level XML file. This can be used to configure various options and parameters of the script.
 ---
 ---While these parameters can be read at any time in the script, it's recommended to copy them to a global variable in or outside the init function. 
 ---@param name string Parameter name
----@param default string Default parameter value
+---@param default string? Default parameter value
+---@return string
 function GetStringParam(name, default) end
 
 --#endregion
@@ -1660,6 +1670,7 @@ end
 ---
 ---https://acko.net/files/teardown-teardown/01-color-pass-albedo.png
 ---@param path string
+---@return sprite_handle
 function LoadSprite(path) end
 
 ---Draws a sprite handle at a transform, stetching the texture/sprite to fill the given width and height
@@ -2035,8 +2046,8 @@ function UiColorFilter(red, green, blue, alpha) end
 ---Translates/Moves the draw cursor around
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param x number
----@param y number
+---@param x number?
+---@param y number?
 function UiTranslate(x, y) end
 
 ---Rotates the cursor
