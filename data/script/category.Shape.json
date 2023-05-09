@@ -4,7 +4,7 @@
     "A shape is a voxel object and always owned by a body. A single body may contain multiple shapes. The transform",
     "of shape is expressed in the parent body coordinate system."
   ],
-  "entries": [
+  "functions": [
     "DrawShapeHighlight",
     "DrawShapeOutline",
     "FindShape",

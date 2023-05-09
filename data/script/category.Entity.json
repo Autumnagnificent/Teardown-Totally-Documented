@@ -5,7 +5,7 @@
     "All entities can have tags, which is a way to store custom properties on entities for scripting purposes.",
     "Some tags are also reserved for engine use. See documentation for details."
   ],
-  "entries": [
+  "functions": [
     "Delete",
     "GetDescription",
     "GetEntityType",

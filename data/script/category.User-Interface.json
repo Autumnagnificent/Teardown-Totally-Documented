@@ -6,7 +6,7 @@
     "mode gui paradigm in mind and uses a cursor and state stack. Pushing and popping the stack is cheap ",
     "and designed to be called often."
   ],
-  "entries": [
+  "functions": [
     "UiAlign",
     "UiBlankButton",
     "UiBlur",

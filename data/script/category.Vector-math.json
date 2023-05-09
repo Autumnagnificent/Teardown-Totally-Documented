@@ -6,7 +6,7 @@
     "Vectors and quaternions are indexed tables with three and four components. Transforms",
     "are tables consisting of one vector (pos) and one quaternion (rot)"
   ],
-  "entries": [
+  "functions": [
     "GetQuatEuler",
     "Quat",
     "QuatAxisAngle",

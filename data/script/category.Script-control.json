@@ -6,7 +6,7 @@
     "",
     "${table:InputLogical}"
   ],
-  "entries": [
+  "functions": [
     "GetTime",
     "GetTimeStep",
     "GetVersion",

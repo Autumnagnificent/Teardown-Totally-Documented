@@ -3,7 +3,7 @@
   "description": [
     "Query the level in various ways."
   ],
-  "entries": [
+  "functions": [
     "AbortPath",
     "GetLastSound",
     "GetPathLength",

@@ -6,7 +6,7 @@
     "parent shape breaks, the emissive scale is set to zero and the light source is disabled. A light source",
     "without a parent shape will always emit light, unless exlicitly disabled by a script."
   ],
-  "entries": [
+  "functions": [
     "FindLight",
     "FindLights",
     "GetLightShape",

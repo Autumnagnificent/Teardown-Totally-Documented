@@ -14,7 +14,7 @@
     "",
     "${table:RegistryRoots}"
   ],
-  "entries": [
+  "functions": [
     "ClearKey",
     "GetBool",
     "GetFloat",

@@ -4,7 +4,7 @@
     "Locations are transforms placed in the editor as markers. Location transforms are always expressed in ",
     "world space coordinates."
   ],
-  "entries": [
+  "functions": [
     "FindLocation",
     "FindLocations",
     "GetLocationTransform"

@@ -3,7 +3,7 @@
   "description": [
     "Screens display the content of UI scripts and can be made interactive."
   ],
-  "entries": [
+  "functions": [
     "FindScreen",
     "FindScreens",
     "GetScreenShape",

@@ -5,7 +5,7 @@
     "placed in the editor. When destruction occurs, joints may be transferred to new shapes, detached or",
     "completely disabled."
   ],
-  "entries": [
+  "functions": [
     "DetachJointFromShape",
     "FindJoint",
     "FindJoints",

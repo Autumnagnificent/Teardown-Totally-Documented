@@ -15,7 +15,7 @@
     "for constant, two argument for linear interpolation, and optionally a third argument for other types of ",
     "interpolation. There are also fade in and fade out parameters that fade from and to zero."
   ],
-  "entries": [
+  "functions": [
     "ParticleAlpha",
     "ParticleCollide",
     "ParticleColor",
