@@ -35,6 +35,10 @@ function parseExample(paragraph) {
 	return m && decodeEntities(m[1]).trim();
 }
 
+function translateHTML(text) {
+	return text.replace(/<a href=["']([^"']*)["']>([^<]*)<\/a>/, (_, link, text) => `[${text}](${link})`);
+}
+
 function extractTables(textInput) {
 	const tablesPart = {};
 	const textResult = [];
@@ -56,7 +60,7 @@ function extractTables(textInput) {
 	textResult.push(decodeEntities(textInput.substring(pos)));
 
 	return {
-		textPart: textResult.join("").trim(),
+		textPart: translateHTML(textResult.join("")).trim(),
 		tablesPart,
 	};
 }
@@ -86,12 +90,11 @@ function parseCategory(text) {
 	if (!name) return;
 	let tables = {};
 	const description = [];
-	const entries = [];
+	const functions = [];
 	for (const part of text.split("<p>").slice(1)) {
-		const a = matchTag(part, "a");
-		if (a) {
+		if (part.match(/^\W*<a href='#/)) {
 			for (const [_, name] of part.matchAll(/<a href='#([^']*)'/g)) {
-				entries.push(name);
+				functions.push(name);
 			}
 		} else {
 			const { textPart, tablesPart } = extractTables(part);
@@ -105,7 +108,7 @@ function parseCategory(text) {
 		name: name[2],
 		description: description.join("\n\n"),
 		tables,
-		entries,
+		functions,
 	};
 }
 
@@ -118,7 +121,7 @@ async function scrapeAPI(url) {
 	for (const part of data.split("<hr/>")) {
 		const category = parseCategory(part);
 		if (category) {
-			category.entries.sort();
+			category.functions.sort();
 			categories.push(category);
 			continue;
 		}

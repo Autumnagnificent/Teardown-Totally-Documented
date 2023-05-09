@@ -1,12 +1,15 @@
 name: Voxscript API updater
 on: workflow_dispatch
+permissions:
+  contents: write
+  pull-requests: write
 jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: official-api
+          ref: external
       - uses: actions/setup-node@v3
         with:
           node-version: 19
@@ -26,6 +29,6 @@ jobs:
         uses: thomaseizinger/create-pull-request@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          head: official-api
+          head: external
           base: main
           title: Update Voxscript API to ${{ steps.scrape.outputs.version }}

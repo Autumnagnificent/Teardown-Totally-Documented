@@ -1,5 +1,17 @@
-const URL = "https://teardowngame.com/modding/voxscript.html";
-const OUT = "voxscript";
+const URL = "https://teardowngame.com/modding/api.html";
+const OUT = "../script";
+
+const tableRenames = {
+	["Alignment"]: "UiAlignment",
+	["Function"]: "Callbacks",
+	["Key"]: "RegistryRoots",
+	["Layer"]: "QueryLayer",
+	["Logical input"]: "InputLogical",
+	["Physical input"]: "InputPhysical",
+	["State"]: "PathState",
+};
+const tableRenamesRegex = /\$\{table:([^}]+)\}/g;
+const tableRenamesFunc = (_, name) => `\${table:${tableRenames[name] ?? name}}`;
 
 async function format(data) {
 	const files = {};
@@ -10,7 +22,7 @@ async function format(data) {
 		}
 		delete cat.tables;
 
-		cat.description = cat.description.split("\n");
+		cat.description = cat.description.replaceAll(tableRenamesRegex, tableRenamesFunc).split("\n");
 
 		files[`category.${cat.name}`] = cat;
 	}
@@ -21,8 +33,8 @@ async function format(data) {
 		}
 		delete func.tables;
 
-		func.description = func.description.split("\n");
-		func.examples = func.examples.map(ex => ex.split("\n"));
+		func.description = func.description.replaceAll(tableRenamesRegex, tableRenamesFunc).split("\n");
+		func.examples = func.examples.map(ex => ex.replaceAll(tableRenamesRegex, tableRenamesFunc).split("\n"));
 
 		files[`function.${func.name}`] = func;
 	}
