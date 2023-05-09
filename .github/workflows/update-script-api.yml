@@ -19,7 +19,7 @@ jobs:
           git config user.email github-actions@github.com
       - name: Scrape API
         id: scrape
-        run: node data/api_script.js
+        run: node data/_tools/api_script.js
       - name: Commit changes
         run: |
           git add data/script
