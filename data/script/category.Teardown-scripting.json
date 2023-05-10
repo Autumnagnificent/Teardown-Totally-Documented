@@ -1,0 +1,15 @@
+{
+  "name": "Teardown scripting",
+  "description": [
+    "Teardown uses Lua version 5.1 as scripting language. The Lua 5.1 reference manual can be found [here](https://www.lua.org/manual/5.1/). ",
+    "Each Teardown script runs in its own Lua context and can only interact with the engine and other scripts ",
+    "through API functions and the registry. The registry is a database of hierarchical global variables that is used both internally",
+    "in the engine, for communication between scripts and as a way to save persistent data.",
+    "",
+    "The Teardown API uses only native lua types. Handles to objects are plain Lua numbers. Vector types are represented",
+    "as plain Lua tables, and so on. Each script has four callback functions.",
+    "",
+    "${table:Callbacks}"
+  ],
+  "functions": []
+}

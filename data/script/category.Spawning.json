@@ -1,0 +1,10 @@
+{
+  "name": "Spawning",
+  "description": [
+    "The spawn API can be used to add entities into the existing scenes. You can spawn existing ",
+    "prefab XML files or generate XML and pass it in as a lua string."
+  ],
+  "functions": [
+    "Spawn"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "GetBodyAngularVelocity",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle (should be a dynamic body)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "angVel",
+      "desc": "Angular velocity as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local angVel = GetBodyAngularVelocity(body)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

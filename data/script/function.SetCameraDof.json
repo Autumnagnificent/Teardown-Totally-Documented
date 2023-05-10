@@ -1,0 +1,27 @@
+{
+  "name": "SetCameraDof",
+  "arguments": [
+    {
+      "name": "distance",
+      "desc": "Depth of field distance",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "amount",
+      "desc": "Optional amount of blur (default 1.0)",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Set depth of field to 10 meters",
+      "SetCameraDof(10)"
+    ]
+  ],
+  "description": [
+    "Override depth of field for the next frame for all camera modes. Depth of field will be used even if turned off in options."
+  ]
+}

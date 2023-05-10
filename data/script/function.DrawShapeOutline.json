@@ -1,0 +1,49 @@
+{
+  "name": "DrawShapeOutline",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "r",
+      "desc": "Red",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Green",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Blue",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Alpha",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Draw white outline at 50% transparency",
+      "DrawShapeOutline(shape, 0.5)",
+      "",
+      "--Draw green outline, fully opaque",
+      "DrawShapeOutline(shape, 0, 1, 0, 1)"
+    ]
+  ],
+  "description": [
+    "Render next frame with an outline around specified shape.",
+    "If no color is given, a white outline will be drawn."
+  ]
+}

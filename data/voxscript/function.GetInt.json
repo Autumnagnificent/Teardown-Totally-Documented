@@ -1,0 +1,26 @@
+{
+  "name": "GetInt",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Parameter name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "defaultValue",
+      "desc": "Default value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "steps = GetInt(\"steps\", 5)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

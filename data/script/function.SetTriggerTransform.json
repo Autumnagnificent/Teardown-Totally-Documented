@@ -1,0 +1,27 @@
+{
+  "name": "SetTriggerTransform",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Trigger handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "transform",
+      "desc": "Desired trigger transform in world space",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local t = Transform(Vec(0, 1, 0), QuatEuler(0, 90, 0))",
+      "SetTriggerTransform(trigger, t)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

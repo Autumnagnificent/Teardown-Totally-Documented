@@ -1,0 +1,28 @@
+{
+  "name": "GetJointMovement",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Joint handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "movement",
+      "desc": "Current joint position or angle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local current = GetJointMovement(hinge)"
+    ]
+  ],
+  "description": [
+    "Return the current position or angle or the joint, measured in same way",
+    "as joint limits."
+  ]
+}

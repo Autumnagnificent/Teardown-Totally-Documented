@@ -1,0 +1,30 @@
+{
+  "name": "GetBodyCenterOfMass",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "point",
+      "desc": "Vector representing local center of mass in body space",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--Visualize center of mass on for body",
+      "local com = GetBodyCenterOfMass(body)",
+      "local worldPoint = TransformToParentPoint(GetBodyTransform(body), com)",
+      "DebugCross(worldPoint)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

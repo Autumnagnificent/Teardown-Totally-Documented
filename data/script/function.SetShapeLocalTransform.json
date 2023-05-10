@@ -1,0 +1,27 @@
+{
+  "name": "SetShapeLocalTransform",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "transform",
+      "desc": "Shape transform in body space",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local transform = Transform(Vec(0, 1, 0), QuatEuler(0, 90, 0))",
+      "SetShapeLocalTransform(shape, transform)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

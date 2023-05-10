@@ -1,0 +1,51 @@
+{
+  "name": "Box",
+  "arguments": [
+    {
+      "name": "x0",
+      "desc": "X start",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y0",
+      "desc": "Y start",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z0",
+      "desc": "Z start",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "x1",
+      "desc": "X end",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y1",
+      "desc": "Y end",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z1",
+      "desc": "Z end",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "Material(mat)",
+      "Box(0, 0, 0, 10, 10, 10)"
+    ]
+  ],
+  "description": [
+    "Draw solid box into the current vox shape using the current material"
+  ]
+}

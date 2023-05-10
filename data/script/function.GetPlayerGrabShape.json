@@ -1,0 +1,23 @@
+{
+  "name": "GetPlayerGrabShape",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to grabbed shape or zero if not grabbing.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local shape = GetPlayerGrabShape()",
+      "if shape ~= 0 then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

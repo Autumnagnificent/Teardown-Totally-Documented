@@ -1,0 +1,22 @@
+{
+  "name": "QueryRejectBody",
+  "arguments": [
+    {
+      "name": "body",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Do not include body in next raycast",
+      "QueryRejectBody(body)",
+      "QueryRaycast(...)"
+    ]
+  ],
+  "description": [
+    "Exclude body from the next query"
+  ]
+}

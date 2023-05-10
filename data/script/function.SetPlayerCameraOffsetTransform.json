@@ -1,0 +1,22 @@
+{
+  "name": "SetPlayerCameraOffsetTransform",
+  "arguments": [
+    {
+      "name": "transform",
+      "desc": "Desired player camera offset transform",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local t = Transform(Vec(), QuatAxisAngle(Vec(1, 0, 0), math.sin(time*3.0) * 3.0))",
+      "SetPlayerCameraOffsetTransform(t)"
+    ]
+  ],
+  "description": [
+    "Call this function continously to apply a camera offset. Can be used for camera effects ",
+    "such as shake and wobble."
+  ]
+}

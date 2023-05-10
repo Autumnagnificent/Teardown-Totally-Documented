@@ -1,0 +1,28 @@
+{
+  "name": "IsBodyJointedToStatic",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "result",
+      "desc": "Return true if body is in any way connected to a static body",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local connectedToStatic = IsBodyJointedToStatic(body)"
+    ]
+  ],
+  "description": [
+    "Determine if a body is in any way connected to a static object, either by being static itself or",
+    "be being directly or indirectly jointed to something static."
+  ]
+}

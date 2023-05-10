@@ -1,0 +1,37 @@
+{
+  "name": "VecCross",
+  "arguments": [
+    {
+      "name": "a",
+      "desc": "Vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "b",
+      "desc": "Vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "c",
+      "desc": "Cross product of a and b (also called vector product)",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local a = Vec(1,0,0)",
+      "local b = Vec(0,1,0)",
+      "local c = VecCross(a, b)",
+      "",
+      "--c now equals {0,0,1}"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

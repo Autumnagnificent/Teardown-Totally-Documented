@@ -1,0 +1,23 @@
+{
+  "name": "ParticleFlags",
+  "arguments": [
+    {
+      "name": "bitmask",
+      "desc": "Particle flags (bitmask 0-65535)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Fire extinguishing particle",
+      "ParticleFlags(256)",
+      "SpawnParticle(...)"
+    ]
+  ],
+  "description": [
+    "Set particle bitmask. The value 256 means fire extinguishing particles and is currently the only ",
+    "flag in use. There might be support for custom flags and queries in the future."
+  ]
+}

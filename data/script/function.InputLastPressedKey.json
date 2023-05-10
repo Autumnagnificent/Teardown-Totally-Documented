@@ -1,0 +1,20 @@
+{
+  "name": "InputLastPressedKey",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "name",
+      "desc": "Name of last pressed key, empty if no key is pressed",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "name = InputLastPressedKey()"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

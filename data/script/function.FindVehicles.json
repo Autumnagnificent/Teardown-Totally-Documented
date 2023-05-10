@@ -1,0 +1,38 @@
+{
+  "name": "FindVehicles",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "global",
+      "desc": "Search in entire scene",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with handles to all vehicles with specified tag",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--Find all vehicles in level tagged \"boat\"",
+      "local boats = FindVehicles(\"boat\")",
+      "for i=1, #boats do",
+      "\tlocal boat = boats[i]",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

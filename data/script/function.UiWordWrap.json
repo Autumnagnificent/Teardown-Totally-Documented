@@ -1,0 +1,21 @@
+{
+  "name": "UiWordWrap",
+  "arguments": [
+    {
+      "name": "width",
+      "desc": "Maximum width of text",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiWordWrap(200)",
+      "UiText(\"Some really long text that will get wrapped into several lines\")"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

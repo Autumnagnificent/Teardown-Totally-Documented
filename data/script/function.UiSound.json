@@ -1,0 +1,38 @@
+{
+  "name": "UiSound",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to sound file (OGG format)",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "volume",
+      "desc": "Playback volume. Default 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "pitch",
+      "desc": "Playback pitch. Default 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "pan",
+      "desc": "Playback stereo panning (-1.0 to 1.0). Default 0.0.",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiSound(\"click.ogg\")"
+    ]
+  ],
+  "description": [
+    "UI sounds are not affected by acoustics simulation. Use LoadSound / PlaySound for that."
+  ]
+}

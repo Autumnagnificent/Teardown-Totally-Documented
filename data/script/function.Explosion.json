@@ -1,0 +1,26 @@
+{
+  "name": "Explosion",
+  "arguments": [
+    {
+      "name": "pos",
+      "desc": "Position in world space as vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "size",
+      "desc": "Explosion size from 0.5 to 4.0",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "Explosion(Vec(0, 10, 0), 1)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

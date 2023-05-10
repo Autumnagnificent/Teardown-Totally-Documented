@@ -1,0 +1,35 @@
+{
+  "name": "RotateBrush",
+  "arguments": [
+    {
+      "name": "brush",
+      "desc": "Brush handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "axis",
+      "desc": "\"x\", \"y\" or \"z\"",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "angle",
+      "desc": "Rotation angle in degrees",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Draw box with brush rotated 90 degrees around y axis",
+      "RotateBrush(brush, \"y\", 90)",
+      "Material(brush)",
+      "Box(0, 0, 0, 10, 10, 10)"
+    ]
+  ],
+  "description": [
+    "Apply a rotation transformation on the brush"
+  ]
+}

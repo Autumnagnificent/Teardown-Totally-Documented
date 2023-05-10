@@ -1,0 +1,31 @@
+{
+  "name": "GetShapeLights",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table of lights owned by shape",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local lights = GetShapeLights(shape)",
+      "for i=1, #lights do",
+      "\tlocal light = lights[i]",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

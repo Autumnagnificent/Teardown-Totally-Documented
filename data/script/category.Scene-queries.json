@@ -1,0 +1,24 @@
+{
+  "name": "Scene queries",
+  "description": [
+    "Query the level in various ways."
+  ],
+  "functions": [
+    "AbortPath",
+    "GetLastSound",
+    "GetPathLength",
+    "GetPathPoint",
+    "GetPathState",
+    "GetWindVelocity",
+    "IsPointInWater",
+    "QueryAabbBodies",
+    "QueryAabbShapes",
+    "QueryClosestPoint",
+    "QueryPath",
+    "QueryRaycast",
+    "QueryRejectBody",
+    "QueryRejectShape",
+    "QueryRejectVehicle",
+    "QueryRequire"
+  ]
+}

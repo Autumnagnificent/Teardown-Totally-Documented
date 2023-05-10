@@ -1,0 +1,21 @@
+{
+  "name": "UiBlur",
+  "arguments": [
+    {
+      "name": "amount",
+      "desc": "Blur amount (0.0 to 1.0)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiBlur(1.0)",
+      "drawMenu()"
+    ]
+  ],
+  "description": [
+    "Perform a gaussian blur on current screen content"
+  ]
+}

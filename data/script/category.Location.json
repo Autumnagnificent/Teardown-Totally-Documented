@@ -1,0 +1,12 @@
+{
+  "name": "Location",
+  "description": [
+    "Locations are transforms placed in the editor as markers. Location transforms are always expressed in ",
+    "world space coordinates."
+  ],
+  "functions": [
+    "FindLocation",
+    "FindLocations",
+    "GetLocationTransform"
+  ]
+}

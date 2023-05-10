@@ -1,0 +1,13 @@
+{
+  "name": "ReleasePlayerGrab",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "ReleasePlayerGrab()"
+    ]
+  ],
+  "description": [
+    "Release what the player is currently holding"
+  ]
+}

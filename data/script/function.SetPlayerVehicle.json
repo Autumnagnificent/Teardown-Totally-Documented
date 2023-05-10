@@ -1,0 +1,21 @@
+{
+  "name": "SetPlayerVehicle",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Handle to vehicle or zero to not drive.",
+      "optional": false,
+      "type": "value"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local car = FindVehicle(\"mycar\")",
+      "SetPlayerVehicle(car)"
+    ]
+  ],
+  "description": [
+    "Drive specified vehicle."
+  ]
+}

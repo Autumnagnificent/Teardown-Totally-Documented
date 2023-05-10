@@ -1,0 +1,30 @@
+{
+  "name": "GetEntityType",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "type",
+      "desc": "Type name of the provided entity",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "local t = GetEntityType(e)",
+      "if t == \"body\" then",
+      "\t--e is a body handle",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the type name of provided entity, for example \"body\", \"shape\", \"light\", etc."
+  ]
+}

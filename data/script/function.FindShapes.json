@@ -1,0 +1,38 @@
+{
+  "name": "FindShapes",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "global",
+      "desc": "Search in entire scene",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with handles to all shapes with specified tag",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--Search for shapes tagged \"alarmbox\" in script scope",
+      "local shapes = FindShapes(\"alarmbox\")",
+      "for i=1, #shapes do",
+      "\tlocal shape = shapes[i]",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

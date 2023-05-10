@@ -1,0 +1,33 @@
+{
+  "name": "UiGetImageSize",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to image (PNG or JPG format)",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "w",
+      "desc": "Image width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Image height",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local w,h = UiGetImageSize(\"test.png\")"
+    ]
+  ],
+  "description": [
+    "Get image size"
+  ]
+}

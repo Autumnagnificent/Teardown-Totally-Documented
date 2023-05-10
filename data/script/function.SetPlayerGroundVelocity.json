@@ -1,0 +1,20 @@
+{
+  "name": "SetPlayerGroundVelocity",
+  "arguments": [
+    {
+      "name": "vel",
+      "desc": "Desired ground velocity",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetPlayerGroundVelocity(Vec(2,0,0))"
+    ]
+  ],
+  "description": [
+    "Make the ground act as a conveyor belt, pushing the player even if ground shape is static."
+  ]
+}

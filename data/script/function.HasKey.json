@@ -1,0 +1,27 @@
+{
+  "name": "HasKey",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Registry key",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "exists",
+      "desc": "True if key exists",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local foo = HasKey(\"score.levels\")"
+    ]
+  ],
+  "description": [
+    "Returns true if the registry contains a certain key"
+  ]
+}

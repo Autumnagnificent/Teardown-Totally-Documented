@@ -1,0 +1,22 @@
+{
+  "name": "Delete",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "Delete(body)",
+      "--All shapes associated with body will also be removed"
+    ]
+  ],
+  "description": [
+    "Remove an entity from the scene. All entities owned by this entity",
+    "will also be removed."
+  ]
+}

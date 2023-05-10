@@ -1,0 +1,27 @@
+{
+  "name": "GetInt",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Registry key",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Integer value of registry node or zero if not found",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local a = GetInt(\"score.levels.level1\")"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

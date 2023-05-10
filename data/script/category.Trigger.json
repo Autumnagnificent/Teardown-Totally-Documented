@@ -1,0 +1,21 @@
+{
+  "name": "Trigger",
+  "description": [
+    "Triggers can be placed in the scene and queried by scripts to see if something is within a certain part",
+    "of the scene."
+  ],
+  "functions": [
+    "FindTrigger",
+    "FindTriggers",
+    "GetTriggerBounds",
+    "GetTriggerClosestPoint",
+    "GetTriggerDistance",
+    "GetTriggerTransform",
+    "IsBodyInTrigger",
+    "IsPointInTrigger",
+    "IsShapeInTrigger",
+    "IsTriggerEmpty",
+    "IsVehicleInTrigger",
+    "SetTriggerTransform"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "IsShapeTouching",
+  "arguments": [
+    {
+      "name": "a",
+      "desc": "Handle to first shape",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Handle to second shape",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "touching",
+      "desc": "True is shapes a and b are touching each other",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local touch = IsShapeTouching(a, b)",
+      "if hit then",
+      "\t--Shapes are touching or overlapping",
+      "end"
+    ]
+  ],
+  "description": [
+    "This will check if two shapes has physical overlap"
+  ]
+}
