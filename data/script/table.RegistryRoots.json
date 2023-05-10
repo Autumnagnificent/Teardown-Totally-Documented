@@ -1,0 +1,22 @@
+[
+  [
+    "options",
+    "reserved for game settings (write protected from mods)"
+  ],
+  [
+    "game",
+    "reserved for the game engine internals (see documentation)"
+  ],
+  [
+    "savegame",
+    "used for persistent game data (write protected for mods)"
+  ],
+  [
+    "savegame.mod",
+    "used for persistent mod data. Use only alphanumeric character for key name."
+  ],
+  [
+    "level",
+    "not reserved, but recommended for level specific entries and script communication"
+  ]
+]

@@ -1,0 +1,35 @@
+{
+  "name": "VecCopy",
+  "arguments": [
+    {
+      "name": "org",
+      "desc": "A vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "new",
+      "desc": "Copy of org vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--Do this to assign a vector",
+      "local right1 = Vec(1, 2, 3)",
+      "local right2 = VecCopy(right1)",
+      "",
+      "--Never do this unless you REALLY know what you're doing",
+      "local wrong1 = Vec(1, 2, 3)",
+      "local wrong2 = wrong1"
+    ]
+  ],
+  "description": [
+    "Vectors should never be assigned like regular numbers. Since they are",
+    "implemented with lua tables assignment means two references pointing to",
+    "the same data. Use this function instead."
+  ]
+}

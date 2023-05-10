@@ -1,0 +1,27 @@
+{
+  "name": "GetLightTransform",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Light handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "World space light transform",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local pos = GetLightTransform(light).pos"
+    ]
+  ],
+  "description": [
+    "Lights that are owned by a dynamic shape are automatcially moved with that shape"
+  ]
+}

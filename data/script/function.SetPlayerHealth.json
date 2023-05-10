@@ -1,0 +1,20 @@
+{
+  "name": "SetPlayerHealth",
+  "arguments": [
+    {
+      "name": "health",
+      "desc": "Set player health (between zero and one)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetPlayerHealth(0.5)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

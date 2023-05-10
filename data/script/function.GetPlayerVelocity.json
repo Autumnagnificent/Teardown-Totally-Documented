@@ -1,0 +1,20 @@
+{
+  "name": "GetPlayerVelocity",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "velocity",
+      "desc": "Player velocity in world space as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local vel = GetPlayerVelocity()"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "GetPlayerScreen",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to interacted screen or zero if none",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "--Interact with screen",
+      "local screen = GetPlayerScreen()"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

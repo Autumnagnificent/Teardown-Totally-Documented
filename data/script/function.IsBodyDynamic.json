@@ -1,0 +1,28 @@
+{
+  "name": "IsBodyDynamic",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "dynamic",
+      "desc": "Return true if body is dynamic",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local dynamic = IsBodyDynamic(body)"
+    ]
+  ],
+  "description": [
+    "Check if body is dynamic. Note that something that was created static ",
+    "may become dynamic due to destruction."
+  ]
+}

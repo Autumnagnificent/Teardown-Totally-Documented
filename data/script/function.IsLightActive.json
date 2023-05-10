@@ -1,0 +1,29 @@
+{
+  "name": "IsLightActive",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Light handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "active",
+      "desc": "True if light is currently emitting light",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if IsLightActive(light) then",
+      "\t--Do something",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

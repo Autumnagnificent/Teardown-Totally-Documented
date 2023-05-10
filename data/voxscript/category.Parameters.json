@@ -1,0 +1,14 @@
+{
+  "name": "Parameters",
+  "description": [
+    "Parameter outside the init function will show up in the editor"
+  ],
+  "functions": [
+    "GetFloat",
+    "GetInt",
+    "GetString",
+    "RandomFloat",
+    "RandomInt",
+    "Randomize"
+  ]
+}

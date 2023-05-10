@@ -1,0 +1,43 @@
+{
+  "name": "SetShapeCollisionFilter",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "layer",
+      "desc": "Layer bits (0-255)",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "mask",
+      "desc": "Mask bits (0-255)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--This will put shapes a and b in layer 2 and disable collisions with",
+      "--object shapes in layers 2, preventing any collisions between the two.",
+      "SetShapeCollisionFilter(a, 2, 255-2)",
+      "SetShapeCollisionFilter(b, 2, 255-2)",
+      "",
+      "--This will put shapes c and d in layer 4 and allow collisions with other",
+      "--shapes in layer 4, but ignore all other collisions with the rest of the world.",
+      "SetShapeCollisionFilter(c, 4, 4)",
+      "SetShapeCollisionFilter(d, 4, 4)"
+    ]
+  ],
+  "description": [
+    "This is used to filter out collisions with other shapes. Each shape can be given a layer ",
+    "bitmask (8 bits, 0-255) along with a mask (also 8 bits). The layer of one object must be in",
+    "the mask of the other object and vice versa for the collision to be valid. The default layer",
+    "for all objects is 1 and the default mask is 255 (collide with all layers)."
+  ]
+}

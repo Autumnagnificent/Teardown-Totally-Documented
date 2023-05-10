@@ -1,0 +1,38 @@
+{
+  "name": "FindScreens",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "global",
+      "desc": "Search in entire scene",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with handles to all screens with specified tag",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--Find screens tagged \"tv\" in script scope",
+      "local screens = FindScreens(\"tv\")",
+      "for i=1, #screens do",
+      "\tlocal screen = screens[i]",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

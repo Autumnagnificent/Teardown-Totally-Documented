@@ -1,0 +1,45 @@
+{
+  "name": "ParticleSticky",
+  "arguments": [
+    {
+      "name": "s0",
+      "desc": "Sticky (0.0 - 1.0)",
+      "optional": false,
+      "type": "float"
+    },
+    {
+      "name": "s1",
+      "desc": "End sticky (0.0 - 1.0)",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "interpolation",
+      "desc": "Interpolation method: linear, smooth, easein, easeout or constant. Default is linear.",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "fadein",
+      "desc": "Fade in between t=0 and t=fadein. Default is zero.",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "fadeout",
+      "desc": "Fade out between t=fadeout and t=1. Default is one.",
+      "optional": true,
+      "type": "float"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Make particles stick to objects",
+      "ParticleSticky(0.5)"
+    ]
+  ],
+  "description": [
+    "Make particle stick when in contact with objects. This can be used for friction."
+  ]
+}

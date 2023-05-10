@@ -1,0 +1,26 @@
+{
+  "name": "SetCameraTransform",
+  "arguments": [
+    {
+      "name": "transform",
+      "desc": "Desired camera transform",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "fov",
+      "desc": "Optional horizontal field of view in degrees (default: 90)",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetCameraTransform(Transform(Vec(0, 10, 0), QuatEuler(0, 90, 0)))"
+    ]
+  ],
+  "description": [
+    "Override current camera transform for this frame. Call continuously to keep overriding."
+  ]
+}

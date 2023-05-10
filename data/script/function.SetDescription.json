@@ -1,0 +1,27 @@
+{
+  "name": "SetDescription",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "description",
+      "desc": "The description string",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetDescription(body, \"Target object\")"
+    ]
+  ],
+  "description": [
+    "All entities can have an associated description. The description for ",
+    "bodies and shapes will show up on the HUD when looking at them."
+  ]
+}

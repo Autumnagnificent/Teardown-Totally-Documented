@@ -1,0 +1,30 @@
+{
+  "name": "GetBodyShapes",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table of shape handles",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local shapes = GetBodyShapes(body)",
+      "for i=1,#shapes do",
+      "\tlocal shape = shapes[i]",
+      "end"
+    ]
+  ],
+  "description": [
+    "Return handles to all shapes owned by a body"
+  ]
+}

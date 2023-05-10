@@ -1,0 +1,35 @@
+{
+  "name": "UiBlankButton",
+  "arguments": [
+    {
+      "name": "w",
+      "desc": "Button width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Button height",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "pressed",
+      "desc": "True if user clicked button",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if UiBlankButton(30, 30) then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

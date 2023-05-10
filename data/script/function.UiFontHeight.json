@@ -1,0 +1,20 @@
+{
+  "name": "UiFontHeight",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "size",
+      "desc": "Font size",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local h = UiFontHeight()"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

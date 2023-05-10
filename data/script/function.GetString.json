@@ -1,0 +1,27 @@
+{
+  "name": "GetString",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Registry key",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "String value of registry node or \"\" if not found",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "local name = GetString(\"level.name\")"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

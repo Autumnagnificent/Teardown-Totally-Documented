@@ -1,0 +1,22 @@
+{
+  "name": "Joint",
+  "description": [
+    "Joints are used to physically connect two shapes. There are several types of joints and they are typically",
+    "placed in the editor. When destruction occurs, joints may be transferred to new shapes, detached or",
+    "completely disabled."
+  ],
+  "functions": [
+    "DetachJointFromShape",
+    "FindJoint",
+    "FindJoints",
+    "GetJointLimits",
+    "GetJointMovement",
+    "GetJointOtherShape",
+    "GetJointShapes",
+    "GetJointType",
+    "GetJointedBodies",
+    "IsJointBroken",
+    "SetJointMotor",
+    "SetJointMotorTarget"
+  ]
+}

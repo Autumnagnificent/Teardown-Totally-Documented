@@ -1,0 +1,23 @@
+{
+  "name": "GetPlayerPickShape",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to picked shape or zero if nothing is picked",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local shape = GetPlayerPickShape()",
+      "if shape ~= 0 then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

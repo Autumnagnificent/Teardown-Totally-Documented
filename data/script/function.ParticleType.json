@@ -1,0 +1,20 @@
+{
+  "name": "ParticleType",
+  "arguments": [
+    {
+      "name": "type",
+      "desc": "Type of particle. Can be \"smoke\" or \"plain\".",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "ParticleType(\"smoke\")"
+    ]
+  ],
+  "description": [
+    "Set type of particle"
+  ]
+}

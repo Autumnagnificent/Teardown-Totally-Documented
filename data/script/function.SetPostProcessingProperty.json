@@ -1,0 +1,41 @@
+{
+  "name": "SetPostProcessingProperty",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Property name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "value0",
+      "desc": "Property value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value1",
+      "desc": "Extra property value (only some properties)",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "value2",
+      "desc": "Extra property value (only some properties)",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Sepia post processing",
+      "SetPostProcessingProperty(\"saturation\", 0.4)",
+      "SetPostProcessingProperty(\"colorbalance\", 1.3, 1.0, 0.7)"
+    ]
+  ],
+  "description": [
+    "This function is used for manipulating the post processing properties. The available properties are",
+    "exactly the same as in the editor."
+  ]
+}

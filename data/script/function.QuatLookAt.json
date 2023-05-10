@@ -1,0 +1,38 @@
+{
+  "name": "QuatLookAt",
+  "arguments": [
+    {
+      "name": "eye",
+      "desc": "Vector representing the camera location",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "target",
+      "desc": "Vector representing the point to look at",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "quat",
+      "desc": "New quaternion",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local eye = Vec(0, 10, 0)",
+      "local target = Vec(0, 1, 5)",
+      "local rot = QuatLookAt(eye, target)",
+      "SetCameraTransform(Transform(eye, rot))"
+    ]
+  ],
+  "description": [
+    "Create a quaternion pointing the negative Z axis (forward) towards",
+    "a specific point, keeping the Y axis upwards. This is very useful",
+    "for creating camera transforms."
+  ]
+}

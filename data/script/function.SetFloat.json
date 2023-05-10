@@ -1,0 +1,26 @@
+{
+  "name": "SetFloat",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Registry key",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "desc": "Desired value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetFloat(\"level.time\", 22.3)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

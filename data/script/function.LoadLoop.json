@@ -1,0 +1,33 @@
+{
+  "name": "LoadLoop",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to ogg sound file",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "nominalDistance",
+      "desc": "The distance in meters this sound is recorded at. Affects attenuation, default is 10.0",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Loop handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local loop = LoadLoop(\"siren.ogg\")"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

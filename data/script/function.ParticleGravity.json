@@ -1,0 +1,45 @@
+{
+  "name": "ParticleGravity",
+  "arguments": [
+    {
+      "name": "g0",
+      "desc": "Gravity",
+      "optional": false,
+      "type": "float"
+    },
+    {
+      "name": "g1",
+      "desc": "End gravity",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "interpolation",
+      "desc": "Interpolation method: linear, smooth, easein, easeout or constant. Default is linear.",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "fadein",
+      "desc": "Fade in between t=0 and t=fadein. Default is zero.",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "fadeout",
+      "desc": "Fade out between t=fadeout and t=1. Default is one.",
+      "optional": true,
+      "type": "float"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Move particles slowly upwards",
+      "ParticleGravity(2)"
+    ]
+  ],
+  "description": [
+    "Set particle gravity. It will be applied along the world Y axis. A negative value will move the particle downwards."
+  ]
+}

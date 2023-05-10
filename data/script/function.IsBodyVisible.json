@@ -1,0 +1,42 @@
+{
+  "name": "IsBodyVisible",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "maxDist",
+      "desc": "Maximum visible distance",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "rejectTransparent",
+      "desc": "See through transparent materials. Default false.",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "visible",
+      "desc": "Return true if body is visible",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if IsBodyVisible(body, 25) then",
+      "\t--Body is within 25 meters visible to the camera",
+      "end"
+    ]
+  ],
+  "description": [
+    "This will check if a body is currently visible in the camera frustum and",
+    "not occluded by other objects."
+  ]
+}

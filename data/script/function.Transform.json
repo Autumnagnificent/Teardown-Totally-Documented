@@ -1,0 +1,41 @@
+{
+  "name": "Transform",
+  "arguments": [
+    {
+      "name": "pos",
+      "desc": "Vector representing transform position",
+      "optional": true,
+      "type": "table"
+    },
+    {
+      "name": "rot",
+      "desc": "Quaternion representing transform rotation",
+      "optional": true,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "New transform",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--Create transform located at {0, 0, 0} with no rotation",
+      "local t1 = Transform()",
+      "",
+      "--Create transform located at {10, 0, 0} with no rotation",
+      "local t2 = Transform(Vec(10, 0,0))",
+      "",
+      "--Create transform located at {10, 0, 0}, rotated 45 degrees around Y axis",
+      "local t2 = Transform(Vec(10, 0,0), QuatEuler(0, 45, 0))"
+    ]
+  ],
+  "description": [
+    "A transform is a regular lua table with two entries: pos and rot,",
+    "a vector and quaternion representing transform position and rotation."
+  ]
+}

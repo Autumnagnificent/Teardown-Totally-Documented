@@ -1,0 +1,20 @@
+{
+  "name": "Randomize",
+  "arguments": [
+    {
+      "name": "seed",
+      "desc": "",
+      "optional": false,
+      "type": "[number]"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "Randomize(5)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

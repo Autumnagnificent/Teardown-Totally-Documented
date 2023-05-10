@@ -1,0 +1,34 @@
+{
+  "name": "ApplyBodyImpulse",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle (should be a dynamic body)",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "position",
+      "desc": "World space position as vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "impulse",
+      "desc": "World space impulse as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local pos = Vec(0,1,0)",
+      "local imp = Vec(0,0,10)",
+      "ApplyBodyImpulse(body, pos, imp)"
+    ]
+  ],
+  "description": [
+    "Apply impulse to dynamic body at position (give body a push)."
+  ]
+}

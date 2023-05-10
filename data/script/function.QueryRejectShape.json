@@ -1,0 +1,22 @@
+{
+  "name": "QueryRejectShape",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Do not include shape in next raycast",
+      "QueryRejectShape(shape)",
+      "QueryRaycast(...)"
+    ]
+  ],
+  "description": [
+    "Exclude shape from the next query"
+  ]
+}

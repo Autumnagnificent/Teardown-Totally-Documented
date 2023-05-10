@@ -1,0 +1,27 @@
+{
+  "name": "DrawBodyHighlight",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "amount",
+      "desc": "Amount",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "DrawBodyHighlight(body, 0.5)"
+    ]
+  ],
+  "description": [
+    "Flash the appearance of a body when rendering this frame. This is",
+    "used for valuables in the game."
+  ]
+}

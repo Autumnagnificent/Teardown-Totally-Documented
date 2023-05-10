@@ -1,0 +1,35 @@
+{
+  "name": "IsBodyInTrigger",
+  "arguments": [
+    {
+      "name": "trigger",
+      "desc": "Trigger handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "body",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "inside",
+      "desc": "True if body is in trigger volume",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if IsBodyInTrigger(trigger, body) then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    "This function will only check the center point of the body"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "DebugPrint",
+  "arguments": [
+    {
+      "name": "message",
+      "desc": "Message to display",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "DebugPrint(\"time\")"
+    ]
+  ],
+  "description": [
+    "Display message on screen. The last 20 lines are displayed."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Restart",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "if shouldRestart then",
+      "Restart()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Restart level"
+  ]
+}

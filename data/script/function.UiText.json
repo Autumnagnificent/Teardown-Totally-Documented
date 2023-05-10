@@ -1,0 +1,46 @@
+{
+  "name": "UiText",
+  "arguments": [
+    {
+      "name": "text",
+      "desc": "Print text at cursor location",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "move",
+      "desc": "Automatically move cursor vertically. Default false.",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "w",
+      "desc": "Width of text",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Height of text",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "UiFont(\"bold.ttf\", 24)",
+      "UiText(\"Hello\")",
+      "",
+      "...",
+      "",
+      "--Automatically advance cursor",
+      "UiText(\"First line\", true)",
+      "UiText(\"Second line\", true)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

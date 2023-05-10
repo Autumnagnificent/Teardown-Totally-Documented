@@ -1,0 +1,26 @@
+{
+  "name": "UiGetMousePos",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "x",
+      "desc": "X coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y coordinate",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local x, y = UiGetMousePos()"
+    ]
+  ],
+  "description": [
+    "Get mouse pointer position relative to the cursor"
+  ]
+}

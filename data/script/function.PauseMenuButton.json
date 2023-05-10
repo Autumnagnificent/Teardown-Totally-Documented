@@ -1,0 +1,55 @@
+{
+  "name": "PauseMenuButton",
+  "arguments": [
+    {
+      "name": "title",
+      "desc": "Text on button",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "primary",
+      "desc": "Primary button",
+      "optional": true,
+      "type": "bool"
+    }
+  ],
+  "returns": [
+    {
+      "name": "clicked",
+      "desc": "True if clicked, false otherwise",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "",
+      "    -- Primary button will be placed in the main pause menu",
+      "\tif PauseMenuButton(\"Back to Hub\", true) then",
+      "\t\tStartLevel(\"hub\", \"MOD/hub.xml\")",
+      "\tend",
+      "\t",
+      "\t-- Button will be placed in the bottom bar of the pause menu",
+      "\tif PauseMenuButton(\"MyMod Settings\") then",
+      "\t\tvisible = true",
+      "\tend",
+      "end",
+      "",
+      "function draw()",
+      "\tif visible then",
+      "\t\tUiMakeInteractive()",
+      "\t\t...",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Calling this function will add a button on the bottom bar or in the main pause menu (center of the screen) when the game is paused. ",
+    "A primary button will be placed in the main pause menu if this function is called from a playable mod. There can be only one primary button.",
+    "Use this as a way to bring up mod settings or other user interfaces while the game is running. ",
+    "Call this function every frame from the tick function for as long as the pause menu button",
+    "should still be visible."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "GetBodyMass",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "mass",
+      "desc": "Body mass. Static bodies always return zero mass.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local mass = GetBodyMass(body)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

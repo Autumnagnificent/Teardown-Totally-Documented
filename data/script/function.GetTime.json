@@ -1,0 +1,21 @@
+{
+  "name": "GetTime",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "time",
+      "desc": "The time in seconds since level was started",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local t = GetTime()"
+    ]
+  ],
+  "description": [
+    "Returns running time of this script. If called from update, this returns",
+    "the simulated time, otherwise it returns wall time."
+  ]
+}
