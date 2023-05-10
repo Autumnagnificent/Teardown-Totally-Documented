@@ -1,0 +1,54 @@
+{
+  "name": "DebugLine",
+  "arguments": [
+    {
+      "name": "p0",
+      "desc": "World space point as vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "p1",
+      "desc": "World space point as vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "r",
+      "desc": "Red",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Green",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Blue",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Alpha",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Draw white debug line",
+      "DebugLine(Vec(0, 0, 0), Vec(-10, 5, -10))",
+      "",
+      "--Draw red debug line",
+      "DebugLine(Vec(0, 0, 0), Vec(10, 5, 10), 1, 0, 0)"
+    ]
+  ],
+  "description": [
+    "Draw a 3D debug overlay line in the world. Default color is white."
+  ]
+}

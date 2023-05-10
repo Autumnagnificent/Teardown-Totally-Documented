@@ -1,0 +1,39 @@
+{
+  "name": "Body",
+  "description": [
+    "A body represents a rigid body in the scene. It can be either static or dynamic. Only dynamic bodies are",
+    "affected by physics."
+  ],
+  "functions": [
+    "ApplyBodyImpulse",
+    "ConstrainAngularVelocity",
+    "ConstrainOrientation",
+    "ConstrainPosition",
+    "ConstrainVelocity",
+    "DrawBodyHighlight",
+    "DrawBodyOutline",
+    "FindBodies",
+    "FindBody",
+    "GetBodyAngularVelocity",
+    "GetBodyBounds",
+    "GetBodyCenterOfMass",
+    "GetBodyClosestPoint",
+    "GetBodyMass",
+    "GetBodyShapes",
+    "GetBodyTransform",
+    "GetBodyVehicle",
+    "GetBodyVelocity",
+    "GetBodyVelocityAtPos",
+    "GetWorldBody",
+    "IsBodyActive",
+    "IsBodyBroken",
+    "IsBodyDynamic",
+    "IsBodyJointedToStatic",
+    "IsBodyVisible",
+    "SetBodyActive",
+    "SetBodyAngularVelocity",
+    "SetBodyDynamic",
+    "SetBodyTransform",
+    "SetBodyVelocity"
+  ]
+}

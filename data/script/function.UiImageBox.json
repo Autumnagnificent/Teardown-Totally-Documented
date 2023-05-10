@@ -1,0 +1,45 @@
+{
+  "name": "UiImageBox",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to image (PNG or JPG format)",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "width",
+      "desc": "Width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "height",
+      "desc": "Height",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "borderWidth",
+      "desc": "Border width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "borderHeight",
+      "desc": "Border height",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiImageBox(\"menu-frame.png\", 200, 200, 10, 10)"
+    ]
+  ],
+  "description": [
+    "Draw 9-slice image at cursor position. Width should be at least 2*borderWidth.",
+    "Height should be at least 2*borderHeight."
+  ]
+}

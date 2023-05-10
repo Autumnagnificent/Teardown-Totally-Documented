@@ -1,0 +1,15 @@
+{
+  "name": "Vehicle",
+  "description": [
+    "Vehicles are set up in the editor and consists of multiple parts owned by a vehicle entity."
+  ],
+  "functions": [
+    "DriveVehicle",
+    "FindVehicle",
+    "FindVehicles",
+    "GetVehicleBody",
+    "GetVehicleDriverPos",
+    "GetVehicleHealth",
+    "GetVehicleTransform"
+  ]
+}

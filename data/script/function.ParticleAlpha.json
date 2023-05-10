@@ -1,0 +1,45 @@
+{
+  "name": "ParticleAlpha",
+  "arguments": [
+    {
+      "name": "a0",
+      "desc": "Alpha (0.0 - 1.0)",
+      "optional": false,
+      "type": "float"
+    },
+    {
+      "name": "a1",
+      "desc": "End alpha (0.0 - 1.0)",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "interpolation",
+      "desc": "Interpolation method: linear, smooth, easein, easeout or constant. Default is linear.",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "fadein",
+      "desc": "Fade in between t=0 and t=fadein. Default is zero.",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "fadeout",
+      "desc": "Fade out between t=fadeout and t=1. Default is one.",
+      "optional": true,
+      "type": "float"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Interpolate from opaque to transparent",
+      "ParticleAlpha(1.0, 0.0)"
+    ]
+  ],
+  "description": [
+    "Set the particle alpha (opacity)."
+  ]
+}

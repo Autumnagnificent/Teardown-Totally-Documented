@@ -1,0 +1,27 @@
+{
+  "name": "IsScreenEnabled",
+  "arguments": [
+    {
+      "name": "screen",
+      "desc": "Screen handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "enabled",
+      "desc": "True if screen is enabled",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local b = IsScreenEnabled(screen)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

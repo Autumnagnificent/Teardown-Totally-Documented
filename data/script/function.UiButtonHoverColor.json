@@ -1,0 +1,41 @@
+{
+  "name": "UiButtonHoverColor",
+  "arguments": [
+    {
+      "name": "r",
+      "desc": "Red multiply",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Green multiply",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Blue multiply",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Alpha channel. Default 1.0",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiButtonHoverColor(1, 0, 0)",
+      "if UiTextButton(\"Test\") then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    "Button color filter when hovering mouse pointer."
+  ]
+}

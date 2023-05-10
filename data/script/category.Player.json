@@ -1,0 +1,34 @@
+{
+  "name": "Player",
+  "description": [
+    "The player functions expose certain information about the player."
+  ],
+  "functions": [
+    "GetPlayerCameraTransform",
+    "GetPlayerGrabBody",
+    "GetPlayerGrabShape",
+    "GetPlayerHealth",
+    "GetPlayerInteractBody",
+    "GetPlayerInteractShape",
+    "GetPlayerPickBody",
+    "GetPlayerPickShape",
+    "GetPlayerPos",
+    "GetPlayerScreen",
+    "GetPlayerTransform",
+    "GetPlayerVehicle",
+    "GetPlayerVelocity",
+    "GetToolBody",
+    "RegisterTool",
+    "ReleasePlayerGrab",
+    "RespawnPlayer",
+    "SetPlayerCameraOffsetTransform",
+    "SetPlayerGroundVelocity",
+    "SetPlayerHealth",
+    "SetPlayerScreen",
+    "SetPlayerSpawnTransform",
+    "SetPlayerTransform",
+    "SetPlayerVehicle",
+    "SetPlayerVelocity",
+    "SetToolTransform"
+  ]
+}

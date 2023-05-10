@@ -1,0 +1,41 @@
+{
+  "name": "UiPixelToWorld",
+  "arguments": [
+    {
+      "name": "x",
+      "desc": "X coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y coordinate",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "direction",
+      "desc": "3D world direction as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "UiMakeInteractive()",
+      "local x, y = UiGetMousePos()",
+      "local dir = UiPixelToWorld(x, y)",
+      "local pos = GetCameraTransform().pos",
+      "local hit, dist = QueryRaycast(pos, dir, 100)",
+      "if hit then",
+      "\tDebugPrint(\"hit distance: \" .. dist)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Convert X and Y UI coordinate to a world direction, as seen from current camera.",
+    "This can be used to raycast into the scene from the mouse pointer position."
+  ]
+}

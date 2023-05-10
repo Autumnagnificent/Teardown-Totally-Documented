@@ -1,0 +1,24 @@
+{
+  "name": "GetPlayerPos",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "position",
+      "desc": "Player center position",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local p = GetPlayerPos()",
+      "",
+      "--This is equivalent to",
+      "p = VecAdd(GetPlayerTransform().pos, Vec(0,1,0))"
+    ]
+  ],
+  "description": [
+    "Return center point of player. This function is deprecated. ",
+    "Use GetPlayerTransform instead."
+  ]
+}

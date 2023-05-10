@@ -1,0 +1,39 @@
+{
+  "name": "GetTagValue",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Returns the tag value, if any. Empty string otherwise.",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "SetTag(handle, \"special\")",
+      "value = GetTagValue(handle, \"special\")",
+      "-- value will be \"\"",
+      "",
+      "SetTag(handle, \"special\", \"foo\")",
+      "value = GetTagValue(handle, \"special\")",
+      "-- value will be \"foo\""
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

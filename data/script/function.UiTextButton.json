@@ -1,0 +1,41 @@
+{
+  "name": "UiTextButton",
+  "arguments": [
+    {
+      "name": "text",
+      "desc": "Text on button",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "w",
+      "desc": "Button width",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Button height",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "pressed",
+      "desc": "True if user clicked button",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "if UiTextButton(\"Test\") then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

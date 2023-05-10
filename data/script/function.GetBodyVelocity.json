@@ -1,0 +1,27 @@
+{
+  "name": "GetBodyVelocity",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body handle (should be a dynamic body)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "velocity",
+      "desc": "Linear velocity as vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local linVel = GetBodyVelocity(body)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

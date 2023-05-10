@@ -1,0 +1,27 @@
+{
+  "name": "SetLightEnabled",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Light handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "enabled",
+      "desc": "Set to true if light should be enabled",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetLightEnabled(light, false)"
+    ]
+  ],
+  "description": [
+    "If light is owned by a shape, the emissive scale of that shape will be set",
+    "to 0.0 when light is disabled and 1.0 when light is enabled."
+  ]
+}

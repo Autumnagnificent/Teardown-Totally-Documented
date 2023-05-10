@@ -1,0 +1,26 @@
+{
+  "name": "SetScreenEnabled",
+  "arguments": [
+    {
+      "name": "screen",
+      "desc": "Screen handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "enabled",
+      "desc": "True if screen should be enabled",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetScreenEnabled(screen, true)"
+    ]
+  ],
+  "description": [
+    "Enable or disable screen"
+  ]
+}

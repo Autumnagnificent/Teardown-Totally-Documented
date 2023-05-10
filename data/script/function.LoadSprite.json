@@ -1,0 +1,29 @@
+{
+  "name": "LoadSprite",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to sprite. Must be PNG or JPG format.",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Sprite handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tarrow = LoadSprite(\"arrow.png\")",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

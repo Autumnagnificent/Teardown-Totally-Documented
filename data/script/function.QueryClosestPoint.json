@@ -1,0 +1,58 @@
+{
+  "name": "QueryClosestPoint",
+  "arguments": [
+    {
+      "name": "origin",
+      "desc": "World space point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "maxDist",
+      "desc": "Maximum distance. Keep this as low as possible for good performance.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "hit",
+      "desc": "True if a point was found",
+      "optional": false,
+      "type": "boolean"
+    },
+    {
+      "name": "point",
+      "desc": "World space closest point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "normal",
+      "desc": "World space normal at closest point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "shape",
+      "desc": "Handle to closest shape",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "--Find closest point within 10 meters of {0, 5, 0}, excluding any point on myVehicle",
+      "QueryRejectVehicle(myVehicle)",
+      "local hit, p, n, s = QueryClosestPoint(Vec(0, 5, 0), 10)",
+      "if hit then",
+      "\t--Point p of shape s is closest",
+      "end"
+    ]
+  ],
+  "description": [
+    "This will query the closest point to all shapes in the world. If you ",
+    "want to set up a filter for the query you need to do so before every call",
+    "to this function."
+  ]
+}

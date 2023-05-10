@@ -1,0 +1,34 @@
+{
+  "name": "GetTriggerBounds",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Trigger handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "min",
+      "desc": "Lower point of trigger bounds in world space",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "max",
+      "desc": "Upper point of trigger bounds in world space",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local mi, ma = GetTriggerBounds(trigger)",
+      "local list = QueryAabbShapes(mi, ma)"
+    ]
+  ],
+  "description": [
+    "Return the lower and upper points in world space of the trigger axis aligned bounding box"
+  ]
+}

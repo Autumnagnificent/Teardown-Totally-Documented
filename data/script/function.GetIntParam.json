@@ -1,0 +1,34 @@
+{
+  "name": "GetIntParam",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Parameter name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "default",
+      "desc": "Default parameter value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "--Retrieve blinkcount parameter, or set to 5 if omitted",
+      "parameterBlinkCount = GetIntParam(\"blinkcount\", 5)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

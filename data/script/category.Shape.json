@@ -1,0 +1,30 @@
+{
+  "name": "Shape",
+  "description": [
+    "A shape is a voxel object and always owned by a body. A single body may contain multiple shapes. The transform",
+    "of shape is expressed in the parent body coordinate system."
+  ],
+  "functions": [
+    "DrawShapeHighlight",
+    "DrawShapeOutline",
+    "FindShape",
+    "FindShapes",
+    "GetShapeBody",
+    "GetShapeBounds",
+    "GetShapeClosestPoint",
+    "GetShapeJoints",
+    "GetShapeLights",
+    "GetShapeLocalTransform",
+    "GetShapeMaterialAtIndex",
+    "GetShapeMaterialAtPosition",
+    "GetShapeSize",
+    "GetShapeVoxelCount",
+    "GetShapeWorldTransform",
+    "IsShapeBroken",
+    "IsShapeTouching",
+    "IsShapeVisible",
+    "SetShapeCollisionFilter",
+    "SetShapeEmissiveScale",
+    "SetShapeLocalTransform"
+  ]
+}

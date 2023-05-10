@@ -1,0 +1,45 @@
+{
+  "name": "ParticleEmissive",
+  "arguments": [
+    {
+      "name": "d0",
+      "desc": "Emissive",
+      "optional": false,
+      "type": "float"
+    },
+    {
+      "name": "d1",
+      "desc": "End emissive",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "interpolation",
+      "desc": "Interpolation method: linear, smooth, easein, easeout or constant. Default is linear.",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "fadein",
+      "desc": "Fade in between t=0 and t=fadein. Default is zero.",
+      "optional": true,
+      "type": "float"
+    },
+    {
+      "name": "fadeout",
+      "desc": "Fade out between t=fadeout and t=1. Default is one.",
+      "optional": true,
+      "type": "float"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Highly emissive at start, not emissive at end",
+      "ParticleEmissive(5, 0)"
+    ]
+  ],
+  "description": [
+    "Draw particle as emissive (glow in the dark). This is useful for fire and embers."
+  ]
+}

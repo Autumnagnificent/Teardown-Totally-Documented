@@ -1,0 +1,23 @@
+{
+  "name": "GetPlayerVehicle",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Current vehicle handle, or zero if not in vehicle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local vehicle = GetPlayerVehicle()",
+      "if vehicle ~= 0 then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

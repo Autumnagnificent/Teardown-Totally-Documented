@@ -1,0 +1,41 @@
+{
+  "name": "GetPostProcessingProperty",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Property name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value0",
+      "desc": "Property value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value1",
+      "desc": "Property value (only some properties)",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value2",
+      "desc": "Property value (only some properties)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local saturation = GetPostProcessingProperty(\"saturation\")",
+      "local r,g,b = GetPostProcessingProperty(\"colorbalance\")"
+    ]
+  ],
+  "description": [
+    "This function is used for querying the current post processing properties. ",
+    "The available properties are exactly the same as in the editor."
+  ]
+}

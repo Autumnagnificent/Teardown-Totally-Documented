@@ -1,0 +1,29 @@
+{
+  "name": "UiTranslate",
+  "arguments": [
+    {
+      "name": "x",
+      "desc": "X component",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y component",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiPush()",
+      "\tUiTranslate(100, 0)",
+      "\tUiText(\"Indented\")",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Translate cursor"
+  ]
+}

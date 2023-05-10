@@ -1,0 +1,29 @@
+{
+  "name": "GetVehicleDriverPos",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "pos",
+      "desc": "Driver position as vector in vehicle space",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local driverPos = GetVehicleDriverPos(vehicle)",
+      "local t = GetVehicleTransform(vehicle)",
+      "local worldPos = TransformToParentPoint(t, driverPos)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

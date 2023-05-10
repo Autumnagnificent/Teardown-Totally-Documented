@@ -1,0 +1,21 @@
+{
+  "name": "SetPaused",
+  "arguments": [
+    {
+      "name": "paused",
+      "desc": "True if game should be paused",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Pause game and bring up pause menu on HUD",
+      "SetPaused(true)"
+    ]
+  ],
+  "description": [
+    "Set paused state of the game"
+  ]
+}

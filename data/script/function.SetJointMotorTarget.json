@@ -1,0 +1,44 @@
+{
+  "name": "SetJointMotorTarget",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Joint handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "target",
+      "desc": "Desired movement target",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "maxVel",
+      "desc": "Maximum velocity to reach target. Default is infinite.",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "strength",
+      "desc": "Desired strength. Default is infinite. Zero to disable.",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Make joint reach a 45 degree angle, going at a maximum of 3 radians per second",
+      "SetJointMotorTarget(hinge, 45, 3)"
+    ]
+  ],
+  "description": [
+    "If a joint has a motor target, it will try to maintain its relative movement. This",
+    "is very useful for elevators or other animated, jointed mechanisms.",
+    "If joint is of type hinge, target is an angle in degrees (-180 to 180) and velocity",
+    "is given in radians per second. If joint type is prismatic, target is given",
+    "in meters and velocity is given in meters per second. Setting a motor target will",
+    "override any previous call to SetJointMotor."
+  ]
+}

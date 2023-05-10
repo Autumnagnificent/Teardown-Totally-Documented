@@ -1,0 +1,60 @@
+{
+  "name": "ConstrainVelocity",
+  "arguments": [
+    {
+      "name": "bodyA",
+      "desc": "First body handle (zero for static)",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "bodyB",
+      "desc": "Second body handle (zero for static)",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "point",
+      "desc": "World space point",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "dir",
+      "desc": "World space direction",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "relVel",
+      "desc": "Desired relative velocity along the provided direction",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "min",
+      "desc": "Minimum impulse (default: -infinity)",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "max",
+      "desc": "Maximum impulse (default: infinity)",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Constrain the velocity between bodies A and B so that the relative velocity ",
+      "--along the X axis at point (0, 5, 0) is always 3 m/s",
+      "ConstrainVelocity(a, b, Vec(0, 5, 0), Vec(1, 0, 0), 3)"
+    ]
+  ],
+  "description": [
+    "This will tell the physics solver to constrain the velocity between two bodies. The physics solver",
+    "will try to reach the desired goal, while not applying an impulse bigger than the min and max values.",
+    "This function should only be used from the update callback."
+  ]
+}

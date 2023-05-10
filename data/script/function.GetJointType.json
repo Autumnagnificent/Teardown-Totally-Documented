@@ -1,0 +1,30 @@
+{
+  "name": "GetJointType",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Joint handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "type",
+      "desc": "Joint type",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "if GetJointType(joint) == \"rope\" then",
+      "\t--Joint is rope",
+      "end"
+    ]
+  ],
+  "description": [
+    "Joint type is one of the following: \"ball\", \"hinge\", \"prismatic\" or \"rope\".",
+    "An empty string is returned if joint handle is invalid."
+  ]
+}

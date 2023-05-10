@@ -1,0 +1,74 @@
+[
+  [
+    "up",
+    "Move forward / Accelerate"
+  ],
+  [
+    "down",
+    "Move backward / Brake"
+  ],
+  [
+    "left",
+    "Move left"
+  ],
+  [
+    "right",
+    "Move right"
+  ],
+  [
+    "interact",
+    "Interact"
+  ],
+  [
+    "flashlight",
+    "Flashlight"
+  ],
+  [
+    "jump",
+    "Jump"
+  ],
+  [
+    "crouch",
+    "Crouch"
+  ],
+  [
+    "usetool",
+    "Use tool"
+  ],
+  [
+    "grab",
+    "Grab"
+  ],
+  [
+    "handbrake",
+    "Handbrake"
+  ],
+  [
+    "map",
+    "Map"
+  ],
+  [
+    "pause",
+    "Pause game (escape)"
+  ],
+  [
+    "vehicleraise",
+    "Raise vehicle parts"
+  ],
+  [
+    "vehiclelower",
+    "Lower vehicle parts"
+  ],
+  [
+    "vehicleaction",
+    "Vehicle action"
+  ],
+  [
+    "camerax",
+    "Camera x movement, scaled by sensitivity. Only valid in InputValue."
+  ],
+  [
+    "cameray",
+    "Camera y movement, scaled by sensitivity. Only valid in InputValue."
+  ]
+]

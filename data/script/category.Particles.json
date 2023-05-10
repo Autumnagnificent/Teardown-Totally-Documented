@@ -1,0 +1,35 @@
+{
+  "name": "Particles",
+  "description": [
+    "Functions to configure and emit particles, used for fire, smoke and other visual effects. There are ",
+    "two types of particles in Teardown - plain particles and smoke particles. Plain particles are simple ",
+    "billboard particles simulated with gravity and velocity that can be used for fire, debris, rain, snow and such. ",
+    "Smoke particles are only intended for smoke and they are simulated with fluid dynamics internally and rendered",
+    "with some special tricks to get a more smoke-like appearance.",
+    "",
+    "All functions in the particle API, except for SpawnParticle modify properties in the particle state, which is",
+    "then used when emitting particles, so the idea is to set up a state, and then emit one or several particles ",
+    "using that state.",
+    "",
+    "Most properties in the particle state can be either constant or animated over time. Supply a single argument",
+    "for constant, two argument for linear interpolation, and optionally a third argument for other types of ",
+    "interpolation. There are also fade in and fade out parameters that fade from and to zero."
+  ],
+  "functions": [
+    "ParticleAlpha",
+    "ParticleCollide",
+    "ParticleColor",
+    "ParticleDrag",
+    "ParticleEmissive",
+    "ParticleFlags",
+    "ParticleGravity",
+    "ParticleRadius",
+    "ParticleReset",
+    "ParticleRotation",
+    "ParticleSticky",
+    "ParticleStretch",
+    "ParticleTile",
+    "ParticleType",
+    "SpawnParticle"
+  ]
+}

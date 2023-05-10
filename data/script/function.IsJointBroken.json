@@ -1,0 +1,27 @@
+{
+  "name": "IsJointBroken",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Joint handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "broken",
+      "desc": "True if joint is broken",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local broken = IsJointBroken(joint)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

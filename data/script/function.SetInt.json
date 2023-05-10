@@ -1,0 +1,26 @@
+{
+  "name": "SetInt",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Registry key",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "desc": "Desired value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetInt(\"score.levels.level1\", 4)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

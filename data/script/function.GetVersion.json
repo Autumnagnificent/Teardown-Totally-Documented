@@ -1,0 +1,21 @@
+{
+  "name": "GetVersion",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "version",
+      "desc": "Dot separated string of current version of the game",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "local v = GetVersion()",
+      "--v is \"0.5.0\""
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

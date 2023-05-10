@@ -1,0 +1,29 @@
+{
+  "name": "UiSoundLoop",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to looping sound file (OGG format)",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "volume",
+      "desc": "Playback volume. Default 1.0",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "if animating then",
+      "\tUiSoundLoop(\"screech.ogg\")",
+      "end"
+    ]
+  ],
+  "description": [
+    "Call this continuously to keep playing loop. ",
+    "UI sounds are not affected by acoustics simulation. Use LoadLoop / PlayLoop for that."
+  ]
+}

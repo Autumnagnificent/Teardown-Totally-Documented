@@ -1,0 +1,34 @@
+{
+  "name": "GetPathPoint",
+  "arguments": [
+    {
+      "name": "dist",
+      "desc": "The distance along path. Should be between zero and result from GetPathLength()",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "point",
+      "desc": "The path point dist meters along the path",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local d = 0",
+      "local l = GetPathLength()",
+      "while d < l do",
+      "\tDebugCross(GetPathPoint(d))",
+      "\td = d + 0.5",
+      "end"
+    ]
+  ],
+  "description": [
+    "Return a point along the path for the most recently computed path query. Note that the result can often be retrieved even",
+    "if the path query failed. If the target point couldn't be reached, the path endpoint will be the point closest",
+    "to the target."
+  ]
+}
