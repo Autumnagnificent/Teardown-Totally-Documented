@@ -1,0 +1,75 @@
+{
+  "name": "CreateMaterial",
+  "arguments": [
+    {
+      "name": "type",
+      "desc": "Material type",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "r",
+      "desc": "Red color",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Green color",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Blue color",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Alpha",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "reflect",
+      "desc": "reflectivity",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "shiny",
+      "desc": "Shininess",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "metal",
+      "desc": "Metallic",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "emissive",
+      "desc": "Emissive",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "material",
+      "desc": "Material handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

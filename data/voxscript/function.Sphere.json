@@ -1,0 +1,39 @@
+{
+  "name": "Sphere",
+  "arguments": [
+    {
+      "name": "x",
+      "desc": "X center",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y center",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z",
+      "desc": "Z center",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "r",
+      "desc": "Radius",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "Material(mat)",
+      "Sphere(0, 0, 0, 15)"
+    ]
+  ],
+  "description": [
+    "Draw solid sphere into current vox shape using the current material"
+  ]
+}

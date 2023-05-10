@@ -1,0 +1,56 @@
+{
+  "name": "Vox",
+  "arguments": [
+    {
+      "name": "x",
+      "desc": "X position",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y position",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z",
+      "desc": "Z position",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "rx",
+      "desc": "Rotation around X in degrees",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "ry",
+      "desc": "Rotation around Y in degrees",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "rz",
+      "desc": "Rotation around Z in degrees",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Create vox shape",
+      "Vox(0, 0, 0)",
+      "",
+      "--We can now fill it with content",
+      "Material(mat)",
+      "Box(0, 0, 0, 10, 10, 10)",
+      "Sphere(10, 10, 10, 5)"
+    ]
+  ],
+  "description": [
+    "Create new shape"
+  ]
+}

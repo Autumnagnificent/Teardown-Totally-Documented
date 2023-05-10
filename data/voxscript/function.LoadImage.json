@@ -1,0 +1,20 @@
+{
+  "name": "LoadImage",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to PNG image",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "LoadImage(\"MOD/image.png\")"
+    ]
+  ],
+  "description": [
+    "Load PNG image from file"
+  ]
+}

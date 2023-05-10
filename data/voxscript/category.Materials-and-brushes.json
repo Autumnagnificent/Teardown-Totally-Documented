@@ -1,0 +1,17 @@
+{
+  "name": "Materials and brushes",
+  "description": [
+    "Materials can be specific materials created in the script or brushes read from a vox file. Use the ",
+    "Material function to set current material. This material will then be used for all subsequent calls",
+    "to Box and Sphere."
+  ],
+  "functions": [
+    "CreateBrush",
+    "CreateMaterial",
+    "FlipBrush",
+    "GetBrushSize",
+    "Material",
+    "RotateBrush",
+    "TranslateBrush"
+  ]
+}

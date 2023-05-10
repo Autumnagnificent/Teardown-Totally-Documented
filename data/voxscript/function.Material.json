@@ -1,0 +1,26 @@
+{
+  "name": "Material",
+  "arguments": [
+    {
+      "name": "material",
+      "desc": "Material or brush handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
+      "SetMaterial(brick)",
+      "Box(0, 0, 0, 10, 10, 10)",
+      "",
+      "--Make box hollow",
+      "SetMaterial(0)",
+      "Box(2, 2, 2, 8, 8, 8)"
+    ]
+  ],
+  "description": [
+    "Set current material or brush. Pass in zero to remove content."
+  ]
+}
