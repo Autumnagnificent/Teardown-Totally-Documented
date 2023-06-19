@@ -56,6 +56,12 @@
       "desc": "Alpha",
       "optional": false,
       "type": "number"
+    },
+    {
+      "name": "entry",
+      "desc": "Palette entry for voxel (zero if empty)",
+      "optional": false,
+      "type": "number"
     }
   ],
   "examples": [

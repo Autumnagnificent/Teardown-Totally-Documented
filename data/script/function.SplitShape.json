@@ -1,0 +1,31 @@
+{
+  "name": "SplitShape",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Source handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "removeResidual",
+      "desc": "Remove residual shapes (default false)",
+      "optional": false,
+      "type": "bool"
+    }
+  ],
+  "returns": [
+    {
+      "name": "newShapes",
+      "desc": "List of shape handles created",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [],
+  "description": [
+    "Split up a shape into multiple shapes based on connectivity. If the removeResidual flag",
+    "is used, small disconnected chunks will be removed during this process to reduce the number",
+    "of newly created shapes."
+  ]
+}

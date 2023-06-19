@@ -5,8 +5,15 @@
     "of shape is expressed in the parent body coordinate system."
   ],
   "functions": [
+    "ClearShape",
+    "CopyShapeContent",
+    "CopyShapePalette",
+    "CreateShape",
+    "DrawShapeBox",
     "DrawShapeHighlight",
+    "DrawShapeLine",
     "DrawShapeOutline",
+    "ExtrudeShape",
     "FindShape",
     "FindShapes",
     "GetShapeBody",
@@ -15,16 +22,24 @@
     "GetShapeJoints",
     "GetShapeLights",
     "GetShapeLocalTransform",
+    "GetShapeMaterial",
     "GetShapeMaterialAtIndex",
     "GetShapeMaterialAtPosition",
+    "GetShapePalette",
     "GetShapeSize",
     "GetShapeVoxelCount",
     "GetShapeWorldTransform",
     "IsShapeBroken",
     "IsShapeTouching",
     "IsShapeVisible",
+    "MergeShape",
+    "ResizeShape",
+    "SetBrush",
+    "SetShapeBody",
     "SetShapeCollisionFilter",
     "SetShapeEmissiveScale",
-    "SetShapeLocalTransform"
+    "SetShapeLocalTransform",
+    "SplitShape",
+    "TrimShape"
   ]
 }

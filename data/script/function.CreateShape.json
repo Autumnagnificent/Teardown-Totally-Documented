@@ -1,0 +1,37 @@
+{
+  "name": "CreateShape",
+  "arguments": [
+    {
+      "name": "body",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "transform",
+      "desc": "Shape transform in body space",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "refShape",
+      "desc": "Handle to reference shape or path to vox file",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "newShape",
+      "desc": "Handle of new shape",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [],
+  "description": [
+    "Create new, empty shape on existing body using the palette of a reference shape.",
+    "The reference shape can be any existingf shape in the scene or an external vox file.",
+    "The size of the new shape will be 1x1x1."
+  ]
+}
