@@ -3,7 +3,7 @@
 --[[
 	Manually created/hand typed by Λutumnatic,
 	Help from Thomasims
-	Motivation from ... wait a second, I swear I left it right here, where did it go?
+	Motivation from the awesome modding community, thanks everyone.
 
 	Not all function are catagorized how they are in the offical api documentation
 	Some are split up into more catagories, and some
@@ -411,7 +411,7 @@ function SetBool(key, value) end
 
 ---Returns the value of registry node or a blank string (`""`) if not found
 ---@param key string
----@return integer value
+---@return string value
 function GetString(key) end
 
 ---@param key string
@@ -648,6 +648,11 @@ function RemoveTag(entity, tag) end
 ---@param tag string
 ---@return boolean
 function HasTag(entity, tag) end
+
+---
+---@param entity entity_handle
+---@return table<string>
+function ListTags(entity) end
 
 ---
 ---@param entity entity_handle
@@ -945,6 +950,20 @@ function GetShapeBounds(shape) end
 ---@param amount number
 function SetShapeEmissiveScale(shape, amount) end
 
+---Return material properties for specific matirial entry.
+---@param shape shape_handle
+---@param index integer
+---@return material type
+---@return number red
+---@return number green
+---@return number blue
+---@return number alpha
+---@return number reflectivity Range 0 - 1
+---@return number shininess Range 0 - 1
+---@return number metallic Range 0 - 1
+---@return number emissive Range 0 - 32
+function GetShapeMaterial(shape, index) end
+
 ---Return material properties for a particular voxel given a world-space position
 ---@param shape shape_handle
 ---@param position vector
@@ -953,6 +972,7 @@ function SetShapeEmissiveScale(shape, amount) end
 ---@return number green
 ---@return number blue
 ---@return number alpha
+---@return integer entry
 function GetShapeMaterialAtPosition(shape, position) end
 
 ---Return material properties for a particular voxel in the voxel grid indexed by integer values.
@@ -967,6 +987,7 @@ function GetShapeMaterialAtPosition(shape, position) end
 ---@return number green
 ---@return number blue
 ---@return number alpha
+---@return integer entry
 function GetShapeMaterialAtIndex(shape, x, y, z) end
 
 ---@param shape shape_handle
@@ -974,7 +995,7 @@ function GetShapeMaterialAtIndex(shape, x, y, z) end
 ---@return integer ysize Size in voxels along y axis
 ---@return integer zsize Size in voxels along z axis
 ---@return number scale The size of one voxel in meters (with default scale it is 0.1)
-function GetShapeSize(shape, xsize, ysize, zsize, scale) end
+function GetShapeSize(shape) end
 
 ---Returns the voxels in a given shape
 ---
@@ -1047,6 +1068,147 @@ function GetShapeClosestPoint(shape, origin) end
 ---@param b shape_handle
 ---@return boolean overlap
 function IsShapeTouching(a, b) end
+
+--#endregion
+--#region Shape Modification
+
+---Creates a new _empty_ shape in the world under an existing body.
+---
+---A empty body can easily be created with
+---```
+---Spawn('<body/>')[1]
+---```
+---@param body body_handle The parent body to create the shape under
+---@param transform transform transform of shape relative to the body
+---@param reference_shape shape_handle|td_path What palette to use, can be a shape handle or a vox file
+---@return shape_handle
+function CreateShape(body, transform, reference_shape) end
+
+---Fill a voxel shape with zeroes, thus removing all voxels.
+---@param shape shape_handle
+function ClearShape(shape) end
+
+---Resize an existing shape.
+---
+---The new coordinates are expressed in the existing shape coordinate frame, so you can provide negative values.
+---
+---The existing content is preserved, but may be cropped if needed. The local shape transform will be moved automatically with an offset vector to preserve the original content in body space.
+---
+---This offset vector is returned in shape local space.
+---@param shape shape_handle
+---@param xmi integer Lower X coordinate
+---@param ymi integer Lower Y coordinate
+---@param zmi integer Lower Z coordinate
+---@param xma integer Upper X coordinate
+---@param yma integer Upper Y coordinate
+---@param zma integer Upper Z coordinate
+---@return vector offset Offset vector in local space
+function ResizeShape(shape, xmi, ymi, zmi, xma, yma, zma) end
+
+---Move existing shape to a new body, optionally providing a new local transform.
+---@param shape shape_handle
+---@param body body_handle
+---@param transform transform?
+function SetShapeBody(shape, body, transform) end
+
+---Copy voxel content from source shape to destination shape.
+---
+---If destination shape has a different size, it will be resized to match the source shape.
+---@param source shape_handle
+---@param destination shape_handle
+function CopyShapeContent(source, destination) end
+
+---Copy the palette from source shape to destination shape.
+---@param source shape_handle
+---@param destination shape_handle
+function CopyShapePalette(source, destination) end
+
+---Return list of material entries, each entry is a material index that can be provided to GetShapeMaterial or used as brush for populating a shape.
+---@param shape shape_handle
+---@return table palette palette material entries
+function GetShapePalette(shape) end
+
+---Set material index to be used for following calls to DrawShapeLine and DrawShapeBox and ExtrudeShape.
+---
+---An optional brush vox file and subobject can be used and provided instead of material index, in which case the content of the brush will be used and repeated.
+---
+---Use material index zero to remove of voxels.
+---@param type 'sphere'|'cube'|'noise'
+---@param size number Size of the brush, must be from 1-16
+---@param index integer|td_path A material or vox file in which to sample from
+---@param object td_path? Optional vox file and subobject can be used and provided instead of material index
+function SetBrush(type, size, index, object) end
+
+---Draw voxelized line between (x0,y0,z0) and (x1,y1,z1) into shape using the material set up with SetBrush.
+---
+---Paint mode will only change material of existing voxels (where the current material index is non-zero).
+---
+---noOverwrite mode will only fill in voxels if the space isn't already accupied by another shape in the scene.
+---@param shape shape_handle
+---@param x0 number Start X coordinate
+---@param y0 number Start Y coordinate
+---@param z0 number Start Z coordinate
+---@param x1 number End X coordinate
+---@param y1 number End Y coordinate
+---@param z1 number End Z coordinate
+---@param paint boolean? Paint mode. Default is false.
+---@param noOverwrite boolean? Only fill in voxels if space isn't already occupied. Default is false.
+function DrawShapeLine(shape, x0, y0, z0, x1, y1, z1, paint, noOverwrite) end
+
+---Draw box between `{ x0, y0, z0 }` and `{ x1, y1, z1 }` into shape using the material set up with SetBrush.
+---@param x0 number Start X coordinate
+---@param y0 number Start Y coordinate
+---@param z0 number Start Z coordinate
+---@param x1 number End X coordinate
+---@param y1 number End Y coordinate
+---@param z1 number End Z coordinate
+function DrawShapeBox(shape, x0, y0, z0, x1, y1, z1) end
+
+---Extrude region of shape. The extruded region will be filled in with the material set up with SetBrush.
+---
+---The mode parameter sepcifies how the region is determined.
+---
+---Exact mode selects region of voxels that exactly match the input voxel at input coordinate.
+---
+---Material mode selects region that has the same material type as the input voxel.
+---
+---Geometry mode selects any connected voxel in the same plane as the input voxel.
+---@param shape shape_handle
+---@param x number X coordinate to extrude
+---@param y number Y coordinate to extrude
+---@param z number Z coordinate to extrude
+---@param dx number X component of extrude direction, should be -1, 0 or 1
+---@param dy number Y component of extrude direction, should be -1, 0 or 1
+---@param dz number Z component of extrude direction, should be -1, 0 or 1
+---@param steps number Length of extrusion in voxels
+---@param mode string Extrusion mode, one of "exact", "material", "geometry". Default is "exact"
+function ExtrudeShape(shape, x, y, z, dx, dy, dz, steps, mode) end
+
+---Trim away empty regions of shape, thus potentially making it smaller.
+---
+---If the size of the shape changes, the shape will be automatically moved to preserve the shape content in body space.
+---
+---The offset vector for this translation is returned in shape local space.
+---@param shape shape_handle
+---@return vector offset Offset vector in local space
+function TrimShape(shape) end
+
+---Split up a shape into multiple shapes based on connectivity.
+---
+---If the removeResidual flag is used, small disconnected chunks will be removed during this process to reduce the number of newly created shapes.
+---@param shape shape_handle
+---@param removeResidual boolean?
+---@return table<shape_handle> new_shapes List of new shape handles that have been created 
+function SplitShape(shape, removeResidual) end
+
+---Try to merge shape with a nearby, matching shape. For a merge to happen, the shapes need to be aligned to the same rotation and touching.
+---
+---If the provided shape was merged into another shape, that shape may be resized to fit the merged content.
+---
+---If shape was merged, the handle to the other shape is returned, otherwise the input handle is returned.
+---@param shape shape_handle
+---@return shape_handle result Shape handle after merge
+function MergeShape(shape) end
 
 --#endregion
 --#region Locations
@@ -1699,6 +1861,7 @@ function DrawSprite(sprite, transform, width, height, red, green, blue, alpha, d
 ---| static | part of a static body |
 ---| large | above debris threshold |
 ---| small | below debris threshold |
+---| visible | only hit visible shapes |
 ---@param layers string A space separate list of layers
 function QueryRequire(layers) end
 
