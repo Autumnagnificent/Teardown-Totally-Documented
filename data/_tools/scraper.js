@@ -79,7 +79,7 @@ function parseFunction(text) {
 		name: name[2],
 		arguments: parseArgs(paragraphs[1]),
 		returns: parseArgs(paragraphs[2]),
-		examples: [parseExample(paragraphs[paragraphs.length - 1])],
+		examples: [parseExample(paragraphs[paragraphs.length - 1])].filter(ex => ex),
 		description: textPart,
 		tables: tablesPart,
 	};
