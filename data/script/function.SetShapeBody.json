@@ -1,0 +1,28 @@
+{
+  "name": "SetShapeBody",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "body",
+      "desc": "Body handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "transform",
+      "desc": "New local shape transform. Default is existing local transform.",
+      "optional": true,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "Move existing shape to a new body, optionally providing a new local transform."
+  ]
+}

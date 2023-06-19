@@ -1,0 +1,37 @@
+{
+  "name": "SetBrush",
+  "arguments": [
+    {
+      "name": "type",
+      "desc": "One of \"sphere\", \"cube\" or \"noise\"",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "size",
+      "desc": "Size of brush in voxels (must be in range 1 to 16)",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "index",
+      "desc": "Material index or path to brush vox file",
+      "optional": false,
+      "type": "or"
+    },
+    {
+      "name": "object",
+      "desc": "Optional object in brush vox file if brush vox file is used",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "Set material index to be used for following calls to DrawShapeLine and DrawShapeBox and ExtrudeShape.",
+    "An optional brush vox file and subobject can be used and provided instead of material index,",
+    "in which case the content of the brush will be used and repeated. Use material index zero ",
+    "to remove of voxels."
+  ]
+}

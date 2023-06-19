@@ -1,0 +1,26 @@
+{
+  "name": "TrimShape",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Source handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "offset",
+      "desc": "Offset vector in shape local space",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [],
+  "description": [
+    "Trim away empty regions of shape, thus potentially making it smaller.",
+    "If the size of the shape changes, the shape will be automatically moved",
+    "to preserve the shape content in body space. The offset vector for this ",
+    "translation is returned in shape local space."
+  ]
+}

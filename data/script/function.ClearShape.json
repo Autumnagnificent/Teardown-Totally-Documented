@@ -1,0 +1,16 @@
+{
+  "name": "ClearShape",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "Fill a voxel shape with zeroes, thus removing all voxels."
+  ]
+}

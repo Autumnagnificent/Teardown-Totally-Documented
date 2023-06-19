@@ -1,0 +1,22 @@
+{
+  "name": "CopyShapePalette",
+  "arguments": [
+    {
+      "name": "src",
+      "desc": "Source shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "dst",
+      "desc": "Destination shape handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "Copy the palette from source shape to destination shape."
+  ]
+}

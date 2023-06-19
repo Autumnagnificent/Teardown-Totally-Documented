@@ -12,6 +12,7 @@
     "GetTagValue",
     "HasTag",
     "IsHandleValid",
+    "ListTags",
     "RemoveTag",
     "SetDescription",
     "SetTag"

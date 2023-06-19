@@ -1,0 +1,53 @@
+{
+  "name": "DrawShapeBox",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Handle to shape",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "x0",
+      "desc": "Start X coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y0",
+      "desc": "Start Y coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z0",
+      "desc": "Start Z coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "x1",
+      "desc": "End X coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y1",
+      "desc": "End Y coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z1",
+      "desc": "End Z coordinate",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "Draw box between (x0,y0,z0) and (x1,y1,z1) into shape using the material",
+    "set up with SetBrush."
+  ]
+}

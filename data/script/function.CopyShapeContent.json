@@ -1,0 +1,23 @@
+{
+  "name": "CopyShapeContent",
+  "arguments": [
+    {
+      "name": "src",
+      "desc": "Source shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "dst",
+      "desc": "Destination shape handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "Copy voxel content from source shape to destination shape. If destination",
+    "shape has a different size, it will be resized to match the source shape."
+  ]
+}
