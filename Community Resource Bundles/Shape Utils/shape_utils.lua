@@ -176,6 +176,31 @@ if ClearKey then -- <script>
 		Delete( negativeShape )
 		return shape
 	end
+
+	function CloneShape( shape )
+		local save = CreateShape()
+		CopyShapeContent( shape, save )
+		local x, y, z, scale = GetShapeSize( shape )
+		local start = GetShapeWorldTransform( shape )
+		ResizeShape( shape, 0, 0, 0, x - 1, y - 1, z + 1 )
+		SetBrush( "cube", 1, 1 )
+		DrawShapeBox( shape, 0, 0, z + 1, 0, 0, z + 1 )
+		local pieces = SplitShape( shape, false )
+		local moved = VecScale( TransformToLocalPoint( GetShapeWorldTransform( shape ), start.pos ), 1 / scale )
+		local mx, my, mz = math.floor( moved[1] + 0.5 ), math.floor( moved[2] + 0.5 ), math.floor( moved[3] + 0.5 )
+		ResizeShape( shape, mx, my, mz, 1, 1, 1 )
+		CopyShapeContent( save, shape )
+		local splitoffset = VecScale( TransformToLocalPoint( GetShapeWorldTransform( pieces[1] ), start.pos ), 1 / scale )
+		local sx, sy, sz = math.floor( splitoffset[1] + 0.5 ), math.floor( splitoffset[2] + 0.5 ),
+							math.floor( splitoffset[3] + 0.5 )
+		ResizeShape( pieces[1], sx, sy, sz, 1, 1, 1 )
+		CopyShapeContent( save, pieces[1] )
+		Delete( save )
+		for i = 2, #pieces do
+			Delete( pieces[i] )
+		end
+		return pieces[1], shape
+	end
 else -- <voxscript>
 	local sx, sy, sz = GetInt( "size", 1, 1, 1 )
 	local shapedata = GetString( "shape" )
