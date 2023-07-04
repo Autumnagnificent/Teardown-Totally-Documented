@@ -18,5 +18,9 @@
   [
     "small",
     "below debris threshold"
+  ],
+  [
+    "visible",
+    "only hit visible shapes"
   ]
 ]

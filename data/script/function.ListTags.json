@@ -1,0 +1,31 @@
+{
+  "name": "ListTags",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "tags",
+      "desc": "Indexed table of tags on entity",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--List all tags and their tag values for a particular entity",
+      "local tags = ListTags(handle)",
+      "for i=1, #tags do",
+      "\tDebugPrint(tags[i] .. \" \" .. GetTagValue(handle, tags[i]))",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

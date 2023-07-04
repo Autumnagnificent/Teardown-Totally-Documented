@@ -1,0 +1,27 @@
+{
+  "name": "MergeShape",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Input shape",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "shape",
+      "desc": "Shape handle after merge",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [],
+  "description": [
+    "Try to merge shape with a nearby, matching shape. For a merge to happen, the",
+    "shapes need to be aligned to the same rotation and touching. If the",
+    "provided shape was merged into another shape, that shape may be resized to",
+    "fit the merged content. If shape was merged, the handle to the other shape is",
+    "returned, otherwise the input handle is returned."
+  ]
+}

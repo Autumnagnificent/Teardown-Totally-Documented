@@ -26,6 +26,18 @@
       "desc": "Height of text",
       "optional": false,
       "type": "number"
+    },
+    {
+      "name": "x",
+      "desc": "End x-position of text. Only valid when \"advance cursor\" is false",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "End y-position of text. Only valid when \"advance cursor\" is false",
+      "optional": false,
+      "type": "number"
     }
   ],
   "examples": [

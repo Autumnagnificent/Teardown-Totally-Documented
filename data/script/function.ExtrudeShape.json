@@ -1,0 +1,68 @@
+{
+  "name": "ExtrudeShape",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Handle to shape",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "x",
+      "desc": "X coordinate to extrude",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y coordinate to extrude",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z",
+      "desc": "Z coordinate to extrude",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "dx",
+      "desc": "X component of extrude direction, should be -1, 0 or 1",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "dy",
+      "desc": "Y component of extrude direction, should be -1, 0 or 1",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "dz",
+      "desc": "Z component of extrude direction, should be -1, 0 or 1",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "steps",
+      "desc": "Length of extrusion in voxels",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "mode",
+      "desc": "Extrusion mode, one of \"exact\", \"material\", \"geometry\". Default is \"exact\"",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "Extrude region of shape. The extruded region will be filled in with the material set up with SetBrush.",
+    "The mode parameter sepcifies how the region is determined.",
+    "Exact mode selects region of voxels that exactly match the input voxel at input coordinate.",
+    "Material mode selects region that has the same material type as the input voxel.",
+    "Geometry mode selects any connected voxel in the same plane as the input voxel."
+  ]
+}

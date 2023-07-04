@@ -1,0 +1,77 @@
+{
+  "name": "GetShapeMaterial",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "entry",
+      "desc": "Material entry",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "type",
+      "desc": "Type",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "red",
+      "desc": "Red value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "green",
+      "desc": "Green value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "blue",
+      "desc": "Blue value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "alpha",
+      "desc": "Alpha value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "reflectivity",
+      "desc": "Range 0 to 1",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "shininess",
+      "desc": "Range 0 to 1",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "metallic",
+      "desc": "Range 0 to 1",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "emissive",
+      "desc": "Range 0 to 32",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [],
+  "description": [
+    "Return material properties for specific matirial entry."
+  ]
+}

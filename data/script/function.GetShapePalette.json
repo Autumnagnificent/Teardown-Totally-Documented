@@ -1,0 +1,25 @@
+{
+  "name": "GetShapePalette",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "entries",
+      "desc": "Palette material entries",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [],
+  "description": [
+    "Return list of material entries, each entry is a material index that",
+    "can be provided to GetShapeMaterial or used as brush for populating a",
+    "shape."
+  ]
+}

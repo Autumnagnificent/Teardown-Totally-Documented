@@ -1,0 +1,62 @@
+{
+  "name": "ResizeShape",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "xmi",
+      "desc": "Lower X coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "ymi",
+      "desc": "Lower Y coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "zmi",
+      "desc": "Lower Z coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "xma",
+      "desc": "Upper X coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "yma",
+      "desc": "Upper Y coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "zma",
+      "desc": "Upper Z coordinate",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "offset",
+      "desc": "Offset vector in shape local space",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [],
+  "description": [
+    "Resize an existing shape. The new coordinates are expressed in the existing shape coordinate frame,",
+    "so you can provide negative values. The existing content is preserved, but may be cropped if needed.",
+    "The local shape transform will be moved automatically with an offset vector to preserve the original content in body space.",
+    "This offset vector is returned in shape local space."
+  ]
+}
