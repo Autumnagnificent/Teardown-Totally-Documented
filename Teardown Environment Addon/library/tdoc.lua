@@ -172,6 +172,7 @@
 ---| "mousewheel" Mouse wheel.
 
 ---@alias material
+---| "none"
 ---| "foliage"
 ---| "dirt"
 ---| "plaster"
