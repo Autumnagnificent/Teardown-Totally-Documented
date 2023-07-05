@@ -68,7 +68,7 @@ SHRED_MaterialSoundBank = {
     heavymetal  = { small = LoadSound('metal/break-s0'),      medium = LoadSound('metal/break-m0'),      large = LoadSound('metal/break-l0')      },
     hardmetal   = { small = LoadSound('metal/break-s0'),      medium = LoadSound('metal/break-m0'),      large = LoadSound('metal/break-l0')      },
     hardmasonry = { small = LoadSound('masonry/break-s0'),    medium = LoadSound('masonry/break-m0'),    large = LoadSound('masonry/break-l0')    },
-    unphysical  = { small = LoadSound('unphysical/break-s0'), medium = LoadSound('unphysical/break-m0'), large = LoadSound('unphysical/break-l0') },
+    -- unphysical  = { small = LoadSound('unphysical/break-s0'), medium = LoadSound('unphysical/break-m0'), large = LoadSound('unphysical/break-l0') },
 }
 
 local function SHRED_DustParticle(origin, dir, scale, color)
