@@ -300,6 +300,36 @@
 ---| "center bottom"
 ---| "right bottom"
 
+---@alias command
+---| "game.about"
+---| "game.applydisplay"
+---| "game.applygraphics"
+---| "game.bakemission"
+---| "game.exitlevel"
+---| "game.menu"
+---| "game.openfolder"
+---| "game.openurl"
+---| "game.path.load"
+---| "game.path.save"
+---| "game.pausemenu"
+---| "game.quickload"
+---| "game.quicksave"
+---| "game.quit"
+---| "game.respawn"
+---| "game.restart"
+---| "game.screenrecord"
+---| "game.selectmod"
+---| "game.steam.showbindingpanel"
+---| "game.unpause"
+---| "hydra.eventToolUpgrade"
+---| "hydra.eventTutorial"
+---| "mods.deactivate"
+---| "mods.publishend"
+---| "mods.publishupload"
+---| "mods.refresh"
+---| "mods.sanitycheck"
+
+
 --#endregion
 --#region Callbacks
 
@@ -333,6 +363,16 @@ function draw(dt) end
 ---NOT IN OFFICAL DOCUMENTATION
 ---@param command string
 function handleCommand(command) end
+
+---Creates a button that can be accesed via the pause menu. Call every tick
+---
+---Creating a pause menu button will create a key at `game.pausemenu.items.<current_script_handle>` with the title as it's value
+---
+---The pause menu button can also be called via `Command('game.pausemenu', <script_handle>)`
+---@param title string
+---@param primary boolean? The button will show in the center of the pause menu instead of the lower bar. Only one button may occupy this space, otherwise it will show in the lower bar.
+---@return boolean activated
+function PauseMenuButton(title, primary) end
 
 --#endregion
 --#region XML Parameters
@@ -803,7 +843,7 @@ function GetBodyCenterOfMass(body) end
 ---This will check if a body is currently visible in the camera frustum and not occluded by other objects.
 ---@param body body_handle
 ---@param max_distance number
----@param reject_transparent number|nil See through transparent materials, Default is false
+---@param reject_transparent boolean|nil See through transparent materials, Default is false
 ---@return boolean
 function IsBodyVisible(body, max_distance, reject_transparent) end
 
@@ -2409,6 +2449,10 @@ function UiRect(width, height) end
 ---@return number height
 function UiImage(path, x0, y0, x1, y1) end
 
+---Will unload an image that was previously loaded. This is useful to free up memory or if the image has changed since the iamge was first drawn/loaded
+---@param path td_path
+function UiUnloadImage(path) end
+
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@param path td_path
 ---@return number width
@@ -2700,6 +2744,20 @@ function SetTimeScale(scale) end
 ---NOT IN OFFICAL DOCUMENTATION
 ---@param intensity number
 function ShakeCamera(intensity) end
+
+---NOT IN OFFICAL DOCUMENTATION
+function Menu() end
+
+---NOT IN OFFICAL DOCUMENTATION
+---@param state boolean
+function SetPaused(state) end
+
+--#endregion
+--#region Special
+
+---NOT IN OFFICAL DOCUMENTATION
+---@param command command
+function Command(command) end
 
 ---Checks if a file exists at the specified path. Respects teardown's path parsing, meaning `MOD/`, `LEVEL/`, and `RAW:` will all work
 ---
