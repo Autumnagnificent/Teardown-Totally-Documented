@@ -2745,10 +2745,9 @@ function SetTimeScale(scale) end
 ---@param intensity number
 function ShakeCamera(intensity) end
 
----NOT IN OFFICAL DOCUMENTATION
+---Returns to the menu
 function Menu() end
 
----NOT IN OFFICAL DOCUMENTATION
 ---@param state boolean
 function SetPaused(state) end
 
@@ -2757,7 +2756,8 @@ function SetPaused(state) end
 
 ---NOT IN OFFICAL DOCUMENTATION
 ---@param command command
-function Command(command) end
+---@vararg any
+function Command(command, ... ) end
 
 ---Checks if a file exists at the specified path. Respects teardown's path parsing, meaning `MOD/`, `LEVEL/`, and `RAW:` will all work
 ---
