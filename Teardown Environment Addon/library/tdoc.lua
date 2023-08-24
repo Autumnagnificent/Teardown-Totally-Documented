@@ -885,6 +885,8 @@ function DrawBodyHighlight(body, alpha) end
 function GetBodyClosestPoint(body, origin) end
 
 ---TODO: explain this
+---
+---Should only be called from the `update` callback
 ---@param bodyA body_handle
 ---@param bodyB body_handle
 ---@param point vector
@@ -895,6 +897,8 @@ function GetBodyClosestPoint(body, origin) end
 function ConstrainVelocity(bodyA, bodyB, point, dir, relative_velocity, min_impulse, max_impulse) end
 
 ---TODO: explain this
+---
+---Should only be called from the `update` callback
 ---@param bodyA body_handle
 ---@param bodyB body_handle
 ---@param dir vector
@@ -904,6 +908,8 @@ function ConstrainVelocity(bodyA, bodyB, point, dir, relative_velocity, min_impu
 function ConstrainAngularVelocity(bodyA, bodyB, dir, relative_angular_velocity, min_angular_impulse, max_angular_impulse) end
 
 ---TODO: explain this
+---
+---Should only be called from the `update` callback
 ---@param bodyA body_handle
 ---@param bodyB body_handle
 ---@param pointA vector
@@ -913,6 +919,8 @@ function ConstrainAngularVelocity(bodyA, bodyB, dir, relative_angular_velocity, 
 function ConstrainPosition(bodyA, bodyB, pointA, pointB, max_velocity, max_impulse) end
 
 ---TODO: explain this
+---
+---Should only be called from the `update` callback
 ---@param bodyA body_handle
 ---@param bodyB body_handle
 ---@param quatA quaternion
