@@ -1,0 +1,24 @@
+function init()
+    SetTag(GetScriptHandle(), 'stacktrace', GetStackTrace())
+end
+
+
+-- These functions are pulled from the Automatic Framework
+
+function GetScriptHandle()
+	local id = tostring(math.random())
+	PauseMenuButton(id)
+	for _, handle in ipairs(ListKeys("game.pausemenu.items")) do
+		local p = "game.pausemenu.items." .. handle
+		if GetString(p) == id then
+			ClearKey(p)
+			return tonumber(handle)
+		end
+	end
+end
+
+function GetStackTrace(level)
+	level = (level or 0)
+	local _, line = pcall(error, '', level + 3) -- The level + 3 is to get out of error, then out of pcall, then out of this function
+	return line
+end
