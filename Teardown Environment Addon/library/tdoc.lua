@@ -320,6 +320,7 @@
 ---| "game.screenrecord"
 ---| "game.selectmod"
 ---| "game.steam.showbindingpanel"
+---| "game.startui"
 ---| "game.unpause"
 ---| "hydra.eventToolUpgrade"
 ---| "hydra.eventTutorial"
