@@ -2180,9 +2180,9 @@ function SpawnParticle(position, velocity, lifetime) end
 ---
 ---It possible to spawn prefabs from other mods, by using the mod id followed by colon, followed by the prefab path. Spawning prefabs from other mods should be used with causion since the referenced mod might not be installed.
 ---@param xml string|td_path Teardown Path or XML content
----@param transform transform Transform of the spawned XML
----@param allow_static boolean|nil Allow spawning static shapes and bodies. Default is false
----@param joint_existing boolean|nil Allow joints to connect to existing scene geometry. Default is false
+---@param transform transform? Transform of the spawned XML
+---@param allow_static boolean? Allow spawning static shapes and bodies. Default is false
+---@param joint_existing boolean? Allow joints to connect to existing scene geometry. Default is false
 ---@return table<entity_handle> entities An indexed table of the entities spawned in order
 function Spawn(xml, transform, allow_static, joint_existing) end
 
