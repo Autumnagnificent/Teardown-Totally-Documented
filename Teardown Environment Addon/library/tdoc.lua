@@ -284,6 +284,7 @@
 ---| "bloom"
 
 ---@alias ui_alignment
+---| ""
 ---| "left"
 ---| "center"
 ---| "right"
@@ -782,7 +783,7 @@ function IsBodyActive(body) end
 function SetBodyActive(body, active) end
 
 ---@param body body_handle
----@param velocity vector
+---@param velocity vector?
 function SetBodyVelocity(body, velocity) end
 
 ---@param body body_handle
@@ -795,7 +796,7 @@ function GetBodyVelocity(body) end
 function GetBodyVelocityAtPos(body, position) end
 
 ---@param body body_handle
----@param velocity vector
+---@param velocity vector?
 function SetBodyAngularVelocity(body, velocity) end
 
 ---@param body body_handle
