@@ -28,7 +28,7 @@ end
 function tick( ... )
     if InputPressed 'f1' then
         reload_times = reload_times + 1
-        print(string.format('[%s Reloaded] : [Script Id %s] : [Reload %s]', Loader.mod_id, GetScriptId(), reload_times))
+        print(string.format('[%s Reloaded] : [Script Id %s] : [Reload %s]', Loader.mod_id, AutoGetScriptHandle(), reload_times))
 
         rawcall(F, 'reload', reload_times)
         init()
