@@ -1,7 +1,5 @@
-uniform mat4 uMvpMatrix;
-uniform mat4 uStableVpMatrix;
-uniform mat4 uOldStableVpMatrix;
-uniform sampler2D uTexture;
+#include "raytracing.h"
+#include "hlsl/gbufferparticlesresources.h"
 
 varying vec4 vCurrentPos;
 varying vec4 vOldPos;
@@ -13,24 +11,22 @@ varying float vEmissive;
 varying float vDepth;
 varying float vIndex;
 varying float vRadius;
-varying float vLife;
 
 #ifdef VERTEX
-attribute vec3 aPosition;
-attribute vec3 aPositionOld;
-attribute vec4 aColor;
-attribute vec3 aNormal;
-attribute vec2 aTexCoord;
-attribute float aEmissive;
-attribute float aIndex;
-attribute float aRadius;
-attribute float aLife;
+DECLARE_VERTEX_ATTR(vec3, aPosition, POSITION, 0)
+DECLARE_VERTEX_ATTR(vec3, aPositionOld, POSITION, 1)
+DECLARE_VERTEX_ATTR(vec3, aNormal, NORMAL, 0)
+DECLARE_VERTEX_ATTR(vec2, aTexCoord, TEXCOORD, 0)
+DECLARE_VERTEX_ATTR(vec4, aColor,COLOR, 0)
+DECLARE_VERTEX_ATTR(float, aEmissive, TEXCOORD, 1)
+DECLARE_VERTEX_ATTR(float, aIndex, TEXCOORD, 2)
+DECLARE_VERTEX_ATTR(float, aRadius, TEXCOORD, 3)
 
 void main(void)
 {
 	blueNoiseInit(aPosition.xy);
 
-	gl_Position = uMvpMatrix * vec4(aPosition, 1.0);
+	gl_Position = mubVpMatrix * vec4(aPosition, 1.0);
 	vTexCoord = aTexCoord;
 	vColor = aColor;
 	vEmissive = aEmissive;
@@ -38,11 +34,10 @@ void main(void)
 	vNormal = aNormal;
 	vIndex = aIndex;
 	vRadius = aRadius;
-	vLife = aLife;
-	vToCamera = uCameraPos - aPosition.xyz;
+	vToCamera = mubCameraPos.xyz - aPosition.xyz;
 
-	vCurrentPos = uStableVpMatrix * vec4(aPosition, 1.0);
-	vOldPos = uOldStableVpMatrix * vec4(aPositionOld, 1.0);
+	vCurrentPos = mubStableVpMatrix * vec4(aPosition, 1.0);
+	vOldPos = mubOldStableVpMatrix * vec4(aPositionOld, 1.0);
 }
 #endif
 
@@ -50,15 +45,17 @@ void main(void)
 #ifdef FRAGMENT
 
 layout(location=0) out vec4 outputColor;
-layout(location=1) out vec3 outputNormal;
+layout(location=1) out vec4 outputNormal;
 layout(location=2) out vec4 outputMaterial;
 layout(location=3) out vec2 outputMotion;
-layout(location=4) out float outputDepth;
 
 void main(void)
 {
+	float far = mubNearFar.g;
+	vec2 pixelSize = mubPixelSize.rg;
+
 	float depth = vDepth;
-	vec2 tc = gl_FragCoord.xy * uPixelSize;
+	vec2 tc = gl_FragCoord.xy * pixelSize;
 	tc += alpha2*vIndex;
 	blueNoiseInit(tc);
 
@@ -66,14 +63,14 @@ void main(void)
 	color = vec4(1.0, 1.0, 1.0, color.r);
 	color *= vColor;
 
-	color.rgb = pow(color.rgb, vec3(2.2));		// vColor and texcolor should be handled sparately!
+	color.rgb = convertSrgbToLinearFast(color.rgb);
 	
 	//Fade out close to geometry
-	float screenDepth = texture(uDepth, gl_FragCoord.xy*uPixelSize).r * uFar;
+	float screenDepth = getLinear16BitDepth(gl_FragCoord.xy * pixelSize) * far;
 	float diff = screenDepth - depth;
 	color.a *= smoothstep(0.0, vRadius, diff);
 
-	// //Fade out smoke very close to camera
+	//Fade out smoke very close to camera
 	// color.a *= smoothstep(0.4, 2.0, depth);
 
 	bool visible = 0.1 < color.a - 0.001;
@@ -87,11 +84,10 @@ void main(void)
 	if (mod(gl_FragCoord.x + gl_FragCoord.y, 2.0) == 0.0)
 		normal = normal - toCamera*(dot(toCamera, normal)*2.0);
 
-	outputColor = vec4(color.rgb, 0.0);
-	outputNormal = normal;
-	outputMaterial = vec4(0.0, 0.0, 0.0, vEmissive);
+	outputColor = vec4(color.rgb, vEmissive / EMISSIVE_SCALE_RANGE);
+	outputNormal = vec4(normal, flagToSNorm(kIsParticles));
+	outputMaterial = vec4(0.0, 0.0, 0.0, 0.0);
 	outputMotion = (vCurrentPos.xy / vCurrentPos.w - vOldPos.xy / vOldPos.w) * 0.5;
-	outputDepth = depth / uFar;
 }
 #endif
 
