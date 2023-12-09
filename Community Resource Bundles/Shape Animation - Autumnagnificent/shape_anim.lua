@@ -22,9 +22,9 @@ local getTransformTable = {
     vehicle = GetVehicleTransform,
 }
 
----@class shape_animation_bone:            { handle:body_handle, tags:table<string, string>, transform:transform, local_transform:transform }
----@class shape_animation_bone_shape_data: { handle:shape_handle, tags:table<string, string>, transform:transform, local_transform:transform }
----@class shape_animation:                 { xml:string, body:body_handle, bones:table<string, shape_animation_bone>, shapes:table<string, shape_animation_bone_shape_data[]>, transformations:transform[], entities:entity_handle[], origin:transform }
+---@class shape_animation_shape_bone:      { handle:shape_handle, transform:transform, tags:table<string, string> }
+---@class shape_animation_bone:            { transform:transform, shape_bones:shape_animation_shape_bone[], tags:table<string, string> }
+---@class shape_animation:                 { xml:string, body:body_handle, bones:table<string, shape_animation_bone>, shapes:shape_handle[], transformations:transform[], entities:entity_handle[], origin:transform }
 local animation_class = {}
 animation_class.__index = animation_class
 
@@ -42,12 +42,12 @@ function animation_class:GetBoneLocalTransform(id)
 		local bid = table.concat(order, '.', 1, o)
         local bone = self.bones[bid]
         if not bone then error(string.format('[ANIM] : Bone not found, searched for [%s], given id [%s]', AutoToString(bid), AutoToString(id))) end
-		transform = TransformToParentTransform(transform, bone.local_transform)
+		transform = TransformToParentTransform(transform, bone.transform)
 
-		local add = self.transformations[bid]
-		if add then
-			transform = TransformToParentTransform(transform, add)
-		end
+        local add = self.transformations[bid]
+        if add then
+            transform = TransformToParentTransform(transform, add)
+        end
 	end
 
 	return TransformToParentTransform(self.origin, transform)
@@ -65,7 +65,8 @@ end
 ---@param id string
 ---@return shape_handle[]
 function animation_class:GetShapesOfBone(id)
-    return AutoTableSub(self.shapes[id], 'handle')
+    return AutoTableSub(self.bones[id].shape_bones, 'handle')
+    -- return AutoTableSub(self.shapes[id], 'handle')
 end
 
 ---@param id string
@@ -75,12 +76,12 @@ function animation_class:SetTransformation(id, transformation)
 end
 
 function animation_class:ApplyRig()
-    for bone_id, connected_shapes in pairs(self.shapes) do
+    for bone_id, bone_data in pairs(self.bones) do
         local bone_transform = self:GetBoneLocalTransform(bone_id)
 
-        for i, shape_data in pairs(connected_shapes) do
+        for i, shape_data in pairs(bone_data.shape_bones) do
             if IsHandleValid(shape_data.handle) then
-                local shape_transform = TransformToParentTransform(bone_transform, shape_data.local_transform)
+                local shape_transform = TransformToParentTransform(bone_transform, shape_data.transform)
                 SetShapeLocalTransform(shape_data.handle, shape_transform)
             end
         end
@@ -96,68 +97,71 @@ function Shape_Animation.Create(xml, parent_body, world_origin)
     if not xml then error('xml not defined, xml = ' .. AutoToString(xml)) end
 
     local origin = world_origin and TransformToLocalTransform(GetBodyTransform(parent_body), world_origin) or Transform()
+
+    ---@type shape_animation
     local anim = { body = parent_body, bones = {}, shapes = {}, transformations = {}, origin = origin }
     setmetatable(anim, animation_class)
 
     local entities = Spawn(xml, origin, true, false)
     anim.entities = entities
 
+    local bone_handles_by_id = {}
+    local transforms_by_handle = {}
+
     for _, ent in pairs(entities) do
-        local data = {}
+        ---@type shape_animation_bone|shape_animation_shape_bone
+        local entity_data = {}
         local handle_type = GetEntityType(ent)
 
-        data.handle = ent
-        data.tags = AutoGetTags(data.handle)
+        entity_data.tags = AutoGetTags(ent)
 
         -- Gets the transform from the spawn origin of the weapon
         local transform_f = getTransformTable[handle_type]
-        data.transform = transform_f and TransformToLocalTransform(origin, transform_f(data.handle)) or Transform()
+        transforms_by_handle[ent] = transform_f and TransformToLocalTransform(origin, transform_f(ent)) or Transform()
 
         if handle_type ~= "shape" then
-            local id = data.tags.id
+            local id = entity_data.tags.id
+
             if id then
-                anim.bones[id] = data
-                anim.shapes[id] = {}
+                bone_handles_by_id[id] = ent
+                entity_data.shape_bones = {}
+                anim.bones[id] = entity_data
             end
         else
-            local body = GetShapeBody(data.handle)
-            local body_tags = AutoGetTags(body)
+            entity_data.handle = ent
+            anim.shapes[#anim.shapes+1] = ent
 
-            local shape_parent = anim.shapes[body_tags.id]
-            shape_parent[#shape_parent + 1] = data
+            local shape_body = GetShapeBody(ent)
+            local shape_body_tags = AutoGetTags(shape_body)
+
+            local shape_bones = anim.bones[shape_body_tags.id].shape_bones
+            shape_bones[#shape_bones+1] = entity_data
         end
     end
 
     for id, bone in pairs(anim.bones) do
+        local bone_handle = bone_handles_by_id[id]
+        local bone_transform = transforms_by_handle[bone_handle]
+        
         local order = AutoSplit(id, '.')
-
         local last_id = table.concat(order, '.', 1, #order - 1)
+
         if last_id and anim.bones[last_id] then
-            bone.local_transform = TransformToLocalTransform(anim.bones[last_id].transform, bone.transform)
+            bone.transform = TransformToLocalTransform(transforms_by_handle[bone_handles_by_id[last_id]], bone_transform)
         else
-            bone.local_transform = TransformCopy(bone.transform)
+            bone.transform = TransformCopy(bone_transform)
         end
 
+        for _, shape_bone in pairs(bone.shape_bones) do
+            shape_bone.transform = TransformToLocalTransform(bone_transform, transforms_by_handle[shape_bone.handle])
+            SetShapeBody(shape_bone.handle, anim.body)
+        end
+        
         anim.bones[id] = bone
     end
 
-    for bone_id, connected_shapes in pairs(anim.shapes) do
-        for i, shape_data in pairs(connected_shapes) do
-            local parent_bone = anim.bones[bone_id]
-            shape_data.local_transform = TransformToLocalTransform(parent_bone.transform, shape_data.transform)
-
-            anim.shapes[bone_id][i] = shape_data
-        end
-    end
-
-    for bone_id, connected_shapes in pairs(anim.shapes) do
-        for i, shape_data in pairs(connected_shapes) do
-            SetShapeBody(shape_data.handle, anim.body, Transform(AutoVecOne(1 / 0)))
-        end
-    end
-
-    for id, bone in pairs(anim.bones) do
-        Delete(bone.handle)
+    for id, handle in pairs(bone_handles_by_id) do
+        Delete(handle)
     end
 
     anim:ApplyRig()
