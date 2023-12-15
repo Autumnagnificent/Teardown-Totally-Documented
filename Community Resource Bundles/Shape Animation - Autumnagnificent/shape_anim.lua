@@ -11,7 +11,7 @@
     CREATED BY AUTUMNAGNIFICENT / AUTUMNATIC / AUTUMN
 ]]
 
-Shape_Animation = {}
+shape_anim = {}
 
 local getTransformTable = {
 	body = GetBodyTransform,
@@ -24,7 +24,7 @@ local getTransformTable = {
 
 ---@class shape_animation_shape_bone:      { handle:shape_handle, transform:transform, tags:table<string, string> }
 ---@class shape_animation_bone:            { transform:transform, shape_bones:shape_animation_shape_bone[], tags:table<string, string> }
----@class shape_animation:                 { xml:string, body:body_handle, bones:table<string, shape_animation_bone>, shapes:shape_handle[], transformations:transform[], entities:entity_handle[], origin:transform }
+---@class shape_animation:                 { xml:string, body:body_handle, bones:table<string, shape_animation_bone>, shapes:shape_handle[], transformations:table<string, transform>, entities:entity_handle[], origin:transform, scale:number }
 local animation_class = {}
 animation_class.__index = animation_class
 
@@ -46,6 +46,8 @@ function animation_class:GetBoneLocalTransform(id)
 
         local add = self.transformations[bid]
         if add then
+            if self.scale ~= 1 then add.pos = VecScale(add.pos, self.scale) end
+
             transform = TransformToParentTransform(transform, add)
         end
 	end
@@ -93,13 +95,13 @@ end
 ---@param xml string
 ---@param parent_body body_handle The Parent Body
 ---@return shape_animation
-function Shape_Animation.Create(xml, parent_body, world_origin)
+function shape_anim.Create(xml, parent_body, world_origin, scale)
     if not xml then error('xml not defined, xml = ' .. AutoToString(xml)) end
 
     local origin = world_origin and TransformToLocalTransform(GetBodyTransform(parent_body), world_origin) or Transform()
 
     ---@type shape_animation
-    local anim = { body = parent_body, bones = {}, shapes = {}, transformations = {}, origin = origin }
+    local anim = { body = parent_body, bones = {}, shapes = {}, transformations = {}, origin = origin, scale = scale or 1 }
     setmetatable(anim, animation_class)
 
     local entities = Spawn(xml, origin, true, false)
@@ -117,9 +119,13 @@ function Shape_Animation.Create(xml, parent_body, world_origin)
 
         -- Gets the transform from the spawn origin of the weapon
         local transform_f = getTransformTable[handle_type]
-        transforms_by_handle[ent] = transform_f and TransformToLocalTransform(origin, transform_f(ent)) or Transform()
+        local transform = transform_f and TransformToLocalTransform(origin, transform_f(ent)) or Transform()
 
+        if anim.scale ~= 1 then transform.pos = VecScale(transform.pos, anim.scale) end
+        
         if handle_type ~= "shape" then
+            transforms_by_handle[ent] = transform
+            
             local id = entity_data.tags.id
 
             if id then
@@ -128,6 +134,23 @@ function Shape_Animation.Create(xml, parent_body, world_origin)
                 anim.bones[id] = entity_data
             end
         else
+            if anim.scale ~= 1 then
+                local old_ent = ent
+                local scaled_vox_xml = string.format('<vox file="tool/wire.vox" scale="%s"/>', anim.scale)
+                local new_ent = Spawn(scaled_vox_xml, GetShapeWorldTransform(old_ent), true, false)[1]
+                
+                SetShapeBody(new_ent, GetShapeBody(old_ent))
+                CopyShapeContent(old_ent, new_ent)
+                CopyShapePalette(old_ent, new_ent)
+
+                
+                ent = new_ent
+                AutoSetTags(ent, entity_data.tags)
+                Delete(old_ent)
+            end
+
+            transforms_by_handle[ent] = transform
+            
             entity_data.handle = ent
             anim.shapes[#anim.shapes+1] = ent
 
@@ -173,7 +196,7 @@ end
 ---@param transform transform
 ---@param density number
 ---@return shape_handle[] colliders
-function Shape_Animation.FakeScaledPhysics(shapes, body, transform, density)
+function shape_anim.FakeScaledPhysics(shapes, body, transform, density)
     colliders = {}
     
     for _, s in pairs(shapes) do
@@ -206,4 +229,27 @@ function Shape_Animation.FakeScaledPhysics(shapes, body, transform, density)
     return colliders
 end
 
-return Shape_Animation
+---@param xml_original td_path|string
+---@param xml_keyframes table<any, td_path|string>
+function shape_anim.ExportAsTransformations(xml_original, xml_keyframes)
+    local original_anim = shape_anim.Create(xml_original, GetWorldBody(), Transform())
+    
+    local transformation_tables = {}
+    
+    for k, xml in pairs(xml_keyframes) do
+        local keyframe_anim = shape_anim.Create(xml, GetWorldBody(), Transform())
+
+        local tt = {}
+
+        for bone_id, _ in pairs(original_anim.bones) do
+            local difference = TransformToLocalTransform(original_anim.bones[bone_id].transform, keyframe_anim.bones[bone_id].transform)
+            tt[bone_id] = difference
+        end
+        
+        transformation_tables[k] = tt
+    end
+
+    return transformation_tables
+end
+
+return shape_anim

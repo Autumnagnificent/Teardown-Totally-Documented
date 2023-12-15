@@ -2184,7 +2184,7 @@ function SpawnParticle(position, velocity, lifetime) end
 ---@param transform transform? Transform of the spawned XML
 ---@param allow_static boolean? Allow spawning static shapes and bodies. Default is false
 ---@param joint_existing boolean? Allow joints to connect to existing scene geometry. Default is false
----@return table<entity_handle> entities An indexed table of the entities spawned in order
+---@return entity_handle[] entities An indexed table of the entities spawned in order
 function Spawn(xml, transform, allow_static, joint_existing) end
 
 --#endregion
