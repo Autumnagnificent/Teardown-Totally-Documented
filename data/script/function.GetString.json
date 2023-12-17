@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local name = GetString(\"level.name\")"
+      "function init()",
+      "\tSetString(\"level.name\", \"foo\")",
+      "\tDebugPrint(GetString(\"level.name\"))",
+      "end"
     ]
   ],
   "description": [

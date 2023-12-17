@@ -24,11 +24,13 @@
   ],
   "examples": [
     [
-      "local a = Vec(1,0,0)",
-      "local b = Vec(0,1,0)",
-      "local c = VecCross(a, b)",
-      "",
-      "--c now equals {0,0,1}"
+      "function init()",
+      "\tlocal a = Vec(1,0,0)",
+      "\tlocal b = Vec(0,1,0)",
+      "\tlocal c = VecCross(a, b)",
+      "\t--c now equals {0,0,1}",
+      "\tDebugPrint(VecStr(c))",
+      "end"
     ]
   ],
   "description": [

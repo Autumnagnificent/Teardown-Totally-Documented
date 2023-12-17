@@ -24,7 +24,10 @@
   ],
   "examples": [
     [
-      "local removedCount= RemoveAabbFires(Vec(0,0,0), Vec(10,10,10))"
+      "function tick()",
+      "\tlocal removedCount= RemoveAabbFires(Vec(0,0,0), Vec(10,10,10))",
+      "\tDebugPrint(removedCount)",
+      "end"
     ]
   ],
   "description": [

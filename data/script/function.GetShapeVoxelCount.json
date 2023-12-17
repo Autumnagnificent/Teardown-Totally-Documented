@@ -18,7 +18,12 @@
   ],
   "examples": [
     [
-      "local voxelCount = GetShapeVoxelCount(shape)"
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "\tlocal voxelCount = GetShapeVoxelCount(shape)",
+      "\tDebugPrint(voxelCount)",
+      "end"
     ]
   ],
   "description": [

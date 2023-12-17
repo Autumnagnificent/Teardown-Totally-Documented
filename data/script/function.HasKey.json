@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local foo = HasKey(\"score.levels\")"
+      "function init()",
+      "\tDebugPrint(HasKey(\"score.levels\"))",
+      "\tDebugPrint(HasKey(\"game.tool.rifle\"))",
+      "end"
     ]
   ],
   "description": [

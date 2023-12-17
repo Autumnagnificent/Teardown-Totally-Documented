@@ -1,0 +1,30 @@
+{
+  "name": "VecStr",
+  "arguments": [
+    {
+      "name": "vector",
+      "desc": "Vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "str",
+      "desc": "String representation",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal v = Vec(0, 10, 0)",
+      "\tDebugPrint(VecStr(v))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the string representation of vector"
+  ]
+}

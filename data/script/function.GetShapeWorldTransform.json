@@ -18,12 +18,19 @@
   ],
   "examples": [
     [
-      "local worldTransform = GetShapeWorldTransform(shape)",
+      "--GetShapeWorldTransform is equivalent to",
+      "--local shapeTransform = GetShapeLocalTransform(shape)",
+      "--local bodyTransform = GetBodyTransform(GetShapeBody(shape))",
+      "--worldTranform = TransformToParentTransform(bodyTransform, shapeTransform)",
       "",
-      "--This is equivalent to",
-      "local shapeTransform = GetShapeLocalTransform(shape)",
-      "local bodyTransform = GetBodyTransform(GetShapeBody(shape))",
-      "worldTranform = TransformToParentTransform(bodyTransform, shapeTransform)"
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tDebugCross(GetShapeWorldTransform(shape).pos)",
+      "end"
     ]
   ],
   "description": [

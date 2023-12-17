@@ -1,0 +1,46 @@
+{
+  "name": "UiIsRectFullyClipped",
+  "arguments": [
+    {
+      "name": "w",
+      "desc": "Width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Height",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "True if rect is fully clipped",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "    UiTranslate(200, 200)",
+      "    UiPush()",
+      "        UiClipRect(150, 150)",
+      "        UiColor(1.0, 1.0, 1.0, 0.15)",
+      "        UiRect(150, 150)",
+      "        UiRect(w, h)",
+      "        UiTranslate(-50, 30)",
+      "        UiColor(1, 0, 0)",
+      "        local w, h = 100, 100",
+      "        UiRect(w, h)",
+      "        DebugPrint(UiIsRectFullyClipped(w, h))",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Checks whether a rectangle with width w and height h is completely clipped"
+  ]
+}

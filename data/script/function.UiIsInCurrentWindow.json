@@ -1,0 +1,39 @@
+{
+  "name": "UiIsInCurrentWindow",
+  "arguments": [
+    {
+      "name": "x",
+      "desc": "X",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "val",
+      "desc": "True if",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "\tUiPush()",
+      "\t\tUiWindow(400, 200)",
+      "\t\tDebugPrint(\"point 1: \" .. tostring(UiIsInCurrentWindow(200, 100)))",
+      "        DebugPrint(\"point 2: \" .. tostring(UiIsInCurrentWindow(450, 100)))",
+      "\tUiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "True if the specified point is within the boundaries of the current window"
+  ]
+}

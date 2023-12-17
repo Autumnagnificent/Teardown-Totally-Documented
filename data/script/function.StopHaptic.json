@@ -1,0 +1,32 @@
+{
+  "name": "StopHaptic",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Handle of haptic effect",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "-- Rumble infinitely",
+      "local haptic_effect",
+      "function init()",
+      "\thaptic_effect = LoadHaptic(\"haptic/gun_fire.xml\")",
+      "end",
+      "",
+      "function tick()",
+      "    if InputDown(\"interact\") then",
+      "        StopHaptic(haptic_effect)",
+      "    elseif not HapticIsPlaying(haptic_effect) then",
+      "\t\tPlayHaptic(haptic_effect, 1)",
+      "    end",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

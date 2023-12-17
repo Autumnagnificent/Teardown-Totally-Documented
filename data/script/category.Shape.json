@@ -37,6 +37,7 @@
     "SetBrush",
     "SetShapeBody",
     "SetShapeCollisionFilter",
+    "SetShapeDensity",
     "SetShapeEmissiveScale",
     "SetShapeLocalTransform",
     "SplitShape",

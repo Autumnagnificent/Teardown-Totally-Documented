@@ -30,8 +30,17 @@
   ],
   "examples": [
     [
-      "if IsShapeVisible(shape, 25) then",
-      "\t--Shape is within 25 meters visible to the camera",
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tif IsShapeVisible(shape, 25) then",
+      "\t\tDebugPrint(\"Shape is visible\")",
+      "\telse",
+      "\t\tDebugPrint(\"Shape is not visible\")",
+      "\tend",
       "end"
     ]
   ],

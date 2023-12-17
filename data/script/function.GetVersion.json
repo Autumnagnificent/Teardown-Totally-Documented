@@ -11,8 +11,11 @@
   ],
   "examples": [
     [
-      "local v = GetVersion()",
-      "--v is \"0.5.0\""
+      "function init()",
+      "\tlocal v = GetVersion()",
+      "\t--v is \"0.5.0\"",
+      "\tDebugPrint(v)",
+      "end"
     ]
   ],
   "description": [

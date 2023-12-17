@@ -35,8 +35,10 @@
   "returns": [],
   "examples": [
     [
-      "--Make particles stick to objects",
-      "ParticleSticky(0.5)"
+      "function init()",
+      "\t--Make particles stick to objects",
+      "\tParticleSticky(0.5)",
+      "end"
     ]
   ],
   "description": [

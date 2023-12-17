@@ -18,8 +18,12 @@
   ],
   "examples": [
     [
-      "if IsBodyActive(body) then",
-      "\t...",
+      "-- try to break the body to see the logs",
+      "function tick()",
+      "\thandle = FindBody(\"body\", true)",
+      "\tif IsBodyActive(handle) then",
+      "\t\tDebugPrint(\"Body is active\")",
+      "\tend",
       "end"
     ]
   ],

@@ -1,0 +1,24 @@
+{
+  "name": "UiTextLineSpacing",
+  "arguments": [
+    {
+      "name": "value",
+      "desc": "Text linespacing",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "    UiTextLineSpacing(10)",
+      "\tUiWordWrap(200)",
+      "\tUiText(\"TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT\")",
+      "end"
+    ]
+  ],
+  "description": [
+    "Sets the context's linespacing value of the text which is drawn using UiText"
+  ]
+}

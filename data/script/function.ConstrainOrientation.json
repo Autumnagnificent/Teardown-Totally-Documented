@@ -41,11 +41,20 @@
   "returns": [],
   "examples": [
     [
-      "--Constrain the orietation of body a to an upright orientation in the world",
-      "ConstrainOrientation(a, 0, GetBodyTransform(a).rot, Quat())",
+      "local handleA = 0",
+      "local handleB = 0",
+      "function init()",
+      "\thandleA = FindBody(\"body\", true)",
+      "\thandleB = FindBody(\"target\", true)",
+      "end",
       "",
-      "--Constrain the orientation of body a to the orientation of body b",
-      "ConstrainOrientation(a, b, GetBodyTransform(a).rot, GetBodyTransform(b).rot)"
+      "function tick()",
+      "\t--Constrain the orietation of body a to an upright orientation in the world",
+      "\tConstrainOrientation(handleA, 0, GetBodyTransform(handleA).rot, Quat())",
+      "",
+      "\t--Constrain the orientation of body a to the orientation of body b",
+      "\tConstrainOrientation(handleA, handleB, GetBodyTransform(handleA).rot, GetBodyTransform(handleB).rot)",
+      "end"
     ]
   ],
   "description": [

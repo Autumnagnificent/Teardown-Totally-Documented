@@ -35,10 +35,13 @@
   "returns": [],
   "examples": [
     [
-      "SetEnvironmentProperty(\"skybox\", \"cloudy.dds\")",
-      "SetEnvironmentProperty(\"rain\", 0.7)",
-      "SetEnvironmentProperty(\"fogcolor\", 0.5, 0.5, 0.8)",
-      "SetEnvironmentProperty(\"nightlight\", false)"
+      "function init()",
+      "\tSetEnvironmentDefault()",
+      "\tSetEnvironmentProperty(\"skybox\", \"cloudy.dds\")",
+      "\tSetEnvironmentProperty(\"rain\", 0.7)",
+      "\tSetEnvironmentProperty(\"fogcolor\", 0.5, 0.5, 0.8)",
+      "\tSetEnvironmentProperty(\"nightlight\", false)",
+      "end"
     ]
   ],
   "description": [

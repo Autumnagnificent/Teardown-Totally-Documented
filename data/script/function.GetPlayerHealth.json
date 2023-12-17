@@ -11,7 +11,15 @@
   ],
   "examples": [
     [
-      "local health = GetPlayerHealth()"
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tif GetPlayerHealth() < 0.75 then",
+      "\t\t\tSetPlayerHealth(1.0)",
+      "\t\telse",
+      "\t\t\tSetPlayerHealth(0.5)",
+      "\t\tend",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

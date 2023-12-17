@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,7 +24,14 @@
   ],
   "examples": [
     [
-      "local loc = FindLocation(\"start\")"
+      "local loc = 0",
+      "function init()",
+      "\tloc = FindLocation(\"loc1\")",
+      "end",
+      "",
+      "function tick()",
+      "\tDebugCross(GetLocationTransform(loc).pos)",
+      "end"
     ]
   ],
   "description": [

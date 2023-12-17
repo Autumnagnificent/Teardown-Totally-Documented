@@ -1,0 +1,28 @@
+{
+  "name": "SetVehicleHealth",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "health",
+      "desc": "Set player health (between zero and one)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tSetVehicleHealth(FindVehicle(\"vehicle\"), 0.5)",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

@@ -41,9 +41,18 @@
   "returns": [],
   "examples": [
     [
-      "--Constrain the angular velocity between bodies A and B so that the relative angular velocity",
-      "--along the Y axis is always 3 rad/s",
-      "ConstrainAngularVelocity(a, b, Vec(1, 0, 0), 3)"
+      "local handleA = 0",
+      "local handleB = 0",
+      "function init()",
+      "\thandleA = FindBody(\"body\", true)",
+      "\thandleB = FindBody(\"target\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\t--Constrain the angular velocity between bodies A and B so that the relative angular velocity",
+      "\t--along the Y axis is always 3 rad/s",
+      "\tConstrainAngularVelocity(handleA, handleB, Vec(1, 0, 0), 3)",
+      "end"
     ]
   ],
   "description": [

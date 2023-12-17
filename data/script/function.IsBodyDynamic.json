@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local dynamic = IsBodyDynamic(body)"
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
+      "\tDebugPrint(IsBodyDynamic(handle))",
+      "end"
     ]
   ],
   "description": [

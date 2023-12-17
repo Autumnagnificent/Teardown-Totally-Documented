@@ -1,6 +1,13 @@
 {
   "name": "UiModalBegin",
-  "arguments": [],
+  "arguments": [
+    {
+      "name": "force",
+      "desc": "Pass true if you need to increase the priority of this modal in the context",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
   "returns": [],
   "examples": [
     [
@@ -21,7 +28,7 @@
     ]
   ],
   "description": [
-    "Disable input for everything, except what's between UiModalBegin and UiModalEnd ",
+    "Disable input for everything, except what's between UiModalBegin and UiModalEnd",
     "(or if modal state is popped)"
   ]
 }

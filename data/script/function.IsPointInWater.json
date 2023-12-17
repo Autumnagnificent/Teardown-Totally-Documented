@@ -24,9 +24,11 @@
   ],
   "examples": [
     [
-      "local wet, d = IsPointInWater(Vec(10, 0, 0))",
-      "if wet then",
-      "\t...point d meters into water",
+      "function tick()",
+      "\tlocal wet, d = IsPointInWater(Vec(10, 0, 0))",
+      "\tif wet then",
+      "\t\tDebugPrint(\"point\" .. d .. \" meters into water\")",
+      "\tend",
       "end"
     ]
   ],

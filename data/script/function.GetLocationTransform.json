@@ -18,7 +18,11 @@
   ],
   "examples": [
     [
-      "local t = GetLocationTransform(loc)"
+      "local location = 0",
+      "function init()",
+      "\tlocation = FindLocation(\"loc1\")",
+      "\tDebugPrint(VecStr(GetLocationTransform(location).pos))",
+      "end"
     ]
   ],
   "description": [

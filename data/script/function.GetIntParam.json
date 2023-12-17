@@ -24,8 +24,11 @@
   ],
   "examples": [
     [
-      "--Retrieve blinkcount parameter, or set to 5 if omitted",
-      "parameterBlinkCount = GetIntParam(\"blinkcount\", 5)"
+      "function init()",
+      "\t--Retrieve blinkcount parameter, or set to 5 if omitted",
+      "\tlocal parameterBlinkCount = GetIntParam(\"blinkcount\", 5)",
+      "\tDebugPrint(parameterBlinkCount)",
+      "end"
     ]
   ],
   "description": [

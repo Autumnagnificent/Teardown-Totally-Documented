@@ -29,8 +29,10 @@
   "returns": [],
   "examples": [
     [
-      "--Make joint reach a 45 degree angle, going at a maximum of 3 radians per second",
-      "SetJointMotorTarget(hinge, 45, 3)"
+      "function init()",
+      "\t--Make joint reach a 45 degree angle, going at a maximum of 3 radians per second",
+      "\tSetJointMotorTarget(FindJoint(\"hinge\"), 45, 3)",
+      "end"
     ]
   ],
   "description": [

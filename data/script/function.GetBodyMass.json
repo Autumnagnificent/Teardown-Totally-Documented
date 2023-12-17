@@ -18,7 +18,13 @@
   ],
   "examples": [
     [
-      "local mass = GetBodyMass(body)"
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
+      "",
+      "\t--Move a body 1 meter upwards",
+      "\tlocal mass = GetBodyMass(handle)",
+      "\tDebugPrint(mass)",
+      "end"
     ]
   ],
   "description": [

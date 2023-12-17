@@ -35,8 +35,10 @@
   "returns": [],
   "examples": [
     [
-      "--Rotate fast at start and slow at end",
-      "ParticleRotation(10, 1)"
+      "function init()",
+      "\t--Rotate fast at start and slow at end",
+      "\tParticleRotation(10, 1)",
+      "end"
     ]
   ],
   "description": [

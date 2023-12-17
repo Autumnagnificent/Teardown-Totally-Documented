@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local time = GetFloat(\"level.time\")"
+      "function init()",
+      "\tSetFloat(\"level.time\", 22.3)",
+      "\tDebugPrint(GetFloat(\"level.time\"))",
+      "end"
     ]
   ],
   "description": [

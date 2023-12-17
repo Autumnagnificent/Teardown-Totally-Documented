@@ -17,8 +17,11 @@
   "returns": [],
   "examples": [
     [
-      "local t = Transform(Vec(0, 1, 0), QuatEuler(0, 90, 0))",
-      "SetTriggerTransform(trigger, t)"
+      "function init()",
+      "\tlocal trigger = FindTrigger(\"toxic\")",
+      "\tlocal t = Transform(Vec(0, 1, 0), QuatEuler(0, 90, 0))",
+      "\tSetTriggerTransform(trigger, t)",
+      "end"
     ]
   ],
   "description": [

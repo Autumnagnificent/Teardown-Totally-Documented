@@ -18,7 +18,12 @@
   ],
   "examples": [
     [
-      "local pos = GetLightTransform(light).pos"
+      "local light = 0",
+      "function init()",
+      "\tlight = FindLight(\"main\")",
+      "\tlocal t = GetLightTransform(light)",
+      "\tDebugPrint(VecStr(t.pos))",
+      "end"
     ]
   ],
   "description": [

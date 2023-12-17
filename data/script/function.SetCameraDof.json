@@ -17,8 +17,10 @@
   "returns": [],
   "examples": [
     [
-      "--Set depth of field to 10 meters",
-      "SetCameraDof(10)"
+      "function tick()",
+      "\t--Set depth of field to 10 meters",
+      "\tSetCameraDof(10)",
+      "end"
     ]
   ],
   "description": [

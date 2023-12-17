@@ -11,7 +11,10 @@
   ],
   "examples": [
     [
-      "local t = GetCameraTransform()"
+      "function tick()",
+      "\tlocal t = GetCameraTransform()",
+      "\tDebugPrint(TransformStr(t))",
+      "end"
     ]
   ],
   "description": [

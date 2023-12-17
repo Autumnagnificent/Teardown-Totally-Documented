@@ -30,8 +30,10 @@
   ],
   "examples": [
     [
-      "--Create quaternion representing rotation 30 degrees around Y axis and 25 degrees around Z axis",
-      "local q = QuatEuler(0, 30, 25)"
+      "function init()",
+      "\t--Create quaternion representing rotation 30 degrees around Y axis and 25 degrees around Z axis",
+      "\tlocal q = QuatEuler(0, 30, 25)",
+      "end"
     ]
   ],
   "description": [

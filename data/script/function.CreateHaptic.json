@@ -1,0 +1,54 @@
+{
+  "name": "CreateHaptic",
+  "arguments": [
+    {
+      "name": "leftMotorRumble",
+      "desc": "Amount of rumble for left motor",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "rightMotorRumble",
+      "desc": "Amount of rumble for right motor",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "leftTriggerRumble",
+      "desc": "Amount of rumble for left trigger",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "rightTriggerRumble",
+      "desc": "Amount of rumble for right trigger",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Haptic effect handle",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "-- Rumble with gun Haptic effect",
+      "function init()",
+      "\thaptic_effect = CreateHaptic(1, 1, 0, 0)",
+      "end",
+      "",
+      "function tick()",
+      "\tif trigHaptic then",
+      "\t\tPlayHaptic(haptic_effect, 1)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

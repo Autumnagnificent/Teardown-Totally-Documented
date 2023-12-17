@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,11 +24,13 @@
   ],
   "examples": [
     [
-      "--Find triggers tagged \"toxic\" in script scope",
-      "local triggers = FindTriggers(\"toxic\")",
-      "for i=1, #triggers do",
-      "\tlocal trigger = triggers[i]",
-      "\t...",
+      "function init()",
+      "\t--Find triggers tagged \"toxic\" in script scope",
+      "\tlocal triggers = FindTriggers(\"toxic\")",
+      "\tfor i=1, #triggers do",
+      "\t\tlocal trigger = triggers[i]",
+      "\t\tDebugPrint(trigger)",
+      "\tend",
       "end"
     ]
   ],

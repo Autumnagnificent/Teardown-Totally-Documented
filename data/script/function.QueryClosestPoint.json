@@ -42,11 +42,14 @@
   ],
   "examples": [
     [
-      "--Find closest point within 10 meters of {0, 5, 0}, excluding any point on myVehicle",
-      "QueryRejectVehicle(myVehicle)",
-      "local hit, p, n, s = QueryClosestPoint(Vec(0, 5, 0), 10)",
-      "if hit then",
-      "\t--Point p of shape s is closest",
+      "function tick()",
+      "\tlocal vehicle = FindVehicle(\"vehicle\")",
+      "\t--Find closest point within 10 meters of {0, 5, 0}, excluding any point on myVehicle",
+      "\tQueryRejectVehicle(vehicle)",
+      "\tlocal hit, p, n, s = QueryClosestPoint(Vec(0, 5, 0), 10)",
+      "\tif hit then",
+      "\t\tDebugPrint(p)",
+      "\tend",
       "end"
     ]
   ],

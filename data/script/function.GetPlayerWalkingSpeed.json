@@ -1,0 +1,22 @@
+{
+  "name": "GetPlayerWalkingSpeed",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "speed",
+      "desc": "Current player walking speed",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tDebugPrint(GetPlayerWalkingSpeed())",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

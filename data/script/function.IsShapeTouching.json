@@ -24,9 +24,15 @@
   ],
   "examples": [
     [
-      "local touch = IsShapeTouching(a, b)",
-      "if hit then",
-      "\t--Shapes are touching or overlapping",
+      "local shapeA = 0",
+      "local shapeB = 0",
+      "function init()",
+      "\tshapeA = FindShape(\"shape\")",
+      "\tshapeB = FindShape(\"shape2\")",
+      "end",
+      "",
+      "function tick()",
+      "\tDebugPrint(IsShapeTouching(shapeA, shapeB))",
       "end"
     ]
   ],

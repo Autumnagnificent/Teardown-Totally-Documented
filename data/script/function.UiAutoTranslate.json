@@ -1,0 +1,34 @@
+{
+  "name": "UiAutoTranslate",
+  "arguments": [
+    {
+      "name": "value",
+      "desc": "",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "    UiPush()",
+      "        UiBeginFrame()",
+      "            if InputDown(\"interact\") then",
+      "                UiAutoTranslate(false)",
+      "            else",
+      "                UiAutoTranslate(true)",
+      "            end",
+      "            ",
+      "            UiRect(50, 50)",
+      "            local w, h = UiGetItemSize()",
+      "            DebugPrint(math.ceil(w) .. \"x\" .. math.ceil(h))",
+      "        UiEndFrame()",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Enables/disables auto autotranslate function when measuring the item size"
+  ]
+}

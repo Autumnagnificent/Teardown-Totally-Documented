@@ -17,10 +17,14 @@
   "returns": [],
   "examples": [
     [
-      "--Move a body 1 meter upwards",
-      "local t = GetBodyTransform(body)",
-      "t.pos = VecAdd(t.pos, Vec(0, 1, 0))",
-      "SetBodyTransform(body, t)"
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
+      "",
+      "\t--Move a body 1 meter upwards",
+      "\tlocal t = GetBodyTransform(handle)",
+      "\tt.pos = VecAdd(t.pos, Vec(0, 3, 0))",
+      "\tSetBodyTransform(handle, t)",
+      "end"
     ]
   ],
   "description": [

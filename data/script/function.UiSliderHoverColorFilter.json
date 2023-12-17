@@ -1,0 +1,62 @@
+{
+  "name": "UiSliderHoverColorFilter",
+  "arguments": [
+    {
+      "name": "r",
+      "desc": "Red channel",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Green channel",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Blue channel",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Alpha channel",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local slider = 0",
+      "",
+      "function draw()",
+      "    local thumbPath = \"common/thumb_I218_249_2430_49029.png\"",
+      "    UiTranslate(200, 200)",
+      "    UiPush()",
+      "        UiMakeInteractive()",
+      "        UiPush()",
+      "            UiAlign(\"top right\")",
+      "            UiTranslate(40, 3.4)",
+      "            UiColor(0.5291666388511658, 0.5291666388511658, 0.5291666388511658, 1)",
+      "            UiFont(\"regular.ttf\", 27)",
+      "            UiText(\"slider\")",
+      "        UiPop()",
+      "        UiTranslate(45.0, 3.0)",
+      "        UiPush()",
+      "            UiTranslate(0, 4.0)",
+      "            UiImageBox(\"common/rect_c#ffffff_o0.10_cr3.png\", 301.0, 12.0, 4, 4)",
+      "        UiPop()",
+      "        UiTranslate(2, 0)",
+      "        UiSliderHoverColorFilter(1.0, 0.2, 0.2)",
+      "        UiSliderThumbSize(8, 20)",
+      "        slider = UiSlider(thumbPath, \"x\", slider * 295, 0, 295) / 295",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Sets the slider hover color filter"
+  ]
+}

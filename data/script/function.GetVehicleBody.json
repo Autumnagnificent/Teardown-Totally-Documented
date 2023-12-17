@@ -18,9 +18,12 @@
   ],
   "examples": [
     [
-      "local body = GetVehicleBody(vehicle)",
-      "if IsBodyBroken(body) then",
-      "--Vehicle body is broken",
+      "function init()",
+      "\tlocal vehicle = FindVehicle(\"vehicle\")",
+      "\tlocal body = GetVehicleBody(vehicle)",
+      "\tif IsBodyBroken(body) then",
+      "\t\tDebugPrint(\"Is broken\")",
+      "\tend",
       "end"
     ]
   ],

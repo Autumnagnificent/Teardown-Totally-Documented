@@ -1,0 +1,41 @@
+{
+  "name": "UiTextSymbolsSub",
+  "arguments": [
+    {
+      "name": "text",
+      "desc": "Text",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "from",
+      "desc": "From element index",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "text",
+      "desc": "To element index",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "substring",
+      "desc": "Substring",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "    DebugPrint(UiTextSymbolsSub(\"Hello world\", 1, 5))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the substring. This function is intended to properly work with UTF8 encoded strings"
+  ]
+}

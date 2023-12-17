@@ -17,7 +17,10 @@
   "returns": [],
   "examples": [
     [
-      "SetString(\"level.name\", \"foo\")"
+      "function init()",
+      "\tSetString(\"level.name\", \"foo\")",
+      "\tDebugPrint(GetString(\"level.name\"))",
+      "end"
     ]
   ],
   "description": [

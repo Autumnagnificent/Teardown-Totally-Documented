@@ -18,14 +18,23 @@
   ],
   "examples": [
     [
-      "--Shape transform in body local space",
-      "local shapeTransform = GetShapeLocalTransform(shape)",
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\")",
+      "end",
       "",
-      "--Body transform in world space",
-      "local bodyTransform = GetBodyTransform(GetShapeBody(shape))",
+      "function tick()",
+      "\t--Shape transform in body local space",
+      "\tlocal shapeTransform = GetShapeLocalTransform(shape)",
       "",
-      "--Shape transform in world space",
-      "local worldTranform = TransformToParentTransform(bodyTransform, shapeTransform)"
+      "\t--Body transform in world space",
+      "\tlocal bodyTransform = GetBodyTransform(GetShapeBody(shape))",
+      "",
+      "\t--Shape transform in world space",
+      "\tlocal worldTranform = TransformToParentTransform(bodyTransform, shapeTransform)",
+      "",
+      "\tDebugCross(worldTranform)",
+      "end"
     ]
   ],
   "description": [

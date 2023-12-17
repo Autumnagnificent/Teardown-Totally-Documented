@@ -1,0 +1,25 @@
+{
+  "name": "UiResetFrame",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "    UiPush()",
+      "        UiTranslate(UiCenter(), 300)",
+      "        UiFont(\"bold.ttf\", 40)",
+      "        UiBeginFrame()",
+      "            UiTextButton(\"Button1\")",
+      "            UiTranslate(200, 0)",
+      "            UiTextButton(\"Button2\")",
+      "        UiResetFrame()",
+      "        local panelWidth, panelHeight = UiEndFrame()",
+      "        DebugPrint(\"w: \" .. panelWidth .. \"; h:\" .. panelHeight)",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Resets the current frame measured values"
+  ]
+}

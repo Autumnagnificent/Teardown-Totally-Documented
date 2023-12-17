@@ -30,15 +30,18 @@
   ],
   "examples": [
     [
-      "local a = Vec(2,0,0)",
-      "local b = Vec(0,4,2)",
-      "local t = 0.5",
-      "",
-      "--These two are equivalent",
-      "local c1 = VecLerp(a, b, t)",
-      "lcoal c2 = VecAdd(VecScale(a, 1-t), VecScale(b, t))",
-      "",
-      "--c1 and c2 now equals {1, 2, 1}"
+      "function init()",
+      "\tlocal a = Vec(2,0,0)",
+      "\tlocal b = Vec(0,4,2)",
+      "\tlocal t = 0.5",
+      "\t",
+      "\t--These two are equivalent",
+      "\tlocal c1 = VecLerp(a, b, t)",
+      "\tlocal c2 = VecAdd(VecScale(a, 1-t), VecScale(b, t))",
+      "\t",
+      "\t--c1 and c2 now equals {1, 2, 1}",
+      "\tDebugPrint(\"c1\" .. VecStr(c1) .. \" == c2\" .. VecStr(c2))",
+      "end"
     ]
   ],
   "description": [

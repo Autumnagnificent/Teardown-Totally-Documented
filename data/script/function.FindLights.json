@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,11 +24,13 @@
   ],
   "examples": [
     [
-      "--Search for lights tagged \"main\" in script scope",
-      "local lights = FindLights(\"main\")",
-      "for i=1, #lights do",
-      "\tlocal light = lights[i]",
-      "\t...",
+      "function init()",
+      "\t--Search for lights tagged \"main\" in script scope",
+      "\tlocal lights = FindLights(\"main\")",
+      "\tfor i=1, #lights do",
+      "\t\tlocal light = lights[i]",
+      "\t\tDebugPrint(light)",
+      "\tend",
       "end"
     ]
   ],

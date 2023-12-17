@@ -24,7 +24,9 @@
   ],
   "examples": [
     [
-      "local snd = LoadSound(\"beep.ogg\")"
+      "function init()",
+      "\tlocal snd = LoadSound(\"warning-beep.ogg\")",
+      "end"
     ]
   ],
   "description": [

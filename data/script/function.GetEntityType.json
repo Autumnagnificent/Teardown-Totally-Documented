@@ -18,9 +18,9 @@
   ],
   "examples": [
     [
-      "local t = GetEntityType(e)",
-      "if t == \"body\" then",
-      "\t--e is a body handle",
+      "function init()",
+      "\tlocal body = FindBody(\"body\", true)",
+      "\tDebugPrint(GetEntityType(body))",
       "end"
     ]
   ],

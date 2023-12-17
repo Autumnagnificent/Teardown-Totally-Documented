@@ -30,9 +30,11 @@
   "examples": [
     [
       "myValue = 0",
-      "SetValue(\"myValue\", 1, \"linear\", 0.5)",
-      "",
-      "This will change the value of myValue from 0 to 1 in a linear fasion over 0.5 seconds"
+      "function tick()",
+      "\t--This will change the value of myValue from 0 to 1 in a linear fasion over 0.5 seconds",
+      "\tSetValue(\"myValue\", 1, \"linear\", 0.5)",
+      "\tDebugPrint(myValue)",
+      "end"
     ]
   ],
   "description": [

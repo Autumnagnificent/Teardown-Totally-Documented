@@ -1,0 +1,49 @@
+{
+  "name": "GetColor",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Registry key",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "r",
+      "desc": "Desired red channel value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Desired green channel value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Desired blue channel value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Desired alpha channel value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tSetColor(\"red\", 1.0, 0.1, 0.1)",
+      "\tcolor = GetColor(\"red\")",
+      "\tDebugPrint(\"RGBA: \" .. color[1] .. \" \" .. color[2] .. \" \" .. color[3] .. \" \" .. color[4])",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the color registry key value"
+  ]
+}

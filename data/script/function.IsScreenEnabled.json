@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local b = IsScreenEnabled(screen)"
+      "function init()",
+      "\tlocal b = IsScreenEnabled(FindScreen(\"tv\"))",
+      "\tDebugPrint(b)",
+      "end"
     ]
   ],
   "description": [

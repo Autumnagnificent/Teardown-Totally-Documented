@@ -11,9 +11,16 @@
   "returns": [],
   "examples": [
     [
-      "--Do not include vehicle in next raycast",
-      "QueryRejectVehicle(vehicle)",
-      "QueryRaycast(...)"
+      "function tick()",
+      "\tlocal vehicle = FindVehicle(\"vehicle\")",
+      "\tQueryRequire(\"physical dynamic large\")",
+      "\t--Do not include vehicle in next raycast",
+      "\tQueryRejectVehicle(vehicle)",
+      "\tlocal hit, dist = QueryRaycast(Vec(0, 0, 0), Vec(1, 0, 0), 10)",
+      "\tif hit then",
+      "\t\tDebugPrint(dist)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

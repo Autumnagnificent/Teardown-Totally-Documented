@@ -1,0 +1,38 @@
+{
+  "name": "SetToolHaptic",
+  "arguments": [
+    {
+      "name": "id",
+      "desc": "Tool unique identifier",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "handle",
+      "desc": "Handle of haptic effect",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "amplitude",
+      "desc": "Amplitude multiplier. Default (1.0)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tRegisterTool(\"minigun\", \"loc@MINIGUN\", \"MOD/vox/minigun.vox\")",
+      "\ttoolHaptic = LoadHaptic(\"MOD/haptic/tool.xml\")",
+      "\tSetToolHaptic(\"minigun\", toolHaptic) ",
+      "end"
+    ]
+  ],
+  "description": [
+    "Register haptic as a \"Tool haptic\" for custom tools.",
+    "\"Tool haptic\" will be played on repeat while this tool is active.",
+    "Also it can be used for Active Triggers of DualSense controller"
+  ]
+}

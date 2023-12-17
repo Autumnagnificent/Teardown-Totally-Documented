@@ -18,10 +18,16 @@
   ],
   "examples": [
     [
-      "--Visualize center of mass on for body",
-      "local com = GetBodyCenterOfMass(body)",
-      "local worldPoint = TransformToParentPoint(GetBodyTransform(body), com)",
-      "DebugCross(worldPoint)"
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\t--Visualize center of mass on for body",
+      "\tlocal com = GetBodyCenterOfMass(handle)",
+      "\tlocal worldPoint = TransformToParentPoint(GetBodyTransform(handle), com)",
+      "\tDebugCross(worldPoint)",
+      "end"
     ]
   ],
   "description": [

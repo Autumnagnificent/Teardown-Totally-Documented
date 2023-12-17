@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -25,10 +25,12 @@
   "examples": [
     [
       "--Search for locations tagged \"doorhinge\" in script scope",
-      "local hinges = FindJoints(\"doorhinge\")",
-      "for i=1, #hinges do",
-      "\tlocal joint = hinges[i]",
-      "\t...",
+      "function init()",
+      "\tlocal hinges = FindJoints(\"doorhinge\")",
+      "\tfor i=1, #hinges do",
+      "\t\tlocal joint = hinges[i]",
+      "\t\tDebugPrint(joint)",
+      "\tend",
       "end"
     ]
   ],

@@ -1,0 +1,43 @@
+{
+  "name": "AddHeat",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "pos",
+      "desc": "World space point as vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "amount",
+      "desc": "amount of heat",
+      "optional": false,
+      "type": "float"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal playerCameraTransform = GetPlayerCameraTransform()",
+      "\tlocal dir = TransformToParentVec(playerCameraTransform, Vec(0, 0, -1))",
+      "",
+      "\t-- Cast ray out of player camera and add heat to shape if we can find one",
+      "\tlocal hit, dist, normal, shape = QueryRaycast(playerCameraTransform.pos, dir, 10)",
+      "",
+      "\tif hit then",
+      "\t\tlocal hitPos = VecAdd(playerCameraTransform.pos, VecScale(dir, dist))",
+      "\t\tAddHeat(shape, hitPos, 1)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Add heat to shape"
+  ]
+}

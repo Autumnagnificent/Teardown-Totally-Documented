@@ -11,9 +11,11 @@
   "returns": [],
   "examples": [
     [
-      "--Fire extinguishing particle",
-      "ParticleFlags(256)",
-      "SpawnParticle(...)"
+      "function tick()",
+      "\t--Fire extinguishing particle",
+      "\tParticleFlags(256)",
+      "\tSpawnParticle(Vec(0, 10, 0), -0.1, math.random() + 1)",
+      "end"
     ]
   ],
   "description": [

@@ -1,0 +1,21 @@
+{
+  "name": "LastInputDevice",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "#include \"ui/ui_helpers.lua\"",
+      "",
+      "function update()",
+      "\tif LastInputDevice() == UI_DEVICE_GAMEPAD then",
+      "\t\tDebugPrint(\"Last input was from gamepad\")",
+      "\telseif LastInputDevice() == UI_DEVICE_MOUSE then",
+      "\t\tDebugPrint(\"Last input was mouse & keyboard\")",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "This function will reset everything we need to reset during state transition"
+  ]
+}

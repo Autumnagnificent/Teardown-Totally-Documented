@@ -24,11 +24,13 @@
   ],
   "examples": [
     [
-      "local a = Vec(1,2,3)",
-      "local b = Vec(3,0,0)",
-      "local c = VecAdd(a, b)",
-      "",
-      "--c now equals {4,2,3}"
+      "function init()",
+      "\tlocal a = Vec(1,2,3)",
+      "\tlocal b = Vec(3,0,0)",
+      "\tlocal c = VecAdd(a, b)",
+      "\t--c now equals {4,2,3}",
+      "\tDebugPrint(VecStr(c))",
+      "end"
     ]
   ],
   "description": [

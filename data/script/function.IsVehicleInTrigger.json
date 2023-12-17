@@ -24,8 +24,17 @@
   ],
   "examples": [
     [
-      "if IsVehicleInTrigger(trigger, vehicle) then",
-      "\t...",
+      "local trigger = 0",
+      "local vehicle = 0",
+      "function init()",
+      "\ttrigger = FindTrigger(\"toxic\")",
+      "\tvehicle = FindVehicle(\"vehicle\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif IsVehicleInTrigger(trigger, vehicle) then",
+      "\t\tDebugPrint(\"In trigger!\")",
+      "\tend",
       "end"
     ]
   ],

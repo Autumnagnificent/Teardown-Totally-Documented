@@ -11,8 +11,11 @@
   "returns": [],
   "examples": [
     [
-      "Delete(body)",
-      "--All shapes associated with body will also be removed"
+      "function init()",
+      "\tlocal body = FindBody(\"body\", true)",
+      "\t--All shapes associated with body will also be removed",
+      "\tDelete(body)",
+      "end"
     ]
   ],
   "description": [

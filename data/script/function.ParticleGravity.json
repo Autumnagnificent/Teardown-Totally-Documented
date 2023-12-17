@@ -35,8 +35,10 @@
   "returns": [],
   "examples": [
     [
-      "--Move particles slowly upwards",
-      "ParticleGravity(2)"
+      "function init()",
+      "\t--Move particles slowly upwards",
+      "\tParticleGravity(2)",
+      "end"
     ]
   ],
   "description": [

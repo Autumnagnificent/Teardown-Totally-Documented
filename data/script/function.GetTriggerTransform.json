@@ -18,7 +18,11 @@
   ],
   "examples": [
     [
-      "local t = GetTriggerTransform(trigger)"
+      "function init()",
+      "\tlocal trigger = FindTrigger(\"toxic\")",
+      "\tlocal t = GetTriggerTransform(trigger)",
+      "\tDebugPrint(t.pos)",
+      "end"
     ]
   ],
   "description": [

@@ -17,7 +17,9 @@
   "returns": [],
   "examples": [
     [
-      "SetCameraTransform(Transform(Vec(0, 10, 0), QuatEuler(0, 90, 0)))"
+      "function tick()",
+      "\tSetCameraTransform(Transform(Vec(0, 10, 0), QuatEuler(0, 90, 0)))",
+      "end"
     ]
   ],
   "description": [

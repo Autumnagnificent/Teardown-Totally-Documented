@@ -18,8 +18,11 @@
   ],
   "examples": [
     [
-      "if GetJointType(joint) == \"rope\" then",
-      "\t--Joint is rope",
+      "function init()",
+      "\tlocal joint = FindJoint(\"joint\")",
+      "\tif GetJointType(joint) == \"rope\" then",
+      "\t\tDebugPrint(\"Joint is rope\")",
+      "\tend",
       "end"
     ]
   ],

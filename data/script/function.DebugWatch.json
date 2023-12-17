@@ -17,8 +17,10 @@
   "returns": [],
   "examples": [
     [
-      "local t = 5",
-      "DebugWatch(\"time\", t)"
+      "function tick()",
+      "\tlocal t = 5",
+      "\tDebugWatch(\"time\", t)",
+      "end"
     ]
   ],
   "description": [

@@ -4,8 +4,10 @@
   "returns": [],
   "examples": [
     [
-      "if shouldRestart then",
-      "Restart()",
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tRestart()",
+      "\tend",
       "end"
     ]
   ],

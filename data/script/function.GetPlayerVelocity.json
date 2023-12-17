@@ -11,7 +11,10 @@
   ],
   "examples": [
     [
-      "local vel = GetPlayerVelocity()"
+      "function tick()",
+      "\tlocal vel = GetPlayerVelocity()",
+      "\tDebugPrint(VecStr(vel))",
+      "end"
     ]
   ],
   "description": [

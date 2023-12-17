@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,11 +24,13 @@
   ],
   "examples": [
     [
-      "--Search for bodies tagged \"target\" in script scope",
-      "local targets = FindBodies(\"target\")",
-      "for i=1, #targets do",
-      "\tlocal target = targets[i]",
-      "\t...",
+      "function init()",
+      "\t--Search for bodies tagged \"target\" in script scope",
+      "\tlocal targets = FindBodies(\"target\", true)",
+      "\tfor i=1, #targets do",
+      "\t\tlocal target = targets[i]",
+      "\t\tDebugPrint(target)",
+      "\tend",
       "end"
     ]
   ],

@@ -36,8 +36,10 @@
   ],
   "examples": [
     [
-      "Spawn(\"MOD/prefab/mycar.xml\", Transform(Vec(0, 5, 0)))",
-      "Spawn(\"<voxbox size='10 10 10' prop='true' material='wood'/>\", Transform(Vec(0, 10, 0)))"
+      "function init()",
+      "\tSpawn(\"MOD/prefab/mycar.xml\", Transform(Vec(0, 5, 0)))",
+      "\tSpawn(\"<voxbox size='10 10 10' prop='true' material='wood'/>\", Transform(Vec(0, 10, 0)))",
+      "end"
     ]
   ],
   "description": [

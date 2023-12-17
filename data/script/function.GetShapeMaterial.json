@@ -70,7 +70,14 @@
       "type": "number"
     }
   ],
-  "examples": [],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal type, r, g, b, a, reflectivity, shininess, metallic, emissive = GetShapeMaterial(FindShape(\"shape2\", true), 1)",
+      "\tDebugPrint(type)",
+      "end"
+    ]
+  ],
   "description": [
     "Return material properties for specific matirial entry."
   ]

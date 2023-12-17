@@ -11,9 +11,11 @@
   ],
   "examples": [
     [
-      "local shape = GetPlayerGrabShape()",
-      "if shape ~= 0 then",
-      "\t...",
+      "function tick()",
+      "\tlocal shape = GetPlayerGrabShape()",
+      "\tif shape ~= 0 then",
+      "\t\tDebugPrint(\"Player is grabbing a shape\")",
+      "\tend",
       "end"
     ]
   ],

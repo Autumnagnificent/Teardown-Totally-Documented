@@ -24,8 +24,11 @@
   ],
   "examples": [
     [
-      "--Retrieve speed parameter, or set to 10.0 if omitted",
-      "parameterSpeed = GetFloatParam(\"speed\", 10.0)"
+      "function init()",
+      "\t--Retrieve speed parameter, or set to 10.0 if omitted",
+      "\tlocal parameterSpeed = GetFloatParam(\"speed\", 10.0)",
+      "\tDebugPrint(parameterSpeed)",
+      "end"
     ]
   ],
   "description": [

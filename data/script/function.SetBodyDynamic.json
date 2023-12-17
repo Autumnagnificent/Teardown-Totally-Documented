@@ -17,7 +17,11 @@
   "returns": [],
   "examples": [
     [
-      "SetBodyDynamic(body, false)"
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
+      "\tSetBodyDynamic(handle, false)",
+      "\tDebugPrint(IsBodyDynamic(handle))",
+      "end"
     ]
   ],
   "description": [

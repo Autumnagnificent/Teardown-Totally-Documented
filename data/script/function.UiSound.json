@@ -20,8 +20,14 @@
       "type": "number"
     },
     {
-      "name": "pan",
-      "desc": "Playback stereo panning (-1.0 to 1.0). Default 0.0.",
+      "name": "panAzimuth",
+      "desc": "Playback stereo panning azimuth (-PI to PI). Default 0.0.",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "panDepth",
+      "desc": "Playback stereo panning depth (0.0 to 1.0). Default 1.0.",
       "optional": true,
       "type": "number"
     }

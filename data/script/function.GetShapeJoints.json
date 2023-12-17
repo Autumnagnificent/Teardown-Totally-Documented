@@ -18,10 +18,15 @@
   ],
   "examples": [
     [
-      "local hinges = GetShapeJoints(door)",
-      "for i=1, #hinges do",
-      "\tlocal joint = hinges[i]",
-      "\t...",
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "",
+      "\tlocal hinges = GetShapeJoints(shape)",
+      "\tfor i=1, #hinges do",
+      "\t\tlocal joint = hinges[i]",
+      "\t\tDebugPrint(joint)",
+      "\tend",
       "end"
     ]
   ],

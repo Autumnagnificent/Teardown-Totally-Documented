@@ -11,7 +11,9 @@
   "returns": [],
   "examples": [
     [
-      "ParticleType(\"smoke\")"
+      "function init()",
+      "\tParticleType(\"smoke\")",
+      "end"
     ]
   ],
   "description": [

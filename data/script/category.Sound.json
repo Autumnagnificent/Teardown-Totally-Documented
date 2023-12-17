@@ -11,6 +11,8 @@
     "PlayLoop",
     "PlayMusic",
     "PlaySound",
+    "PlaySoundForUser",
+    "SetSoundLoopUser",
     "StopMusic"
   ]
 }

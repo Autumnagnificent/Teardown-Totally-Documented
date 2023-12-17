@@ -57,7 +57,16 @@
     }
   ],
   "returns": [],
-  "examples": [],
+  "examples": [
+    [
+      "local shape = 0",
+      "function init()",
+      "\tSetBrush(\"sphere\", 3, 4)",
+      "\tshape = FindShape(\"shape\")",
+      "\tExtrudeShape(shape, 0, 5, 0, -1, 0, 0, 50, \"exact\")",
+      "end"
+    ]
+  ],
   "description": [
     "Extrude region of shape. The extruded region will be filled in with the material set up with SetBrush.",
     "The mode parameter sepcifies how the region is determined.",

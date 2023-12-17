@@ -24,8 +24,11 @@
   ],
   "examples": [
     [
-      "--Retrieve playsound parameter, or false if omitted",
-      "parameterPlaySound = GetBoolParam(\"playsound\", false)"
+      "function init()",
+      "\t--Retrieve playsound parameter, or false if omitted",
+      "\tlocal parameterPlaySound = GetBoolParam(\"playsound\", false)",
+      "\tDebugPrint(parameterPlaySound)",
+      "end"
     ]
   ],
   "description": [

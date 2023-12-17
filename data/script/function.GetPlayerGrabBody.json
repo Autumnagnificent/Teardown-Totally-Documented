@@ -11,9 +11,11 @@
   ],
   "examples": [
     [
-      "local body = GetPlayerGrabBody()",
-      "if body ~= 0 then",
-      "\t...",
+      "function tick()",
+      "\tlocal body = GetPlayerGrabBody()",
+      "\tif body ~= 0 then",
+      "\t\tDebugPrint(\"Player is grabbing a body\")",
+      "\tend",
       "end"
     ]
   ],

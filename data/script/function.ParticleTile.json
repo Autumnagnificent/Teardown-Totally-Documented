@@ -11,11 +11,13 @@
   "returns": [],
   "examples": [
     [
-      "--Smoke particle",
-      "ParticleTile(0)",
-      "",
-      "--Fire particle",
-      "ParticleTile(5)"
+      "function init()",
+      "\t--Smoke particle",
+      "\tParticleTile(0)",
+      "\t",
+      "\t--Fire particle",
+      "\tParticleTile(5)",
+      "end"
     ]
   ],
   "description": [

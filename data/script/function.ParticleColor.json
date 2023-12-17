@@ -41,11 +41,13 @@
   "returns": [],
   "examples": [
     [
-      "--Constant red",
-      "ParticleColor(1,0,0)",
+      "function init()",
+      "\t--Constant red",
+      "\tParticleColor(1,0,0)",
       "",
-      "--Animating from yellow to red",
-      "ParticleColor(1,1,0, 1,0,0)"
+      "\t--Animating from yellow to red",
+      "\tParticleColor(1,1,0, 1,0,0)",
+      "end"
     ]
   ],
   "description": [

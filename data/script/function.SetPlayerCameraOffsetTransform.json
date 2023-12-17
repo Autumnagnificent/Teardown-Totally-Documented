@@ -11,8 +11,10 @@
   "returns": [],
   "examples": [
     [
-      "local t = Transform(Vec(), QuatAxisAngle(Vec(1, 0, 0), math.sin(time*3.0) * 3.0))",
-      "SetPlayerCameraOffsetTransform(t)"
+      "function tick()",
+      "\tlocal t = Transform(Vec(), QuatAxisAngle(Vec(1, 0, 0), math.sin(GetTime()*3.0) * 3.0))",
+      "\tSetPlayerCameraOffsetTransform(t)",
+      "end"
     ]
   ],
   "description": [

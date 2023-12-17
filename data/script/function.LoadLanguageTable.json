@@ -1,0 +1,25 @@
+{
+  "name": "LoadLanguageTable",
+  "arguments": [
+    {
+      "name": "id",
+      "desc": "Language id (enum)",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\t-- loads the english localization table",
+      "\tLoadLanguageTable(0) ",
+      "end"
+    ]
+  ],
+  "description": [
+    "Loads the language table for specified language id for further localization.",
+    "Possible id values are:<br>",
+    "${table:Id}"
+  ]
+}

@@ -17,7 +17,12 @@
   ],
   "examples": [
     [
-      "local vol, pos = GetLastSound()"
+      "function tick()",
+      "\tlocal vol, pos = GetLastSound()",
+      "\tif vol > 0 then",
+      "\t\tDebugPrint(vol .. \" \" .. VecStr(pos)) ",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

@@ -11,9 +11,11 @@
   ],
   "examples": [
     [
-      "local vehicle = GetPlayerVehicle()",
-      "if vehicle ~= 0 then",
-      "\t...",
+      "function tick()",
+      "\tlocal vehicle = GetPlayerVehicle()",
+      "\tif vehicle ~= 0 then",
+      "\t\tDebugPrint(\"Player drives the vehicle\")",
+      "\tend",
       "end"
     ]
   ],

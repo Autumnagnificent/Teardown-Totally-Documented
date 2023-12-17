@@ -35,8 +35,10 @@
   "returns": [],
   "examples": [
     [
-      "--Stretch particle along direction of motion",
-      "ParticleStretch(1.0)"
+      "function init()",
+      "\t--Stretch particle along direction of motion",
+      "\tParticleStretch(1.0)",
+      "end"
     ]
   ],
   "description": [

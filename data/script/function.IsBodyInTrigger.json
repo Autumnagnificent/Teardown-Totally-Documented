@@ -24,8 +24,17 @@
   ],
   "examples": [
     [
-      "if IsBodyInTrigger(trigger, body) then",
-      "\t...",
+      "local trigger = 0",
+      "local body = 0",
+      "function init()",
+      "\ttrigger = FindTrigger(\"toxic\")",
+      "\tbody = FindBody(\"body\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif IsBodyInTrigger(trigger, body) then",
+      "\t\tDebugPrint(\"In trigger!\")",
+      "\tend",
       "end"
     ]
   ],

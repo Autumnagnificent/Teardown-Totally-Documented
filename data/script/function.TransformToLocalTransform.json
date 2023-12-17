@@ -24,15 +24,18 @@
   ],
   "examples": [
     [
-      "local b = GetBodyTransform(body)",
-      "local w = GetShapeWorldTransform(shape)",
+      "function init()",
+      "\tlocal b = GetBodyTransform(body)",
+      "\tlocal w = GetShapeWorldTransform(shape)",
       "",
-      "--b represents the location of body in world space",
-      "--w represents the location of shape in world space",
+      "\t--b represents the location of body in world space",
+      "\t--w represents the location of shape in world space",
+      "\t",
+      "\tlocal s = TransformToLocalTransform(b, w)",
       "",
-      "local s = TransformToLocalTransform(b, w)",
-      "",
-      "--s now represents the location of shape in body space."
+      "\t--s now represents the location of shape in body space.",
+      "\tDebugPrint(TransformStr(s))",
+      "end"
     ]
   ],
   "description": [

@@ -66,8 +66,12 @@
   ],
   "examples": [
     [
-      "local mat = GetShapeMaterialAtIndex(shape, 0, 0, 0)",
-      "DebugPrint(\"The voxel closest to origo is of material: \" .. mat)"
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "\tlocal mat = GetShapeMaterialAtIndex(shape, 0, 0, 0)",
+      "\tDebugPrint(\"The voxel is of material: \" .. mat)",
+      "end"
     ]
   ],
   "description": [

@@ -24,9 +24,17 @@
   ],
   "examples": [
     [
-      "local p = Vec(0, 10, 0)",
-      "if IsPointInTrigger(trigger, p) then",
-      "\t...",
+      "local trigger = 0",
+      "local point = {}",
+      "function init()",
+      "\ttrigger = FindTrigger(\"toxic\", true)",
+      "\tpoint = Vec(0, 0, 0)",
+      "end",
+      "",
+      "function tick()",
+      "\tif IsPointInTrigger(trigger, point) then",
+      "\t\tDebugPrint(\"In trigger!\")",
+      "\tend",
       "end"
     ]
   ],

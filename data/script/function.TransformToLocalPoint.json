@@ -24,11 +24,14 @@
   ],
   "examples": [
     [
-      "local t = GetBodyTransform(body)",
-      "local worldOrigo = Vec(0, 0, 0)",
-      "local p = TransformToLocalPoint(t, worldOrigo)",
+      "function init()",
+      "\tlocal t = GetBodyTransform(body)",
+      "\tlocal worldOrigo = Vec(0, 0, 0)",
+      "\tlocal p = TransformToLocalPoint(t, worldOrigo)",
       "",
-      "--p now represents the position of world origo in local body space"
+      "\t--p now represents the position of world origo in local body space",
+      "\tDebugPrint(VecStr(p))",
+      "end"
     ]
   ],
   "description": [

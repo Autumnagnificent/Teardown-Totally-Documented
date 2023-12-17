@@ -11,9 +11,11 @@
   ],
   "examples": [
     [
-      "local body = GetPlayerPickBody()",
-      "if body ~= 0 then",
-      "\t...",
+      "function tick()",
+      "\tlocal body = GetPlayerPickBody()",
+      "\tif body ~= 0 then",
+      "\t\tDebugWatch(\"Pick body \", body)",
+      "\tend",
       "end"
     ]
   ],

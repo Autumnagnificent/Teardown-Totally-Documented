@@ -9,6 +9,7 @@
   "functions": [
     "GetQuatEuler",
     "Quat",
+    "QuatAlignXZ",
     "QuatAxisAngle",
     "QuatCopy",
     "QuatEuler",
@@ -16,8 +17,10 @@
     "QuatRotateQuat",
     "QuatRotateVec",
     "QuatSlerp",
+    "QuatStr",
     "Transform",
     "TransformCopy",
+    "TransformStr",
     "TransformToLocalPoint",
     "TransformToLocalTransform",
     "TransformToLocalVec",
@@ -33,6 +36,7 @@
     "VecLerp",
     "VecNormalize",
     "VecScale",
+    "VecStr",
     "VecSub"
   ]
 }

@@ -9,7 +9,7 @@
     },
     {
       "name": "primary",
-      "desc": "Primary button",
+      "desc": "| [location] (String) Button location. Primary if true.",
       "optional": true,
       "type": "bool"
     }
@@ -28,7 +28,7 @@
       "",
       "    -- Primary button will be placed in the main pause menu",
       "\tif PauseMenuButton(\"Back to Hub\", true) then",
-      "\t\tStartLevel(\"hub\", \"MOD/hub.xml\")",
+      "\t\tStartLevel(\"hub\", \"level/hub.xml\")",
       "\tend",
       "\t",
       "\t-- Button will be placed in the bottom bar of the pause menu",
@@ -40,16 +40,17 @@
       "function draw()",
       "\tif visible then",
       "\t\tUiMakeInteractive()",
-      "\t\t...",
       "\tend",
       "end"
     ]
   ],
   "description": [
-    "Calling this function will add a button on the bottom bar or in the main pause menu (center of the screen) when the game is paused. ",
+    "Calling this function will add a button on the bottom bar or in the main pause menu (center of the screen) when the game is paused.",
+    "Or in any custom location, identified by 'location' parameter.",
     "A primary button will be placed in the main pause menu if this function is called from a playable mod. There can be only one primary button.",
     "Use this as a way to bring up mod settings or other user interfaces while the game is running. ",
     "Call this function every frame from the tick function for as long as the pause menu button",
-    "should still be visible."
+    "should still be visible.",
+    "Only one button per script is allowed. Consecutive calls replace button added in previous calls."
   ]
 }

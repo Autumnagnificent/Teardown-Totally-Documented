@@ -16,7 +16,15 @@
       "type": "table"
     }
   ],
-  "examples": [],
+  "examples": [
+    [
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "\tTrimShape(shape)",
+      "end"
+    ]
+  ],
   "description": [
     "Trim away empty regions of shape, thus potentially making it smaller.",
     "If the size of the shape changes, the shape will be automatically moved",

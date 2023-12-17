@@ -17,8 +17,12 @@
   "returns": [],
   "examples": [
     [
-      "local t = Transform(Vec(10, 0, 0), QuatEuler(0, 90, 0))",
-      "SetPlayerTransform(t)"
+      "function tick()",
+      "\tif InputPressed(\"jump\") then",
+      "\t\tlocal t = Transform(Vec(50, 0, 0), QuatEuler(0, 90, 0))",
+      "\t\tSetPlayerTransform(t)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

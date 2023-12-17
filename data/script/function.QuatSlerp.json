@@ -30,11 +30,14 @@
   ],
   "examples": [
     [
-      "local a = QuatEuler(0, 10, 0)",
-      "local b = QuatEuler(0, 0, 45)",
+      "function init()",
+      "\tlocal a = QuatEuler(0, 10, 0)",
+      "\tlocal b = QuatEuler(0, 0, 45)",
       "",
-      "--Create quaternion half way between a and b",
-      "local q = QuatSlerp(a, b, 0.5)"
+      "\t--Create quaternion half way between a and b",
+      "\tlocal q = QuatSlerp(a, b, 0.5)",
+      "\tDebugPrint(QuatStr(q))",
+      "end"
     ]
   ],
   "description": [

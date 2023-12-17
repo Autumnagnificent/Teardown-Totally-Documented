@@ -18,13 +18,15 @@
   ],
   "examples": [
     [
-      "--Do this to assign a quaternion",
-      "local right1 = Transform(Vec(1,0,0), QuatEuler(0, 90, 0))",
-      "local right2 = TransformCopy(right1)",
+      "function init()",
+      "\t--Do this to assign a quaternion",
+      "\tlocal right1 = Transform(Vec(1,0,0), QuatEuler(0, 90, 0))",
+      "\tlocal right2 = TransformCopy(right1)",
       "",
-      "--Never do this unless you REALLY know what you're doing",
-      "local wrong1 = Transform(Vec(1,0,0), QuatEuler(0, 90, 0))",
-      "local wrong2 = wrong1"
+      "\t--Never do this unless you REALLY know what you're doing",
+      "\tlocal wrong1 = Transform(Vec(1,0,0), QuatEuler(0, 90, 0))",
+      "\tlocal wrong2 = wrong1",
+      "end"
     ]
   ],
   "description": [

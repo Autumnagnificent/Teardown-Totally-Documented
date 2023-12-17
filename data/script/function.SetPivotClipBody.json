@@ -1,0 +1,41 @@
+{
+  "name": "SetPivotClipBody",
+  "arguments": [
+    {
+      "name": "bodyHandle",
+      "desc": "Handle of a body, shapes of which should be",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "mainShapeIdx",
+      "desc": "Optional index of a shape among the given",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local body_1 = 0",
+      "local body_2 = 0",
+      "function init()",
+      "\tbody_1 = FindBody(\"body_1\")",
+      "\tbody_2 = FindBody(\"body_2\")",
+      "end",
+      "",
+      "function tick()",
+      "\tSetPivotClipBody(body_1, 0) -- this overload should be called once and",
+      "\t-- only once per frame to take effect",
+      "\tSetPivotClipBody(body_2)",
+      "end"
+    ]
+  ],
+  "description": [
+    "treated as pivots when clipping",
+    "body's shapes which is used to calculate clipping parameters",
+    "(default: -1)",
+    "Enforce camera clipping for this frame and mark the given body as a",
+    "pivot for clipping. Call continuously to keep overriding."
+  ]
+}

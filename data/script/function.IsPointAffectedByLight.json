@@ -24,8 +24,13 @@
   ],
   "examples": [
     [
-      "local point = Vec(0, 10, 0)",
-      "local affected = IsPointAffectedByLight(light, point)"
+      "local light = 0",
+      "function init()",
+      "\tlight = FindLight(\"main\")",
+      "\tlocal point = Vec(0, 10, 0)",
+      "\tlocal affected = IsPointAffectedByLight(light, point)",
+      "\tDebugPrint(affected)",
+      "end"
     ]
   ],
   "description": [

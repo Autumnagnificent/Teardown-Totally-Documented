@@ -1,0 +1,30 @@
+{
+  "name": "UiGetSymbolsCount",
+  "arguments": [
+    {
+      "name": "text",
+      "desc": "Text",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "count",
+      "desc": "Symbols count",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "    DebugPrint(UiGetSymbolsCount(\"Hello world!\"))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the symbols count in the specified text.<br>",
+    "This function is intended to property count symbols in UTF 8 encoded string"
+  ]
+}

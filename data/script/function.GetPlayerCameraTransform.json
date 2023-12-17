@@ -11,7 +11,10 @@
   ],
   "examples": [
     [
-      "local t = GetPlayerCameraTransform()"
+      "function init()",
+      "\tlocal t = GetPlayerCameraTransform()",
+      "\tDebugPrint(TransformStr(t))",
+      "end"
     ]
   ],
   "description": [
