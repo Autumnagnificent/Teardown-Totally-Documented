@@ -1,6 +1,6 @@
 Loader = {}
 
----Leave blank to sove for find itself.
+---Leave blank to find itself.
 ---@param set_mod_id string?
 function Loader.Set(set_mod_id)
 	if set_mod_id then
@@ -95,7 +95,9 @@ function Loader.File(path, default_search_path, inherit_env)
 
 	if success and f then
 		local env = inherit_env or {}
-		setmetatable(env, default_env_meta)
+        setmetatable(env, {
+			__index = getfenv(2) or _G
+		})
 
 		setfenv(f, env)
 		return f(), env

@@ -319,6 +319,7 @@
 ---| "game.respawn"
 ---| "game.restart"
 ---| "game.screenrecord"
+---| "game.screenshot"
 ---| "game.selectmod"
 ---| "game.steam.showbindingpanel"
 ---| "game.startui"
