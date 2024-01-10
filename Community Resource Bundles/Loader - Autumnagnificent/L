@@ -3,9 +3,9 @@ function init()
 end
 
 function GetStackTrace(level)
-	level = (level or 0)
-	local _, line = pcall(error, '', level + 3) -- The level + 3 is to get out of error, then out of pcall, then out of this function
-	return line
+    level = (level or 0)
+    local _, line = pcall(error, '', level + 3) -- The level + 3 is to get out of error, then out of pcall, then out of this function
+    return line
 end
 
 function AutoGetScriptHandle()
