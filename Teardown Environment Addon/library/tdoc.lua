@@ -172,6 +172,7 @@
 ---| "mousewheel" Mouse wheel.
 
 ---@alias material
+---| "none"
 ---| "foliage"
 ---| "dirt"
 ---| "plaster"
@@ -283,6 +284,7 @@
 ---| "bloom"
 
 ---@alias ui_alignment
+---| ""
 ---| "left"
 ---| "center"
 ---| "right"
@@ -298,6 +300,38 @@
 ---| "left bottom"
 ---| "center bottom"
 ---| "right bottom"
+
+---@alias command
+---| "game.about"
+---| "game.applydisplay"
+---| "game.applygraphics"
+---| "game.bakemission"
+---| "game.exitlevel"
+---| "game.menu"
+---| "game.openfolder"
+---| "game.openurl"
+---| "game.path.load"
+---| "game.path.save"
+---| "game.pausemenu"
+---| "game.quickload"
+---| "game.quicksave"
+---| "game.quit"
+---| "game.respawn"
+---| "game.restart"
+---| "game.screenrecord"
+---| "game.screenshot"
+---| "game.selectmod"
+---| "game.steam.showbindingpanel"
+---| "game.startui"
+---| "game.unpause"
+---| "hydra.eventToolUpgrade"
+---| "hydra.eventTutorial"
+---| "mods.deactivate"
+---| "mods.publishend"
+---| "mods.publishupload"
+---| "mods.refresh"
+---| "mods.sanitycheck"
+
 
 --#endregion
 --#region Callbacks
@@ -332,6 +366,16 @@ function draw(dt) end
 ---NOT IN OFFICAL DOCUMENTATION
 ---@param command string
 function handleCommand(command) end
+
+---Creates a button that can be accesed via the pause menu. Call every tick
+---
+---Creating a pause menu button will create a key at `game.pausemenu.items.<current_script_handle>` with the title as it's value
+---
+---The pause menu button can also be called via `Command('game.pausemenu', <script_handle>)`
+---@param title string
+---@param primary boolean? The button will show in the center of the pause menu instead of the lower bar. Only one button may occupy this space, otherwise it will show in the lower bar.
+---@return boolean activated
+function PauseMenuButton(title, primary) end
 
 --#endregion
 --#region XML Parameters
@@ -740,7 +784,7 @@ function IsBodyActive(body) end
 function SetBodyActive(body, active) end
 
 ---@param body body_handle
----@param velocity vector
+---@param velocity vector?
 function SetBodyVelocity(body, velocity) end
 
 ---@param body body_handle
@@ -753,7 +797,7 @@ function GetBodyVelocity(body) end
 function GetBodyVelocityAtPos(body, position) end
 
 ---@param body body_handle
----@param velocity vector
+---@param velocity vector?
 function SetBodyAngularVelocity(body, velocity) end
 
 ---@param body body_handle
@@ -802,7 +846,7 @@ function GetBodyCenterOfMass(body) end
 ---This will check if a body is currently visible in the camera frustum and not occluded by other objects.
 ---@param body body_handle
 ---@param max_distance number
----@param reject_transparent number|nil See through transparent materials, Default is false
+---@param reject_transparent boolean|nil See through transparent materials, Default is false
 ---@return boolean
 function IsBodyVisible(body, max_distance, reject_transparent) end
 
@@ -844,6 +888,8 @@ function DrawBodyHighlight(body, alpha) end
 function GetBodyClosestPoint(body, origin) end
 
 ---TODO: explain this
+---
+---Should only be called from the `update` callback
 ---@param bodyA body_handle
 ---@param bodyB body_handle
 ---@param point vector
@@ -854,6 +900,8 @@ function GetBodyClosestPoint(body, origin) end
 function ConstrainVelocity(bodyA, bodyB, point, dir, relative_velocity, min_impulse, max_impulse) end
 
 ---TODO: explain this
+---
+---Should only be called from the `update` callback
 ---@param bodyA body_handle
 ---@param bodyB body_handle
 ---@param dir vector
@@ -863,6 +911,8 @@ function ConstrainVelocity(bodyA, bodyB, point, dir, relative_velocity, min_impu
 function ConstrainAngularVelocity(bodyA, bodyB, dir, relative_angular_velocity, min_angular_impulse, max_angular_impulse) end
 
 ---TODO: explain this
+---
+---Should only be called from the `update` callback
 ---@param bodyA body_handle
 ---@param bodyB body_handle
 ---@param pointA vector
@@ -872,6 +922,8 @@ function ConstrainAngularVelocity(bodyA, bodyB, dir, relative_angular_velocity, 
 function ConstrainPosition(bodyA, bodyB, pointA, pointB, max_velocity, max_impulse) end
 
 ---TODO: explain this
+---
+---Should only be called from the `update` callback
 ---@param bodyA body_handle
 ---@param bodyB body_handle
 ---@param quatA quaternion
@@ -2130,10 +2182,10 @@ function SpawnParticle(position, velocity, lifetime) end
 ---
 ---It possible to spawn prefabs from other mods, by using the mod id followed by colon, followed by the prefab path. Spawning prefabs from other mods should be used with causion since the referenced mod might not be installed.
 ---@param xml string|td_path Teardown Path or XML content
----@param transform transform Transform of the spawned XML
----@param allow_static boolean|nil Allow spawning static shapes and bodies. Default is false
----@param joint_existing boolean|nil Allow joints to connect to existing scene geometry. Default is false
----@return table<entity_handle> entities An indexed table of the entities spawned in order
+---@param transform transform? Transform of the spawned XML
+---@param allow_static boolean? Allow spawning static shapes and bodies. Default is false
+---@param joint_existing boolean? Allow joints to connect to existing scene geometry. Default is false
+---@return entity_handle[] entities An indexed table of the entities spawned in order
 function Spawn(xml, transform, allow_static, joint_existing) end
 
 --#endregion
@@ -2407,6 +2459,10 @@ function UiRect(width, height) end
 ---@return number width
 ---@return number height
 function UiImage(path, x0, y0, x1, y1) end
+
+---Will unload an image that was previously loaded. This is useful to free up memory or if the image has changed since the iamge was first drawn/loaded
+---@param path td_path
+function UiUnloadImage(path) end
 
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@param path td_path
@@ -2699,6 +2755,20 @@ function SetTimeScale(scale) end
 ---NOT IN OFFICAL DOCUMENTATION
 ---@param intensity number
 function ShakeCamera(intensity) end
+
+---Returns to the menu
+function Menu() end
+
+---@param state boolean
+function SetPaused(state) end
+
+--#endregion
+--#region Special
+
+---NOT IN OFFICAL DOCUMENTATION
+---@param command command
+---@vararg any
+function Command(command, ... ) end
 
 ---Checks if a file exists at the specified path. Respects teardown's path parsing, meaning `MOD/`, `LEVEL/`, and `RAW:` will all work
 ---

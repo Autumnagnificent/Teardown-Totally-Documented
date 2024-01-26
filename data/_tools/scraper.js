@@ -114,7 +114,7 @@ function parseCategory(text) {
 
 async function scrapeAPI(url) {
 	const data = await fetch(url).then(data => data.text());
-	const version = data.match(/<h1>.*?\(([\d\.]+)\)<\/h1>/)[1];
+	const version = data.match(/<h1>.*?\(([\d\.]+)[^\)]*\)<\/h1>/)[1];
 	const categories = [];
 	const functions = [];
 
