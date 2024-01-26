@@ -1,0 +1,29 @@
+{
+  "name": "IsShapeDisconnected",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Input shape",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "disconnected",
+      "desc": "True if shape disconnected (has detached parts)",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tDebugWatch(\"IsShapeDisconnected\", IsShapeDisconnected(FindShape(\"shape\", true)))",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

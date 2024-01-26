@@ -1,0 +1,36 @@
+{
+  "name": "SetProperty",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "property",
+      "desc": "Property name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "desc": "Property name",
+      "optional": false,
+      "type": "any"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal light = FindLight(\"mylight\", true)",
+      "\tSetProperty(light, \"intensity\", math.abs(math.sin(GetTime())))",
+      "end",
+      "end"
+    ]
+  ],
+  "description": [
+    "${table:Entity type}"
+  ]
+}

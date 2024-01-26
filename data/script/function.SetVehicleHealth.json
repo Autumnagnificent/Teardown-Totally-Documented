@@ -9,7 +9,7 @@
     },
     {
       "name": "health",
-      "desc": "Set player health (between zero and one)",
+      "desc": "Set vehicle health (between zero and one)",
       "optional": false,
       "type": "number"
     }
@@ -17,12 +17,15 @@
   "returns": [],
   "examples": [
     [
-      "function init()",
-      "\tSetVehicleHealth(FindVehicle(\"vehicle\"), 0.5)",
+      "function tick()",
+      "\tif InputPressed(\"usetool\") then",
+      "\t\tSetVehicleHealth(FindVehicle(\"car\", true), 0.0)",
+      "\tend",
       "end"
     ]
   ],
   "description": [
-    ""
+    "Works only for vehicles with 'customhealth' tag. 'customhealth' disables the common vehicles damage system.",
+    "So this function needed for custom vehicle damage systems."
   ]
 }

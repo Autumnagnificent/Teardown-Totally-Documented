@@ -1,0 +1,33 @@
+{
+  "name": "SetCameraOffsetTransform",
+  "arguments": [
+    {
+      "name": "transform",
+      "desc": "Desired camera offset transform",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "stackable",
+      "desc": "True if camera offset should summ up with multiple calls per tick",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal tPosX = Transform(Vec(math.sin(GetTime()*3.0) * 0.2, 0, 0))",
+      "\tlocal tPosY = Transform(Vec(0, math.cos(GetTime()*3.0) * 0.2, 0), QuatAxisAngle(Vec(0, 0, 0)))",
+      "",
+      "\tSetCameraOffsetTransform(tPosX, true)",
+      "\tSetCameraOffsetTransform(tPosY, true)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Call this function continously to apply a camera offset. Can be used for camera effects",
+    "such as shake and wobble."
+  ]
+}

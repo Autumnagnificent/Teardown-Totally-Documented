@@ -23,21 +23,26 @@
   "returns": [],
   "examples": [
     [
-      "function tick()",
-      "\tlocal playerCameraTransform = GetPlayerCameraTransform()",
-      "\tlocal dir = TransformToParentVec(playerCameraTransform, Vec(0, 0, -1))",
+      "function tick(dt)",
+      "\tif InputDown(\"usetool\") then",
+      "\t\tlocal playerCameraTransform = GetPlayerCameraTransform()",
+      "\t\tlocal dir = TransformToParentVec(playerCameraTransform, Vec(0, 0, -1))",
       "",
-      "\t-- Cast ray out of player camera and add heat to shape if we can find one",
-      "\tlocal hit, dist, normal, shape = QueryRaycast(playerCameraTransform.pos, dir, 10)",
+      "\t\t-- Cast ray out of player camera and add heat to shape if we can find one",
+      "\t\tlocal hit, dist, normal, shape = QueryRaycast(playerCameraTransform.pos, dir, 50)",
       "",
-      "\tif hit then",
-      "\t\tlocal hitPos = VecAdd(playerCameraTransform.pos, VecScale(dir, dist))",
-      "\t\tAddHeat(shape, hitPos, 1)",
+      "\t\tif hit then",
+      "\t\t\tlocal hitPos = VecAdd(playerCameraTransform.pos, VecScale(dir, dist))",
+      "\t\t\tAddHeat(shape, hitPos, 2 * dt)",
+      "\t\tend",
+      "",
+      "\t\tDrawLine(VecAdd(playerCameraTransform.pos, Vec(0.5, 0, 0)), VecAdd(playerCameraTransform.pos, VecScale(dir, dist)), 1, 0, 0, 1)",
       "\tend",
       "end"
     ]
   ],
   "description": [
-    "Add heat to shape"
+    "Adds heat to shape. It works similar to blowtorch.",
+    "As soon as the heat of the voxel reaches a critical value, it destroys and can ignite the surrounding voxels."
   ]
 }

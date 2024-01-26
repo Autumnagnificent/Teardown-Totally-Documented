@@ -1,0 +1,33 @@
+{
+  "name": "GetVehicleBodies",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transforms",
+      "desc": "Vehicle bodies handles",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal vehicle = FindVehicle(\"car\", true)",
+      "\tlocal t = GetVehicleBodies(vehicle)",
+      "\tfor i = 1, #t do",
+      "\t\tDebugWatch(tostring(i), t[i])",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  [
+    "Body",
+    "desc, dynamic, mass, transform, velocity, angVelocity, active"
+  ],
+  [
+    "Shape",
+    "density, strength, emissiveScale"
+  ],
+  [
+    "Light",
+    "enabled, color, intensity, transform"
+  ],
+  [
+    "Location",
+    "transform"
+  ],
+  [
+    "Water",
+    "type, depth, wave, ripple, motion, foam"
+  ],
+  [
+    "Joint",
+    "size, rotstrength, rotspring (only for ropes: slack, strength, maxstretch)"
+  ],
+  [
+    "Vehicle",
+    "spring, damping, topspeed, acceleration, strength, antispin, antiroll, difflock, steerassist, friction"
+  ],
+  [
+    "Wheel",
+    "drive, steer, travel"
+  ],
+  [
+    "Screen",
+    "enabled"
+  ]
+]

@@ -1,0 +1,32 @@
+{
+  "name": "GetVehicleParams",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "params",
+      "desc": "Vehicle params",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal params = GetVehicleParams(FindVehicle(\"car\", true))",
+      "\tfor key, value in pairs(params) do",
+      "\t\tDebugWatch(key, value)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

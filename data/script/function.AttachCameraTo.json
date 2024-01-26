@@ -1,0 +1,35 @@
+{
+  "name": "AttachCameraTo",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Body or shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "ignoreRotation",
+      "desc": "True to ignore rotation and use position only, false to use full transform",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal vehicle = GetPlayerVehicle()",
+      "\tif vehicle ~= 0 then",
+      "\t\tAttachCameraTo(GetVehicleBody(vehicle))",
+      "\t\tSetCameraOffsetTransform(Transform(Vec(1, 2, 3)))",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Attach current camera transform for this frame to body or shape. Call continuously to keep overriding.",
+    "In tick function we have coordinates of bodies and shapes that are not yet updated by physics,",
+    "that's why camera can not be in sync with it using SetCameraTransform,",
+    "instead use this function and SetCameraOffsetTransform to place camera around any body or shape without lag."
+  ]
+}

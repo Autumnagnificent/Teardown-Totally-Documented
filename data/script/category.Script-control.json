@@ -10,6 +10,7 @@
     "GetTime",
     "GetTimeStep",
     "GetVersion",
+    "HasFile",
     "HasVersion",
     "InputClear",
     "InputDown",

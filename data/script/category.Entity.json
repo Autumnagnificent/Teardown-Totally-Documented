@@ -9,12 +9,14 @@
     "Delete",
     "GetDescription",
     "GetEntityType",
+    "GetProperty",
     "GetTagValue",
     "HasTag",
     "IsHandleValid",
     "ListTags",
     "RemoveTag",
     "SetDescription",
+    "SetProperty",
     "SetTag"
   ]
 }

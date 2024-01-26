@@ -6,6 +6,12 @@
       "desc": "Desired player camera offset transform",
       "optional": false,
       "type": "table"
+    },
+    {
+      "name": "stackable",
+      "desc": "True if eye offset should summ up with multiple calls per tick",
+      "optional": true,
+      "type": "boolean"
     }
   ],
   "returns": [],

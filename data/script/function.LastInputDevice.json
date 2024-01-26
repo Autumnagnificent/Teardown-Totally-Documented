@@ -1,7 +1,14 @@
 {
   "name": "LastInputDevice",
   "arguments": [],
-  "returns": [],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Last device id",
+      "optional": false,
+      "type": "number"
+    }
+  ],
   "examples": [
     [
       "#include \"ui/ui_helpers.lua\"",
@@ -16,6 +23,7 @@
     ]
   ],
   "description": [
-    "This function will reset everything we need to reset during state transition"
+    "Returns the last input device id.",
+    "0 - none, 1 - mouse, 2 - gamepad"
   ]
 }
