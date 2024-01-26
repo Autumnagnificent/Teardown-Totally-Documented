@@ -17,7 +17,9 @@
   "returns": [],
   "examples": [
     [
-      "Explosion(Vec(0, 10, 0), 1)"
+      "function init()",
+      "\tExplosion(Vec(0, 5, 0), 1)",
+      "end"
     ]
   ],
   "description": [

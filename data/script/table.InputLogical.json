@@ -70,5 +70,81 @@
   [
     "cameray",
     "Camera y movement, scaled by sensitivity. Only valid in InputValue."
+  ],
+  [
+    "tool_group_prev",
+    "Switch to previous tool group"
+  ],
+  [
+    "tool_group_next",
+    "Switch to next tool group"
+  ],
+  [
+    "extra0",
+    "Extra action 0"
+  ],
+  [
+    "extra1",
+    "Extra action 1"
+  ],
+  [
+    "extra2",
+    "Extra action 2"
+  ],
+  [
+    "extra3",
+    "Extra action 3"
+  ],
+  [
+    "extra4",
+    "Extra action 4"
+  ],
+  [
+    "extra5",
+    "Extra action 5"
+  ],
+  [
+    "extra6",
+    "Extra action 6"
+  ],
+  [
+    "photomode",
+    "Photomode"
+  ],
+  [
+    "zoom",
+    "Zoom"
+  ],
+  [
+    "menu_left",
+    "Menu left"
+  ],
+  [
+    "menu_right",
+    "Menu right"
+  ],
+  [
+    "menu_up",
+    "Menu up"
+  ],
+  [
+    "menu_down",
+    "Menu down"
+  ],
+  [
+    "menu_next",
+    "Menu next"
+  ],
+  [
+    "menu_prev",
+    "Menu prev"
+  ],
+  [
+    "menu_accept",
+    "Menu accept"
+  ],
+  [
+    "menu_cancel",
+    "Menu cancel"
   ]
 ]

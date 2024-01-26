@@ -4,7 +4,9 @@
   "returns": [],
   "examples": [
     [
-      "ParticleReset()"
+      "function init()",
+      "\tParticleReset()",
+      "end"
     ]
   ],
   "description": [

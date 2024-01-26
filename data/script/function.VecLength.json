@@ -18,10 +18,12 @@
   ],
   "examples": [
     [
-      "local v = Vec(1,1,0)",
-      "local l = VecLength(v)",
-      "",
-      "--l now equals 1.41421356"
+      "function init()",
+      "\tlocal v = Vec(1,1,0)",
+      "\tlocal l = VecLength(v)",
+      "\t--l now equals 1.4142",
+      "\tDebugPrint(l)",
+      "end"
     ]
   ],
   "description": [

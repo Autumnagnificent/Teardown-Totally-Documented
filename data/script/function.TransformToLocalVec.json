@@ -24,11 +24,14 @@
   ],
   "examples": [
     [
-      "local t = GetBodyTransform(body)",
-      "local worldUp = Vec(0, 1, 0)",
-      "local up = TransformToLocalVec(t, worldUp)",
+      "function init()",
+      "\tlocal t = GetBodyTransform(body)",
+      "\tlocal localUp = Vec(0, 1, 0)",
+      "\tlocal up = TransformToParentVec(t, localUp)",
       "",
-      "--up now represents the world up direction in local body space"
+      "\t--up now represents the local body up direction in world space",
+      "\tDebugPrint(VecStr(up))",
+      "end"
     ]
   ],
   "description": [

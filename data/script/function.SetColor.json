@@ -1,0 +1,46 @@
+{
+  "name": "SetColor",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Registry key",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "r",
+      "desc": "Desired red channel value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "g",
+      "desc": "Desired green channel value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "b",
+      "desc": "Desired blue channel value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "a",
+      "desc": "Desired alpha channel value",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tSetColor(\"game.tool.wire.color\", 1.0, 0.5, 0.3)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Sets the color registry key value"
+  ]
+}

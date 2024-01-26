@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local isRobotsEnabled = GetBool(\"level.robots.enabled\")"
+      "function init()",
+      "\tSetBool(\"level.robots.enabled\", true)",
+      "\tDebugPrint(GetBool(\"level.robots.enabled\"))",
+      "end"
     ]
   ],
   "description": [

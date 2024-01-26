@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local v = GetWindVelocity(Vec(0, 10, 0))"
+      "function tick()",
+      "\tlocal v = GetWindVelocity(Vec(0, 10, 0))",
+      "\tDebugPrint(VecStr(v))",
+      "end"
     ]
   ],
   "description": [

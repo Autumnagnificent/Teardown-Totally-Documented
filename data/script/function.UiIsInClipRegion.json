@@ -1,0 +1,44 @@
+{
+  "name": "UiIsInClipRegion",
+  "arguments": [
+    {
+      "name": "x",
+      "desc": "X",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "True if point is in clip region",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "    UiPush()",
+      "        UiTranslate(200, 200)",
+      "        UiClipRect(150, 150)",
+      "        UiColor(1.0, 1.0, 1.0, 0.15)",
+      "        UiRect(150, 150)",
+      "        UiRect(w, h)",
+      "",
+      "        DebugPrint(\"point 1: \" .. tostring(UiIsInClipRegion(250, 250)))",
+      "        DebugPrint(\"point 2: \" .. tostring(UiIsInClipRegion(350, 250)))",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Checks whether a point is inside the clip region"
+  ]
+}

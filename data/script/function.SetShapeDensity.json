@@ -1,0 +1,32 @@
+{
+  "name": "SetShapeDensity",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Shape handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "density",
+      "desc": "New density for the shape",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "",
+      "\tlocal density = 10.0",
+      "\tSetShapeDensity(shape, density)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Change the material density of the shape."
+  ]
+}

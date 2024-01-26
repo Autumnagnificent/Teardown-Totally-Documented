@@ -24,11 +24,14 @@
   ],
   "examples": [
     [
-      "local t = GetBodyTransform(body)",
-      "local bodyPoint = Vec(0, 0, -1)",
-      "local p = TransformToParentPoint(t, bodyPoint)",
+      "function init()",
+      "\tlocal t = GetBodyTransform(body)",
+      "\tlocal bodyPoint = Vec(0, 0, -1)",
+      "\tlocal p = TransformToParentPoint(t, bodyPoint)",
       "",
-      "--p now represents the local body point {0, 0, -1 } in world space"
+      "\t--p now represents the local body point {0, 0, -1 } in world space",
+      "\tDebugPrint(VecStr(p))",
+      "end"
     ]
   ],
   "description": [

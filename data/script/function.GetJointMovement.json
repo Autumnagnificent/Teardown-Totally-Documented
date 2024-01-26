@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local current = GetJointMovement(hinge)"
+      "function init()",
+      "\tlocal current = GetJointMovement(FindJoint(\"hinge\"))",
+      "\tDebugPrint(current)",
+      "end"
     ]
   ],
   "description": [

@@ -27,7 +27,13 @@
     }
   ],
   "returns": [],
-  "examples": [],
+  "examples": [
+    [
+      "function init()",
+      "\tSetBrush(\"sphere\", 3, 3)",
+      "end"
+    ]
+  ],
   "description": [
     "Set material index to be used for following calls to DrawShapeLine and DrawShapeBox and ExtrudeShape.",
     "An optional brush vox file and subobject can be used and provided instead of material index,",

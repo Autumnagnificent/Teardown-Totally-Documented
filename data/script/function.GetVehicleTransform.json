@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local t = GetVehicleTransform(vehicle)"
+      "function init()",
+      "\tlocal vehicle = FindVehicle(\"vehicle\")",
+      "\tlocal t = GetVehicleTransform(vehicle)",
+      "end"
     ]
   ],
   "description": [

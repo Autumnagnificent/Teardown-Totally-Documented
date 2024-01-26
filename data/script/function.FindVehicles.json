@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,11 +24,13 @@
   ],
   "examples": [
     [
-      "--Find all vehicles in level tagged \"boat\"",
-      "local boats = FindVehicles(\"boat\")",
-      "for i=1, #boats do",
-      "\tlocal boat = boats[i]",
-      "\t...",
+      "function init()",
+      "\t--Find all vehicles in level tagged \"boat\"",
+      "\tlocal boats = FindVehicles(\"boat\")",
+      "\tfor i=1, #boats do",
+      "\t\tlocal boat = boats[i]",
+      "\t\tDebugPrint(boat)",
+      "\tend",
       "end"
     ]
   ],

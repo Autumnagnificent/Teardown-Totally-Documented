@@ -1,0 +1,33 @@
+{
+  "name": "GetVehicleVitalTransforms",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transforms",
+      "desc": "Transforms of vehicle vitals",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal vehicle = FindVehicle(\"car\", true)",
+      "\tlocal t = GetVehicleVitalTransforms(vehicle)",
+      "\tfor i = 1, #t do",
+      "\t\tDebugWatch(tostring(i), t[i])",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the vitals transforms in local space of the vehicle."
+  ]
+}

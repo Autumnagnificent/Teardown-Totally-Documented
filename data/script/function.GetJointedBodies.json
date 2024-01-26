@@ -18,10 +18,17 @@
   ],
   "examples": [
     [
-      "--Draw outline for all bodies in jointed structure",
-      "local all = GetJointedBodies(body)",
-      "for i=1,#all do",
-      "\tDrawBodyOutline(all[i], 0.5)",
+      "local body = 0",
+      "function init()",
+      "\tbody = FindBody(\"body\")",
+      "end",
+      "",
+      "function tick()",
+      "\t--Draw outline for all bodies in jointed structure",
+      "\tlocal all = GetJointedBodies(body)",
+      "\tfor i=1,#all do",
+      "\t\tDrawBodyOutline(all[i], 0.5)",
+      "\tend",
       "end"
     ]
   ],

@@ -30,9 +30,17 @@
   ],
   "examples": [
     [
-      "local empty, highPoint = IsTriggerEmpty(trigger)",
-      "if not empty then",
-      "\t--highPoint[2] is the tallest point in trigger",
+      "local trigger = 0",
+      "function init()",
+      "\ttrigger = FindTrigger(\"toxic\")",
+      "end",
+      "",
+      "function tick()",
+      "\tlocal empty, highPoint = IsTriggerEmpty(trigger)",
+      "\tif not empty then",
+      "\t\t--highPoint[2] is the tallest point in trigger",
+      "\t\tDebugPrint(\"Is not empty\")",
+      "\tend",
       "end"
     ]
   ],

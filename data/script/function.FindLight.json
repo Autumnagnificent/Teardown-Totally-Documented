@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,7 +24,10 @@
   ],
   "examples": [
     [
-      "local light = FindLight(\"main\")"
+      "function init()",
+      "\tlocal light = FindLight(\"main\")",
+      "\tDebugPrint(light)",
+      "end"
     ]
   ],
   "description": [

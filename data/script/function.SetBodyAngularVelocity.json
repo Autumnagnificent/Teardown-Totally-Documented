@@ -17,8 +17,11 @@
   "returns": [],
   "examples": [
     [
-      "local angVel = Vec(2,0,0)",
-      "SetBodyAngularVelocity(body, angVel)"
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "\tlocal angVel = Vec(0,100,0)",
+      "\tSetBodyAngularVelocity(handle, angVel)",
+      "end"
     ]
   ],
   "description": [

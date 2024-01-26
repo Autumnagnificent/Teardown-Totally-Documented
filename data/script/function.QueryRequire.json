@@ -12,9 +12,15 @@
   "examples": [
     [
       "--Raycast dynamic, physical objects above debris threshold, but not specific vehicle",
-      "QueryRequire(\"physical dynamic large\")",
-      "QueryRejectVehicle(vehicle)",
-      "QueryRaycast(...)"
+      "function tick()",
+      "\tlocal vehicle = FindVehicle(\"vehicle\")",
+      "\tQueryRequire(\"physical dynamic large\")",
+      "\tQueryRejectVehicle(vehicle)",
+      "\tlocal hit, dist = QueryRaycast(Vec(0, 0, 0), Vec(1, 0, 0), 10)",
+      "\tif hit then",
+      "\t\tDebugPrint(dist)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

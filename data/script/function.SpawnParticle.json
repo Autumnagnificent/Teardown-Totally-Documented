@@ -23,11 +23,13 @@
   "returns": [],
   "examples": [
     [
-      "ParticleReset()",
-      "ParticleType(\"smoke\")",
-      "ParticleColor(0.7, 0.6, 0.5)",
-      "--Spawn particle at world origo with upwards velocity and a lifetime of ten seconds",
-      "SpawnParticle(Vec(0, 0, 0), Vec(0, 1, 0), 10.0)"
+      "function tick()",
+      "\tParticleReset()",
+      "\tParticleType(\"smoke\")",
+      "\tParticleColor(0.7, 0.6, 0.5)",
+      "\t--Spawn particle at world origo with upwards velocity and a lifetime of ten seconds",
+      "\tSpawnParticle(Vec(0, 5, 0), Vec(0, 1, 0), 10.0)",
+      "end"
     ]
   ],
   "description": [

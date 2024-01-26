@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,7 +24,10 @@
   ],
   "examples": [
     [
-      "local joint = FindJoint(\"doorhinge\")"
+      "function init()",
+      "\tlocal joint = FindJoint(\"doorhinge\")",
+      "\tDebugPrint(joint)",
+      "end"
     ]
   ],
   "description": [

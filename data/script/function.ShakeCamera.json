@@ -1,0 +1,22 @@
+{
+  "name": "ShakeCamera",
+  "arguments": [
+    {
+      "name": "strength",
+      "desc": "Normalized strength of shaking",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tShakeCamera(0.5)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Shakes the player camera"
+  ]
+}

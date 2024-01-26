@@ -23,9 +23,13 @@
   "returns": [],
   "examples": [
     [
-      "local pos = Vec(0,1,0)",
-      "local imp = Vec(0,0,10)",
-      "ApplyBodyImpulse(body, pos, imp)"
+      "function tick()",
+      "\thandle = FindBody(\"body\", true)",
+      "",
+      "\tlocal pos = Vec(0,1,0)",
+      "\tlocal imp = Vec(0,0,10)",
+      "\tApplyBodyImpulse(handle, pos, imp)",
+      "end"
     ]
   ],
   "description": [

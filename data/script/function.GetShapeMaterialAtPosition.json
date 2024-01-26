@@ -54,11 +54,21 @@
   ],
   "examples": [
     [
-      "local hit, dist, normal, shape = QueryRaycast(pos, dir, 10)",
-      "if hit then",
-      "\tlocal hitPoint = VecAdd(pos, VecScale(dir, dist))",
-      "\tlocal mat = GetShapeMaterialAtPosition(shape, hitPoint)",
-      "\tDebugPrint(\"Raycast hit voxel made out of \" .. mat)",
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tlocal pos = GetCameraTransform().pos",
+      "\tlocal dir = Vec(0, 0, 1)",
+      "\tlocal hit, dist, normal, shape = QueryRaycast(pos, dir, 10)",
+      "\tif hit then",
+      "\t\tlocal hitPoint = VecAdd(pos, VecScale(dir, dist))",
+      "\t\tlocal mat = GetShapeMaterialAtPosition(shape, hitPoint)",
+      "\t\tDebugPrint(\"Raycast hit voxel made out of \" .. mat)",
+      "\tend",
+      "\tDebugLine(pos, VecAdd(pos, VecScale(dir, 10)))",
       "end"
     ]
   ],

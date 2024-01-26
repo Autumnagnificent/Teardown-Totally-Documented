@@ -24,9 +24,16 @@
   ],
   "examples": [
     [
-      "local min, max = GetShapeBounds(shape)",
-      "local boundsSize = VecSub(max, min)",
-      "local center = VecLerp(min, max, 0.5)"
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "",
+      "\tlocal min, max = GetShapeBounds(shape)",
+      "\tlocal boundsSize = VecSub(max, min)",
+      "\tlocal center = VecLerp(min, max, 0.5)",
+      "",
+      "\tDebugPrint(VecStr(boundsSize) .. \" \" .. VecStr(center))",
+      "end"
     ]
   ],
   "description": [

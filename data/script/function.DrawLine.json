@@ -41,11 +41,13 @@
   "returns": [],
   "examples": [
     [
-      "--Draw white debug line",
-      "DrawLine(Vec(0, 0, 0), Vec(-10, 5, -10))",
+      "function tick()",
+      "\t--Draw white debug line",
+      "\tDrawLine(Vec(0, 0, 0), Vec(-10, 5, -10))",
       "",
-      "--Draw red debug line",
-      "DrawLine(Vec(0, 0, 0), Vec(10, 5, 10), 1, 0, 0)"
+      "\t--Draw red debug line",
+      "\tDrawLine(Vec(0, 0, 0), Vec(10, 5, 10), 1, 0, 0)",
+      "end"
     ]
   ],
   "description": [

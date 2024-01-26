@@ -24,8 +24,13 @@
   ],
   "examples": [
     [
-      "local p = Vec(0, 10, 0)",
-      "local closest = GetTriggerClosestPoint(trigger, p)"
+      "local trigger = 0",
+      "function init()",
+      "\ttrigger = FindTrigger(\"toxic\")",
+      "\tlocal p = Vec(0, 10, 0)",
+      "\tlocal closest = GetTriggerClosestPoint(trigger, p)",
+      "\tDebugPrint(closest)",
+      "end"
     ]
   ],
   "description": [

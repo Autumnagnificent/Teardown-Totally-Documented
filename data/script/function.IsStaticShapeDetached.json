@@ -1,0 +1,29 @@
+{
+  "name": "IsStaticShapeDetached",
+  "arguments": [
+    {
+      "name": "shape",
+      "desc": "Input shape",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "disconnected",
+      "desc": "True if static shape has detached parts",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tDebugWatch(\"IsStaticShapeDetached\", IsStaticShapeDetached(FindShape(\"shape_glass\", true)))",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

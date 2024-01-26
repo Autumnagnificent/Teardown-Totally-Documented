@@ -1,0 +1,23 @@
+{
+  "name": "SetPlayerRegenerationState",
+  "arguments": [
+    {
+      "name": "state",
+      "desc": "State of player regeneration",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\t-- disable regeneration for player",
+      "\tSetPlayerRegenerationState(false)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Enable or disable regeneration for player"
+  ]
+}

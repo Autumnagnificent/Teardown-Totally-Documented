@@ -17,7 +17,10 @@
   "returns": [],
   "examples": [
     [
-      "SetBool(\"level.robots.enabled\", true)"
+      "function init()",
+      "\tSetBool(\"level.robots.enabled\", true)",
+      "\tDebugPrint(GetBool(\"level.robots.enabled\"))",
+      "end"
     ]
   ],
   "description": [

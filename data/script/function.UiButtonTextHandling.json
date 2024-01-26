@@ -1,0 +1,29 @@
+{
+  "name": "UiButtonTextHandling",
+  "arguments": [
+    {
+      "name": "type",
+      "desc": "One of the enum value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiButtonTextHandling(1)",
+      "if UiTextButton(\"Test\") then",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    "indicating how to handle text overflow.",
+    "Possible values are:",
+    "0 - AsIs,",
+    "1 - Slide,",
+    "2 - Truncate,",
+    "3 - Fade,",
+    "4 - Resize (Default)"
+  ]
+}

@@ -46,13 +46,25 @@
   ],
   "returns": [
     {
+      "name": "resized",
+      "desc": "Resized successfully",
+      "optional": false,
+      "type": "boolean"
+    },
+    {
       "name": "offset",
       "desc": "Offset vector in shape local space",
       "optional": false,
       "type": "table"
     }
   ],
-  "examples": [],
+  "examples": [
+    [
+      "function init()",
+      "\tResizeShape(FindShape(\"shape\", true), -5, 0, -5, 5, 5, 5)",
+      "end"
+    ]
+  ],
   "description": [
     "Resize an existing shape. The new coordinates are expressed in the existing shape coordinate frame,",
     "so you can provide negative values. The existing content is preserved, but may be cropped if needed.",

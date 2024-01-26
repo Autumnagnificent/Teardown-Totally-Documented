@@ -18,7 +18,12 @@
   ],
   "examples": [
     [
-      "local vehicle = GetBodyVehicle(body)"
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "",
+      "\tlocal vehicle = GetBodyVehicle(handle)",
+      "\tDebugPrint(vehicle)",
+      "end"
     ]
   ],
   "description": [

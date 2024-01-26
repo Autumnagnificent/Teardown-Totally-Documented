@@ -35,7 +35,9 @@
   "returns": [],
   "examples": [
     [
-      "Shoot(Vec(0, 10, 0), Vec(0, 0, 1), \"shotgun\")"
+      "function tick()",
+      "\tShoot(Vec(0, 10, 0), Vec(0, -1, 0), \"shotgun\")",
+      "end"
     ]
   ],
   "description": [

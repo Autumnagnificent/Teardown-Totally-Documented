@@ -1,0 +1,28 @@
+{
+  "name": "SetPlayerZoom",
+  "arguments": [
+    {
+      "name": "targetZoom",
+      "desc": "Desired player zoom",
+      "optional": false,
+      "type": "value"
+    },
+    {
+      "name": "transitionLength",
+      "desc": "Desired amount of time to zoom",
+      "optional": false,
+      "type": "value"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tSetPlayerZoom(2, 0.2)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Smoothly zoom player with desirable amount of time."
+  ]
+}

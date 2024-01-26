@@ -1,0 +1,22 @@
+{
+  "name": "SetPlayerSpawnHealth",
+  "arguments": [
+    {
+      "name": "health",
+      "desc": "Desired player spawn health (between zero and one)",
+      "optional": false,
+      "type": "float"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tSetPlayerSpawnHealth(0.5)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Call this function during init to alter the player spawn health amount."
+  ]
+}

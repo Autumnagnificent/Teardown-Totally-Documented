@@ -21,7 +21,13 @@
     }
   ],
   "returns": [],
-  "examples": [],
+  "examples": [
+    [
+      "function init()",
+      "\tSetShapeBody(FindShape(\"shape\", true), FindBody(\"custombody\", true), true)",
+      "end"
+    ]
+  ],
   "description": [
     "Move existing shape to a new body, optionally providing a new local transform."
   ]

@@ -1,0 +1,33 @@
+{
+  "name": "TransformStr",
+  "arguments": [
+    {
+      "name": "transform",
+      "desc": "Transform",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "str",
+      "desc": "String representation",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal eye = Vec(0, 10, 0)",
+      "\tlocal target = Vec(0, 1, 5)",
+      "\tlocal rot = QuatLookAt(eye, target)",
+      "\tlocal t = Transform(eye, rot)",
+      "\tDebugPrint(TransformStr(t))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the string representation of transform"
+  ]
+}

@@ -29,8 +29,10 @@
   "returns": [],
   "examples": [
     [
-      "--Set light color to yellow",
-      "SetLightColor(light, 1, 1, 0)"
+      "function init()",
+      "\t--Set light color to yellow",
+      "\tSetLightColor(FindLight(\"main\"), 1, 1, 0)",
+      "end"
     ]
   ],
   "description": [

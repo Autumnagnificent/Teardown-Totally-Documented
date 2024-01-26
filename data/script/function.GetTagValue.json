@@ -24,13 +24,13 @@
   ],
   "examples": [
     [
-      "SetTag(handle, \"special\")",
-      "value = GetTagValue(handle, \"special\")",
-      "-- value will be \"\"",
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
       "",
-      "SetTag(handle, \"special\", \"foo\")",
-      "value = GetTagValue(handle, \"special\")",
-      "-- value will be \"foo\""
+      "\t--Add \"team\" tag to an entity and give it value \"red\"",
+      "\tSetTag(handle, \"team\", \"red\")",
+      "\tDebugPrint(GetTagValue(handle, \"team\"))",
+      "end"
     ]
   ],
   "description": [

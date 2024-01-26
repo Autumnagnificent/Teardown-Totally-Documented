@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,11 +24,14 @@
   ],
   "examples": [
     [
-      "--Search for locations tagged \"waypoint\" in script scope",
-      "local locations = FindLocations(\"waypoint\")",
-      "for i=1, #locs do",
-      "\tlocal locs = locations[i]",
-      "\t...",
+      "local locations",
+      "function init()",
+      "\tlocations = FindLocations(\"loc1\")",
+      "",
+      "\tfor i=1, #locations do",
+      "\t\tlocal loc = locations[i]",
+      "\t\tDebugPrint(DebugPrint(loc))",
+      "\tend",
       "end"
     ]
   ],

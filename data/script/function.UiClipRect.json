@@ -1,0 +1,41 @@
+{
+  "name": "UiClipRect",
+  "arguments": [
+    {
+      "name": "width",
+      "desc": "Rect width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "height",
+      "desc": "Rect height",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "inherit",
+      "desc": "True if must include the parent's clip rect",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "    UiTranslate(200, 200)",
+      "    UiPush()",
+      "        UiClipRect(100, 50)",
+      "        UiTranslate(5, 15)",
+      "        UiFont(\"regular.ttf\", 50)",
+      "        UiText(\"Text\")",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Specifies the area beyond which ui is cut off and not drawn.<br>",
+    "If inherit is true the resulting rect clip will be equal to the overlapped area of both rects"
+  ]
+}

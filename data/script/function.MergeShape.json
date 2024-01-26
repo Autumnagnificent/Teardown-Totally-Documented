@@ -16,7 +16,17 @@
       "type": "number"
     }
   ],
-  "examples": [],
+  "examples": [
+    [
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "\tDebugPrint(shape)",
+      "\tshape = MergeShape(shape)",
+      "\tDebugPrint(shape)",
+      "end"
+    ]
+  ],
   "description": [
     "Try to merge shape with a nearby, matching shape. For a merge to happen, the",
     "shapes need to be aligned to the same rotation and touching. If the",

@@ -1,0 +1,30 @@
+{
+  "name": "UiTextAlignment",
+  "arguments": [
+    {
+      "name": "alignment",
+      "desc": "Alignment keywords",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiAlign(\"left\")",
+      "UiText(\"Aligned left at baseline\")",
+      "",
+      "UiAlign(\"center\")",
+      "UiText(\"Centered\")"
+    ]
+  ],
+  "description": [
+    "The alignment determines how text is aligned with respect to the",
+    "cursor and wrap width.",
+    "${table:UiAlignment}",
+    "Alignment can contain combinations of these, for instance:",
+    "\"center middle\", \"left top\", \"center top\", etc. If horizontal",
+    "or vertical alginment is omitted it will depend on the element drawn.",
+    "Text, for instance has default vertical alignment at baseline."
+  ]
+}

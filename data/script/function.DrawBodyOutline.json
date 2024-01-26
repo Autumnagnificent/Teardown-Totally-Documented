@@ -28,18 +28,27 @@
     {
       "name": "a",
       "desc": "Alpha",
-      "optional": false,
+      "optional": true,
       "type": "number"
     }
   ],
   "returns": [],
   "examples": [
     [
-      "--Draw white outline at 50% transparency",
-      "DrawBodyOutline(body, 0.5)",
+      "local handle = 0",
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "end",
       "",
-      "--Draw green outline, fully opaque",
-      "DrawBodyOutline(body, 0, 1, 0, 1)"
+      "function tick()",
+      "\tif InputDown(\"interact\") then",
+      "\t\t--Draw white outline at 50% transparency",
+      "\t\tDrawBodyOutline(handle, 0.5)",
+      "\telse",
+      "\t\t--Draw green outline, fully opaque",
+      "\t\tDrawBodyOutline(handle, 0, 1, 0, 1)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

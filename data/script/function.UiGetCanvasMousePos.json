@@ -1,0 +1,30 @@
+{
+  "name": "UiGetCanvasMousePos",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "x",
+      "desc": "X coordinate",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y coordinate",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "\tlocal x, y = UiGetCanvasMousePos()",
+      "\tDebugPrint(\"x :\" .. x .. \" y:\" .. y)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns position of mouse cursor in UI canvas space.<br>",
+    "The size of the canvas depends on the aspect ratio. For example, for 16:9, the maximum value will be 1920x1080, and for 16:10, it will be 1920x1200"
+  ]
+}

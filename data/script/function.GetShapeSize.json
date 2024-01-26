@@ -36,7 +36,12 @@
   ],
   "examples": [
     [
-      "local x, y, z = GetShapeSize(shape)"
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "\tlocal x, y, z = GetShapeSize(shape)",
+      "\tDebugPrint(\"Shape size: \" .. x .. \";\" .. y .. \";\" .. z)",
+      "end"
     ]
   ],
   "description": [

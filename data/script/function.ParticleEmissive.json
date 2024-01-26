@@ -35,8 +35,10 @@
   "returns": [],
   "examples": [
     [
-      "--Highly emissive at start, not emissive at end",
-      "ParticleEmissive(5, 0)"
+      "function init()",
+      "\t--Highly emissive at start, not emissive at end",
+      "\tParticleEmissive(5, 0)",
+      "end"
     ]
   ],
   "description": [

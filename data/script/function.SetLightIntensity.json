@@ -17,8 +17,10 @@
   "returns": [],
   "examples": [
     [
-      "--Pulsate light",
-      "SetLightIntensity(light, math.sin(GetTime())*0.5 + 1.0)"
+      "function init()",
+      "\t--Pulsate light",
+      "\tSetLightIntensity(FindLight(\"main\"), math.sin(GetTime())*0.5 + 1.0)",
+      "end"
     ]
   ],
   "description": [

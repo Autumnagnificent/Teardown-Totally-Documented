@@ -24,7 +24,15 @@
   ],
   "examples": [
     [
-      "local vel = GetBodyVelocityAtPos(body, pos)"
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "\tlocal vel = Vec(0,10,0)",
+      "\tSetBodyVelocity(handle, vel)",
+      "end",
+      "",
+      "function tick()",
+      "\tDebugPrint(VecStr(GetBodyVelocityAtPos(handle, Vec(0, 0, 0))))",
+      "end"
     ]
   ],
   "description": [

@@ -24,8 +24,17 @@
   ],
   "examples": [
     [
-      "if IsShapeInTrigger(trigger, shape) then",
-      "\t...",
+      "local trigger = 0",
+      "local shape = 0",
+      "function init()",
+      "\ttrigger = FindTrigger(\"toxic\")",
+      "\tshape = FindShape(\"shape\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif IsShapeInTrigger(trigger, shape) then",
+      "\t\tDebugPrint(\"In trigger!\")",
+      "\tend",
       "end"
     ]
   ],

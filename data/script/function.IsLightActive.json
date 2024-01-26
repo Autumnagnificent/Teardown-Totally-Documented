@@ -18,8 +18,12 @@
   ],
   "examples": [
     [
-      "if IsLightActive(light) then",
-      "\t--Do something",
+      "local light = 0",
+      "function init()",
+      "\tlight = FindLight(\"main\")",
+      "\tif IsLightActive(light) then",
+      "\t\tDebugPrint(\"Light is active\")",
+      "\tend",
       "end"
     ]
   ],

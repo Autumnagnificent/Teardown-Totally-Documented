@@ -11,9 +11,11 @@
   "returns": [],
   "examples": [
     [
-      "--Slow down time when holding down a key",
-      "if InputDown('t') then",
-      "SetTimeScale(0.2)",
+      "function tick()",
+      "\t--Slow down time when holding down a key",
+      "\tif InputDown('t') then",
+      "\t\tSetTimeScale(0.2)",
+      "\tend",
       "end"
     ]
   ],

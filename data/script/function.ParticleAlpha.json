@@ -35,8 +35,10 @@
   "returns": [],
   "examples": [
     [
-      "--Interpolate from opaque to transparent",
-      "ParticleAlpha(1.0, 0.0)"
+      "function init()",
+      "\t--Interpolate from opaque to transparent",
+      "\tParticleAlpha(1.0, 0.0)",
+      "end"
     ]
   ],
   "description": [

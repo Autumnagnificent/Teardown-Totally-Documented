@@ -1,0 +1,37 @@
+{
+  "name": "GetColorParam",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Parameter name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "default",
+      "desc": "Default parameter value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\t--Retrieve color parameter, or set to 0.39, 0.39, 0.39 if omitted",
+      "\tlocal color_r, color_g, color_b = GetColorParam(\"color\", 0.39, 0.39, 0.39)",
+      "\tDebugPrint(color_r .. \" \" .. color_g .. \" \" .. color_b)",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

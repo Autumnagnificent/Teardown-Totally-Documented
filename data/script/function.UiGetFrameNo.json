@@ -1,0 +1,23 @@
+{
+  "name": "UiGetFrameNo",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "frameNo",
+      "desc": "Frame number since the level start",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "\tlocal fNo = GetFrame()",
+      "\tDebugPrint(fNo)",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

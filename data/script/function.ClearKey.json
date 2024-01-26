@@ -11,16 +11,18 @@
   "returns": [],
   "examples": [
     [
-      "--If the registry looks like this:",
-      "--\tscore",
-      "--\t\tlevels",
-      "--\t\t\tlevel1 = 5",
-      "--\t\t\tlevel2 = 4",
+      "function init()",
+      "\t--If the registry looks like this:",
+      "\t--\tscore",
+      "\t--\t\tlevels",
+      "\t--\t\t\tlevel1 = 5",
+      "\t--\t\t\tlevel2 = 4",
       "",
-      "ClearKey(\"score.levels\")",
+      "\tClearKey(\"score.levels\")",
       "",
-      "--Afterwards, the registry will look like this:",
-      "--\tscore"
+      "\t--Afterwards, the registry will look like this:",
+      "\t--\tscore",
+      "end"
     ]
   ],
   "description": [

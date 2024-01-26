@@ -1,0 +1,36 @@
+{
+  "name": "UiFrameOccupy",
+  "arguments": [
+    {
+      "name": "width",
+      "desc": "Width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "height",
+      "desc": "Height",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "\tUiPush()",
+      "        UiBeginFrame()",
+      "            UiColor(1.0, 1.0, 0.8)",
+      "            UiRect(200, 200)",
+      "            UiRect(300, 200)",
+      "            UiFrameOccupy(500, 500)",
+      "        local panelWidth, panelHeight = UiEndFrame()",
+      "        DebugPrint(math.ceil(panelWidth) .. \"x\" .. math.ceil(panelHeight))",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Occupies some space for current frame (between UiBeginFrame and UiEndFrame)"
+  ]
+}

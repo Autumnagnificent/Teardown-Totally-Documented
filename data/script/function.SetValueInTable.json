@@ -1,0 +1,54 @@
+{
+  "name": "SetValueInTable",
+  "arguments": [
+    {
+      "name": "tableId",
+      "desc": "Id of the table",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "memberName",
+      "desc": "Name of the member",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "newValue",
+      "desc": "New value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "type",
+      "desc": "Transition type",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "length",
+      "desc": "Transition length",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local t = {}",
+      "function init()",
+      "\tSetValueInTable(t, \"score\", 1, \"number\", 1)",
+      "end",
+      "function update()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tSetValueInTable(t, \"score\", t.score + 1, \"number\", 1)",
+      "        DebugPrint(t.score)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Chages the value of a table member in time according to specified args.",
+    "Works similar to SetValue but for global variables of trivial types"
+  ]
+}

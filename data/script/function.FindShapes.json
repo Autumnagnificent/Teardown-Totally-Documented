@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,11 +24,17 @@
   ],
   "examples": [
     [
-      "--Search for shapes tagged \"alarmbox\" in script scope",
-      "local shapes = FindShapes(\"alarmbox\")",
-      "for i=1, #shapes do",
-      "\tlocal shape = shapes[i]",
-      "\t...",
+      "local shapes = {}",
+      "function init()",
+      "\t--Search for shapes tagged \"body\"",
+      "\tshapes = FindShapes(\"body\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tfor i=1, #shapes do",
+      "\t\tlocal shape = shapes[i]",
+      "\t\tDebugCross(GetShapeWorldTransform(shape).pos)",
+      "\tend",
       "end"
     ]
   ],

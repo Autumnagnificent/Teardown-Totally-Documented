@@ -18,10 +18,17 @@
   ],
   "examples": [
     [
-      "--List all tags and their tag values for a particular entity",
-      "local tags = ListTags(handle)",
-      "for i=1, #tags do",
-      "\tDebugPrint(tags[i] .. \" \" .. GetTagValue(handle, tags[i]))",
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
+      "",
+      "\t--Add \"team\" tag to an entity and give it value \"red\"",
+      "\tSetTag(handle, \"team\", \"red\")",
+      "\t",
+      "\t--List all tags and their tag values for a particular entity",
+      "\tlocal tags = ListTags(handle)",
+      "\tfor i=1, #tags do",
+      "\t\tDebugPrint(tags[i] .. \" \" .. GetTagValue(handle, tags[i]))",
+      "\tend",
       "end"
     ]
   ],

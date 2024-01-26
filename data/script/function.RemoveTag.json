@@ -17,7 +17,17 @@
   "returns": [],
   "examples": [
     [
-      "RemoveTag(handle, \"special\")"
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
+      "\t--Add \"special\" tag to an entity",
+      "\tSetTag(handle, \"special\")",
+      "\tRemoveTag(handle, \"special\")",
+      "\tDebugPrint(HasTag(handle, \"special\"))",
+      "",
+      "\t--Add \"team\" tag to an entity and give it value \"red\"",
+      "\tSetTag(handle, \"team\", \"red\")",
+      "\tDebugPrint(HasTag(handle, \"team\"))",
+      "end"
     ]
   ],
   "description": [

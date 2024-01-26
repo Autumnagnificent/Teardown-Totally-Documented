@@ -24,11 +24,14 @@
   ],
   "examples": [
     [
-      "local q = QuatEuler(0, 10, 0)",
-      "local v = Vec(1, 0, 0)",
-      "local r = QuatRotateVec(q, v)",
-      "",
-      "--r is now vector a rotated 10 degrees around the Y axis"
+      "function init()",
+      "\tlocal q = QuatEuler(0, 10, 0)",
+      "\tlocal v = Vec(1, 0, 0)",
+      "\tlocal r = QuatRotateVec(q, v)",
+      "\t",
+      "\t--r is now vector a rotated 10 degrees around the Y axis",
+      "\tDebugPrint(VecStr(r))",
+      "end"
     ]
   ],
   "description": [

@@ -4,7 +4,11 @@
   "returns": [],
   "examples": [
     [
-      "ReleasePlayerGrab()"
+      "function tick()",
+      "\tif InputPressed(\"jump\") then",
+      "\t\tReleasePlayerGrab()",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

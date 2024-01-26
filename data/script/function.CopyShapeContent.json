@@ -15,7 +15,13 @@
     }
   ],
   "returns": [],
-  "examples": [],
+  "examples": [
+    [
+      "function init()",
+      "\tCopyShapeContent(FindShape(\"shape\", true), FindShape(\"shape2\", true))",
+      "end"
+    ]
+  ],
   "description": [
     "Copy voxel content from source shape to destination shape. If destination",
     "shape has a different size, it will be resized to match the source shape."

@@ -30,8 +30,10 @@
   "examples": [
     [
       "--Sepia post processing",
-      "SetPostProcessingProperty(\"saturation\", 0.4)",
-      "SetPostProcessingProperty(\"colorbalance\", 1.3, 1.0, 0.7)"
+      "function tick()",
+      "\tSetPostProcessingProperty(\"saturation\", 0.4)",
+      "\tSetPostProcessingProperty(\"colorbalance\", 1.3, 1.0, 0.7)",
+      "end"
     ]
   ],
   "description": [

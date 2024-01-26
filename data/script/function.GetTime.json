@@ -11,7 +11,10 @@
   ],
   "examples": [
     [
-      "local t = GetTime()"
+      "function update()",
+      "\tlocal t = GetTime()",
+      "\tDebugPrint(t)",
+      "end"
     ]
   ],
   "description": [

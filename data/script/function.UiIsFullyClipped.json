@@ -1,0 +1,45 @@
+{
+  "name": "UiIsFullyClipped",
+  "arguments": [
+    {
+      "name": "w",
+      "desc": "Width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Height",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "True if rect is not overlapping clip region",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "    UiPush()",
+      "        UiTranslate(200, 200)",
+      "        UiClipRect(150, 150)",
+      "        UiColor(1.0, 1.0, 1.0, 0.15)",
+      "        UiRect(150, 150)",
+      "        UiRect(w, h)",
+      "",
+      "        DebugPrint(\"rect 1: \" .. tostring(UiIsFullyClipped(200, 200)))",
+      "        UiTranslate(200, 0)",
+      "        DebugPrint(\"rect 2: \" .. tostring(UiIsFullyClipped(200, 200)))",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Checks whether a rect is overlap the clip region"
+  ]
+}

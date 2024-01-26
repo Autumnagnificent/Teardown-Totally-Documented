@@ -1,0 +1,31 @@
+{
+  "name": "UiUnloadImage",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to image (PNG or JPG format)",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local image = \"gfx/cursor.png\"",
+      "",
+      "function draw()",
+      "    UiTranslate(300, 300)",
+      "\tif UiHasImage(image) then",
+      "\t\tif InputDown(\"interact\") then",
+      "\t\t\tUiUnloadImage(\"img/background.jpg\")",
+      "\t\telse",
+      "\t\t\tUiImage(image)",
+      "\t\tend",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Unloads a texture from the memory"
+  ]
+}

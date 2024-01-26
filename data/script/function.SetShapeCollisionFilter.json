@@ -23,15 +23,25 @@
   "returns": [],
   "examples": [
     [
-      "--This will put shapes a and b in layer 2 and disable collisions with",
-      "--object shapes in layers 2, preventing any collisions between the two.",
-      "SetShapeCollisionFilter(a, 2, 255-2)",
-      "SetShapeCollisionFilter(b, 2, 255-2)",
+      "local shapeA = 0",
+      "local shapeB = 0",
+      "local shapeC = 0",
+      "local shapeD = 0",
+      "function init()",
+      "\tshapeA = FindShape(\"shapeA\")",
+      "\tshapeB = FindShape(\"shapeB\")",
+      "\tshapeC = FindShape(\"shapeC\")",
+      "\tshapeD = FindShape(\"shapeD\")",
+      "\t--This will put shapes a and b in layer 2 and disable collisions with",
+      "\t--object shapes in layers 2, preventing any collisions between the two.",
+      "\tSetShapeCollisionFilter(shapeA, 2, 255-2)",
+      "\tSetShapeCollisionFilter(shapeB, 2, 255-2)",
       "",
-      "--This will put shapes c and d in layer 4 and allow collisions with other",
-      "--shapes in layer 4, but ignore all other collisions with the rest of the world.",
-      "SetShapeCollisionFilter(c, 4, 4)",
-      "SetShapeCollisionFilter(d, 4, 4)"
+      "\t--This will put shapes c and d in layer 4 and allow collisions with other",
+      "\t--shapes in layer 4, but ignore all other collisions with the rest of the world.",
+      "\tSetShapeCollisionFilter(shapeC, 4, 4)",
+      "\tSetShapeCollisionFilter(shapeD, 4, 4)",
+      "end"
     ]
   ],
   "description": [

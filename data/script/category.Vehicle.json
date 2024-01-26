@@ -7,9 +7,14 @@
     "DriveVehicle",
     "FindVehicle",
     "FindVehicles",
+    "GetVehicleBodies",
     "GetVehicleBody",
     "GetVehicleDriverPos",
+    "GetVehicleExhaustTransforms",
     "GetVehicleHealth",
-    "GetVehicleTransform"
+    "GetVehicleParams",
+    "GetVehicleTransform",
+    "GetVehicleVitalTransforms",
+    "SetVehicleParam"
   ]
 }

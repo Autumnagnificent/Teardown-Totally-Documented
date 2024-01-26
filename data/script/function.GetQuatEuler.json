@@ -30,8 +30,12 @@
   ],
   "examples": [
     [
-      "--Return euler angles from quaternion q",
-      "rx, ry, rz = GetQuatEuler(q)"
+      "function init()",
+      "\t--Return euler angles from quaternion q",
+      "\tq = QuatEuler(30, 45, 0)",
+      "\trx, ry, rz = GetQuatEuler(q)",
+      "\tDebugPrint(rx .. \" \" .. ry .. \" \" .. rz)",
+      "end"
     ]
   ],
   "description": [

@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local broken = IsJointBroken(joint)"
+      "function init()",
+      "\tlocal broken = IsJointBroken(FindJoint(\"joint\"))",
+      "\tDebugPrint(broken)",
+      "end"
     ]
   ],
   "description": [

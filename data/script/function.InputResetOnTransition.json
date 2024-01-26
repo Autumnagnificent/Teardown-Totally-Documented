@@ -1,0 +1,18 @@
+{
+  "name": "InputResetOnTransition",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "function update()",
+      "\tif InputDown(\"interact\") then",
+      "        -- In this form, you won't be able to notice the result of the function; you need a specific context",
+      "\t\tInputResetOnTransition()",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "This function will reset everything we need to reset during state transition"
+  ]
+}

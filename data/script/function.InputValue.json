@@ -18,7 +18,11 @@
   ],
   "examples": [
     [
-      "scrollPos = scrollPos + InputValue(\"mousewheel\")"
+      "local scrollPos = 0",
+      "function tick()",
+      "\tscrollPos = scrollPos + InputValue(\"mousewheel\")",
+      "\tDebugPrint(scrollPos)",
+      "end"
     ]
   ],
   "description": [

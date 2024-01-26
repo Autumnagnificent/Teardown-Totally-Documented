@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,11 +24,13 @@
   ],
   "examples": [
     [
-      "--Find screens tagged \"tv\" in script scope",
-      "local screens = FindScreens(\"tv\")",
-      "for i=1, #screens do",
-      "\tlocal screen = screens[i]",
-      "\t...",
+      "function init()",
+      "\t--Find screens tagged \"tv\" in script scope",
+      "\tlocal screens = FindScreens(\"tv\")",
+      "\tfor i=1, #screens do",
+      "\t\tlocal screen = screens[i]",
+      "\t\tDebugPrint(screen)",
+      "\tend",
       "end"
     ]
   ],

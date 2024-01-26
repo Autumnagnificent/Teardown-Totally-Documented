@@ -11,9 +11,16 @@
   "returns": [],
   "examples": [
     [
-      "--Do not include body in next raycast",
-      "QueryRejectBody(body)",
-      "QueryRaycast(...)"
+      "function tick()",
+      "\tlocal body = FindBody(\"body\")",
+      "\tQueryRequire(\"physical dynamic large\")",
+      "\t--Do not include body in next raycast",
+      "\tQueryRejectBody(body)",
+      "\tlocal hit, dist = QueryRaycast(Vec(0, 0, 0), Vec(1, 0, 0), 10)",
+      "\tif hit then",
+      "\t\tDebugPrint(dist)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

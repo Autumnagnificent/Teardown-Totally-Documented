@@ -17,8 +17,11 @@
   "returns": [],
   "examples": [
     [
-      "local vel = Vec(2,0,0)",
-      "SetBodyVelocity(body, vel)"
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
+      "\tlocal vel = Vec(0,10,0)",
+      "\tSetBodyVelocity(handle, vel)",
+      "end"
     ]
   ],
   "description": [

@@ -18,9 +18,14 @@
   ],
   "examples": [
     [
-      "local shapes = GetBodyShapes(body)",
-      "for i=1,#shapes do",
-      "\tlocal shape = shapes[i]",
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "",
+      "\tlocal shapes = GetBodyShapes(handle)",
+      "\tfor i=1,#shapes do",
+      "\t\tlocal shape = shapes[i]",
+      "\t\tDebugPrint(shape)",
+      "\tend",
       "end"
     ]
   ],

@@ -1,0 +1,42 @@
+{
+  "name": "UiIgnoreNavigation",
+  "arguments": [
+    {
+      "name": "ignore",
+      "desc": "Whether ignore the navigation in a current UI scope or not.",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "    -- window declaration is necessary for navigation to work",
+      "    UiWindow(1920, 1080)",
+      "    if LastInputDevice() == UI_DEVICE_GAMEPAD then",
+      "\t\t-- active mouse cursor has higher priority over the gamepad control",
+      "\t\t-- so it will reset focused components if the mouse moves",
+      "        UiSetCursorState(UI_CURSOR_HIDE_AND_LOCK)   ",
+      "    end",
+      "    UiTranslate(960, 540)",
+      "    UiNavComponent(100, 20)",
+      "",
+      "\tUiTranslate(150, 40)",
+      "\tUiPush()",
+      "\t\tUiIgnoreNavigation(true)",
+      "\t\tlocal id = UiNavComponent(100, 20)",
+      "\t\tlocal isInFocus = UiIsComponentInFocus(id)",
+      "\t\t-- will be always \"false\"",
+      "\t\tDebugPrint(isInFocus)",
+      "\tUiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Sets a flag to ingore the navgation in a current UI scope or not. By default, if argument isn't",
+    "specified, the function sets the flag to true. If ignore is set to true, all components after the function call",
+    "won't participate in navigation as if they didn't exist on a scene. Flag resets back to false",
+    "after leaving the UI scope in which the function was called."
+  ]
+}

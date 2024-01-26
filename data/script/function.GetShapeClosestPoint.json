@@ -36,9 +36,17 @@
   ],
   "examples": [
     [
-      "local hit, p, n = GetShapeClosestPoint(s, Vec(0, 5, 0))",
-      "if hit then",
-      "\t--Point p of shape s is closest to (0,5,0)",
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tDebugCross(Vec(1, 0, 0))",
+      "\tlocal hit, p, n, s = GetShapeClosestPoint(shape, Vec(1, 0, 0))",
+      "\tif hit then",
+      "\t\tDebugCross(p)",
+      "\tend",
       "end"
     ]
   ],

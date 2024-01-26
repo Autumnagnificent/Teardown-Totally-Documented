@@ -35,7 +35,9 @@
   "returns": [],
   "examples": [
     [
-      "DebugCross(Vec(10, 5, 5))"
+      "function tick()",
+      "\tDebugCross(Vec(10, 5, 5))",
+      "end"
     ]
   ],
   "description": [

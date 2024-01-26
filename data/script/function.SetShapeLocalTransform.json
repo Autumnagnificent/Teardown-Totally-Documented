@@ -17,8 +17,25 @@
   "returns": [],
   "examples": [
     [
-      "local transform = Transform(Vec(0, 1, 0), QuatEuler(0, 90, 0))",
-      "SetShapeLocalTransform(shape, transform)"
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\")",
+      "\tlocal transform = Transform(Vec(0, 1, 0), QuatEuler(0, 90, 0))",
+      "\tSetShapeLocalTransform(shape, transform)",
+      "end",
+      "",
+      "function tick()",
+      "\t--Shape transform in body local space",
+      "\tlocal shapeTransform = GetShapeLocalTransform(shape)",
+      "",
+      "\t--Body transform in world space",
+      "\tlocal bodyTransform = GetBodyTransform(GetShapeBody(shape))",
+      "",
+      "\t--Shape transform in world space",
+      "\tlocal worldTranform = TransformToParentTransform(bodyTransform, shapeTransform)",
+      "",
+      "\tDebugCross(worldTranform)",
+      "end"
     ]
   ],
   "description": [

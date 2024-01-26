@@ -47,9 +47,18 @@
   "returns": [],
   "examples": [
     [
-      "--Constrain the velocity between bodies A and B so that the relative velocity ",
-      "--along the X axis at point (0, 5, 0) is always 3 m/s",
-      "ConstrainVelocity(a, b, Vec(0, 5, 0), Vec(1, 0, 0), 3)"
+      "local handleA = 0",
+      "local handleB = 0",
+      "function init()",
+      "\thandleA = FindBody(\"body\", true)",
+      "\thandleB = FindBody(\"target\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\t--Constrain the velocity between bodies A and B so that the relative velocity ",
+      "\t--along the X axis at point (0, 5, 0) is always 3 m/s",
+      "\tConstrainVelocity(handleA, handleB, Vec(0, 5, 0), Vec(1, 0, 0), 3)",
+      "end"
     ]
   ],
   "description": [

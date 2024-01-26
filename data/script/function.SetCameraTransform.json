@@ -17,10 +17,15 @@
   "returns": [],
   "examples": [
     [
-      "SetCameraTransform(Transform(Vec(0, 10, 0), QuatEuler(0, 90, 0)))"
+      "function tick()",
+      "\tSetCameraTransform(Transform(Vec(0, 10, 0), QuatEuler(0, 90, 0)))",
+      "end"
     ]
   ],
   "description": [
-    "Override current camera transform for this frame. Call continuously to keep overriding."
+    "Override current camera transform for this frame. Call continuously to keep overriding.",
+    "When transform of some shape or body used to calculate camera transform, consider use of AttachCameraTo,",
+    "because you might be using transform from previous physics update",
+    "(that was on previous frame or even earlier depending on fps and timescale)."
   ]
 }

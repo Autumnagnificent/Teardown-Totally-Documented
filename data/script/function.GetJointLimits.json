@@ -24,7 +24,10 @@
   ],
   "examples": [
     [
-      "local min, max = GetJointLimits(hinge)"
+      "function init()",
+      "\tlocal min, max = GetJointLimits(FindJoint(\"hinge\"))",
+      "\tDebugPrint(min .. \"-\" .. max)",
+      "end"
     ]
   ],
   "description": [

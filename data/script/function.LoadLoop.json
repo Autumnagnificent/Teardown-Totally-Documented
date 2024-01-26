@@ -24,7 +24,15 @@
   ],
   "examples": [
     [
-      "local loop = LoadLoop(\"siren.ogg\")"
+      "local loop",
+      "function init()",
+      "\tloop = LoadLoop(\"radio/jazz.ogg\")",
+      "end",
+      "",
+      "function tick()",
+      "\tlocal pos = Vec(0, 0, 0)",
+      "\tPlayLoop(loop, pos, 1.0)",
+      "end"
     ]
   ],
   "description": [

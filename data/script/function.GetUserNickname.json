@@ -1,0 +1,29 @@
+{
+  "name": "GetUserNickname",
+  "arguments": [
+    {
+      "name": "id",
+      "desc": "User id",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "User nickname",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tDebugPrint(GetUserNickname(0))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the user nickname with the specified id. If id is not specified, returns nickname for user with id '0'"
+  ]
+}

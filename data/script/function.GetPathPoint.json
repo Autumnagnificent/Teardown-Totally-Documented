@@ -18,11 +18,17 @@
   ],
   "examples": [
     [
-      "local d = 0",
-      "local l = GetPathLength()",
-      "while d < l do",
-      "\tDebugCross(GetPathPoint(d))",
-      "\td = d + 0.5",
+      "function init()",
+      "\tQueryPath(Vec(-10, 0, 0), Vec(10, 0, 0))",
+      "end",
+      "",
+      "function tick()",
+      "\tlocal d = 0",
+      "\tlocal l = GetPathLength()",
+      "\twhile d < l do",
+      "\t\tDebugCross(GetPathPoint(d))",
+      "\t\td = d + 0.5",
+      "\tend",
       "end"
     ]
   ],

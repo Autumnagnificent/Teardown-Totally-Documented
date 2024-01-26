@@ -11,8 +11,16 @@
   ],
   "examples": [
     [
-      "--Interact with screen",
-      "local screen = GetPlayerScreen()"
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tif GetPlayerScreen() ~= 0 then",
+      "\t\t\tSetPlayerScreen(0)",
+      "\t\telse",
+      "\t\t\tSetPlayerScreen(screen)",
+      "\t\tend",
+      "",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

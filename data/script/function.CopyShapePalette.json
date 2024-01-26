@@ -15,7 +15,13 @@
     }
   ],
   "returns": [],
-  "examples": [],
+  "examples": [
+    [
+      "function init()",
+      "\tCopyShapePalette(FindShape(\"shape\", true), FindShape(\"shape2\", true))",
+      "end"
+    ]
+  ],
   "description": [
     "Copy the palette from source shape to destination shape."
   ]

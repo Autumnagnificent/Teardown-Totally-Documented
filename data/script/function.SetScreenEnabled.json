@@ -17,7 +17,9 @@
   "returns": [],
   "examples": [
     [
-      "SetScreenEnabled(screen, true)"
+      "function init()",
+      "\tSetScreenEnabled(FindScreen(\"tv\"), true)",
+      "end"
     ]
   ],
   "description": [

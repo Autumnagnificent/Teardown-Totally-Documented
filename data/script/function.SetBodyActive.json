@@ -17,11 +17,15 @@
   "returns": [],
   "examples": [
     [
-      "--Wake up body",
-      "SetBodyActive(body, true)",
+      "function tick()",
+      "\thandle = FindBody(\"body\", true)",
       "",
-      "--Put body to sleep",
-      "SetBodyActive(body, false)"
+      "\t-- Forces body to \"sleep\"",
+      "\tSetBodyActive(handle, false)",
+      "\tif IsBodyActive(handle) then",
+      "\t\tDebugPrint(\"Body is active\")",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

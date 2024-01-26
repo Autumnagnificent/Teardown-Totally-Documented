@@ -1,0 +1,35 @@
+{
+  "name": "UiEndFrame",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "width",
+      "desc": "Width of content drawn between since UiBeginFrame was called",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "height",
+      "desc": "Height of content drawn between since UiBeginFrame was called",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "\tUiPush()",
+      "        UiBeginFrame()",
+      "            UiColor(1.0, 1.0, 0.8)",
+      "            UiRect(200, 200)",
+      "            UiRect(300, 200)",
+      "        local panelWidth, panelHeight = UiEndFrame()",
+      "        DebugPrint(math.ceil(panelWidth) .. \"x\" .. math.ceil(panelHeight))",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

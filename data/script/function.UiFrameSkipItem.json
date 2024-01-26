@@ -1,0 +1,29 @@
+{
+  "name": "UiFrameSkipItem",
+  "arguments": [
+    {
+      "name": "skip",
+      "desc": "Should skip item",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "\tUiPush()",
+      "\t\tUiBeginFrame()",
+      "\t\t\tUiFrameSkipItem(true)",
+      "\t\t\t--[[",
+      "\t\t\t\t...",
+      "\t\t\t]]",
+      "\t\tUiEndFrame()",
+      "\tUiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Sets whether to skip items in current ui scope for current ui frame. This items won't affect on the frame size"
+  ]
+}

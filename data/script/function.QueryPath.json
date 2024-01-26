@@ -29,7 +29,9 @@
   "returns": [],
   "examples": [
     [
-      "QueryPath(Vec(-10, 0, 0), Vec(10, 0, 0))"
+      "function init()",
+      "\tQueryPath(Vec(-10, 0, 0), Vec(10, 0, 0))",
+      "end"
     ]
   ],
   "description": [

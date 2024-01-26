@@ -11,7 +11,16 @@
   ],
   "examples": [
     [
-      "local l = GetPathLength()"
+      "function init()",
+      "\tQueryPath(Vec(-10, 0, 0), Vec(10, 0, 0))",
+      "end",
+      "",
+      "function tick()",
+      "\tlocal s = GetPathState()",
+      "\tif s == \"done\" then",
+      "\t\tDebugPrint(\"done \" .. GetPathLength())",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

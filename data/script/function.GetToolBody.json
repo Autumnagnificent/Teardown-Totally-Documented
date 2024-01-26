@@ -11,9 +11,11 @@
   ],
   "examples": [
     [
-      "local toolBody = GetToolBody()",
-      "if toolBody~=0 then",
-      "\t...",
+      "function tick()",
+      "\tlocal toolBody = GetToolBody()",
+      "\tif toolBody~=0 then",
+      "\t\tDebugPrint(\"Tool body: \" .. toolBody)",
+      "\tend",
       "end"
     ]
   ],

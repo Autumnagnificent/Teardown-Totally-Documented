@@ -17,6 +17,7 @@
     "GetPlayerTransform",
     "GetPlayerVehicle",
     "GetPlayerVelocity",
+    "GetPlayerWalkingSpeed",
     "GetToolBody",
     "RegisterTool",
     "ReleasePlayerGrab",
@@ -24,11 +25,16 @@
     "SetPlayerCameraOffsetTransform",
     "SetPlayerGroundVelocity",
     "SetPlayerHealth",
+    "SetPlayerRegenerationState",
     "SetPlayerScreen",
+    "SetPlayerSpawnHealth",
+    "SetPlayerSpawnTool",
     "SetPlayerSpawnTransform",
     "SetPlayerTransform",
     "SetPlayerVehicle",
     "SetPlayerVelocity",
+    "SetPlayerWalkingSpeed",
+    "SetPlayerZoom",
     "SetToolTransform"
   ]
 }

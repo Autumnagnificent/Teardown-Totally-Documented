@@ -11,7 +11,12 @@
   ],
   "examples": [
     [
-      "name = InputLastPressedKey()"
+      "function tick()",
+      "\tlocal name = InputLastPressedKey()",
+      "\tif string.len(name) > 0 then",
+      "\t\tDebugPrint(name) ",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

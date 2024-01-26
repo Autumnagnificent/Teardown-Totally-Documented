@@ -24,12 +24,16 @@
   ],
   "examples": [
     [
-      "local a = QuatEuler(0, 10, 0)",
-      "local b = QuatEuler(0, 0, 45)",
-      "local q = QuatRotateQuat(a, b)",
+      "function init()",
+      "\tlocal a = QuatEuler(0, 10, 0)",
+      "\tlocal b = QuatEuler(0, 0, 45)",
+      "\tlocal q = QuatRotateQuat(a, b)",
       "",
-      "--q now represents a rotation first 10 degrees around",
-      "--the Y axis and then 45 degrees around the Z axis."
+      "\t--q now represents a rotation first 10 degrees around",
+      "\t--the Y axis and then 45 degrees around the Z axis.",
+      "\tlocal x, y, z = GetQuatEuler(q)",
+      "\tDebugPrint(x .. \" \" .. y .. \" \" .. z)",
+      "end"
     ]
   ],
   "description": [

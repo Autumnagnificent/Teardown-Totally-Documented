@@ -18,8 +18,10 @@
   ],
   "examples": [
     [
-      "if InputDown(\"interact\") then",
-      "...",
+      "function tick()",
+      "\tif InputDown(\"interact\") then",
+      "\t\tDebugPrint(\"interact\")",
+      "\tend",
       "end"
     ]
   ],

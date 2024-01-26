@@ -30,8 +30,18 @@
   ],
   "examples": [
     [
-      "if IsBodyVisible(body, 25) then",
-      "\t--Body is within 25 meters visible to the camera",
+      "local handle = 0",
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tif IsBodyVisible(handle, 25) then",
+      "\t\t--Body is within 25 meters visible to the camera",
+      "\t\tDebugPrint(\"visible\")",
+      "\telse",
+      "\t\tDebugPrint(\"not visible\")",
+      "\tend",
       "end"
     ]
   ],

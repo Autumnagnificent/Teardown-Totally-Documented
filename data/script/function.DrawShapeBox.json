@@ -45,7 +45,14 @@
     }
   ],
   "returns": [],
-  "examples": [],
+  "examples": [
+    [
+      "function init()",
+      "\tSetBrush(\"sphere\", 3, 4)",
+      "\tDrawShapeBox(FindShape(\"shape\", true), 0, 0, 0, 10, 50, 5)",
+      "end"
+    ]
+  ],
   "description": [
     "Draw box between (x0,y0,z0) and (x1,y1,z1) into shape using the material",
     "set up with SetBrush."

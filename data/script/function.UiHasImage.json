@@ -1,0 +1,33 @@
+{
+  "name": "UiHasImage",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to image (PNG or JPG format)",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "exists",
+      "desc": "Does the image exists at the specified path",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local image = \"gfx/circle.png\"",
+      "",
+      "function draw()",
+      "\tif UiHasImage(image) then",
+      "\t\tDebugPrint(\"image \" .. image .. \" exists\")",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}
