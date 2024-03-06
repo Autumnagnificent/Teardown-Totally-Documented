@@ -2149,13 +2149,17 @@ function UnloadSound(sound) end
 ---@param sound sound_handle
 ---@param position vector? Default is player position
 ---@param volume number? Default is 1.0
-function PlaySound(sound, position, volume) end
+---@param register_volume boolean? Register position and volume of this sound for GetLastSound. Default is true
+---@param pitch number? Default 1.0
+function PlaySound(sound, position, volume, register_volume, pitch) end
 
 ---@param sound sound_handle
 ---@param user user 
 ---@param position vector? Default is player position
 ---@param volume number? Default is 1.0
-function PlaySoundForUser(sound, user, position, volume) end
+---@param register_volume boolean? Register position and volume of this sound for GetLastSound. Default is true
+---@param pitch number? Default 1.0
+function PlaySoundForUser(sound, user, position, volume, register_volume, pitch) end
 
 ---@param sound sound_handle
 ---@return number time time in seconds
@@ -2192,7 +2196,9 @@ function UnloadSound(loop) end
 ---@param loop loop_handle
 ---@param position vector? Default is player position
 ---@param volume number Default is 1.0
-function PlayLoop(loop, position, volume) end
+---@param register_volume boolean? Register position and volume of this sound for GetLastSound. Default is true
+---@param pitch number? Default 1.0
+function PlayLoop(loop, position, volume, register_volume, pitch) end
 
 ---@param loop loop_handle
 ---@return number time time in seconds
