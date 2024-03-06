@@ -18,7 +18,11 @@
   ],
   "examples": [
     [
-      "local health = GetVehicleHealth(vehicle)"
+      "function init()",
+      "\tlocal vehicle = FindVehicle(\"vehicle\")",
+      "\tlocal health = GetVehicleHealth(vehicle)",
+      "\tDebugPrint(health)",
+      "end"
     ]
   ],
   "description": [

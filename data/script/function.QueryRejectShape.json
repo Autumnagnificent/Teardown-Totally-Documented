@@ -11,9 +11,16 @@
   "returns": [],
   "examples": [
     [
-      "--Do not include shape in next raycast",
-      "QueryRejectShape(shape)",
-      "QueryRaycast(...)"
+      "function tick()",
+      "\tlocal shape = FindShape(\"shape\")",
+      "\tQueryRequire(\"physical dynamic large\")",
+      "\t--Do not include shape in next raycast",
+      "\tQueryRejectShape(shape)",
+      "\tlocal hit, dist = QueryRaycast(Vec(0, 0, 0), Vec(1, 0, 0), 10)",
+      "\tif hit then",
+      "\t\tDebugPrint(dist)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

@@ -24,14 +24,20 @@
   ],
   "examples": [
     [
-      "--Create transform located at {0, 0, 0} with no rotation",
-      "local t1 = Transform()",
+      "function init()",
+      "\t--Create transform located at {0, 0, 0} with no rotation",
+      "\tlocal t1 = Transform()",
       "",
-      "--Create transform located at {10, 0, 0} with no rotation",
-      "local t2 = Transform(Vec(10, 0,0))",
+      "\t--Create transform located at {10, 0, 0} with no rotation",
+      "\tlocal t2 = Transform(Vec(10, 0,0))",
       "",
-      "--Create transform located at {10, 0, 0}, rotated 45 degrees around Y axis",
-      "local t2 = Transform(Vec(10, 0,0), QuatEuler(0, 45, 0))"
+      "\t--Create transform located at {10, 0, 0}, rotated 45 degrees around Y axis",
+      "\tlocal t3 = Transform(Vec(10, 0,0), QuatEuler(0, 45, 0))",
+      "",
+      "\tDebugPrint(TransformStr(t1))",
+      "\tDebugPrint(TransformStr(t2))",
+      "\tDebugPrint(TransformStr(t3))",
+      "end"
     ]
   ],
   "description": [

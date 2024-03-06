@@ -11,9 +11,11 @@
   ],
   "examples": [
     [
-      "local shape = GetPlayerInteractShape()",
-      "if shape ~= 0 then",
-      "\t...",
+      "function tick()",
+      "\tlocal shape = GetPlayerInteractShape()",
+      "\tif shape ~= 0 then",
+      "\t\tDebugPrint(\"Interact shape \" .. shape)",
+      "\tend",
       "end"
     ]
   ],

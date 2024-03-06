@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local desc = GetDescription(body)"
+      "function init()",
+      "\tlocal body = FindBody(\"body\", true)",
+      "\tDebugPrint(GetDescription(body))",
+      "end"
     ]
   ],
   "description": [

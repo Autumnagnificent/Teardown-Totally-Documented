@@ -24,8 +24,15 @@
   ],
   "examples": [
     [
-      "local mi, ma = GetTriggerBounds(trigger)",
-      "local list = QueryAabbShapes(mi, ma)"
+      "function init()",
+      "\tlocal trigger = FindTrigger(\"toxic\")",
+      "\tlocal mi, ma = GetTriggerBounds(trigger)",
+      "\t",
+      "\tlocal list = QueryAabbShapes(mi, ma)",
+      "\tfor i = 1, #list do",
+      "\t\tDebugPrint(list[i])",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

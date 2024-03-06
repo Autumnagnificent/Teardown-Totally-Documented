@@ -11,10 +11,14 @@
   ],
   "examples": [
     [
-      "local p = GetPlayerPos()",
+      "function init()",
+      "\tlocal p = GetPlayerPos()",
+      "\tDebugPrint(p)",
       "",
-      "--This is equivalent to",
-      "p = VecAdd(GetPlayerTransform().pos, Vec(0,1,0))"
+      "\t--This is equivalent to",
+      "\tp = VecAdd(GetPlayerTransform().pos, Vec(0,1,0))",
+      "\tDebugPrint(p)",
+      "end"
     ]
   ],
   "description": [

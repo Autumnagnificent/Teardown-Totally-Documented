@@ -1,0 +1,30 @@
+{
+  "name": "QuatStr",
+  "arguments": [
+    {
+      "name": "quat",
+      "desc": "Quaternion",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [
+    {
+      "name": "str",
+      "desc": "String representation",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal q = QuatEuler(0, 10, 0)",
+      "\tDebugPrint(QuatStr(q))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the string representation of quaternion"
+  ]
+}

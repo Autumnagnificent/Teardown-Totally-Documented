@@ -18,10 +18,12 @@
   ],
   "examples": [
     [
-      "local v = Vec(0,3,0)",
-      "local n = VecNormalize(v)",
-      "",
-      "--n now equals {0,1,0}"
+      "function init()",
+      "\tlocal v = Vec(0,3,0)",
+      "\tlocal n = VecNormalize(v)",
+      "\t--n now equals {0,1,0}",
+      "\tDebugPrint(VecStr(n))",
+      "end"
     ]
   ],
   "description": [

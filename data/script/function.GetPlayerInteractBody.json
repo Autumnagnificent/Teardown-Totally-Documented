@@ -11,9 +11,11 @@
   ],
   "examples": [
     [
-      "local body = GetPlayerInteractBody()",
-      "if body ~= 0 then",
-      "\t...",
+      "function tick()",
+      "\tlocal body = GetPlayerInteractBody()",
+      "\tif body ~= 0 then",
+      "\t\tDebugPrint(\"Interact body \" .. body)",
+      "\tend",
       "end"
     ]
   ],

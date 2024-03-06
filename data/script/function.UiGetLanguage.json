@@ -1,0 +1,20 @@
+{
+  "name": "UiGetLanguage",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "index",
+      "desc": "Language index",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local n = UiGetLanguage()"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

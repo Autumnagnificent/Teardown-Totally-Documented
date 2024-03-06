@@ -35,9 +35,11 @@
   "returns": [],
   "examples": [
     [
-      "--Pulsating, yellow light above world origo",
-      "local intensity = 3 + math.sin(GetTime())",
-      "PointLight(Vec(0, 5, 0), 1, 1, 0, intensity)"
+      "function tick()",
+      "\t--Pulsating, yellow light above world origo",
+      "\tlocal intensity = 3 + math.sin(GetTime())",
+      "\tPointLight(Vec(0, 5, 0), 1, 1, 0, intensity)",
+      "end"
     ]
   ],
   "description": [

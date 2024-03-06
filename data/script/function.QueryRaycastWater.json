@@ -1,0 +1,57 @@
+{
+  "name": "QueryRaycastWater",
+  "arguments": [
+    {
+      "name": "origin",
+      "desc": "Raycast origin as world space vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "direction",
+      "desc": "Unit length raycast direction as world space vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "maxDist",
+      "desc": "Raycast maximum distance. Keep this as low as possible for good performance.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "hit",
+      "desc": "True if raycast hit something",
+      "optional": false,
+      "type": "boolean"
+    },
+    {
+      "name": "dist",
+      "desc": "Hit distance from origin",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "hitPos",
+      "desc": "Hit point as world space vector",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\t--Raycast from a high point straight downwards, looking for water",
+      "\tlocal hit, d = QueryRaycast(Vec(0, 100, 0), Vec(0, -1, 0), 100)",
+      "\tif hit then",
+      "\t\tDebugPrint(d)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "This will perform a raycast query looking for water."
+  ]
+}

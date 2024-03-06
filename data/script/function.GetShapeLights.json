@@ -18,10 +18,14 @@
   ],
   "examples": [
     [
-      "local lights = GetShapeLights(shape)",
-      "for i=1, #lights do",
-      "\tlocal light = lights[i]",
-      "\t...",
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "",
+      "\tlocal light = GetShapeLights(shape)",
+      "\tfor i=1, #light do",
+      "\t\tDebugPrint(light[i])",
+      "\tend",
       "end"
     ]
   ],

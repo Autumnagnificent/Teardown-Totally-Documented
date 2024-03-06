@@ -35,11 +35,13 @@
   "returns": [],
   "examples": [
     [
-      "--Constant radius 0.4 meters",
-      "ParticleRadius(0.4)",
+      "function init()",
+      "\t--Constant radius 0.4 meters",
+      "\tParticleRadius(0.4)",
       "",
-      "--Interpolate from small to large",
-      "ParticleRadius(0.1, 0.7)"
+      "\t--Interpolate from small to large",
+      "\tParticleRadius(0.1, 0.7)",
+      "end"
     ]
   ],
   "description": [

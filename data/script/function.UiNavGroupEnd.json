@@ -1,0 +1,40 @@
+{
+  "name": "UiNavGroupEnd",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "    -- window declaration is necessary for navigation to work",
+      "    UiWindow(1920, 1080)",
+      "    if LastInputDevice() == UI_DEVICE_GAMEPAD then",
+      "\t\t-- active mouse cursor has higher priority over the gamepad control",
+      "\t\t-- so it will reset focused components if the mouse moves",
+      "        UiSetCursorState(UI_CURSOR_HIDE_AND_LOCK)   ",
+      "    end",
+      "",
+      "    UiTranslate(960, 540)",
+      "",
+      "\tlocal gId = UiNavGroupBegin()",
+      "",
+      "\tUiNavComponent(100, 20)",
+      "\tUiTranslate(0, 50)",
+      "    local id = UiNavComponent(100, 20)",
+      "\tlocal isInFocus = UiIsComponentInFocus(id)",
+      "",
+      "\tUiNavGroupEnd()",
+      "",
+      "\tlocal groupInFocus = UiIsComponentInFocus(gId)",
+      "",
+      "",
+      "\tif isInFocus then",
+      "\t\tDebugPrint(groupInFocus)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Ends a scope of a new navigation group. All components before that call become",
+    "children of that navigation group."
+  ]
+}

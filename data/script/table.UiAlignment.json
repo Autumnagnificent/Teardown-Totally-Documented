@@ -10,17 +10,5 @@
   [
     "center",
     "Horizontally align to the center"
-  ],
-  [
-    "top",
-    "Vertically align to the top"
-  ],
-  [
-    "bottom",
-    "Veritcally align to the bottom"
-  ],
-  [
-    "middle",
-    "Vertically align to the middle"
   ]
 ]

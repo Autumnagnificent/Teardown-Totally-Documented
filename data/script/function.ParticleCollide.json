@@ -35,14 +35,16 @@
   "returns": [],
   "examples": [
     [
-      "--Disable collisions",
-      "ParticleCollide(0)",
+      "function init()",
+      "\t--Disable collisions",
+      "\tParticleCollide(0)",
       "",
-      "--Enable collisions over time",
-      "ParticleCollide(0, 1)",
+      "\t--Enable collisions over time",
+      "\tParticleCollide(0, 1)",
       "",
-      "--Ramp up collisions very quickly, only skipping the first 5% of lifetime",
-      "ParticleCollide(1, 1, \"constant\", 0.05)"
+      "\t--Ramp up collisions very quickly, only skipping the first 5% of lifetime",
+      "\tParticleCollide(1, 1, \"constant\", 0.05)",
+      "end"
     ]
   ],
   "description": [

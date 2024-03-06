@@ -11,9 +11,11 @@
   ],
   "examples": [
     [
-      "local shape = GetPlayerPickShape()",
-      "if shape ~= 0 then",
-      "\t...",
+      "function tick()",
+      "\tlocal shape = GetPlayerPickShape()",
+      "\tif shape ~= 0 then",
+      "\t\tDebugPrint(\"Picked shape \" .. shape)",
+      "\tend",
       "end"
     ]
   ],

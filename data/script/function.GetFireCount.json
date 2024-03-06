@@ -11,7 +11,10 @@
   ],
   "examples": [
     [
-      "local c = GetFireCount()"
+      "function tick()",
+      "\tlocal c = GetFireCount()",
+      "\tDebugPrint(\"Fire count \" .. c)",
+      "end"
     ]
   ],
   "description": [

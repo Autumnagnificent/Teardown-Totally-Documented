@@ -1,0 +1,22 @@
+{
+  "name": "SetPlayerSpawnTool",
+  "arguments": [
+    {
+      "name": "INPUT",
+      "desc": "Tool unique identifier",
+      "optional": false,
+      "type": "id"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tSetPlayerSpawnTool(\"pistol\")",
+      "end"
+    ]
+  ],
+  "description": [
+    "Call this function during init to alter the player spawn active tool."
+  ]
+}

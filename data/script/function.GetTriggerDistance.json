@@ -24,8 +24,13 @@
   ],
   "examples": [
     [
-      "local p = Vec(0, 10, 0)",
-      "local dist = GetTriggerDistance(trigger, p)"
+      "local trigger = 0",
+      "function init()",
+      "\ttrigger = FindTrigger(\"toxic\")",
+      "\tlocal p = Vec(0, 10, 0)",
+      "\tlocal dist = GetTriggerDistance(trigger, p)",
+      "\tDebugPrint(dist)",
+      "end"
     ]
   ],
   "description": [

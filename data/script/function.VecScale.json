@@ -24,10 +24,12 @@
   ],
   "examples": [
     [
-      "local v = Vec(1,2,3)",
-      "local n = VecScale(v, 2)",
-      "",
-      "--n now equals {2,4,6}"
+      "function init()",
+      "\tlocal v = Vec(1,2,3)",
+      "\tlocal n = VecScale(v, 2)",
+      "\t--n now equals {2,4,6}",
+      "\tDebugPrint(VecStr(n))",
+      "end"
     ]
   ],
   "description": [

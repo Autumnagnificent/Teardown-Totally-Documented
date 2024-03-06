@@ -4,8 +4,10 @@
   "returns": [],
   "examples": [
     [
-      "if shouldExitLevel then",
-      "Menu()",
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tMenu()",
+      "\tend",
       "end"
     ]
   ],

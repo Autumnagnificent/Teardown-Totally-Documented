@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,11 +24,15 @@
   ],
   "examples": [
     [
-      "--Search for a body tagged \"target\" in script scope",
-      "local target = FindBody(\"target\")",
+      "function init()",
+      "\t--Search for a body tagged \"target\" in script scope",
+      "\tlocal target = FindBody(\"body\")",
+      "\tDebugPrint(target)",
       "",
-      "--Search for a body tagged \"escape\" in entire scene",
-      "local escape = FindBody(\"escape\", true)"
+      "\t--Search for a body tagged \"escape\" in entire scene",
+      "\tlocal escape = FindBody(\"body\", true)",
+      "\tDebugPrint(escape)",
+      "end"
     ]
   ],
   "description": [

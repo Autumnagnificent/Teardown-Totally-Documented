@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,11 +24,20 @@
   ],
   "examples": [
     [
-      "--Search for a shape tagged \"mybox\" in script scope",
-      "local target = FindShape(\"mybox\")",
+      "local target = 0",
+      "local escape = 0",
+      "function init()",
+      "\t--Search for a shape tagged \"mybox\" in script scope",
+      "\ttarget = FindShape(\"mybox\")",
       "",
-      "--Search for a shape tagged \"laserturret\" in entire scene",
-      "local escape = FindShape(\"laserturret\", true)"
+      "\t--Search for a shape tagged \"laserturret\" in entire scene",
+      "\tescape = FindShape(\"laserturret\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tDebugCross(GetShapeWorldTransform(target).pos)",
+      "\tDebugCross(GetShapeWorldTransform(escape).pos)",
+      "end"
     ]
   ],
   "description": [

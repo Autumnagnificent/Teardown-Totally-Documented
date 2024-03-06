@@ -11,7 +11,14 @@
   ],
   "examples": [
     [
-      "local w = GetWorldBody()"
+      "local handle",
+      "function init()",
+      "\thandle = GetWorldBody()",
+      "end",
+      "",
+      "function tick()",
+      "\tDebugCross(GetBodyTransform(handle).pos)",
+      "end"
     ]
   ],
   "description": [

@@ -1,0 +1,23 @@
+{
+  "name": "GetPlayerWalkingSpeed",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "speed",
+      "desc": "Current player base walking speed",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tDebugPrint(GetPlayerWalkingSpeed())",
+      "end"
+    ]
+  ],
+  "description": [
+    "This function gets base speed, but real player speed depends on many",
+    "factors such as health, crouch, water, grabbing objects."
+  ]
+}

@@ -11,8 +11,10 @@
   "returns": [],
   "examples": [
     [
-      "local t = Transform(Vec(10, 0, 0), QuatEuler(0, 90, 0))",
-      "SetPlayerSpawnTransform(t)"
+      "function init()",
+      "\tlocal t = Transform(Vec(10, 0, 0), QuatEuler(0, 90, 0))",
+      "\tSetPlayerSpawnTransform(t)",
+      "end"
     ]
   ],
   "description": [

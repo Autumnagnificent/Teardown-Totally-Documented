@@ -24,10 +24,12 @@
   ],
   "examples": [
     [
-      "local eye = Vec(0, 10, 0)",
-      "local target = Vec(0, 1, 5)",
-      "local rot = QuatLookAt(eye, target)",
-      "SetCameraTransform(Transform(eye, rot))"
+      "function init()",
+      "\tlocal eye = Vec(0, 10, 0)",
+      "\tlocal target = Vec(0, 1, 5)",
+      "\tlocal rot = QuatLookAt(eye, target)",
+      "\tSetCameraTransform(Transform(eye, rot))",
+      "end"
     ]
   ],
   "description": [

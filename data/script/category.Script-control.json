@@ -10,17 +10,23 @@
     "GetTime",
     "GetTimeStep",
     "GetVersion",
+    "HasFile",
     "HasVersion",
+    "InputClear",
     "InputDown",
+    "InputLastPressedGamepadButton",
     "InputLastPressedKey",
     "InputPressed",
     "InputReleased",
+    "InputResetOnTransition",
     "InputValue",
+    "LastInputDevice",
     "Menu",
     "PauseMenuButton",
     "Restart",
     "SetPaused",
     "SetValue",
+    "SetValueInTable",
     "StartLevel"
   ]
 }

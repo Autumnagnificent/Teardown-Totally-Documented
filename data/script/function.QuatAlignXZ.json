@@ -1,0 +1,45 @@
+{
+  "name": "QuatAlignXZ",
+  "arguments": [
+    {
+      "name": "xAxis",
+      "desc": "X axis",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "zAxis",
+      "desc": "Z axis",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "quat",
+      "desc": "Quaternion",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function update()",
+      "\tlocal laserSprite = LoadSprite(\"gfx/laser.png\")",
+      "\tlocal origin = Vec(0, 0, 0)",
+      "\tlocal dir = Vec(1, 0, 0)",
+      "\tlocal length = 10",
+      "\tlocal hitPoint = VecAdd(origin, VecScale(dir, length))",
+      "\tlocal t = Transform(VecLerp(origin, hitPoint, 0.5))",
+      "\tlocal xAxis = VecNormalize(VecSub(hitPoint, origin))",
+      "\tlocal zAxis = VecNormalize(VecSub(origin, GetCameraTransform().pos))",
+      "\tt.rot = QuatAlignXZ(xAxis, zAxis)",
+      "\tDrawSprite(laserSprite, t, length, 0.05+math.random()*0.01, 8, 4, 4, 1, true, true)",
+      "\tDrawSprite(laserSprite, t, length, 0.5, 1.0, 0.3, 0.3, 1, true, true)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Return the quaternion aligned to specified axes"
+  ]
+}

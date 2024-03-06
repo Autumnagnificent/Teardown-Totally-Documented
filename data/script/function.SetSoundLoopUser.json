@@ -1,0 +1,37 @@
+{
+  "name": "SetSoundLoopUser",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Loop handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "nominalDistance",
+      "desc": "User index",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "flag",
+      "desc": "TRUE if sound applied to gamepad speaker, FALSE otherwise.",
+      "optional": false,
+      "type": "bool"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal loop = LoadLoop(\"radio/jazz.ogg\")",
+      "\tSetSoundLoopUser(loop, 0)",
+      "end",
+      "--This function will move (if possible) sound to gamepad of appropriate user"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

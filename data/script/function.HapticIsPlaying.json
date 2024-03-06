@@ -1,0 +1,37 @@
+{
+  "name": "HapticIsPlaying",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Handle of haptic effect",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "flag",
+      "desc": "is current Haptic playing or not",
+      "optional": false,
+      "type": "bool"
+    }
+  ],
+  "examples": [
+    [
+      "-- Rumble infinitely",
+      "local haptic_effect",
+      "function init()",
+      "\thaptic_effect = LoadHaptic(\"haptic/gun_fire.xml\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif not HapticIsPlaying(haptic_effect) then",
+      "\t\tPlayHaptic(haptic_effect, 1)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "GetVehicleExhaustTransforms",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transforms",
+      "desc": "Transforms of vehicle exhausts",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal vehicle = FindVehicle(\"car\", true)",
+      "\tlocal t = GetVehicleExhaustTransforms(vehicle)",
+      "\tfor i = 1, #t do",
+      "\t\tDebugWatch(tostring(i), t[i])",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the exhausts transforms in local space of the vehicle."
+  ]
+}

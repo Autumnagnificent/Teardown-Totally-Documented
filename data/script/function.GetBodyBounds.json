@@ -24,9 +24,14 @@
   ],
   "examples": [
     [
-      "local min, max = GetBodyBounds(body)",
-      "local boundsSize = VecSub(max, min)",
-      "local center = VecLerp(min, max, 0.5)"
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "",
+      "\tlocal min, max = GetBodyBounds(handle)",
+      "\tlocal boundsSize = VecSub(max, min)",
+      "\tlocal center = VecLerp(min, max, 0.5)",
+      "\tDebugPrint(VecStr(boundsSize) .. \" \" .. VecStr(center))",
+      "end"
     ]
   ],
   "description": [

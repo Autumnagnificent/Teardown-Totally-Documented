@@ -9,7 +9,13 @@
     }
   ],
   "returns": [],
-  "examples": [],
+  "examples": [
+    [
+      "function init()",
+      "\tClearShape(FindShape(\"shape\", true))",
+      "end"
+    ]
+  ],
   "description": [
     "Fill a voxel shape with zeroes, thus removing all voxels."
   ]

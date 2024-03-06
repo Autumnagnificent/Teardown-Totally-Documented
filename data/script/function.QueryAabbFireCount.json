@@ -24,7 +24,10 @@
   ],
   "examples": [
     [
-      "local count = QueryAabbFireCount(Vec(0,0,0), Vec(10,10,10))"
+      "function tick()",
+      "\tlocal count = QueryAabbFireCount(Vec(0,0,0), Vec(10,10,10))",
+      "\tDebugPrint(count)",
+      "end"
     ]
   ],
   "description": [

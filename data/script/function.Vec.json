@@ -30,13 +30,17 @@
   ],
   "examples": [
     [
-      "--These are equivalent",
-      "local a1 = Vec()",
-      "local a2 = {0, 0, 0}",
+      "function init()",
+      "\t--These are equivalent",
+      "\tlocal a1 = Vec()",
+      "\tlocal a2 = {0, 0, 0}",
+      "\tDebugPrint(\"a1 == a2: \" .. tostring(VecStr(a1) == VecStr(a2)))",
       "",
-      "--These are equivalent",
-      "local b1 = Vec(0, 1, 0)",
-      "local b2 = {0, 1, 0}"
+      "\t--These are equivalent",
+      "\tlocal b1 = Vec(0, 1, 0)",
+      "\tlocal b2 = {0, 1, 0}",
+      "\tDebugPrint(\"b1 == b2: \" .. tostring(VecStr(b1) == VecStr(b2)))",
+      "end"
     ]
   ],
   "description": [

@@ -1,0 +1,31 @@
+{
+  "name": "SetVehicleHealth",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "health",
+      "desc": "Set vehicle health (between zero and one)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tif InputPressed(\"usetool\") then",
+      "\t\tSetVehicleHealth(FindVehicle(\"car\", true), 0.0)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Works only for vehicles with 'customhealth' tag. 'customhealth' disables the common vehicles damage system.",
+    "So this function needed for custom vehicle damage systems."
+  ]
+}

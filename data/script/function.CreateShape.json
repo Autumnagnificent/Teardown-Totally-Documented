@@ -28,10 +28,20 @@
       "type": "number"
     }
   ],
-  "examples": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tlocal t = Transform(Vec(0, 5, 0), QuatEuler(0, 0, 0))",
+      "\t\tlocal handle = CreateShape(FindBody(\"shape\", true), t, FindShape(\"shape\", true))",
+      "\t\tDebugPrint(handle)",
+      "\tend",
+      "end"
+    ]
+  ],
   "description": [
     "Create new, empty shape on existing body using the palette of a reference shape.",
-    "The reference shape can be any existingf shape in the scene or an external vox file.",
+    "The reference shape can be any existing shape in the scene or an external vox file.",
     "The size of the new shape will be 1x1x1."
   ]
 }

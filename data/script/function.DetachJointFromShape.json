@@ -17,7 +17,9 @@
   "returns": [],
   "examples": [
     [
-      "DetachJointFromShape(hinge, door)"
+      "function init()",
+      "\tDetachJointFromShape(FindJoint(\"joint\"), FindShape(\"door\"))",
+      "end"
     ]
   ],
   "description": [

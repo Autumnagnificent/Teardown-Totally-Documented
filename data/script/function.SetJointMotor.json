@@ -23,8 +23,10 @@
   "returns": [],
   "examples": [
     [
-      "--Set motor speed to 0.5 radians per second",
-      "SetJointMotor(hinge, 0.5)"
+      "function init()",
+      "\t--Set motor speed to 0.5 radians per second",
+      "\tSetJointMotor(FindJoint(\"hinge\"), 0.5)",
+      "end"
     ]
   ],
   "description": [

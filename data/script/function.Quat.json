@@ -36,9 +36,13 @@
   ],
   "examples": [
     [
-      "--These are equivalent",
-      "local a1 = Quat()",
-      "local a2 = {0, 0, 0, 1}"
+      "function init()",
+      "\t--These are equivalent",
+      "\tlocal a1 = Quat()",
+      "\tlocal a2 = {0, 0, 0, 1}",
+      "",
+      "\tDebugPrint(QuatStr(a1) == QuatStr(a2))",
+      "end"
     ]
   ],
   "description": [

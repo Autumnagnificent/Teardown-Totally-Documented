@@ -29,11 +29,13 @@
   "returns": [],
   "examples": [
     [
-      "--Start level with no active layers",
-      "StartLevel(\"level1\", \"MOD/level1.xml\")",
+      "function init()",
+      "\t--Start level with no active layers",
+      "\tStartLevel(\"level1\", \"MOD/level1.xml\")",
       "",
-      "--Start level with two layers",
-      "StartLevel(\"level1\", \"MOD/level1.xml\", \"vehicles targets\")"
+      "\t--Start level with two layers",
+      "\tStartLevel(\"level1\", \"MOD/level1.xml\", \"vehicles targets\")",
+      "end"
     ]
   ],
   "description": [

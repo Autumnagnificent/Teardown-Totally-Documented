@@ -35,11 +35,20 @@
   "returns": [],
   "examples": [
     [
-      "--Draw white outline at 50% transparency",
-      "DrawShapeOutline(shape, 0.5)",
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "end",
       "",
-      "--Draw green outline, fully opaque",
-      "DrawShapeOutline(shape, 0, 1, 0, 1)"
+      "function tick()",
+      "\tif InputDown(\"interact\") then",
+      "\t\t--Draw white outline at 50% transparency",
+      "\t\tDrawShapeOutline(shape, 0.5)",
+      "\telse",
+      "\t\t--Draw green outline, fully opaque",
+      "\t\tDrawShapeOutline(shape, 0, 1, 0, 1)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

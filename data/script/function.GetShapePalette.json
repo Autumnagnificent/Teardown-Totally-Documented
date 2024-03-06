@@ -16,7 +16,16 @@
       "type": "table"
     }
   ],
-  "examples": [],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal palette = GetShapePalette(FindShape(\"shape2\", true))",
+      "\tfor i = 1, #palette do",
+      "\t\tDebugPrint(palette[i])",
+      "\tend",
+      "end"
+    ]
+  ],
   "description": [
     "Return list of material entries, each entry is a material index that",
     "can be provided to GetShapeMaterial or used as brush for populating a",

@@ -1,0 +1,35 @@
+{
+  "name": "PlayHaptic",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Handle of haptic effect",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "amplitude",
+      "desc": "Amplidute used for calculation of Haptic effect.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "-- Rumble with gun Haptic effect",
+      "function init()",
+      "\thaptic_effect = LoadHaptic(\"haptic/gun_fire.xml\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif trigHaptic then",
+      "\t\tPlayHaptic(haptic_effect, 1)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "If Haptic already playing, restarts it."
+  ]
+}

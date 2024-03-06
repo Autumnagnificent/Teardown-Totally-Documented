@@ -1,0 +1,25 @@
+{
+  "name": "UiResetColor",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "\tUiPush()",
+      "        UiFont(\"bold.ttf\", 44)",
+      "\t\tUiTranslate(100, 100)",
+      "\t\tUiColor(1, 0, 0)",
+      "\t\tUiText(\"A\")",
+      "\t\tUiTranslate(100, 0)",
+      "\t\tUiResetColor()",
+      "\t\tUiText(\"B\")",
+      "\tUiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Resets the ui context's color, outline color, shadow color, color filter to default values. <br>",
+    "Remarkable that if some component, lets call it \"parent\", wants to hide everyting in it's scope, <br>",
+    "it is possible that a child which uses UiResetColor would ignore the hide logic, if its implemented via changing opacity."
+  ]
+}

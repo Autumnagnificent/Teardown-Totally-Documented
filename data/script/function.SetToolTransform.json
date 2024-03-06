@@ -17,9 +17,11 @@
   "returns": [],
   "examples": [
     [
-      "--Offset the tool half a meter to the right",
-      "local offset = Transform(Vec(0.5, 0, 0))",
-      "SetToolTransform(offset)"
+      "function init()",
+      "\t--Offset the tool half a meter to the right",
+      "\tlocal offset = Transform(Vec(0.5, 0, 0))",
+      "\tSetToolTransform(offset)",
+      "end"
     ]
   ],
   "description": [

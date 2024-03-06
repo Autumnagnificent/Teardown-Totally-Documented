@@ -24,8 +24,11 @@
   ],
   "examples": [
     [
-      "--Create quaternion representing rotation 30 degrees around Y axis",
-      "local q = QuatAxisAngle(Vec(0,1,0), 30)"
+      "function init()",
+      "\t--Create quaternion representing rotation 30 degrees around Y axis",
+      "\tlocal q = QuatAxisAngle(Vec(0,1,0), 30)",
+      "\tDebugPrint(QuatStr(q))",
+      "end"
     ]
   ],
   "description": [

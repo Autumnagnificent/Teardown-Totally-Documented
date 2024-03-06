@@ -30,10 +30,12 @@
   ],
   "examples": [
     [
-      "local hit, pos = QueryClosestFire(GetPlayerTransform().pos, 5.0)",
-      "if hit then",
-      "\t--There is a fire within 5 meters to the player. Mark it with a debug cross.",
-      "\tDebugCross(pos)",
+      "function tick()",
+      "\tlocal hit, pos = QueryClosestFire(GetPlayerTransform().pos, 5.0)",
+      "\tif hit then",
+      "\t\t--There is a fire within 5 meters to the player. Mark it with a debug cross.",
+      "\t\tDebugCross(pos)",
+      "\tend",
       "end"
     ]
   ],

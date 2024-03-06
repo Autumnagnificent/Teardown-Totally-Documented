@@ -1,0 +1,39 @@
+{
+  "name": "UiMeasureText",
+  "arguments": [
+    {
+      "name": "space",
+      "desc": "Space between lines",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "text/locale",
+      "desc": ", ... A text strings",
+      "optional": false,
+      "type": "string,"
+    }
+  ],
+  "returns": [
+    {
+      "name": "w",
+      "desc": "Width of biggest line",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Height of all lines combined with interval",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local w, h = UiMeasureText(0, \"Some text\", \"loc@key\")"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

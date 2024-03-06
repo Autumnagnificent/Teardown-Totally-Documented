@@ -1,0 +1,44 @@
+{
+  "name": "UiGetCurrentWindow",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "tl_x",
+      "desc": "Top left x",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "tl_y",
+      "desc": "Top left y",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "br_x",
+      "desc": "Bottom right x",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "br_y",
+      "desc": "Bottom right y",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "\tUiPush()",
+      "\t\tUiWindow(400, 200)",
+      "\t\ttl_x, tl_y, br_x, br_y = UiGetCurrentWindow()",
+      "\t\t-- do something",
+      "\tUiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the top left & bottom right points of the current window"
+  ]
+}

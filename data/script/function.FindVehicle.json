@@ -4,7 +4,7 @@
     {
       "name": "tag",
       "desc": "Tag name",
-      "optional": false,
+      "optional": true,
       "type": "string"
     },
     {
@@ -24,7 +24,9 @@
   ],
   "examples": [
     [
-      "local vehicle = FindVehicle(\"mycar\")"
+      "function init()",
+      "\tlocal vehicle = FindVehicle(\"mycar\")",
+      "end"
     ]
   ],
   "description": [

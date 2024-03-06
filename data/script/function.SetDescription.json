@@ -17,7 +17,11 @@
   "returns": [],
   "examples": [
     [
-      "SetDescription(body, \"Target object\")"
+      "function init()",
+      "\tlocal body = FindBody(\"body\", true)",
+      "\tSetDescription(body, \"Target object\")",
+      "\tDebugPrint(GetDescription(body))",
+      "end"
     ]
   ],
   "description": [

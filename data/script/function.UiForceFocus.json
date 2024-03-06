@@ -1,0 +1,52 @@
+{
+  "name": "UiForceFocus",
+  "arguments": [
+    {
+      "name": "id",
+      "desc": "Id of the component",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "    -- window declaration is necessary for navigation to work",
+      "    UiWindow(1920, 1080)",
+      "    if LastInputDevice() == UI_DEVICE_GAMEPAD then",
+      "        -- active mouse cursor has higher priority over the gamepad control",
+      "        -- so it will reset focused components if the mouse moves",
+      "        UiSetCursorState(UI_CURSOR_HIDE_AND_LOCK)   ",
+      "    end",
+      "    ",
+      "\tUiPush()",
+      "",
+      "    UiTranslate(960, 540)",
+      "",
+      "    local id1 = UiNavComponent(100, 20)",
+      "    UiTranslate(0, 50)",
+      "    local id2 = UiNavComponent(100, 20)",
+      "",
+      "\tUiPop()",
+      "",
+      "    local f1 = UiIsComponentInFocus(id1)",
+      "    local f2 = UiIsComponentInFocus(id2)",
+      "",
+      "    local rect = UiFocusedComponentRect()",
+      "    UiPush()",
+      "        UiColor(1, 0, 0)",
+      "        UiTranslate(rect.x, rect.y)",
+      "        UiRect(rect.w, rect.h)",
+      "    UiPop()",
+      "",
+      "    if InputPressed(\"menu_accept\") then",
+      "        UiForceFocus(id2)",
+      "    end",
+      "end"
+    ]
+  ],
+  "description": [
+    "Force focus to the component with specified id."
+  ]
+}

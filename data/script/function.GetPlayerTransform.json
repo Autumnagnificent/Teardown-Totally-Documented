@@ -4,7 +4,7 @@
     {
       "name": "includePitch",
       "desc": "Include the player pitch (look up/down) in transform",
-      "optional": false,
+      "optional": true,
       "type": "boolean"
     }
   ],
@@ -18,7 +18,10 @@
   ],
   "examples": [
     [
-      "local t = GetPlayerTransform()"
+      "function init()",
+      "\tlocal t = GetPlayerTransform()",
+      "\tDebugPrint(TransformStr(t))",
+      "end"
     ]
   ],
   "description": [

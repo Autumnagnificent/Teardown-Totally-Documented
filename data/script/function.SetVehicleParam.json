@@ -1,0 +1,34 @@
+{
+  "name": "SetVehicleParam",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Vehicle handler",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "param",
+      "desc": "Param name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "desc": "Param value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tSetVehicleParam(FindVehicle(\"car\", true), \"topspeed\", 200)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Available parameters: spring, damping, topspeed, acceleration, strength, antispin, antiroll, difflock, steerassist, friction"
+  ]
+}

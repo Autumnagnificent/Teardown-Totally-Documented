@@ -18,7 +18,12 @@
   ],
   "examples": [
     [
-      "local shape = GetLightShape(light)"
+      "local light = 0",
+      "function init()",
+      "\tlight = FindLight(\"main\")",
+      "\tlocal shape = GetLightShape(light)",
+      "\tDebugPrint(shape)",
+      "end"
     ]
   ],
   "description": [

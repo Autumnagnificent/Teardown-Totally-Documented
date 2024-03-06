@@ -1,0 +1,27 @@
+{
+  "name": "SetPlayerWalkingSpeed",
+  "arguments": [
+    {
+      "name": "speed",
+      "desc": "Set player base walking speed",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tif InputDown(\"shift\") then",
+      "\t\tSetPlayerWalkingSpeed(15.0)",
+      "\telse",
+      "\t\tSetPlayerWalkingSpeed(7.0)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "This function sets base speed, but real player speed depends on many",
+    "factors such as health, crouch, water, grabbing objects."
+  ]
+}

@@ -22,7 +22,15 @@
       "type": "table"
     }
   ],
-  "examples": [],
+  "examples": [
+    [
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "\tSplitShape(shape, true)",
+      "end"
+    ]
+  ],
   "description": [
     "Split up a shape into multiple shapes based on connectivity. If the removeResidual flag",
     "is used, small disconnected chunks will be removed during this process to reduce the number",

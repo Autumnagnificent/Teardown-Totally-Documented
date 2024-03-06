@@ -4,7 +4,11 @@
   "returns": [],
   "examples": [
     [
-      "RespawnPlayer()"
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tRespawnPlayer()",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

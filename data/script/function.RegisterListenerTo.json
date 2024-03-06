@@ -1,0 +1,33 @@
+{
+  "name": "RegisterListenerTo",
+  "arguments": [
+    {
+      "name": "eventName",
+      "desc": "Event name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "listenerFunction",
+      "desc": "Listener function name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function onLangauageChanged()",
+      "\tDebugPrint(\"langauageChanged\")",
+      "end",
+      "",
+      "function init()",
+      "\tRegisterListenerTo(\"LanguageChanged\", \"onLangauageChanged\")",
+      "\tTriggerEvent(\"LanguageChanged\")",
+      "end"
+    ]
+  ],
+  "description": [
+    "Binds the callback function on the event"
+  ]
+}

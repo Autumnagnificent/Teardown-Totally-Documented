@@ -41,12 +41,21 @@
   "returns": [],
   "examples": [
     [
-      "--Constrain the origo of body a to an animated point in the world",
-      "local worldPos = Vec(0, 3+math.sin(GetTime()), 0)",
-      "ConstrainPosition(a, 0, GetBodyTransform(a).pos, worldPos)",
+      "local handleA = 0",
+      "local handleB = 0",
+      "function init()",
+      "\thandleA = FindBody(\"body\", true)",
+      "\thandleB = FindBody(\"target\", true)",
+      "end",
       "",
-      "--Constrain the origo of body a to the origo of body b (like a ball joint)",
-      "ConstrainPosition(a, b, GetBodyTransform(a).pos, GetBodyTransform(b).pos)"
+      "function tick()",
+      "\t--Constrain the origo of body a to an animated point in the world",
+      "\tlocal worldPos = Vec(0, 3+math.sin(GetTime()), 0)",
+      "\tConstrainPosition(handleA, 0, GetBodyTransform(handleA).pos, worldPos)",
+      "",
+      "\t--Constrain the origo of body a to the origo of body b (like a ball joint)",
+      "\tConstrainPosition(handleA, handleA, GetBodyTransform(handleA).pos, GetBodyTransform(handleB).pos)",
+      "end"
     ]
   ],
   "description": [

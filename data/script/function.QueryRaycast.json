@@ -60,11 +60,14 @@
   ],
   "examples": [
     [
-      "--Raycast from a high point straight downwards, excluding a specific vehicle",
-      "QueryRejectVehicle(vehicle)",
-      "local hit, d = QueryRaycast(Vec(0, 100, 0), Vec(0, -1, 0), 100)",
-      "if hit then",
-      "\t...hit something at distance d",
+      "function init()",
+      "\tlocal vehicle = FindVehicle(\"vehicle\")",
+      "\tQueryRejectVehicle(vehicle)",
+      "\t--Raycast from a high point straight downwards, excluding a specific vehicle",
+      "\tlocal hit, d = QueryRaycast(Vec(0, 100, 0), Vec(0, -1, 0), 100)",
+      "\tif hit then",
+      "\t\tDebugPrint(d)",
+      "\tend",
       "end"
     ]
   ],

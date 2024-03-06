@@ -11,7 +11,9 @@
   "returns": [],
   "examples": [
     [
-      "PlayMusic(\"MOD/music/background.ogg\")"
+      "function init()",
+      "\tPlayMusic(\"about.ogg\")",
+      "end"
     ]
   ],
   "description": [

@@ -24,8 +24,11 @@
   ],
   "examples": [
     [
-      "--Retrieve mode parameter, or \"idle\" if omitted",
-      "parameterMode = GetSrtingParam(\"mode\", \"idle\")"
+      "function init()",
+      "\t--Retrieve mode parameter, or \"idle\" if omitted",
+      "\tlocal parameterMode = GetStringParam(\"mode\", \"idle\")",
+      "\tDebugPrint(parameterMode)",
+      "end"
     ]
   ],
   "description": [

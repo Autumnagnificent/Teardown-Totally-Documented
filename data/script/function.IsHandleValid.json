@@ -18,14 +18,16 @@
   ],
   "examples": [
     [
-      "valid = IsHandleValid(body)",
+      "function init()",
+      "\tlocal body = FindBody(\"body\", true)",
       "",
-      "--valid is true if body still exists",
+      "\t--valid is true if body still exists",
+      "\tDebugPrint(IsHandleValid(body))",
+      "\tDelete(body)",
       "",
-      "Delete(body)",
-      "valid = IsHandleValid(body)",
-      "",
-      "--valid will now be false"
+      "\t--valid will now be false",
+      "\tDebugPrint(IsHandleValid(body))",
+      "end"
     ]
   ],
   "description": [

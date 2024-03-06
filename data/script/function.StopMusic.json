@@ -4,7 +4,15 @@
   "returns": [],
   "examples": [
     [
-      "StopMusic()"
+      "function init()",
+      "\tPlayMusic(\"about.ogg\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif InputDown(\"interact\") then",
+      "\t\tStopMusic()",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

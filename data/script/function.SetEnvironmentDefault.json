@@ -4,7 +4,9 @@
   "returns": [],
   "examples": [
     [
-      "SetEnvironmentDefault()"
+      "function init()",
+      "\tSetEnvironmentDefault()",
+      "end"
     ]
   ],
   "description": [

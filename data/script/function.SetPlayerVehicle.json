@@ -11,8 +11,12 @@
   "returns": [],
   "examples": [
     [
-      "local car = FindVehicle(\"mycar\")",
-      "SetPlayerVehicle(car)"
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tlocal car = FindVehicle(\"mycar\")",
+      "\t\tSetPlayerVehicle(car)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

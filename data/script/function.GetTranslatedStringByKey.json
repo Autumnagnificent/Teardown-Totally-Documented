@@ -1,0 +1,35 @@
+{
+  "name": "GetTranslatedStringByKey",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Translation key",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "default",
+      "desc": "Default value",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Translation",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tDebugPrint(GetTranslatedStringByKey(\"TOOL_CAMERA\"))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the translation for the specified key from the translation table. If the key is not found returns the default value"
+  ]
+}

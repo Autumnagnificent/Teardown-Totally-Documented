@@ -24,10 +24,12 @@
   ],
   "examples": [
     [
-      "local list = QueryAabbBodies(Vec(0, 0, 0), Vec(10, 10, 10))",
-      "for i=1, #list do",
-      "\tlocal body = list[i]",
-      "\t..",
+      "function tick()",
+      "\tlocal list = QueryAabbBodies(Vec(0, 0, 0), Vec(10, 10, 10))",
+      "\tfor i=1, #list do",
+      "\t\tlocal body = list[i]",
+      "\t\tDebugPrint(body)",
+      "\tend",
       "end"
     ]
   ],

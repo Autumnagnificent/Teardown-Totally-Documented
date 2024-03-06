@@ -18,7 +18,11 @@
   ],
   "examples": [
     [
-      "local t = GetBodyTransform(body)"
+      "function init()",
+      "\tlocal handle = FindBody(\"target\", true)",
+      "\tlocal t = GetBodyTransform(handle)",
+      "\tDebugPrint(TransformStr(t))",
+      "end"
     ]
   ],
   "description": [

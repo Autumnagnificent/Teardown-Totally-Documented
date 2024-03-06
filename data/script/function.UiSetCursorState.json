@@ -1,0 +1,48 @@
+{
+  "name": "UiSetCursorState",
+  "arguments": [
+    {
+      "name": "state",
+      "desc": "",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "#include \"ui/ui_helpers.lua\"",
+      "",
+      "function draw()",
+      "\tUiPush()",
+      "\t\t-- If the last input device was a gamepad, hide the cursor and proceed to control through D-pad navigation",
+      "\t\tif LastInputDevice() == UI_DEVICE_GAMEPAD then",
+      "\t\t\tUiSetCursorState(UI_CURSOR_HIDE_AND_LOCK)",
+      "\t\tend",
+      "",
+      "        UiMakeInteractive()",
+      "        UiAlign(\"center\")",
+      "        UiColor(1.0, 1.0, 1.0)",
+      "\t\tUiButtonHoverColor(1.0, 0.5, 0.5)",
+      "        UiFont(\"regular.ttf\", 50)",
+      "        UiTranslate(UiCenter(), 200)",
+      "    ",
+      "        UiTranslate(0, 100)",
+      "        if UiTextButton(\"1\") then",
+      "            DebugPrint(1)",
+      "        end",
+      "        UiTranslate(0, 100)",
+      "        if UiTextButton(\"2\") then",
+      "            DebugPrint(2)",
+      "        end",
+      "\tUiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Possible values are: <br> 0 - show cursor (UI_CURSOR_SHOW) <br> 1 - hide cursor (UI_CURSOR_HIDE) <br> 2 - hide & lock cursor (UI_CURSOR_HIDE_AND_LOCK)<br><br>",
+    "Allows you to force visibilty of cursor for next frame. If the cursor is hidden, gamepad navigation methods are used.<br>",
+    "By default, in case of entering interactive UI state with gamepad, cursor will be shown and will be controlled using gamepad.<br>",
+    "Thus, if you need to implement navigation using the gamepad's D-pad, you should call this function."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "UiGetItemSize",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "x",
+      "desc": "Width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Height",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "    UiTranslate(200, 200)",
+      "    UiPush()",
+      "        UiBeginFrame()",
+      "            UiFont(\"regular.ttf\", 30)",
+      "            UiText(\"Text\")",
+      "        UiEndFrame()",
+      "        w, h = UiGetItemSize()",
+      "        DebugPrint(w .. \" \" .. h)",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the last ui item size"
+  ]
+}

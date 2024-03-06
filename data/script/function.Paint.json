@@ -29,7 +29,9 @@
   "returns": [],
   "examples": [
     [
-      "Paint(Vec(0, 10, 0), 0.5, \"spraycan\")"
+      "function tick()",
+      "\tPaint(Vec(0, 2, 0), 5.0, \"spraycan\")",
+      "end"
     ]
   ],
   "description": [

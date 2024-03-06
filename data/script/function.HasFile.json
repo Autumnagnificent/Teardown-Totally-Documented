@@ -1,0 +1,34 @@
+{
+  "name": "HasFile",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to file",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "exists",
+      "desc": "True if file exists",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local file = \"gfx/circle.png\"",
+      "",
+      "function draw()",
+      "\tif HasFile(image) then",
+      "\t\tDebugPrint(\"file \" .. file .. \" exists\")",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Checks that file exists on the specified path.",
+    "It is preferable to use UiHasImage whenever possible - it has better performance"
+  ]
+}

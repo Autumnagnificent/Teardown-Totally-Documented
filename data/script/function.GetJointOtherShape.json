@@ -24,13 +24,16 @@
   ],
   "examples": [
     [
-      "--joint is connected to a and b",
+      "function init()",
+      "\tlocal joint = FindJoint(\"joint\")",
+      "\t--joint is connected to A and B",
       "",
-      "otherShape = GetJointOtherShape(joint, a)",
-      "--otherShape is now b",
+      "\totherShape = GetJointOtherShape(joint, FindShape(\"shapeA\"))",
+      "\t--otherShape is now B",
       "",
-      "otherShape = GetJointOtherShape(joint, b)",
-      "--otherShape is now a"
+      "\totherShape = GetJointOtherShape(joint, FindShape(\"shapeB\"))",
+      "\t--otherShape is now A",
+      "end"
     ]
   ],
   "description": [

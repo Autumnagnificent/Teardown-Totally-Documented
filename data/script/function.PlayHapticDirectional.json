@@ -1,0 +1,42 @@
+{
+  "name": "PlayHapticDirectional",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Handle of haptic effect",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "direction",
+      "desc": "Direction in which effect must be played",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "amplitude",
+      "desc": "Amplidute used for calculation of Haptic effect.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "-- Rumble with gun Haptic effect",
+      "local haptic_effect",
+      "function init()",
+      "\thaptic_effect = LoadHaptic(\"haptic/gun_fire.xml\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tPlayHapticDirectional(haptic_effect, Vec(-1, 0, 0), 1)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "If Haptic already playing, restarts it."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "HasTranslationByKey",
+  "arguments": [
+    {
+      "name": "key",
+      "desc": "Translation key",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "True if translation exists",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tDebugPrint(HasTranslationByKey(\"TOOL_CAMERA\"))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Checks that translation for specified key exists"
+  ]
+}

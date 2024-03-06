@@ -18,7 +18,12 @@
   ],
   "examples": [
     [
-      "local shape = GetScreenShape(screen)"
+      "local screen = 0",
+      "function init()",
+      "\tscreen = FindScreen(\"tv\")",
+      "\tlocal shape = GetScreenShape(screen)",
+      "\tDebugPrint(shape)",
+      "end"
     ]
   ],
   "description": [

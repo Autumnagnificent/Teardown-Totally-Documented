@@ -1,0 +1,52 @@
+{
+  "name": "UiNavComponent",
+  "arguments": [
+    {
+      "name": "w",
+      "desc": "Width of the component",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "desc": "Height of the component",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "id",
+      "desc": "Generated ID of the component which can be used to get an info about the component state",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "    -- window declaration is necessary for navigation to work",
+      "    UiWindow(1920, 1080)",
+      "    if LastInputDevice() == UI_DEVICE_GAMEPAD then",
+      "\t\t-- active mouse cursor has higher priority over the gamepad control",
+      "\t\t-- so it will reset focused components if the mouse moves",
+      "        UiSetCursorState(UI_CURSOR_HIDE_AND_LOCK)   ",
+      "    end",
+      "    UiTranslate(960, 540)",
+      "    local id = UiNavComponent(100, 20)",
+      "    local isInFocus = UiIsComponentInFocus(id)",
+      "    if isInFocus then",
+      "        local rect = UiFocusedComponentRect()",
+      "        DebugPrint(\"Position: (\" .. tostring(rect.x) .. \", \" .. tostring(rect.y) .. \"), Size: (\" .. tostring(rect.w) .. \", \" .. tostring(rect.h) .. \")\")",
+      "    end",
+      "end"
+    ]
+  ],
+  "description": [
+    "Declares a navigation component which participates in navigation using dpad buttons of a gamepad.",
+    "It's an abstract entity which can be focused. It has it's own size and position on screen accroding to ",
+    "UI cursor and passed arguments, but it won't be drawn on the screen. ",
+    "Note that all navigation components which are located outside of UiWindow borders won't participate ",
+    "in the navigation and will be considered as inactive"
+  ]
+}

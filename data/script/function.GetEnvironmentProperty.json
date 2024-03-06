@@ -42,10 +42,16 @@
   ],
   "examples": [
     [
-      "local skyboxPath = GetEnvironmentProperty(\"skybox\")",
-      "local rainValue = GetEnvironmentProperty(\"rain\")",
-      "local r,g,b = GetEnvironmentProperty(\"fogcolor\")",
-      "local enabled = GetEnvironmentProperty(\"nightlight\")"
+      "function init()",
+      "\tlocal skyboxPath = GetEnvironmentProperty(\"skybox\")",
+      "\tlocal rainValue = GetEnvironmentProperty(\"rain\")",
+      "\tlocal r,g,b = GetEnvironmentProperty(\"fogcolor\")",
+      "\tlocal enabled = GetEnvironmentProperty(\"nightlight\")",
+      "\tDebugPrint(skyboxPath)",
+      "\tDebugPrint(rainValue)",
+      "\tDebugPrint(r .. \" \" .. g .. \" \" .. b)",
+      "\tDebugPrint(enabled)",
+      "end"
     ]
   ],
   "description": [

@@ -24,9 +24,16 @@
   ],
   "examples": [
     [
-      "SetTag(handle, \"special\")",
-      "local hasSpecial = HasTag(handle, \"special\") ",
-      "-- hasSpecial will be true"
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
+      "\t--Add \"special\" tag to an entity",
+      "\tSetTag(handle, \"special\")",
+      "\tDebugPrint(HasTag(handle, \"special\"))",
+      "",
+      "\t--Add \"team\" tag to an entity and give it value \"red\"",
+      "\tSetTag(handle, \"team\", \"red\")",
+      "\tDebugPrint(HasTag(handle, \"team\"))",
+      "end"
     ]
   ],
   "description": [

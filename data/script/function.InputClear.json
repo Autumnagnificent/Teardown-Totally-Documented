@@ -1,0 +1,23 @@
+{
+  "name": "InputClear",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "function update()",
+      "    -- Prints '2' because InputClear() allows the game to \"forget\" the player's input",
+      "\tif InputDown(\"interact\") then",
+      "        InputClear()",
+      "\t\tif InputDown(\"interact\") then",
+      "\t\t\tDebugPrint(1)",
+      "\t\telse",
+      "\t\t\tDebugPrint(2)",
+      "\t\tend",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "All player input is \"forgotten\" by the game after calling this function"
+  ]
+}

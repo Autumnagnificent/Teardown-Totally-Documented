@@ -1,0 +1,38 @@
+{
+  "name": "GetProperty",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "property",
+      "desc": "Property name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Property value",
+      "optional": false,
+      "type": "any"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal body = FindBody(\"testbody\", true)",
+      "\tlocal isDynamic = GetProperty(body, \"dynamic\")",
+      "\tDebugWatch(\"isDynamic\", isDynamic)",
+      "end",
+      "end"
+    ]
+  ],
+  "description": [
+    "${table:Entity type}"
+  ]
+}

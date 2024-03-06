@@ -11,8 +11,12 @@
   "returns": [],
   "examples": [
     [
-      "--Pause game and bring up pause menu on HUD",
-      "SetPaused(true)"
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\t--Pause game and bring up pause menu on HUD",
+      "\t\tSetPaused(true)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

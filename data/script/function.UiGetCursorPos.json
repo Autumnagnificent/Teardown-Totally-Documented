@@ -1,0 +1,17 @@
+{
+  "name": "UiGetCursorPos",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "    UiTranslate(100, 50)",
+      "    x, y = UiGetCursorPos()",
+      "    DebugPrint(\"x: \" .. x .. \"; y: \" .. y)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the ui cursor's postion"
+  ]
+}

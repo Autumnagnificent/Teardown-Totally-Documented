@@ -18,9 +18,13 @@
   ],
   "examples": [
     [
-      "local driverPos = GetVehicleDriverPos(vehicle)",
-      "local t = GetVehicleTransform(vehicle)",
-      "local worldPos = TransformToParentPoint(t, driverPos)"
+      "function init()",
+      "\tlocal vehicle = FindVehicle(\"vehicle\")",
+      "\tlocal driverPos = GetVehicleDriverPos(vehicle)",
+      "\tlocal t = GetVehicleTransform(vehicle)",
+      "\tlocal worldPos = TransformToParentPoint(t, driverPos)",
+      "\tDebugPrint(worldPos)",
+      "end"
     ]
   ],
   "description": [

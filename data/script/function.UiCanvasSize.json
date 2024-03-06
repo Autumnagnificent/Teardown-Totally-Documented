@@ -1,0 +1,28 @@
+{
+  "name": "UiCanvasSize",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Canvas width & height",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "\tUiPush()",
+      "        local canvas = UiCanvasSize()",
+      "        UiWindow(canvas.w, canvas.h)",
+      "        --[[ ",
+      "            ...",
+      "        ]]",
+      "\tUiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the canvas size. \"Canvas\" means a coordinate space in which UI is drawn"
+  ]
+}

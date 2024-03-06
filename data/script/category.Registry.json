@@ -17,12 +17,18 @@
   "functions": [
     "ClearKey",
     "GetBool",
+    "GetColor",
     "GetFloat",
     "GetInt",
     "GetString",
+    "GetTranslatedStringByKey",
+    "GetUserNickname",
     "HasKey",
+    "HasTranslationByKey",
     "ListKeys",
+    "LoadLanguageTable",
     "SetBool",
+    "SetColor",
     "SetFloat",
     "SetInt",
     "SetString"

@@ -11,11 +11,16 @@
   "returns": [],
   "examples": [
     [
-      "--Interact with screen",
-      "SetPlayerScreen(screen)",
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tif GetPlayerScreen() ~= 0 then",
+      "\t\t\tSetPlayerScreen(0)",
+      "\t\telse",
+      "\t\t\tSetPlayerScreen(screen)",
+      "\t\tend",
       "",
-      "--Do not interact with screen",
-      "SetPlayerScreen(0)"
+      "\tend",
+      "end"
     ]
   ],
   "description": [

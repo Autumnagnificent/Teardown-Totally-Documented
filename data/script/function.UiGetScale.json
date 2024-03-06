@@ -1,0 +1,32 @@
+{
+  "name": "UiGetScale",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "x",
+      "desc": "X scale",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "Y scale",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function draw()",
+      "\tUiPush()",
+      "\t\tUiScale(2)",
+      "\t\tx, y = UiGetScale()",
+      "\t\tDebugPrint(x .. \" \" .. y)",
+      "\tUiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the ui context's scale"
+  ]
+}

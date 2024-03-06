@@ -1,0 +1,25 @@
+{
+  "name": "UiBeginFrame",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "function draw()",
+      "\tUiPush()",
+      "        UiBeginFrame()",
+      "            UiColor(1.0, 1.0, 0.8)",
+      "            UiTranslate(UiCenter(), 300)",
+      "            UiFont(\"bold.ttf\", 40)",
+      "            UiText(\"Hello\")",
+      "        local panelWidth, panelHeight = UiEndFrame()",
+      "        DebugPrint(math.ceil(panelWidth) .. \"x\" .. math.ceil(panelHeight))",
+      "    UiPop()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Call to start measuring the content size. After drawing part of the ",
+    "interface, call UiEndFrame to get its size. Useful when you want the ",
+    "size of the image box to match the size of the content."
+  ]
+}

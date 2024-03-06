@@ -1,0 +1,58 @@
+{
+  "name": "PaintRGBA",
+  "arguments": [
+    {
+      "name": "origin",
+      "desc": "Origin in world space as vector",
+      "optional": false,
+      "type": "table"
+    },
+    {
+      "name": "radius",
+      "desc": "Affected radius, in range 0.0 to 5.0",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "red",
+      "desc": "red color value, in range 0.0 to 1.0",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "green",
+      "desc": "green color value, in range 0.0 to 1.0",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "blue",
+      "desc": "blue color value, in range 0.0 to 1.0",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "alpha",
+      "desc": "alpha channel value, in range 0.0 to 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "probability",
+      "desc": "Dithering probability between zero and one, default is 1.0",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tPaintRGBA(Vec(0, 5, 0), 5.5, 1.0, 0.0, 0.0)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Tint the color of objects within radius to custom RGBA color."
+  ]
+}

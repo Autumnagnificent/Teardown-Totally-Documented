@@ -18,7 +18,14 @@
   ],
   "examples": [
     [
-      "local broken = IsBodyBroken(body)"
+      "local handle = 0",
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tDebugPrint(IsBodyBroken(handle))",
+      "end"
     ]
   ],
   "description": [

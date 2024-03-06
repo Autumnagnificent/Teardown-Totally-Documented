@@ -23,11 +23,16 @@
   "returns": [],
   "examples": [
     [
-      "--Add \"special\" tag to an entity",
-      "SetTag(handle, \"special\")",
+      "function init()",
+      "\tlocal handle = FindBody(\"body\", true)",
+      "\t--Add \"special\" tag to an entity",
+      "\tSetTag(handle, \"special\")",
+      "\tDebugPrint(HasTag(handle, \"special\"))",
       "",
-      "--Add \"team\" tag to an entity and give it value \"red\"",
-      "SetTag(handle, \"team\", \"red\")"
+      "\t--Add \"team\" tag to an entity and give it value \"red\"",
+      "\tSetTag(handle, \"team\", \"red\")",
+      "\tDebugPrint(HasTag(handle, \"team\"))",
+      "end"
     ]
   ],
   "description": [

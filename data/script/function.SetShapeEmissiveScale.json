@@ -17,9 +17,14 @@
   "returns": [],
   "examples": [
     [
-      "--Pulsate emissiveness and light intensity for shape",
-      "local scale = math.sin(GetTime())*0.5 + 0.5",
-      "SetShapeEmissiveScale(shape, scale)"
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "",
+      "\t--Pulsate emissiveness and light intensity for shape",
+      "\tlocal scale = math.sin(GetTime())*0.5 + 0.5",
+      "\tSetShapeEmissiveScale(shape, scale)",
+      "end"
     ]
   ],
   "description": [

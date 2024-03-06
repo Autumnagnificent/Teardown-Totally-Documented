@@ -17,7 +17,16 @@
   "returns": [],
   "examples": [
     [
-      "DrawBodyHighlight(body, 0.5)"
+      "local handle = 0",
+      "function init()",
+      "\thandle = FindBody(\"body\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tif InputDown(\"interact\") then",
+      "\t\tDrawBodyHighlight(handle, 0.5)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [

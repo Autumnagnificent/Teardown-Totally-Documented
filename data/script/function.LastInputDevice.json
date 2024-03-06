@@ -1,0 +1,29 @@
+{
+  "name": "LastInputDevice",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Last device id",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "#include \"ui/ui_helpers.lua\"",
+      "",
+      "function update()",
+      "\tif LastInputDevice() == UI_DEVICE_GAMEPAD then",
+      "\t\tDebugPrint(\"Last input was from gamepad\")",
+      "\telseif LastInputDevice() == UI_DEVICE_MOUSE then",
+      "\t\tDebugPrint(\"Last input was mouse & keyboard\")",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the last input device id.",
+    "0 - none, 1 - mouse, 2 - gamepad"
+  ]
+}

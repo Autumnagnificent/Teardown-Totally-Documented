@@ -30,8 +30,14 @@
   ],
   "examples": [
     [
-      "local saturation = GetPostProcessingProperty(\"saturation\")",
-      "local r,g,b = GetPostProcessingProperty(\"colorbalance\")"
+      "function tick()",
+      "\tSetPostProcessingProperty(\"saturation\", 0.4)",
+      "\tSetPostProcessingProperty(\"colorbalance\", 1.3, 1.0, 0.7)",
+      "\tlocal saturation = GetPostProcessingProperty(\"saturation\")",
+      "\tlocal r,g,b = GetPostProcessingProperty(\"colorbalance\")",
+      "\tDebugPrint(\"saturation \" .. saturation)",
+      "\tDebugPrint(\"colorbalance \" .. r .. \" \" .. g .. \" \" .. b)",
+      "end"
     ]
   ],
   "description": [

@@ -17,7 +17,16 @@
   "returns": [],
   "examples": [
     [
-      "DrawShapeHighlight(shape, 0.5)"
+      "local shape = 0",
+      "function init()",
+      "\tshape = FindShape(\"shape\", true)",
+      "end",
+      "",
+      "function tick()",
+      "\tif InputDown(\"interact\") then",
+      "\t\tDrawShapeHighlight(shape, 0.5)",
+      "\tend",
+      "end"
     ]
   ],
   "description": [
