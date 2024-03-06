@@ -840,6 +840,7 @@ function TransformToLocalVec(relation, vector) end
 ---@param tag_filter string?
 ---@param global boolean?
 ---@param entity_type entity_type?
+---@return entity_handle
 function FindEntity(tag_filter, global, entity_type) end
 
 ---Returns a list of entities with the specified tag and type.
@@ -850,6 +851,7 @@ function FindEntity(tag_filter, global, entity_type) end
 ---@param tag_filter string?
 ---@param global boolean?
 ---@param entity_type entity_type?
+---@return entity_handle[]
 function FindEntities(tag_filter, global, entity_type)	end
 
 ---@param entity entity_handle
