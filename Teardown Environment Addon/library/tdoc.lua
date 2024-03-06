@@ -39,6 +39,9 @@
 ---@field pos vector
 ---@field rot quaternion
 
+---A non-negative interger that represents an index to a user.
+---@class user: integer
+
 ---A non-negative interger that represents an index to a entity of any type in the World/Entity Table
 ---@class entity_handle: integer
 
@@ -71,6 +74,113 @@
 ---@class sound_handle: integer
 ---A non-negative interger that represents the index/handle to a sound loop in the Sound Table
 ---@class loop_handle: integer
+---A string that represents the index/handle to a haptic configuration in the some unknown table. Follows the naming convenction of "Generated Haptic Effect #...", with ... being an integer
+---@class haptic_handle: string
+
+---@alias entity_property body_property|shape_property|light_property|location_property|water_property|joint_property|vehicle_property|wheel_property|screen_property|trigger_property
+
+---@alias body_property
+---| 'desc' string
+---| 'dynamic' boolean
+---| 'mass' number
+---| 'transform'
+---| 'velocity' vector
+---| 'angVelocity' vector
+---| 'active boolean
+
+---@alias shape_property
+---| 'density' number
+---| 'strength' number
+---| 'size' number
+---| 'emissiveScale' number
+---| 'localTransform' transform
+---| 'worldTransform' transform
+
+---@alias light_property
+---| 'enabled' boolean
+---| 'color' vector
+---| 'intensity' number
+---| 'transform' transform
+---| 'active' boolean
+---| 'type' string
+---| 'size' number
+---| 'reach' number
+---| 'unshadowed' number
+---| 'fogscale' number
+---| 'fogiter' number
+---| 'glare' number
+
+---@alias location_property
+---| 'transform' transform
+
+---@alias water_property
+---| 'type' string
+---| 'depth' number
+---| 'wave' number
+---| 'ripple' number
+---| 'motion' number
+---| 'foam' number
+---| 'color' vector
+
+---@alias joint_property
+---| 'type' string
+---| 'size' number
+---| 'rotstrength' number
+---| 'rotspring' number
+---| 'slack' number
+---| 'strength' number
+---| 'maxstretch' number
+---| 'ropecolor' vector
+
+---@alias vehicle_property
+---| 'spring' number
+---| 'damping' number
+---| 'topspeed' number
+---| 'acceleration' number
+---| 'strength' number
+---| 'antispin' number
+---| 'antiroll' number
+---| 'difflock' number
+---| 'steerassist' number
+---| 'friction' number
+---| 'smokeintensity' number
+---| 'transform'
+---| 'brokenthreshold' number
+
+---@alias wheel_property
+---| 'drive' number
+---| 'steer' number
+---| 'travel' vector(x, y)
+
+---@alias screen_property
+---| 'enabled' boolean
+---| 'bulge' number
+---| 'resolution' number, number
+---| 'script' string
+---| 'interactive' boolean
+---| 'emissive' number
+---| 'fxraster' number
+---| 'fxca' number
+---| 'fxnoise' number
+---| 'fxglitch' number
+---| 'size' vector(x, y)
+
+---@alias trigger_property
+---| 'transform' transform
+---| 'type' string
+---| 'size' vector|number
+
+---@alias vehicle_parameter
+---| 'spring'
+---| 'damping'
+---| 'topspeed'
+---| 'acceleration'
+---| 'strength'
+---| 'antispin'
+---| 'antiroll'
+---| 'difflock'
+---| 'steerassist'
+---| 'friction' 
 
 ---@alias key
 ---| "1"
@@ -264,7 +374,7 @@
 ---| "slippery"
 ---| "snowamount"
 ---| "snowdir"
----| "snowonground"
+-- ---| "snowonground" -- Error in 1.5.4 update
 ---| "sunbrightness"
 ---| "suncolortint"
 ---| "sundir"
@@ -332,6 +442,24 @@
 ---| "mods.refresh"
 ---| "mods.sanitycheck"
 
+---@alias player_parameter
+---| 'Health' Current value of the players health : float
+---| 'HealthRegeneration' Is the players health regeneration enabled : boolean
+---| 'WalkingSpeed' The players walking speed. Set continuously! : float
+---| 'JumpSpeed' The players jump speed. Set continuously!  : float
+---| 'GodMode' If the value is True, the player does not lose health : boolean
+---| 'FlyMode' If the value is True, the player will fly : boolean
+
+---@alias language
+---| 0 English
+---| 1 French
+---| 2 Spanish
+---| 3 Italian
+---| 4 German
+---| 5 Simplified Chinese
+---| 6 Japenese
+---| 7 Russian
+---| 8 Polish
 
 --#endregion
 --#region Callbacks
@@ -462,6 +590,17 @@ function GetString(key) end
 ---@param value string
 function SetString(key, value) end
 
+---@param key string
+---@return number red, number green, number blue, number alpha
+function GetColor(key) end
+
+---@param key string
+---@param red number?
+---@param green number?
+---@param blue number?
+---@param alpha number?
+function SetColor(key, red, green, blue, alpha) end
+
 --#endregion
 --#region Vector Math
 
@@ -470,9 +609,9 @@ function SetString(key, value) end
 ---The default for each parameter is 0.
 ---
 ---Vec() will result in { 0, 0, 0 }
----@param x number|nil X value
----@param y number|nil Y value
----@param z number|nil Z value
+---@param x number? X value
+---@param y number? Y value
+---@param z number? Z value
 ---@return vector vector
 function Vec(x, y, z) end
 
@@ -480,6 +619,11 @@ function Vec(x, y, z) end
 ---@param orginal vector
 ---@return vector copy
 function VecCopy(orginal) end
+
+---Formats a vector as a string
+---@param vector vector
+---@return string
+function VecStr(vector) end
 
 ---Gets the length of a vector
 ---@param vector vector
@@ -538,10 +682,10 @@ function VecLerp(a, b, t) end
 ---The default for each parameter is 0.
 ---
 ---If no arguments are provided, Quat() will result in { 0, 0, 0, 1 }
----@param x number|nil X value
----@param y number|nil Y value
----@param z number|nil Z value
----@param w number|nil W value
+---@param x number? X value
+---@param y number? Y value
+---@param z number? Z value
+---@param w number? W value
 ---@return quaternion created_quaternion
 function Quat(x, y, z, w) end
 
@@ -555,9 +699,9 @@ function QuatCopy(orginal) end
 ---The order of applied rotations uses the "NASA standard aeroplane"
 ---
 ---The default for each parameter is 0.
----@param x number|nil
----@param y number|nil
----@param z number|nil
+---@param x number?
+---@param y number?
+---@param z number?
 ---@return quaternion created_quaternion
 function QuatEuler(x, y, z) end
 
@@ -586,6 +730,9 @@ function QuatAxisAngle(axis, angle) end
 ---@return quaternion created_quaternion
 function QuatLookAt(eye, target) end
 
+---Return the quaternion aligned to specified axes
+function QuatAlignXZ(x_axis, z_axis) end
+
 ---Interpolates between two quaternions.
 ---
 ---@param quatA quaternion
@@ -608,6 +755,11 @@ function QuatRotateQuat(quatA, quatB) end
 ---@return vector vector
 function QuatRotateVec(quaternion, vector) end
 
+---Formats a quaternion as a string
+---@param quaternion any
+---@return string
+function QuatStr(quaternion) end
+
 --#endregion
 --#region Transforms
 
@@ -618,8 +770,8 @@ function QuatRotateVec(quaternion, vector) end
 ---The default of rot is Quat()
 ---
 ---Transform() will result in { pos = { 0, 0, 0 }, rot = { 0, 0, 0, 1 } }
----@param pos vector|nil the position of the Transform
----@param rot quaternion|nil the rotation of the Transform
+---@param pos vector? the position of the Transform
+---@param rot quaternion? the rotation of the Transform
 ---@return transform trans
 function Transform(pos, rot) end
 
@@ -628,6 +780,10 @@ function Transform(pos, rot) end
 ---@return transform copy
 function TransformCopy(orginal) end
 
+---Formats a transform as a string
+---@param transform transform
+---@return string
+function TransformStr(transform) end
 
 ---Transform one transform out of the local space of another transform
 ---
@@ -676,6 +832,54 @@ function TransformToLocalVec(relation, vector) end
 --#endregion
 --#region Entities
 
+---Returns an entity with the specified tag and type.
+---
+---This is a universal method that is an alternative to `FindBody`, `FindShape`, `FindVehicle`, etc. 
+---
+---A entity type can be specified. Making the function behave the`FindBody`, `FindShape`, `FindVehicle`, etc. 
+---@param tag_filter string?
+---@param global boolean?
+---@param entity_type entity_type?
+function FindEntity(tag_filter, global, entity_type) end
+
+---Returns a list of entities with the specified tag and type.
+---
+---This is a universal method that is an alternative to `FindBodies`, `FindShapes`, `FindVehicles`, etc. 
+---
+---A entity type can be specified. Making the function behave the`FindBodies`, `FindShapes`, `FindVehicles`, etc. 
+---@param tag_filter string?
+---@param global boolean?
+---@param entity_type entity_type?
+function FindEntities(tag_filter, global, entity_type)	end
+
+---@param entity entity_handle
+---@param tag_filter string?
+---@param recursive boolean?
+---@param type_filter entity_type?
+---@return entity_handle[]
+function GetEntityChildren(entity, tag_filter, recursive, type_filter) end
+
+---@param entity entity_handle
+---@param tag_filter string?
+---@param type_filter entity_type?
+---@return entity_handle
+function GetEntityParent(entity, tag_filter, type_filter) end
+
+---
+---@param entity entity_handle
+---@return entity_type type
+function GetEntityType(entity) end
+
+---@param entity entity_handle
+---@param property entity_property
+---@return any
+function GetProperty(entity, property) end
+
+---@param entity entity_handle
+---@param property entity_property
+---@param value any
+function SetProperty(entity, property, value) end
+
 ---
 ---@param entity entity_handle
 ---@param tag string
@@ -723,11 +927,6 @@ function Delete(entity) end
 ---@return boolean
 function IsHandleValid(entity) end
 
----
----@param entity entity_handle
----@return entity_type type
-function GetEntityType(entity) end
-
 --#endregion
 --#region Bodies
 
@@ -738,8 +937,8 @@ function GetEntityType(entity) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no body is found, the function returns 0
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return body_handle body
 function FindBody(tag, global) end
 
@@ -750,8 +949,8 @@ function FindBody(tag, global) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no bodies are found, the function returns a blank table
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return table<body_handle> bodies A table contraining the handle for each body found
 function FindBodies(tag, global) end
 
@@ -846,7 +1045,7 @@ function GetBodyCenterOfMass(body) end
 ---This will check if a body is currently visible in the camera frustum and not occluded by other objects.
 ---@param body body_handle
 ---@param max_distance number
----@param reject_transparent boolean|nil See through transparent materials, Default is false
+---@param reject_transparent boolean? See through transparent materials, Default is false
 ---@return boolean
 function IsBodyVisible(body, max_distance, reject_transparent) end
 
@@ -863,10 +1062,10 @@ function IsBodyJointedToStatic(body) end
 ---
 ---If only the body is given, { r, g, b, a } will default to { 1, 1, 1, 1 } (white)
 ---@param body body_handle
----@param r number|nil Default is 0
----@param g number|nil Default is 0
----@param b number|nil Default is 0
----@param a number|nil Default is 0
+---@param r number? Default is 0
+---@param g number? Default is 0
+---@param b number? Default is 0
+---@param a number? Default is 0
 function DrawBodyOutline(body, r, g, b, a) end
 
 ---Renders a solid while color over a body for this frame
@@ -945,8 +1144,8 @@ function GetWorldBody() end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no shape is found, the function returns 0
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return shape_handle shape
 function FindShape(tag, global) end
 
@@ -957,8 +1156,8 @@ function FindShape(tag, global) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no bodies are found, the function returns a blank table
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return table<shape_handle> bodies A table contraining the handle for each shape found
 function FindShapes(tag, global) end
 
@@ -1065,7 +1264,7 @@ function GetShapeVoxelCount(shape) end
 ---This will check if a shape is currently visible in the camera frustum and not occluded by other objects.
 ---@param shape shape_handle
 ---@param max_distance number
----@param reject_transparent boolean|nil See through transparent materials, Default is false
+---@param reject_transparent boolean? See through transparent materials, Default is false
 ---@return boolean
 function IsShapeVisible(shape, max_distance, reject_transparent) end
 
@@ -1080,10 +1279,10 @@ function IsShapeBroken(shape) end
 ---
 ---If only the shape is given, { r, g, b, a } will default to { 1, 1, 1, 1 } (white)
 ---@param shape shape_handle
----@param r number|nil Default is 0
----@param g number|nil Default is 0
----@param b number|nil Default is 0
----@param a number|nil Default is 0
+---@param r number? Default is 0
+---@param g number? Default is 0
+---@param b number? Default is 0
+---@param a number? Default is 0
 function DrawShapeOutline(shape, r, g, b, a) end
 
 ---Renders a solid while color over a shape for this frame
@@ -1120,6 +1319,18 @@ function GetShapeClosestPoint(shape, origin) end
 ---@param b shape_handle
 ---@return boolean overlap
 function IsShapeTouching(a, b) end
+
+---@param shape shape_handle
+---@return boolean disconnected Has detached parts
+function IsShapeDisconnected(shape) end
+
+---@param shape shape_handle
+---@return boolean disconnected Has detached parts
+function IsStaticShapeDisconnected(shape) end
+
+---@param shape shape_handle
+---@param density number
+function SetShapeDensity(shape, density) end
 
 --#endregion
 --#region Shape Modification
@@ -1272,8 +1483,8 @@ function MergeShape(shape) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no location is found, the function returns 0
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return location_handle location
 function FindLocation(tag, global) end
 
@@ -1284,8 +1495,8 @@ function FindLocation(tag, global) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no locations are found, the function returns a blank table
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return table<location_handle> locations
 function FindLocations(tag, global) end
 
@@ -1306,8 +1517,8 @@ function GetLocationTransform(location) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no joint is found, the function returns 0
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return joint_handle joint
 function FindJoint(tag, global) end
 
@@ -1318,8 +1529,8 @@ function FindJoint(tag, global) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no joints are found, the function returns a blank table
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return table<joint_handle> joints
 function FindJoints(tag, global) end
 
@@ -1348,7 +1559,7 @@ function GetJointShapes(joint) end
 ---Calling this function will override and void any previous call to SetJointMotorTarget.
 ---@param joint joint_handle
 ---@param velocity number Desired velocity
----@param strength number|nil Desired strength. Default is infinite. Zero to disable
+---@param strength number? Desired strength. Default is infinite. Zero to disable
 function SetJointMotor(joint, velocity, strength) end
 
 ---If a joint has a motor target, it will try to maintain its relative movement.
@@ -1358,8 +1569,8 @@ function SetJointMotor(joint, velocity, strength) end
 ---Setting a motor target will override any previous call to SetJointMotor.
 ---@param joint joint_handle
 ---@param target number Desired movement target
----@param max_velocity number|nil Maximum velocity to reach target. Default is infinite
----@param strength number|nil Desired strength. Default is infinite. Zero to disable
+---@param max_velocity number? Maximum velocity to reach target. Default is infinite
+---@param strength number? Desired strength. Default is infinite. Zero to disable
 function SetJointMotorTarget(joint, target, max_velocity, strength) end
 
 ---@param joint joint_handle
@@ -1376,6 +1587,27 @@ function GetJointMovement(joint) end
 ---@param joint joint_handle
 ---@param shape shape_handle
 function DetachJointFromShape(joint, shape) end
+
+--#endregion
+--#region Ropes
+
+---@param joint_handle joint_handle Joint of type rope.
+---@param position vector world position
+function BreakRope(joint_handle, position) end
+
+---@param joint_handle joint_handle Joint of type rope.
+---@return vector aa The position of the lower bound
+---@return vector bb The position of the upper bound
+function GetRopeBounds(joint_handle) end
+
+---@param joint_handle joint_handle Joint of type rope.
+---@return integer
+function GetRopeNumberOfPoints(joint_handle) end
+
+---@param joint_handle joint_handle Joint of type rope.
+---@param index integer Starts at 1
+---@return vector
+function GetRopePointPosition(joint_handle, index) end
 
 --#endregion
 --#region Lights
@@ -1401,8 +1633,8 @@ function PointLight(position, red, green, blue, intensity) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no light is found, the function returns 0
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return light_handle light
 function FindLight(tag, global) end
 
@@ -1413,8 +1645,8 @@ function FindLight(tag, global) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no lights are found, the function returns a blank table
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return table<light_handle> lights
 function FindLights(tag, global) end
 
@@ -1460,8 +1692,8 @@ function IsPointAffectedByLight(light, point) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no trigger is found, the function returns 0
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return trigger_handle trigger
 function FindTrigger(tag, global) end
 
@@ -1472,8 +1704,8 @@ function FindTrigger(tag, global) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no triggers are found, the function returns a blank table
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return table<trigger_handle> triggers
 function FindTriggers(tag, global) end
 
@@ -1521,7 +1753,7 @@ function IsShapeInTrigger(trigger, shape) end
 ---
 ---The highest point will also be returned, this is used in a few missions in the campagin
 ---@param trigger trigger_handle
----@param demolition boolean|nil If true, small debris and vehicles are ignored
+---@param demolition boolean? If true, small debris and vehicles are ignored
 ---@return boolean empty
 ---@return vector? maxpoint
 function IsTriggerEmpty(trigger, demolition) end
@@ -1552,8 +1784,8 @@ function GetTriggerClosestPoint(trigger, point) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no screen is found, the function returns 0
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return screen_handle screen
 function FindScreen(tag, global) end
 
@@ -1564,8 +1796,8 @@ function FindScreen(tag, global) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no screens are found, the function returns a blank table
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return table<screen_handle> screens
 function FindScreens(tag, global) end
 
@@ -1597,8 +1829,8 @@ function UiGetScreen() end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no vehicle is found, the function returns 0
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return vehicle_handle vehicle
 function FindVehicle(tag, global) end
 
@@ -1609,8 +1841,8 @@ function FindVehicle(tag, global) end
 ---If global, then the script will search the entire scene, not the children of this script.
 ---
 ---If no vehicles are found, the function returns a blank table
----@param tag string|nil
----@param global boolean|nil
+---@param tag string?
+---@param global boolean?
 ---@return table<vehicle_handle> vehicles
 function FindVehicles(tag, global) end
 
@@ -1623,6 +1855,10 @@ function GetVehicleTransform(vehicle) end
 function GetVehicleBody(vehicle) end
 
 ---@param vehicle vehicle_handle
+---@return body_handle[] bodies
+function GetVehicleBodies(vehicle) end
+
+---@param vehicle vehicle_handle
 ---@return number number 0 to 1 value
 function GetVehicleHealth(vehicle) end
 
@@ -1630,6 +1866,34 @@ function GetVehicleHealth(vehicle) end
 ---@param vehicle vehicle_handle
 ---@return vector position
 function GetVehicleDriverPos(vehicle) end
+
+---Exhausts transforms relative to the vehicle. 
+---@param vehicle vehicle_handle
+---@return transform[] exhuast_transfomrs Local space, relative to the vehicle
+function GetVehicleExhaustTransforms(vehicle) end
+
+---Vital transforms relative to the vehicle. 
+---@param vehicle vehicle_handle
+---@return transform[] vital_transforms  Local space, relative to the vehicle
+function GetVehicleVitalTransforms(vehicle) end
+
+---@param vehicle vehicle_handle
+---@return table<vehicle_parameter, any>
+function GetVehicleParams(vehicle) end
+
+---@param vehicle vehicle_handle
+---@param parameter vehicle_parameter
+---@param value any
+function SetVehicleParam(vehicle, parameter, value) end
+
+---Works only for vehicles with 'customhealth' tag. 
+---
+---'customhealth' disables the common vehicles damage system. 
+---
+---So this function needed for custom vehicle damage systems. 
+---@param vehicle vehicle_handle
+---@param health number
+function SetVehicleHealth(vehicle, health) end
 
 ---Pipes input to vehicles, allowing for autonomous driving.
 ---
@@ -1653,7 +1917,7 @@ function GetPlayerPos() end
 ---Returns the player's transform
 ---
 ---Can optionaly include the pitch of the player's camera
----@param includePitch boolean|nil Default is false
+---@param includePitch boolean? Default is false
 ---@return transform transform
 function GetPlayerTransform(includePitch) end
 
@@ -1665,7 +1929,7 @@ function GetPlayerTransform(includePitch) end
 ---
 ---Also Note that if you are trying to move the player on level load, use SetPlayerSpawnTransform() instead.
 ---@param transform transform
----@param includePitch boolean|nil Default is false
+---@param includePitch boolean? Default is false
 function SetPlayerTransform(transform, includePitch) end
 
 ---Make the ground act as a conveyor belt, pushing the player even if ground shape is static.
@@ -1683,10 +1947,6 @@ function GetPlayerCameraTransform() end
 ---Also Note that calling SetPlayerTransform() in the same tick as SetPlayerCameraOffsetTransform() will cause absolutely nothing to happen ~~because dennis hates us.~~
 ---@param transform transform
 function SetPlayerCameraOffsetTransform(transform ) end
-
---Call this function during init to alter the player's spawn transform. 
----@param transform transform
-function SetPlayerSpawnTransform(transform) end
 
 ---@return vector velocity
 function GetPlayerVelocity() end
@@ -1745,14 +2005,51 @@ function GetPlayerScreen() end
 ---@param screen screen_handle
 function SetPlayerScreen(screen) end
 
+---Respawn player at spawn position without modifying the scene
+function RespawnPlayer() end
+
+---@param parameter player_parameter
+---@return any
+function GetPlayerParam(parameter) end
+
+---@param parameter player_parameter
+---@param value any
+function SetPlayerParam(parameter, value) end
+
 ---@return number number 0 to 1 value representing the players health
 function GetPlayerHealth() end
 
 ---@param health number
 function SetPlayerHealth(health) end
 
----Respawn player at spawn position without modifying the scene
-function RespawnPlayer() end
+---@param state boolean
+function SetPlayerRegenerationState(state) end
+
+---Returns base speed, but real player speed depends on many factors such as health, crouch, water, grabbing objects. 
+---@return number
+function GetPlayerWalkingSpeed() end
+
+---Set base speed, but real player speed depends on many factors such as health, crouch, water, grabbing objects. 
+---@param base_speed number
+function SetPlayerWalkingSpeed(base_speed) end
+
+---Smoothly zoom player with desirable amount of time. 
+---@param zoom number NOT FOV
+---@param time number Amount of time to zoom
+function SetPlayerZoom(zoom, time) end
+
+---@return boolean
+function IsPlayerGrounded() end
+
+--Call this function during init to alter the player's spawn transform. 
+---@param transform transform
+function SetPlayerSpawnTransform(transform) end
+
+---@param health number
+function SetPlayerSpawnHealth(health) end
+
+---@param tool_id string
+function SetPlayerSpawnTool(tool_id) end
 
 --#endregion
 --#region Camera
@@ -1765,8 +2062,15 @@ function GetCameraTransform() end
 ---
 ---Has an optional parameter for setting fiewld of view
 ---@param transform transform
----@param field_of_view number|nil Default is 90, regardless of player's set fov in the options menu
+---@param field_of_view number? Default is 90, regardless of player's set fov in the options menu
 function SetCameraTransform(transform, field_of_view) end
+
+---Applies an offset to the camera, Call continuously
+---
+---HaCan be used for camera effects such as shake and wobble. 
+---@param transform transform local space
+---@param stackable boolean? Stacks multiple offsets per tick
+function SetCameraOffsetTransform(transform, stackable) end
 
 ---Override field of view for the next frame for all camera modes, except when explicitly set in SetCameraTransform
 ---
@@ -1776,8 +2080,26 @@ function SetCameraFov(field_of_view) end
 
 ---Override depth of field for the next frame for all camera modes. Depth of field will be used even if turned off in options.
 ---@param distance number
----@param amount number|nil Default is 1.0
+---@param amount number? Default is 1.0
 function SetCameraDof(distance, amount) end
+
+---Attach current camera transform for this frame to body or shape.
+---
+---Call continuously to keep overriding.
+---
+---In tick function we have coordinates of bodies and shapes that are not yet updated by physics, that's why camera can not be in sync with it using `SetCameraTransform`, instead use this function and `SetCameraOffsetTransform` to place camera around any body or shape without lag. 
+---@param handle body_handle|shape_handle
+---@param ignore_rotation boolean True to ignore rotation and use position only, false to use full transform
+function AttachCameraTo(handle, ignore_rotation) end
+
+---Treated as pivots when clipping body's shapes which is used to calculate clipping parameters (default: -1)
+---
+---Enforce camera clipping for this frame and mark the given body as a pivot for clipping.
+---
+---Call continuously. 
+---@param body body_handle
+---@param main_shape_index integer
+function SetPivotClipBody(body, main_shape_index) end
 
 --#endregion
 --#region Tools
@@ -1803,7 +2125,7 @@ function GetToolBody() end
 ---
 ---You need to set this every frame from the tick function. The optional sway parameter control the amount of tool swaying when walking. Set to zero to disable completely.
 ---@param transform transform
----@param sway number|nil Default is 1
+---@param sway number? Default is 1
 function SetToolTransform(transform, sway) end
 
 --#endregion
@@ -1817,61 +2139,103 @@ function SetToolTransform(transform, sway) end
 ---
 ---"example-sound0.ogg", "example-sound1.ogg", "example-sound2.ogg", ...
 ---@param path td_path
----@param nominal_distance number|nil The distance in meters this sound is recorded at. Affects attenuation. Default is 10
+---@param nominal_distance number? The distance in meters this sound is recorded at. Affects attenuation. Default is 10
 ---@return sound_handle
 function LoadSound(path, nominal_distance) end
 
+---@param sound sound_handle
+function UnloadSound(sound) end
+
+---@param sound sound_handle
+---@param position vector? Default is player position
+---@param volume number? Default is 1.0
+function PlaySound(sound, position, volume) end
+
+---@param sound sound_handle
+---@param user user 
+---@param position vector? Default is player position
+---@param volume number? Default is 1.0
+function PlaySoundForUser(sound, user, position, volume) end
+
+---@param sound sound_handle
+---@return number time time in seconds
+function GetSoundProgress(sound) end
+
+---@param sound sound_handle
+---@param time number time in seconds
+function SetSoundProgress(sound, time) end
+
+---@param sound sound_handle
+function StopSound(sound) end
+
+---@param sound sound_handle
+function IsSoundPlaying(sound) end
+
+---Returns the loudest sound played last frame
+---@return number volume volume of the loudest sound of last frame
+---@return vector world_position position of the loudest sound of last frame
+function GetLastSound() end
+
+--#endregion
+--#region Sound Loops
+
 ---Loads a Loop and returns the handle for it
 ---@param path td_path
----@param nominal_distance number|nil The distance in meters this sound is recorded at. Affects attenuation. Default is 10
+---@param nominal_distance number? The distance in meters this sound is recorded at. Affects attenuation. Default is 10
 ---@return loop_handle
 function LoadLoop(path, nominal_distance) end
 
----@param sound sound_handle
----@param position vector|nil Default is player position
----@param volume number|nil Default is 1.0
-function PlaySound(sound, position, volume) end
+---@param loop loop_handle
+function UnloadSound(loop) end
 
 ---Call continuously
 ---@param loop loop_handle
----@param position vector|nil Default is player position
+---@param position vector? Default is player position
 ---@param volume number Default is 1.0
 function PlayLoop(loop, position, volume) end
+
+---@param loop loop_handle
+---@return number time time in seconds
+function GetSoundLoopProgress(loop) end
+
+---@param loop loop_handle
+---@param time number time in seconds
+function SetSoundLoopProgress(loop, time) end
+
+---Moves a given sound loop handle to the gamepad speaker, if possible.
+---@param loop loop_handle
+---@param user user
+---@return boolean success succesfully transfered to gamepad
+function SetSoundLoopUser(loop, user) end
+
+--#endregion
+--#region Music
 
 ---@param path td_path
 function PlayMusic(path) end
 
 function StopMusic() end
 
----UI sounds are not affected by acoustics simulation.
----
----Use LoadSound / PlaySound for that.
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param path td_path
----@param volume number|nil Default is 1.0
----@param pitch number|nil Default is 1.0
----@param pan number|nil Stero panning (*-1.0 to 1.0*) Default is 0.0
-function UiSound(path, volume, pitch, pan)
-end
+---@return boolean
+function IsMusicPlaying() end
 
----Call this continuously to keep playing loop.
----
----UI sounds are not affected by acoustics simulation.
----
----Use LoadLoop / PlayLoop for that.
----
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param path td_path
----@param volume number|nil Default is 1.0
-function UiSoundLoop(path, volume)
-end
+---@return number time Current music progress in seconds.
+function GetMusicProgress() end
 
----THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param amount number Mute by this amount (*-1.0 to 1.0*)
----@param mute_music boolean|nil Mute the music as well. Default is false
-function UiMute(amount, mute_music)
-end
+---@param time number Progress in seconds. Default is 0.0
+function SetMusicProgress(time) end
+
+---@param volume number
+function SetMusicVolume(volume) end
+
+---Override current music low pass filter for this frame.
+---
+---Call continuously
+---@param fraction number 0.0 to 1.0
+function SetMusicLowPass(fraction) end
+
+---@param paused boolean
+function SetMusicPaused(paused) end
 
 --#endregion
 --#region Sprites
@@ -1898,8 +2262,8 @@ function LoadSprite(path) end
 ---@param green number
 ---@param blue number
 ---@param alpha number
----@param depth_test boolean|nil Defualt is false
----@param additive boolean|nil Defualt is false
+---@param depth_test boolean? Defualt is false
+---@param additive boolean? Defualt is false
 function DrawSprite(sprite, transform, width, height, red, green, blue, alpha, depth_test, additive) end
 
 --#endregion
@@ -1925,6 +2289,10 @@ function QueryRejectBody(body) end
 ---@param shape shape_handle
 function QueryRejectShape(shape) end
 
+---Excludes a table of shapes from the next query
+---@param shapes shape_handle[]
+function QueryRejectShapes(shapes) end
+
 ---Excludes a vehicle from the next query
 ---@param vehicle vehicle_handle
 function QueryRejectVehicle(vehicle) end
@@ -1938,13 +2306,30 @@ function QueryRejectVehicle(vehicle) end
 ---@param origin vector
 ---@param direction vector
 ---@param max_distance number
----@param radius number|nil Default is 0.0
----@param reject_transparent boolean|nil Default is false
+---@param radius number? Default is 0.0
+---@param reject_transparent boolean? Default is false
 ---@return boolean hit
 ---@return number distance
 ---@return vector normal
 ---@return shape_handle shape
 function QueryRaycast(origin, direction, max_distance, radius, reject_transparent) end
+
+---@param origin vector
+---@param direction vector
+---@param max_distance number
+---@param radius number? Default is 0.0
+---@return boolean hit
+---@return number distance
+---@return joint_handle joint
+function QueryRaycastRope(origin, direction, max_distance, radius) end
+
+---@param origin vector
+---@param direction vector
+---@param max_distance number
+---@return boolean hit
+---@return number distance
+---@return vector position
+function QueryRaycastWater(origin, direction, max_distance) end
 
 ---Querys the closest point to all shapes in the world
 ---@param origin vector
@@ -1996,15 +2381,38 @@ function QueryAabbFireCount(lower_bound, upper_bound) end
 ---@return number count 
 function RemoveAabbFires(lower_bound, upper_bound) end
 
----Returns the loudest sound played last frame
----@return number volume volume of the loudest sound of last frame
----@return vector world_position position of the loudest sound of last frame
-function GetLastSound() end
+---@return number count The number of active fires in the level
+function GetFireCount() end
+
+---@return light_handle
+function GetFlashlight() end
+
+---Sets a new light entity as the flashlight. 
+---@param light light_handle
+function SetFlashlight(light) end
+
+---@return vector
+function GetGravity() end
+
+---Sets the gravity value on the scene.
+---
+---Call once.
+---
+---When the scene restarts, it resets to the default value (0, -10, 0). 
+---@return vector
+function SetGravity(vector) end
 
 ---@param point vector
 ---@return boolean in_water
 ---@return number depth Depth of point into water, or zero if not in water
 function IsPointInWater(point) end
+
+---Checks whether the point is within the scene boundaries.
+---
+---If there are no boundaries on the scene, the function returns True. 
+---@param point vector
+---@return boolean in_water
+function IsPointInBoundaries(point) end
 
 ---Get the wind velocity at provided point.
 ---
@@ -2023,8 +2431,8 @@ function GetWindVelocity(point) end
 ---The path planning query will use the currently set up query filter, just like the other query functions.
 ---@param start vector
 ---@param target vector
----@param max_distance number|nil Maximum path length before giving up. Default is infinite.
----@param target_radius number|nil Maximum allowed distance to target in meters. Default is 2.0
+---@param max_distance number? Maximum path length before giving up. Default is infinite.
+---@param target_radius number? Maximum allowed distance to target in meters. Default is 2.0
 function QueryPath(start, target, max_distance, target_radius) end
 
 ---Abort current path query, regardless of what state it is currently in.
@@ -2066,73 +2474,73 @@ function ParticleTile(particle_tile) end
 ---@param red number
 ---@param green number
 ---@param blue number
----@param red_end number|nil interpolated to over the particle's life
----@param green_end number|nil interpolated to over the particle's life
----@param blue_end number|nil interpolated to over the particle's life
+---@param red_end number? interpolated to over the particle's life
+---@param green_end number? interpolated to over the particle's life
+---@param blue_end number? interpolated to over the particle's life
 function ParticleColor(red, green, blue, red_end, green_end, blue_end) end
 
 ---Set the particle radius. Max radius for smoke particles is 1.0. 
 ---@param radius number
----@param radius_end number|nil
----@param interpolation transition_method|nil
----@param fadein number|nil
----@param fadeout number|nil
+---@param radius_end number?
+---@param interpolation transition_method?
+---@param fadein number?
+---@param fadeout number?
 function ParticleRadius(radius, radius_end, interpolation, fadein, fadeout) end
 
 ---@param alpha number
----@param alpha_end number|nil
----@param interpolation transition_method|nil
----@param fadein number|nil
----@param fadeout number|nil
+---@param alpha_end number?
+---@param interpolation transition_method?
+---@param fadein number?
+---@param fadeout number?
 function ParticleAlpha(alpha, alpha_end, interpolation, fadein, fadeout) end
 
 ---Set particle gravity. It will be applied along the world Y axis. A negative value will move the particle downwards.
 ---@param gravity number
----@param gravity_end number|nil
----@param interpolation transition_method|nil
----@param fadein number|nil
----@param fadeout number|nil
+---@param gravity_end number?
+---@param interpolation transition_method?
+---@param fadein number?
+---@param fadeout number?
 function ParticleGravity(gravity, gravity_end, interpolation, fadein, fadeout) end
 
 ---@param drag number
----@param drag_end number|nil
----@param interpolation transition_method|nil
----@param fadein number|nil
----@param fadeout number|nil
+---@param drag_end number?
+---@param interpolation transition_method?
+---@param fadein number?
+---@param fadeout number?
 function ParticleDrag(drag, drag_end, interpolation, fadein, fadeout) end
 
 ---Draw particle as emissive (glow in the dark). This is useful for fire and embers. 
 ---@param emissive number
----@param emissive_end number|nil
----@param interpolation transition_method|nil
----@param fadein number|nil
----@param fadeout number|nil
+---@param emissive_end number?
+---@param interpolation transition_method?
+---@param fadein number?
+---@param fadeout number?
 function ParticleEmissive(emissive, emissive_end, interpolation, fadein, fadeout) end
 
 ---Makes the particle rotate. Positive values is counter-clockwise rotation.
 ---@param rotation number - radians per second
----@param rotation_end number|nil - radians per second
----@param interpolation transition_method|nil
----@param fadein number|nil
----@param fadeout number|nil
+---@param rotation_end number? - radians per second
+---@param interpolation transition_method?
+---@param fadein number?
+---@param fadeout number?
 function ParticleRotation(rotation, rotation_end, interpolation, fadein, fadeout) end
 
 ---Stretch particle along with velocity.
 ---
 ---0.0 means no stretching. 1.0 stretches with the particle motion over one frame. Larger values stretches the particle even more.
 ---@param stretch number
----@param stretch_end number|nil
----@param interpolation transition_method|nil
----@param fadein number|nil
----@param fadeout number|nil
+---@param stretch_end number?
+---@param interpolation transition_method?
+---@param fadein number?
+---@param fadeout number?
 function ParticleStretch(stretch, stretch_end, interpolation, fadein, fadeout) end
 
 ---Make particle stick when in contact with objects. This can be used for friction. 
 ---@param sticky number
----@param sticky_end number|nil
----@param interpolation transition_method|nil
----@param fadein number|nil
----@param fadeout number|nil
+---@param sticky_end number?
+---@param interpolation transition_method?
+---@param fadein number?
+---@param fadeout number?
 function ParticleSticky(sticky, sticky_end, interpolation, fadein, fadeout) end
 
 ---Control particle collisions.
@@ -2141,10 +2549,10 @@ function ParticleSticky(sticky, sticky_end, interpolation, fadein, fadeout) end
 ---
 ---It is sometimes useful to animate this value from zero to one in order to not collide with objects around the emitter.
 ---@param collision number
----@param collision_end number|nil
----@param interpolation transition_method|nil
----@param fadein number|nil
----@param fadeout number|nil
+---@param collision_end number?
+---@param interpolation transition_method?
+---@param fadein number?
+---@param fadeout number?
 function ParticleCollide(collision, collision_end, interpolation, fadein, fadeout) end
 
 ---Set particle bitmask.
@@ -2243,19 +2651,19 @@ function UiMiddle() end
 ---Sets the color of the scope
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param red number|nil Default is 0.0
----@param green number|nil Default is 0.0
----@param blue number|nil Default is 0.0
----@param alpha number|nil Default is 1.0
+---@param red number? Default is 0.0
+---@param green number? Default is 0.0
+---@param blue number? Default is 0.0
+---@param alpha number? Default is 1.0
 function UiColor(red, green, blue, alpha) end
 
 ---Multiplies every color by these values within this scope
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param red number|nil Default is 0.0
----@param green number|nil Default is 0.0
----@param blue number|nil Default is 0.0
----@param alpha number|nil Default is 1.0
+---@param red number? Default is 0.0
+---@param green number? Default is 0.0
+---@param blue number? Default is 0.0
+---@param alpha number? Default is 1.0
 function UiColorFilter(red, green, blue, alpha) end
 
 ---Translates/Moves the draw cursor around
@@ -2281,7 +2689,7 @@ function UiRotate(degrees) end
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@param x number
----@param y number|nil
+---@param y number?
 function UiScale(x, y) end
 
 ---Set up new bounds. Calls to UiWidth, UiHeight, UiCenter and UiMiddle will operate in the context of the window size.
@@ -2291,8 +2699,8 @@ function UiScale(x, y) end
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@param width number Window width
 ---@param height number Window height
----@param clip boolean|nil boolean Clip content outside window. Default is false.
----@param inherit boolean|nil boolean Inherit current clip region (for nested clip regions)
+---@param clip boolean? boolean Clip content outside window. Default is false.
+---@param inherit boolean? boolean Inherit current clip region (for nested clip regions)
 function UiWindow(width, height, clip, inherit) end
 
 ---Return a safe drawing area that will always be visible regardless of display aspect ratio.
@@ -2390,6 +2798,10 @@ function UiBlur(amount) end
 
 ---Sets the font for the current scope
 ---
+---Only True Type Fonts, .ttf files, are supported
+---
+---Size ranges from 10 to 100
+---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@param path td_path
 ---@param size number
@@ -2405,7 +2817,7 @@ function UiFontHeight() end
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@param text string|number
----@param auto_move boolean|nil
+---@param auto_move boolean?
 ---@return number width
 ---@return number height
 function UiText(text, auto_move) end
@@ -2423,20 +2835,20 @@ function UiGetTextSize(text) end
 function UiWordWrap(width) end
 
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param red number|nil Default is 0
----@param green number|nil Default is 0
----@param blue number|nil Default is 0
----@param alpha number|nil Default is 0
----@param thickness number|nil Default is 0.1
+---@param red number? Default is 0
+---@param green number? Default is 0
+---@param blue number? Default is 0
+---@param alpha number? Default is 0
+---@param thickness number? Default is 0.1
 function UiTextOutline(red, green, blue, alpha, thickness) end
 
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param red number|nil Default is 0
----@param green number|nil Default is 0
----@param blue number|nil Default is 0
----@param alpha number|nil Default is 0
----@param distance number|nil Default is 1.0
----@param blur number|nil Default is 0.5
+---@param red number? Default is 0
+---@param green number? Default is 0
+---@param blue number? Default is 0
+---@param alpha number? Default is 0
+---@param distance number? Default is 1.0
+---@param blur number? Default is 0.5
 function UiTextShadow(red, green, blue, alpha, distance, blur) end
 
 ---Draw solid rectangle at cursor position
@@ -2452,10 +2864,10 @@ function UiRect(width, height) end
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@param path td_path
----@param x0 number|nil Lower x coordinate. Default is 0
----@param y0 number|nil Lower y coordinate. Default is 0
----@param x1 number|nil Upper x coordinate. Default is image width
----@param y1 number|nil Upper y coordinate. Default is image height
+---@param x0 number? Lower x coordinate. Default is 0
+---@param y0 number? Lower y coordinate. Default is 0
+---@param x1 number? Upper x coordinate. Default is image width
+---@param y1 number? Upper y coordinate. Default is image height
 ---@return number width
 ---@return number height
 function UiImage(path, x0, y0, x1, y1) end
@@ -2488,28 +2900,28 @@ function UiImageBox(path, width, height, border_width, border_height) end
 ---@param path td_path
 ---@param border_width number
 ---@param border_height number
----@param red number|nil Default is 1.0
----@param green number|nil Default is 1.0
----@param blue number|nil Default is 1.0
----@param alpha number|nil Default is 1.0
+---@param red number? Default is 1.0
+---@param green number? Default is 1.0
+---@param blue number? Default is 1.0
+---@param alpha number? Default is 1.0
 function UiButtonImageBox(path, border_width, border_height, red, green, blue, alpha) end
 
 ---Button color filter when hovering mouse pointer.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param red number|nil Default is 0.0
----@param green number|nil Default is 0.0
----@param blue number|nil Default is 0.0
----@param alpha number|nil Default is 1.0
+---@param red number? Default is 0.0
+---@param green number? Default is 0.0
+---@param blue number? Default is 0.0
+---@param alpha number? Default is 1.0
 function UiButtonHoverColor(red, green, blue, alpha) end
 
 ---Button color filter when pressing down.
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
----@param red number|nil Default is 0.0
----@param green number|nil Default is 0.0
----@param blue number|nil Default is 0.0
----@param alpha number|nil Default is 1.0
+---@param red number? Default is 0.0
+---@param green number? Default is 0.0
+---@param blue number? Default is 0.0
+---@param alpha number? Default is 1.0
 function UiButtonPressColor(red, green, blue, alpha) end
 
 ---The button offset when being pressed
@@ -2523,8 +2935,8 @@ function UiButtonPressDist(distance) end
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@return boolean pressed
 ---@param display_text string
----@param width number|nil If not specified, will be the width of the displayed text
----@param height number|nil If not specified, will be the height of the displayed text
+---@param width number? If not specified, will be the width of the displayed text
+---@param height number? If not specified, will be the height of the displayed text
 function UiTextButton(display_text, width, height) end
 
 ---Renders a image on screen, returns true if it was pressed
@@ -2553,6 +2965,36 @@ function UiBlankButton(width, height) end
 ---@return number updated_value
 ---@return boolean slider_released
 function UiSlider(slider_image, axis, current, minimum, maximum) end
+
+---UI sounds are not affected by acoustics simulation.
+---
+---Use LoadSound / PlaySound for that.
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param path td_path
+---@param volume number? Default is 1.0
+---@param pitch number? Default is 1.0
+---@param pan number? Stero panning (*-1.0 to 1.0*) Default is 0.0
+function UiSound(path, volume, pitch, pan)
+end
+
+---Call this continuously to keep playing loop.
+---
+---UI sounds are not affected by acoustics simulation.
+---
+---Use LoadLoop / PlayLoop for that.
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param path td_path
+---@param volume number? Default is 1.0
+function UiSoundLoop(path, volume)
+end
+
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param amount number Mute by this amount (*-1.0 to 1.0*)
+---@param mute_music boolean? Mute the music as well. Default is false
+function UiMute(amount, mute_music)
+end
 
 --#endregion
 --#region Debug
@@ -2613,36 +3055,36 @@ function SetEnvironmentDefault() end
 
 ---The return type could vary depending on the property, could be nil if property does not exist
 ---@param property environment_property
----@return any|nil value0 
----@return any|nil value1 May be nil if property does not have overloads
----@return any|nil value2 May be nil if property does not have overloads
----@return any|nil value3 May be nil if property does not have overloads
----@return any|nil value4 May be nil if property does not have overloads
+---@return any? value0 
+---@return any? value1 May be nil if property does not have overloads
+---@return any? value2 May be nil if property does not have overloads
+---@return any? value3 May be nil if property does not have overloads
+---@return any? value4 May be nil if property does not have overloads
 function GetEnvironmentProperty(property) end
 
 ---@param property environment_property
----@param value0 any|nil
----@param value1 any|nil
----@param value2 any|nil
----@param value3 any|nil
+---@param value0 any?
+---@param value1 any?
+---@param value2 any?
+---@param value3 any?
 function SetEnvironmentProperty(property, value0, value1, value2, value3) end
 
 ---Reset the post proccesing properties to default.
 function SetPostProcessingDefault() end
 
 ---@param property postprocessing_property
----@return any|nil value0
----@return any|nil value1 May be nil if property does not have overloads
----@return any|nil value2 May be nil if property does not have overloads
----@return any|nil value3 May be nil if property does not have overloads
----@return any|nil value4 May be nil if property does not have overloads
+---@return any? value0
+---@return any? value1 May be nil if property does not have overloads
+---@return any? value2 May be nil if property does not have overloads
+---@return any? value3 May be nil if property does not have overloads
+---@return any? value4 May be nil if property does not have overloads
 function GetPostProcessingProperty(property) end
 
 ---@param property postprocessing_property
----@param value0 any|nil
----@param value1 any|nil
----@param value2 any|nil
----@param value3 any|nil
+---@param value0 any?
+---@param value1 any?
+---@param value2 any?
+---@param value3 any?
 function SetPostProcessingProperty(property, value0, value1, value2, value3) end
 
 --#endregion
@@ -2667,6 +3109,24 @@ function InputValue(key_value) end
 ---@return key key
 function InputLastPressedKey() end
 
+---All player input is "forgotten" by the game after calling this function 
+function InputClear() end
+
+---This function will reset everything we need to reset during state transition
+---
+---Supposedly, The api docs give an example that is prefaced with "This isn't how you should use this".
+---
+---So take this function with a grain of salt.
+function InputResetOnTransition() end
+
+--- |  |  |
+--- | --- | --- |
+--- | 0 | none |
+--- | 1 | mouse |
+--- | 2 | gamepad  |
+---@return 0|1|2
+function LastInputDevice() end
+
 --#endregion
 --#region Misc
 
@@ -2682,16 +3142,11 @@ function GetTime() end
 ---@return number time
 function GetTimeStep() end
 
----Get the version of the game.
+---Returns the fps value based on general game timestep.
 ---
----@return string version
-function GetVersion() end
-
----Tests whether or not the game version is greater or equal to the provided one.
----
----@param version string
----@return boolean match
-function HasVersion(version) end
+---It doesn't depend on whether it is called from tick or update. 
+---@return number
+function GetFps() end
 
 ---Creates a projectile.
 ---
@@ -2708,9 +3163,18 @@ function Shoot(origin, direction, type, strength, max_distance) end
 
 ---@param origin vector Origin in world space as vector
 ---@param radius number Affected radius, in range 0.0 to 5.0
----@param type "spraycan"|"explosion"|nil Default is spraycan.
----@param probability number|nil Dithering probability between zero and one. Default is 1.0
+---@param type "spraycan"|"explosion"? Default is spraycan.
+---@param probability number? Dithering probability between zero and one. Default is 1.0
 function Paint(origin, radius, type, probability) end
+
+---@param origin vector Origin in world space as vector
+---@param radius number Affected radius, in range 0.0 to 5.0
+---@param red number
+---@param green number
+---@param blue number
+---@param alpha number
+---@param probability number? Dithering probability between zero and one. Default is 1.0
+function PaintRGBA(origin, radius, red, green, blue, alpha, probability) end
 
 ---Makes a hole in the environment
 ---| Type | Materials |
@@ -2720,9 +3184,9 @@ function Paint(origin, radius, type, probability) end
 ---| Hard | <u>hard metal</u>, <u>hard masonry</u> |
 ---@param position vector
 ---@param soft_radius number Hole radius for soft materials.
----@param medium_radius number|nil Hole radius for medium materials. Defualt is 0
----@param hard_radius number|nil Hole radius for hard materials. Defualt is 0
----@param silent boolean|nil Disables the breaking sound. Default is false
+---@param medium_radius number? Hole radius for medium materials. Defualt is 0
+---@param hard_radius number? Hole radius for hard materials. Defualt is 0
+---@param silent boolean? Disables the breaking sound. Default is false
 ---@return number voxels_removed Number of voxels removed from all effected shapes, zero if no shapes were effected.
 function MakeHole(position, soft_radius, medium_radius, hard_radius, silent) end
 
@@ -2736,8 +3200,11 @@ function Explosion(position, size) end
 ---@param position vector
 function SpawnFire(position) end
 
----@return number count The number of active fires in the level
-function GetFireCount() end
+---Adds heat to shape. It works similar to blowtorch. As soon as the heat of the voxel reaches a critical value, it destroys and can ignite the surrounding voxels. 
+---@param shape_handle shape_handle
+---@param position vector world space
+---@param amount number
+function AddHeat(shape_handle, position, amount) end
 
 ---Sets the time scale for the next frame
 ---
@@ -2745,7 +3212,7 @@ function GetFireCount() end
 ---
 ---Note that this can and will effect physical behaviors
 ---
----@param scale number (0.1 to 1.0)
+---@param scale number (0.0 to 2.0)
 function SetTimeScale(scale) end
 
 ---Shakes the Camera
@@ -2759,8 +3226,79 @@ function ShakeCamera(intensity) end
 ---Returns to the menu
 function Menu() end
 
+---Restarts the level
+function Restart() end
+
 ---@param state boolean
 function SetPaused(state) end
+
+---@param mission string An identifier of your choice
+---@param path td_path
+---@param layers string? Active layers. Default is no layers.
+---@param pass_through boolean? If set, loading screen will have no text and music will keep playing
+function StartLevel(mission, path, layers, pass_through) end
+
+--#endregion
+--#region Haptics
+
+---@param left_motor_rumble number
+---@param right_motor_rumble number
+---@param left_trigger_rumble number
+---@param right_trigger_rumble number
+---@return haptic_handle handle
+function CreateHaptic(left_motor_rumble, right_motor_rumble, left_trigger_rumble, right_trigger_rumble)	end
+
+---@param path td_path
+---@return haptic_handle handle
+function LoadHaptic(path) end
+
+---If the haptic is already playing, restart.
+---@param haptic haptic_handle
+---@param amplitude number Default is 1.0
+function PlayHaptic(haptic, amplitude) end
+
+---If the haptic is already playing, restart.
+---@param haptic haptic_handle
+---@param direction vector
+---@param amplitude number Default is 1.0
+function PlayHapticDirectional(haptic, direction, amplitude) end
+
+---@param haptic haptic_handle
+---@return boolean
+function HapticIsPlaying(haptic) end
+
+---@param haptic haptic_handle
+function StopHaptic(haptic) end
+
+---Register haptic as a "Tool haptic" for custom tools.
+---
+---"Tool haptic" will be played on repeat while this tool is active.
+---
+---Also it can be used for Active Triggers of DualSense controller
+---@param tool_id string
+---@param haptic haptic_handle
+---@param amplitude number
+function SetToolHaptic(tool_id, haptic, amplitude) end
+
+--#endregion
+--#region Event System
+
+---Binds a global function to an event 
+---@param event_name string
+---@param callback_function string Function must be global
+function RegisterListenerTo(event_name, callback_function) end
+
+---Unbinds a global function from an event 
+---@param event_name string
+---@param callback_function string Function must be global
+function UnregisterListener(event_name, callback_function) end
+
+---Triggers an event for all registered listeners
+---
+---Allows for passing in a single string 
+---@param event_name string
+---@param serialized_data string
+function TriggerEvent(event_name, serialized_data) end
 
 --#endregion
 --#region Special
@@ -2776,5 +3314,63 @@ function Command(command, ... ) end
 ---@param path td_path
 ---@return boolean
 function HasFile(path) end
+
+---Set value of a number variable in the global context with an optional transition. 
+---
+---If a transition is provided the value will animate from current value to the new value during the transition time. 
+---
+---`_G[global_variable_key]`
+---@param global_variable_key string
+---@param value number|vector|quaternion|transform
+---@param transition transition_method
+---@param time number
+function SetValue(global_variable_key, value, transition, time) end
+
+---Set value, but instead of `_G[global_variable_key]`, `_G[global_variable_key][key]`
+---
+---If a transition is provided the value will animate from current value to the new value during the transition time. 
+---@param global_variable_key string
+---@param key string
+---@param value number|vector|quaternion|transform
+---@param transition transition_method
+---@param time number
+function SetValueInTable(global_variable_key, key, value, transition, time) end
+
+--#endregion
+--#region Language
+
+---Checks that translation for specified key exists 
+---@param key string
+---@return boolean
+function HasTranslationByKey(key) end
+
+---Returns the translation for the specified key from the translation table. If the key is not found returns the default value 
+---@param key string
+---@param default string
+---@return string
+function GetTranslatedStringByKey(key, default) end
+
+---Loads the language table for specified language id for further localization.
+---@param language_id language
+function LoadLanguageTable(language_id) end
+
+--#endregion
+--#region Info
+
+---Get the version of the game.
+---
+---@return string version
+function GetVersion() end
+
+---Tests whether or not the game version is greater or equal to the provided one.
+---
+---@param version string
+---@return boolean match
+function HasVersion(version) end
+
+---Returns the user nickname. If user is not specified, returns nickname for user with id '0' 
+---@param user user
+---@return string
+function GetUserNickname(user) end
 
 --#endregion
