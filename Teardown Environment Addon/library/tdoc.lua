@@ -87,6 +87,10 @@
 ---| 'velocity' vector
 ---| 'angVelocity' vector
 ---| 'active boolean
+---| 'friction' number
+---| 'restitution' number
+---| 'frictionMode' string
+---| 'restitutionMode' string
 
 ---@alias shape_property
 ---| 'density' number
