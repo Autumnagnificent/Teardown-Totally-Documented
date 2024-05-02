@@ -89,8 +89,8 @@
 ---| 'active boolean
 ---| 'friction' number
 ---| 'restitution' number
----| 'frictionMode' string
----| 'restitutionMode' string
+---| 'frictionMode' string average|minimum|multiply|maximum
+---| 'restitutionMode' string average|minimum|multiply|maximum
 
 ---@alias shape_property
 ---| 'density' number
@@ -2863,12 +2863,20 @@ function UiTextOutline(red, green, blue, alpha, thickness) end
 ---@param blur number? Default is 0.5
 function UiTextShadow(red, green, blue, alpha, distance, blur) end
 
----Draw solid rectangle at cursor position
+---Draws a solid rectangle at cursor position
 ---
 ---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
 ---@param width number
 ---@param height number
 function UiRect(width, height) end
+
+---Draws a circle at the cursor position
+---
+---The circle with have anti-aliasing
+---
+---THIS FUNCTION WILL ONLY EXIST IF draw() IS DEFINED
+---@param radius number
+function UiCircle(radius) end
 
 ---Draw image at cursor position.
 ---
@@ -3012,11 +3020,11 @@ end
 --#region Debug
 
 
----Dispalys a string in the bottom left corner of the screen
+---Displays a string in the bottom left corner of the screen
 ---
 ---Only the last 20 lines can be displayed, and more will be cut off and removed
----@param string string
-function DebugPrint(string) end
+---@param value any
+function DebugPrint(value) end
 
 ---Permantly displays a value in the top left corner of the screen
 ---
@@ -3025,7 +3033,7 @@ function DebugPrint(string) end
 ---Vectors, Quaternions, and Transforms are converted to strings
 ---
 ---Values updated the current frame are drawn opaque. Old values are drawn transparent in white.
----@param name string
+---@param name any
 ---@param value number|string|vector|quaternion|transform
 function DebugWatch(name, value) end
 
