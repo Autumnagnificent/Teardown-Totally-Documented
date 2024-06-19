@@ -6,13 +6,27 @@
     "without acoustics you should use UiSound and UiSoundLoop in the User Interface section."
   ],
   "functions": [
+    "GetMusicProgress",
+    "GetSoundLoopProgress",
+    "GetSoundProgress",
+    "IsMusicPlaying",
+    "IsSoundPlaying",
     "LoadLoop",
     "LoadSound",
     "PlayLoop",
     "PlayMusic",
     "PlaySound",
     "PlaySoundForUser",
+    "SetMusicLowPass",
+    "SetMusicPaused",
+    "SetMusicProgress",
+    "SetMusicVolume",
+    "SetSoundLoopProgress",
     "SetSoundLoopUser",
-    "StopMusic"
+    "SetSoundProgress",
+    "StopMusic",
+    "StopSound",
+    "UnloadLoop",
+    "UnloadSound"
   ]
 }

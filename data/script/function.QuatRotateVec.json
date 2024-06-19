@@ -5,13 +5,13 @@
       "name": "a",
       "desc": "Quaternion",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     },
     {
       "name": "vec",
       "desc": "Vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [
@@ -19,7 +19,7 @@
       "name": "vec",
       "desc": "Rotated vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

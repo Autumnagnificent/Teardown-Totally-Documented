@@ -5,13 +5,13 @@
       "name": "targetZoom",
       "desc": "Desired player zoom",
       "optional": false,
-      "type": "value"
+      "type": "number"
     },
     {
       "name": "transitionLength",
       "desc": "Desired amount of time to zoom",
       "optional": false,
-      "type": "value"
+      "type": "number"
     }
   ],
   "returns": [],

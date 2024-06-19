@@ -11,7 +11,7 @@
       "name": "transform",
       "desc": "Desired trigger transform in world space",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "returns": [],

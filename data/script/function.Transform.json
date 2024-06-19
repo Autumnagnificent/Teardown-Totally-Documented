@@ -5,13 +5,13 @@
       "name": "pos",
       "desc": "Vector representing transform position",
       "optional": true,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "rot",
       "desc": "Quaternion representing transform rotation",
       "optional": true,
-      "type": "table"
+      "type": "TQuat"
     }
   ],
   "returns": [
@@ -19,7 +19,7 @@
       "name": "transform",
       "desc": "New transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "examples": [

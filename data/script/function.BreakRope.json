@@ -1,0 +1,35 @@
+{
+  "name": "BreakRope",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Rope type joint handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "point",
+      "desc": "Point of break as world space vector",
+      "optional": false,
+      "type": "TVec"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal playerCameraTransform = GetPlayerCameraTransform()",
+      "\tlocal dir = TransformToParentVec(playerCameraTransform, Vec(0, 0, -1))",
+      "",
+      "\tlocal hit, dist, joint = QueryRaycastRope(playerCameraTransform.pos, dir, 5)",
+      "\tif hit then",
+      "\t\tlocal breakPoint = VecAdd(playerCameraTransform.pos, VecScale(dir, dist))",
+      "\t\tBreakRope(joint, breakPoint)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Breaks the rope at the specified point."
+  ]
+}

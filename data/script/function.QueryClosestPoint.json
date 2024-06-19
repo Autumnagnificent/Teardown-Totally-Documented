@@ -5,7 +5,7 @@
       "name": "origin",
       "desc": "World space point",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "maxDist",
@@ -25,13 +25,13 @@
       "name": "point",
       "desc": "World space closest point",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "normal",
       "desc": "World space normal at closest point",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "shape",

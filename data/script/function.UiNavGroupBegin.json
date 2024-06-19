@@ -1,6 +1,13 @@
 {
   "name": "UiNavGroupBegin",
-  "arguments": [],
+  "arguments": [
+    {
+      "name": "id",
+      "desc": "Name of navigation group. If not presented, will be generated automatically.",
+      "optional": true,
+      "type": "string"
+    }
+  ],
   "returns": [
     {
       "name": "id",

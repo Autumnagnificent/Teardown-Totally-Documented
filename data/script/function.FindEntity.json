@@ -1,0 +1,48 @@
+{
+  "name": "FindEntity",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "global",
+      "desc": "Search in entire scene",
+      "optional": true,
+      "type": "boolean"
+    },
+    {
+      "name": "type",
+      "desc": "Entity type (\"body\", \"shape\", \"light\", \"location\" etc.)",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to first entity with specified tag or zero if not found",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\t--You may use this function in a similar way to other \"Find functions\" like FindBody, FindShape, FindVehicle, etc.",
+      "\tlocal myCar = FindEntity(\"myCar\", false, \"vehicle\")",
+      "",
+      "\t--If you do not specify the tag, the first element found will be returned",
+      "\tlocal joint = FindEntity(\"\", true, \"joint\")",
+      "",
+      "\t--If the type is not specified, the search will be performed for all types of entity",
+      "\tlocal target = FindEntity(\"target\", true)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns an entity with the specified tag and type. This is a universal method that is an alternative to FindBody, FindShape, FindVehicle, etc."
+  ]
+}

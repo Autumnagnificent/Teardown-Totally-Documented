@@ -6,6 +6,7 @@
     "completely disabled."
   ],
   "functions": [
+    "BreakRope",
     "DetachJointFromShape",
     "FindJoint",
     "FindJoints",
@@ -15,6 +16,9 @@
     "GetJointShapes",
     "GetJointType",
     "GetJointedBodies",
+    "GetRopeBounds",
+    "GetRopeNumberOfPoints",
+    "GetRopePointPosition",
     "IsJointBroken",
     "SetJointMotor",
     "SetJointMotorTarget"

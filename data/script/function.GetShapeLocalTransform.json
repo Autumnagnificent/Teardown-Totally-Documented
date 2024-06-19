@@ -13,7 +13,7 @@
       "name": "transform",
       "desc": "Return shape transform in body space",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "examples": [

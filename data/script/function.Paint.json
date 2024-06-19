@@ -5,7 +5,7 @@
       "name": "origin",
       "desc": "Origin in world space as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "radius",

@@ -5,12 +5,12 @@
       "name": "transform",
       "desc": "Desired player transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     },
     {
       "name": "includePitch",
       "desc": "Set player pitch (look up/down) as well",
-      "optional": false,
+      "optional": true,
       "type": "boolean"
     }
   ],

@@ -5,13 +5,13 @@
       "name": "xAxis",
       "desc": "X axis",
       "optional": false,
-      "type": "number"
+      "type": "TVec"
     },
     {
       "name": "zAxis",
       "desc": "Z axis",
       "optional": false,
-      "type": "number"
+      "type": "TVec"
     }
   ],
   "returns": [
@@ -19,7 +19,7 @@
       "name": "quat",
       "desc": "Quaternion",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     }
   ],
   "examples": [

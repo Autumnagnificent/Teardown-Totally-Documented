@@ -12,6 +12,7 @@
     "GetTriggerDistance",
     "GetTriggerTransform",
     "IsBodyInTrigger",
+    "IsPointInBoundaries",
     "IsPointInTrigger",
     "IsShapeInTrigger",
     "IsTriggerEmpty",

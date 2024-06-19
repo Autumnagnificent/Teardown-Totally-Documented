@@ -1,0 +1,23 @@
+{
+  "name": "GetFps",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "fps",
+      "desc": "Frames per second",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tDebugWatch(\"fps\", GetFps())",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the fps value based on general game timestep.",
+    "It doesn't depend on whether it is called from tick or update."
+  ]
+}

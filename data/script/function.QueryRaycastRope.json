@@ -1,0 +1,67 @@
+{
+  "name": "QueryRaycastRope",
+  "arguments": [
+    {
+      "name": "origin",
+      "desc": "Raycast origin as world space vector",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "direction",
+      "desc": "Unit length raycast direction as world space vector",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "maxDist",
+      "desc": "Raycast maximum distance. Keep this as low as possible for good performance.",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "radius",
+      "desc": "Raycast thickness. Default zero.",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "hit",
+      "desc": "True if raycast hit something",
+      "optional": false,
+      "type": "boolean"
+    },
+    {
+      "name": "dist",
+      "desc": "Hit distance from origin",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "joint",
+      "desc": "Handle to hit joint of rope type",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal playerCameraTransform = GetPlayerCameraTransform()",
+      "\tlocal dir = TransformToParentVec(playerCameraTransform, Vec(0, 0, -1))",
+      "",
+      "\tlocal hit, dist, joint = QueryRaycastRope(playerCameraTransform.pos, dir, 10)",
+      "\tif hit then",
+      "\t\tDebugWatch(\"distance\", dist)",
+      "\t\tDebugWatch(\"joint\", joint)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "This will perform a raycast query that returns the handle of the joint of rope type when if collides with it.",
+    "There are no filters for this type of raycast."
+  ]
+}

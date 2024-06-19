@@ -5,7 +5,7 @@
       "name": "path",
       "desc": "Image path (PNG or JPG file)",
       "optional": false,
-      "type": "number"
+      "type": "string"
     },
     {
       "name": "axis",

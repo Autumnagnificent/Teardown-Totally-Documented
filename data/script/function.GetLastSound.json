@@ -12,7 +12,7 @@
       "name": "position",
       "desc": "World position of loudest sound played last frame",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

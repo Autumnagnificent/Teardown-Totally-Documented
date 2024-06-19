@@ -5,12 +5,12 @@
       "name": "transform",
       "desc": "Tool body transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     },
     {
       "name": "sway",
       "desc": "Tool sway amount. Default is 1.0.",
-      "optional": false,
+      "optional": true,
       "type": "number"
     }
   ],

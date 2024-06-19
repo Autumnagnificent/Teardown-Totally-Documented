@@ -13,7 +13,7 @@
       "name": "point",
       "desc": "Vector representing local center of mass in body space",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

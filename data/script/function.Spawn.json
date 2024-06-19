@@ -11,7 +11,7 @@
       "name": "transform",
       "desc": "Spawn transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     },
     {
       "name": "allowStatic",

@@ -11,7 +11,7 @@
       "name": "point",
       "desc": "Word space point as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [

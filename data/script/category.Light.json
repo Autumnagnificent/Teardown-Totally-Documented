@@ -9,10 +9,12 @@
   "functions": [
     "FindLight",
     "FindLights",
+    "GetFlashlight",
     "GetLightShape",
     "GetLightTransform",
     "IsLightActive",
     "IsPointAffectedByLight",
+    "SetFlashlight",
     "SetLightColor",
     "SetLightEnabled",
     "SetLightIntensity"

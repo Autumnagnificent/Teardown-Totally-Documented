@@ -1,0 +1,30 @@
+{
+  "name": "SetMusicVolume",
+  "arguments": [
+    {
+      "name": "volume",
+      "desc": "Music volume.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tPlayMusic(\"about.ogg\")",
+      "end",
+      "",
+      "local rewindRequested = false",
+      "",
+      "function tick()",
+      "\tif InputDown(\"interact\") then",
+      " \t\tSetMusicVolume(0.3)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Override current music volume for this frame. Call continuously to keep overriding."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "SetSoundLoopProgress",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Loop handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "progress",
+      "desc": "Progress in seconds. Default 0.0.",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tloop = LoadLoop(\"radio/jazz.ogg\")",
+      "end",
+      "",
+      "local rewindRequested = false",
+      "",
+      "function tick()",
+      "\tlocal pos = Vec(0, 0, 0)",
+      "\tPlayLoop(loop, pos, 1.0)",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tSetSoundLoopProgress(loop, GetSoundLoopProgress(loop) - 1.0)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

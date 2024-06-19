@@ -5,7 +5,7 @@
       "name": "axis",
       "desc": "Rotation axis, unit vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "angle",
@@ -19,7 +19,7 @@
       "name": "quat",
       "desc": "New quaternion",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     }
   ],
   "examples": [

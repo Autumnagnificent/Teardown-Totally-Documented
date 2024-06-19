@@ -13,13 +13,13 @@
       "name": "min",
       "desc": "Vector representing the AABB lower bound",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "max",
       "desc": "Vector representing the AABB upper bound",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

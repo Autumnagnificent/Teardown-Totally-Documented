@@ -13,7 +13,7 @@
       "name": "velocity",
       "desc": "Linear velocity as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

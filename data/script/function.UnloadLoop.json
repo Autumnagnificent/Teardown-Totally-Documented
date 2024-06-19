@@ -1,0 +1,35 @@
+{
+  "name": "UnloadLoop",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Loop handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local loop = -1",
+      "function init()",
+      "\tloop = LoadLoop(\"radio/jazz.ogg\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif loop ~= -1 then",
+      "\t\tlocal pos = Vec(0, 0, 0)",
+      "\t\tPlayLoop(loop, pos, 1.0)",
+      "\tend",
+      "\t\t",
+      "\tif InputPressed(\"space\") then",
+      "\t\tUnloadLoop(loop)",
+      "\t\tloop = -1",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

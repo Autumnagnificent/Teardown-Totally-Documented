@@ -5,13 +5,13 @@
       "name": "min",
       "desc": "Aabb minimum point",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "max",
       "desc": "Aabb maximum point",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [

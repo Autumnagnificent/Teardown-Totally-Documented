@@ -13,7 +13,7 @@
       "name": "pos",
       "desc": "Driver position as vector in vehicle space",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

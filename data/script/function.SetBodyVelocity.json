@@ -11,7 +11,7 @@
       "name": "velocity",
       "desc": "Vector with linear velocity",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [],

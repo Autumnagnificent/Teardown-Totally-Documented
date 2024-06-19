@@ -12,14 +12,32 @@
       "desc": "Value",
       "optional": false,
       "type": "string"
+    },
+    {
+      "name": "lineWrapping",
+      "desc": "True if you need to wrap Table lines. Works only with tables.",
+      "optional": true,
+      "type": "boolean"
     }
   ],
   "returns": [],
   "examples": [
     [
       "function tick()",
-      "\tlocal t = 5",
-      "\tDebugWatch(\"time\", t)",
+      "\tDebugWatch(\"Player camera transform\", GetPlayerCameraTransform())",
+      "",
+      "\tlocal anyTable = {",
+      "\t\t\"teardown\",",
+      "\t\t{",
+      "\t\t\tname = \"Alex\",",
+      "\t\t\tage = 25,",
+      "\t\t\tchild = { name = \"Lena\" }",
+      "\t\t},",
+      "\t\tnil,",
+      "\t\tversion = \"1.6.0\",",
+      "\t\ttrue",
+      "\t}",
+      "\tDebugWatch(\"table\", anyTable);",
       "end"
     ]
   ],
@@ -28,7 +46,6 @@
     "Up to 32 values can be shown simultaneously. Values updated the current",
     "frame are drawn opaque. Old values are drawn transparent in white.",
     "",
-    "The function will also recognize vectors, quaternions and transforms as",
-    "second argument and convert them to strings automatically."
+    "The function will also recognize tables and convert them to strings automatically."
   ]
 }

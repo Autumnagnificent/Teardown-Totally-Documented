@@ -1,0 +1,28 @@
+{
+  "name": "SetMusicPaused",
+  "arguments": [
+    {
+      "name": "paused",
+      "desc": "True to pause, false to resume.",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tPlayMusic(\"about.ogg\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tSetMusicPaused(IsMusicPlaying())",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

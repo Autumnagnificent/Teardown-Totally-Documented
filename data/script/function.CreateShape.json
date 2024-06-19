@@ -11,7 +11,7 @@
       "name": "transform",
       "desc": "Shape transform in body space",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     },
     {
       "name": "refShape",

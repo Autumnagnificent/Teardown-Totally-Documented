@@ -17,13 +17,13 @@
       "name": "quatA",
       "desc": "World space orientation for first body",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     },
     {
       "name": "quatB",
       "desc": "World space orientation for second body",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     },
     {
       "name": "maxAngVel",

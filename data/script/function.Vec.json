@@ -25,7 +25,7 @@
       "name": "vec",
       "desc": "New vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

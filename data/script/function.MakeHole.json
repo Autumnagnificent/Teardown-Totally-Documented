@@ -5,7 +5,7 @@
       "name": "position",
       "desc": "Hole center point",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "r0",

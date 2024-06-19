@@ -6,6 +6,12 @@
       "desc": "Message to display",
       "optional": false,
       "type": "string"
+    },
+    {
+      "name": "lineWrapping",
+      "desc": "True if you need to wrap Table lines. Works only with tables.",
+      "optional": true,
+      "type": "boolean"
     }
   ],
   "returns": [],
@@ -13,10 +19,26 @@
     [
       "function init()",
       "\tDebugPrint(\"time\")",
+      "",
+      "\tDebugPrint(GetPlayerCameraTransform())",
+      "",
+      "\tlocal anyTable = {",
+      "\t\t\"teardown\",",
+      "\t\t{",
+      "\t\t\tname = \"Alex\",",
+      "\t\t\tage = 25,",
+      "\t\t\tchild = { name = \"Lena\" }",
+      "\t\t},",
+      "\t\tnil,",
+      "\t\tversion = \"1.6.0\",",
+      "\t\ttrue,",
+      "\t}",
+      "\tDebugPrint(anyTable)",
       "end"
     ]
   ],
   "description": [
-    "Display message on screen. The last 20 lines are displayed."
+    "Display message on screen. The last 20 lines are displayed.",
+    "The function will also recognize tables and convert them to strings automatically."
   ]
 }

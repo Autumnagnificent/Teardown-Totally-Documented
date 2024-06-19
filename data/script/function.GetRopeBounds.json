@@ -1,0 +1,40 @@
+{
+  "name": "GetRopeBounds",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Joint handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "min",
+      "desc": "Lower point of rope bounds in world space",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "max",
+      "desc": "Upper point of rope bounds in world space",
+      "optional": false,
+      "type": "TVec"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal joint = FindJoint(\"joint\")",
+      "\tlocal mi, ma = GetRopeBounds(joint)",
+      "",
+      "\tDebugCross(mi)",
+      "\tDebugCross(ma)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the bounds of the rope.",
+    "Will return nil if the handle is not a rope"
+  ]
+}

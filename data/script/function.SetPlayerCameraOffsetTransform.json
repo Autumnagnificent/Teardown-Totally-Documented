@@ -5,7 +5,7 @@
       "name": "transform",
       "desc": "Desired player camera offset transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     },
     {
       "name": "stackable",

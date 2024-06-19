@@ -11,7 +11,7 @@
       "name": "transform",
       "desc": "Desired transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "returns": [],

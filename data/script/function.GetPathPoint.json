@@ -13,7 +13,7 @@
       "name": "point",
       "desc": "The path point dist meters along the path",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

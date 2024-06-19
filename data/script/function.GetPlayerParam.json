@@ -1,0 +1,37 @@
+{
+  "name": "GetPlayerParam",
+  "arguments": [
+    {
+      "name": "parameter",
+      "desc": "Parameter name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "any"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\t-- The parameter names are case-insensitive, so any of the specified writing styles will be correct:",
+      "\t-- \"GodMode\", \"godmode\", \"godMode\"",
+      "\tlocal paramName = \"GodMode\"",
+      "\tlocal param = GetPlayerParam(paramName)",
+      "\tDebugWatch(paramName, param)",
+      "",
+      "\tif InputPressed(\"g\") then",
+      "\t\tSetPlayerParam(paramName, not param)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "${table:Param name}"
+  ]
+}

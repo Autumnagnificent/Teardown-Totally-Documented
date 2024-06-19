@@ -2,8 +2,14 @@
   "name": "UiButtonPressDist",
   "arguments": [
     {
-      "name": "dist",
-      "desc": "Press distance",
+      "name": "distX",
+      "desc": "Press distance along X axis",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "distY",
+      "desc": "Press distance along Y axis",
       "optional": false,
       "type": "number"
     }
@@ -11,7 +17,7 @@
   "returns": [],
   "examples": [
     [
-      "UiButtonPressDistance(4)",
+      "UiButtonPressDistance(4, 4)",
       "if UiTextButton(\"Test\") then",
       "\t...",
       "end"

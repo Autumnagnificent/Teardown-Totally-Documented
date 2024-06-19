@@ -11,13 +11,13 @@
       "name": "position",
       "desc": "World space position as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "impulse",
       "desc": "World space impulse as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [],

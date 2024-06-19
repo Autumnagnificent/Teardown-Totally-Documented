@@ -5,13 +5,13 @@
       "name": "pos",
       "desc": "World space point as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "velocity",
       "desc": "World space velocity as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "lifetime",

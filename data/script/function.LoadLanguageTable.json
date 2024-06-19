@@ -5,7 +5,7 @@
       "name": "id",
       "desc": "Language id (enum)",
       "optional": false,
-      "type": "string"
+      "type": "number"
     }
   ],
   "returns": [],

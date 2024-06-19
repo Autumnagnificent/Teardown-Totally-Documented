@@ -5,13 +5,13 @@
       "name": "t",
       "desc": "Transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     },
     {
       "name": "v",
       "desc": "Vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [
@@ -19,7 +19,7 @@
       "name": "r",
       "desc": "Transformed vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

@@ -28,7 +28,6 @@
       "\tlocal body = FindBody(\"testbody\", true)",
       "\tlocal isDynamic = GetProperty(body, \"dynamic\")",
       "\tDebugWatch(\"isDynamic\", isDynamic)",
-      "end",
       "end"
     ]
   ],

@@ -1,0 +1,32 @@
+{
+  "name": "SetGravity",
+  "arguments": [
+    {
+      "name": "vec",
+      "desc": "Gravity vector",
+      "optional": false,
+      "type": "TVec"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local isMoonGravityEnabled = false",
+      "",
+      "function tick()",
+      "\tif InputPressed(\"g\") then",
+      "\t\tisMoonGravityEnabled = not isMoonGravityEnabled",
+      "\t\tif isMoonGravityEnabled then",
+      "\t\t\tSetGravity(Vec(0, -1.6, 0))",
+      "\t\telse",
+      "\t\t\tSetGravity(Vec(0, -10.0, 0))",
+      "\t\tend",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Sets the gravity value on the scene.",
+    "When the scene restarts, it resets to the default value (0, -10, 0)."
+  ]
+}

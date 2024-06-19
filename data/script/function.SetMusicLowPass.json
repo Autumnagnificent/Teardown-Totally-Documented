@@ -1,0 +1,30 @@
+{
+  "name": "SetMusicLowPass",
+  "arguments": [
+    {
+      "name": "wet",
+      "desc": "Music low pass filter 0.0 - 1.0.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tPlayMusic(\"about.ogg\")",
+      "end",
+      "",
+      "local rewindRequested = false",
+      "",
+      "function tick()",
+      "\tif InputDown(\"interact\") then",
+      " \t\tSetMusicLowPass(0.6)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Override current music low pass filter for this frame. Call continuously to keep overriding."
+  ]
+}

@@ -19,7 +19,7 @@
       "name": "direction",
       "desc": "3D world direction as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

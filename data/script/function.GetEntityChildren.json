@@ -1,0 +1,53 @@
+{
+  "name": "GetEntityChildren",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "recursive",
+      "desc": "Search recursively",
+      "optional": true,
+      "type": "boolean"
+    },
+    {
+      "name": "type",
+      "desc": "Entity type (\"body\", \"shape\", \"light\", \"location\" etc.)",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with child elements of the entity",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal car = FindEntity(\"car\", true, \"vehicle\")",
+      "\tDebugWatch(\"car\", car)",
+      "",
+      "\tlocal children = GetEntityChildren(entity, \"\", true, \"wheel\")",
+      "\tfor i = 1, #children do",
+      "\t\tDebugWatch(\"wheel \" .. tostring(i), children[i])",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns child entities"
+  ]
+}

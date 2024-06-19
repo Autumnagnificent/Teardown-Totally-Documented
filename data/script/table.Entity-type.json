@@ -1,15 +1,15 @@
 [
   [
     "Body",
-    "desc, dynamic, mass, transform, velocity, angVelocity, active"
+    "desc (string), dynamic (boolean), transform, velocity (vector(x, y, z)), angVelocity (vector(x,y,z)), active (boolean), friction (number), restitution (number), frictionMode (average|minimum|multiply|maximum), restitutionMode (average|minimum|multiply|maximum)"
   ],
   [
     "Shape",
-    "density, strength, emissiveScale"
+    "density (number), strength (number), emissiveScale (number), localTransform"
   ],
   [
     "Light",
-    "enabled, color, intensity, transform"
+    "enabled (boolean), color (vector(r, g, b)), intensity (number), transform, size (number), reach (number), unshadowed (number), fogscale (number), fogiter (number), glare (number)"
   ],
   [
     "Location",
@@ -17,22 +17,26 @@
   ],
   [
     "Water",
-    "type, depth, wave, ripple, motion, foam"
+    "type (string), depth (number), wave (number), ripple (number), motion (number), foam (number), color (vector(r, g, b))"
   ],
   [
     "Joint",
-    "size, rotstrength, rotspring (only for ropes: slack, strength, maxstretch)"
+    "size (number), rotstrength (number), rotspring (number);  only for ropes: slack (number), strength (number), maxstretch (number), ropecolor (vector(r, g, b))"
   ],
   [
     "Vehicle",
-    "spring, damping, topspeed, acceleration, strength, antispin, antiroll, difflock, steerassist, friction"
+    "spring (number), damping (number), topspeed (number), acceleration (number), strength (number), antispin (number), antiroll (number), difflock (number), steerassist (number), friction (number), smokeintensity (number), transform, brokenthreshold (number)"
   ],
   [
     "Wheel",
-    "drive, steer, travel"
+    "drive (number), steer (number), travel (vector(x, y))"
   ],
   [
     "Screen",
-    "enabled"
+    "enabled (boolean), interactive (boolean), emissive (number), fxraster (number), fxca (number), fxnoise (number), fxglitch (number)"
+  ],
+  [
+    "Trigger",
+    "transform, size (vector(x, y, z)/number)"
   ]
 ]
