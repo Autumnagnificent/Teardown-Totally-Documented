@@ -6,7 +6,7 @@
       "name": "transform",
       "desc": "Current player camera transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "examples": [

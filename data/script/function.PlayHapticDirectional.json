@@ -11,7 +11,7 @@
       "name": "direction",
       "desc": "Direction in which effect must be played",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "amplitude",

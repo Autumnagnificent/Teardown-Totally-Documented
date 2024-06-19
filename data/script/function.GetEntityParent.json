@@ -1,0 +1,43 @@
+{
+  "name": "GetEntityParent",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Entity handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "desc": "Entity type (\"body\", \"shape\", \"light\", \"location\" etc.)",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal wheel = FindEntity(\"\", true, \"wheel\")",
+      "\tlocal vehicle = GetEntityParent(wheel,  \"\", \"vehicle\")",
+      "\tDebugWatch(\"Wheel vehicle\", GetEntityType(vehicle) .. \" \" .. tostring(vehicle))",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

@@ -17,13 +17,13 @@
       "name": "pointA",
       "desc": "World space point for first body",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "pointB",
       "desc": "World space point for second body",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "maxVel",

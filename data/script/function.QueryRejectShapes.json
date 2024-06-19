@@ -1,0 +1,30 @@
+{
+  "name": "QueryRejectShapes",
+  "arguments": [
+    {
+      "name": "shapes",
+      "desc": "Array with shapes handles",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal shape = FindShape(\"shape\")",
+      "\tQueryRequire(\"physical dynamic large\")",
+      "\tlocal shapes = {shape}",
+      "\t--Do not include shape in next raycast",
+      "\tQueryRejectShapes(shapes)",
+      "\tlocal hit, dist = QueryRaycast(Vec(0, 0, 0), Vec(1, 0, 0), 10)",
+      "\tif hit then",
+      "\t\tDebugPrint(dist)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Exclude shapes from the next query"
+  ]
+}

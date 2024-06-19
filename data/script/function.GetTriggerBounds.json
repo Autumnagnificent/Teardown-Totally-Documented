@@ -13,13 +13,13 @@
       "name": "min",
       "desc": "Lower point of trigger bounds in world space",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "max",
       "desc": "Upper point of trigger bounds in world space",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

@@ -5,13 +5,13 @@
       "name": "t",
       "desc": "Transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     },
     {
       "name": "p",
       "desc": "Vector representing position",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [
@@ -19,7 +19,7 @@
       "name": "r",
       "desc": "Transformed position",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

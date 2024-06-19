@@ -1,0 +1,22 @@
+{
+  "name": "GetGravity",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "vector",
+      "desc": "Gravity vector",
+      "optional": false,
+      "type": "TVec"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tDebugPrint(VecStr(GetGravity()))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the gravity value on the scene."
+  ]
+}

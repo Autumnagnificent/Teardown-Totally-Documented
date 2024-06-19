@@ -5,13 +5,13 @@
       "name": "a",
       "desc": "Quaternion",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     },
     {
       "name": "b",
       "desc": "Quaternion",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     }
   ],
   "returns": [
@@ -19,7 +19,7 @@
       "name": "c",
       "desc": "New quaternion",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     }
   ],
   "examples": [

@@ -1,0 +1,25 @@
+{
+  "name": "SetFlashlight",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Handle of the light",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local oldLight = 0",
+      "function tick()",
+      "\t-- in order not to lose the original flashlight, it is better to save it's handle",
+      "\toldLight = GetFlashlight()",
+      "\tSetFlashlight(FindEntity(\"mylight\", true))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Sets a new entity of the Light type as a flashlight."
+  ]
+}

@@ -15,7 +15,7 @@
     },
     {
       "name": "value",
-      "desc": "Property name",
+      "desc": "Property value",
       "optional": false,
       "type": "any"
     }
@@ -26,7 +26,6 @@
       "function tick()",
       "\tlocal light = FindLight(\"mylight\", true)",
       "\tSetProperty(light, \"intensity\", math.abs(math.sin(GetTime())))",
-      "end",
       "end"
     ]
   ],

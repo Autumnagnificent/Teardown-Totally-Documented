@@ -1,0 +1,44 @@
+{
+  "name": "UiRoundedRectOutline",
+  "arguments": [
+    {
+      "name": "width",
+      "desc": "Rectangle width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "height",
+      "desc": "Rectangle height",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "roundingRadius",
+      "desc": "Round corners radius",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "thickness",
+      "desc": "Rectangle outline thickness",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiPush()",
+      "\tUiColor(1, 0, 0)",
+      "\tUiTranslate(UiCenter(), UiMiddle())",
+      "\tUiRotate(GetTime())",
+      "\tUiAlign(\"center middle\")",
+      "\tUiRoundedRectOutline(100, 100, 20, 5)",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Draw rectangle outline with round corners at cursor position"
+  ]
+}

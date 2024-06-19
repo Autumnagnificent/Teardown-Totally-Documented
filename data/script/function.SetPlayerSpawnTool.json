@@ -2,10 +2,10 @@
   "name": "SetPlayerSpawnTool",
   "arguments": [
     {
-      "name": "INPUT",
+      "name": "id",
       "desc": "Tool unique identifier",
       "optional": false,
-      "type": "id"
+      "type": "string"
     }
   ],
   "returns": [],

@@ -5,13 +5,13 @@
       "name": "eye",
       "desc": "Vector representing the camera location",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "target",
       "desc": "Vector representing the point to look at",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [
@@ -19,7 +19,7 @@
       "name": "quat",
       "desc": "New quaternion",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     }
   ],
   "examples": [

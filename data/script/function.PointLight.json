@@ -5,7 +5,7 @@
       "name": "pos",
       "desc": "World space light position",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "r",

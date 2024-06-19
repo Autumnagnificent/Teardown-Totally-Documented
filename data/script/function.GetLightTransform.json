@@ -13,7 +13,7 @@
       "name": "transform",
       "desc": "World space light transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "examples": [

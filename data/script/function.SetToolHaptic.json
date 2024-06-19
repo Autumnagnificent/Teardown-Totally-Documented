@@ -16,7 +16,7 @@
     {
       "name": "amplitude",
       "desc": "Amplitude multiplier. Default (1.0)",
-      "optional": false,
+      "optional": true,
       "type": "number"
     }
   ],

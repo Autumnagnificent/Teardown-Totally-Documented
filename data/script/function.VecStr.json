@@ -5,7 +5,7 @@
       "name": "vector",
       "desc": "Vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [

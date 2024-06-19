@@ -1,0 +1,23 @@
+{
+  "name": "UnloadSound",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Sound handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal snd = LoadSound(\"warning-beep.ogg\")",
+      "\tUnloadSound(snd)",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

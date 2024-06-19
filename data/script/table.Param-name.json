@@ -1,0 +1,32 @@
+[
+  [
+    "Health",
+    "float",
+    "Current value of the player's health."
+  ],
+  [
+    "HealthRegeneration",
+    "boolean &nbsp",
+    "Is the player's health regeneration enabled."
+  ],
+  [
+    "WalkingSpeed",
+    "float",
+    "The player's walking speed. <b> This value is applied for 1 frame! </b>"
+  ],
+  [
+    "JumpSpeed",
+    "float",
+    "The player's jump speed. The height of the jump depends non-linearly on the jump speed. <b> This value is applied for 1 frame! </b>"
+  ],
+  [
+    "GodMode",
+    "boolean &nbsp",
+    "If the value is True, the player does not lose health"
+  ],
+  [
+    "FlyMode",
+    "boolean &nbsp",
+    "If the value is True, the player will fly"
+  ]
+]

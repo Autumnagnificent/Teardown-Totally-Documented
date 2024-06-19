@@ -25,7 +25,7 @@
       "name": "maxpoint",
       "desc": "World space point of highest point (largest Y coordinate) if not empty",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

@@ -1,0 +1,42 @@
+{
+  "name": "GetSoundProgress",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Sound play handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "progress",
+      "desc": "Current sound progress in seconds.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local snd",
+      "function init()",
+      "\tsnd = LoadSound(\"radio/jazz.ogg\")",
+      "end",
+      "",
+      "local sndPlay",
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tif not IsSoundPlaying(sndPlay) then",
+      "\t\t\tlocal pos = Vec(0, 0, 0)",
+      "\t\t\tsndPlay = PlaySound(snd, pos, 0.5)",
+      "\t\telse",
+      "\t\t\tSetSoundProgress(sndPlay, GetSoundProgress(sndPlay) - 1.0)",
+      "\t\tend",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

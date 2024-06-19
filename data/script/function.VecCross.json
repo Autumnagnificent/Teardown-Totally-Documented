@@ -5,13 +5,13 @@
       "name": "a",
       "desc": "Vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "b",
       "desc": "Vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [
@@ -19,7 +19,7 @@
       "name": "c",
       "desc": "Cross product of a and b (also called vector product)",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

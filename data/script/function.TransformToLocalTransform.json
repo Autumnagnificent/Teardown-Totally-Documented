@@ -5,13 +5,13 @@
       "name": "parent",
       "desc": "Transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     },
     {
       "name": "child",
       "desc": "Transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "returns": [
@@ -19,7 +19,7 @@
       "name": "transform",
       "desc": "New transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "examples": [

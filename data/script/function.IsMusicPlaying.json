@@ -1,0 +1,28 @@
+{
+  "name": "IsMusicPlaying",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "playing",
+      "desc": "True if music is playing, false otherwise.",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tPlayMusic(\"about.ogg\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif InputPressed(\"interact\") and IsMusicPlaying() then",
+      "\t\tDebugPrint(\"music is playing\")",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

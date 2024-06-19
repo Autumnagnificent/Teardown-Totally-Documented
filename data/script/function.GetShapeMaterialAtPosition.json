@@ -11,7 +11,7 @@
       "name": "pos",
       "desc": "Position in world space",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [

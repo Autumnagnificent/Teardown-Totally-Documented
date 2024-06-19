@@ -5,7 +5,7 @@
       "name": "vel",
       "desc": "Desired ground velocity",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [],

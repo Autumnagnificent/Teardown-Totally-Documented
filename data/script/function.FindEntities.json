@@ -1,0 +1,48 @@
+{
+  "name": "FindEntities",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "global",
+      "desc": "Search in entire scene",
+      "optional": true,
+      "type": "boolean"
+    },
+    {
+      "name": "type",
+      "desc": "Entity type (\"body\", \"shape\", \"light\", \"location\" etc.)",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with handles to all entities with specified tag",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\t-- You may use this function in a similar way to other \"Find functions\" like FindBody, FindShape, FindVehicle, etc.",
+      "\tlocal cars = FindEntities(\"car\", false, \"vehicle\")",
+      "",
+      "\t-- You can get all the entities of the specified type by passing an empty string to the tag",
+      "\tlocal allJoints = FindEntities(\"\", true, \"joint\")",
+      "",
+      "\t-- If the type is not specified, the search will be performed for all types",
+      "\tlocal allUnbreakables = FindEntities(\"unbreakable\", true)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns a list of entities with the specified tag and type. This is a universal method that is an alternative to FindBody, FindShape, FindVehicle, etc."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "UiCircleOutline",
+  "arguments": [
+    {
+      "name": "radius",
+      "desc": "Circle radius",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "thickness",
+      "desc": "Circle outline thickness",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Draw a red rotating rectangle outline in center of screen",
+      "UiPush()",
+      "\tUiColor(1, 0, 0)",
+      "\tUiTranslate(UiCenter(), UiMiddle())",
+      "\tUiAlign(\"center middle\")",
+      "\tUiCircleOutline(100, 8)",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Draw a circle outline at cursor position"
+  ]
+}

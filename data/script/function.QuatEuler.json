@@ -25,7 +25,7 @@
       "name": "quat",
       "desc": "New quaternion",
       "optional": false,
-      "type": "table"
+      "type": "TQuat"
     }
   ],
   "examples": [

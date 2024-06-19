@@ -11,7 +11,7 @@
       "name": "transform",
       "desc": "Transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     },
     {
       "name": "width",

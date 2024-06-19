@@ -5,7 +5,7 @@
       "name": "vec",
       "desc": "A vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "scale",
@@ -19,7 +19,7 @@
       "name": "norm",
       "desc": "A scaled version of input vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

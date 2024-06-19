@@ -6,7 +6,7 @@
       "name": "transform",
       "desc": "Current camera transform",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "examples": [

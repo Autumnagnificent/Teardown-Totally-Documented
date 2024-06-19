@@ -1,0 +1,42 @@
+{
+  "name": "IsSoundPlaying",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Sound play handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "playing",
+      "desc": "True if sound is playing, false otherwise.",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [
+    [
+      "local snd",
+      "function init()",
+      "\tsnd = LoadSound(\"radio/jazz.ogg\")",
+      "end",
+      "",
+      "local sndPlay",
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      "\t\tif not IsSoundPlaying(sndPlay) then",
+      "\t\t\tlocal pos = Vec(0, 0, 0)",
+      "\t\t\tsndPlay = PlaySound(snd, pos, 0.5)",
+      "\t\telse",
+      "\t\t\tStopSound(sndPlay)",
+      "\t\tend",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

@@ -55,7 +55,7 @@
       "name": "offset",
       "desc": "Offset vector in shape local space",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

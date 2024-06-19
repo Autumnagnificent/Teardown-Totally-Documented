@@ -1,0 +1,38 @@
+{
+  "name": "UiRoundedRect",
+  "arguments": [
+    {
+      "name": "width",
+      "desc": "Rectangle width",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "height",
+      "desc": "Rectangle height",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "roundingRadius",
+      "desc": "Round corners radius",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiPush()",
+      "\tUiColor(1, 0, 0)",
+      "\tUiTranslate(UiCenter(), UiMiddle())",
+      "\tUiRotate(GetTime())",
+      "\tUiAlign(\"center middle\")",
+      "\tUiRoundedRect(100, 100, 8)",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Draw a solid rectangle with round corners of specified radius"
+  ]
+}

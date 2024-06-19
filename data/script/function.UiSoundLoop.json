@@ -12,6 +12,12 @@
       "desc": "Playback volume. Default 1.0",
       "optional": true,
       "type": "number"
+    },
+    {
+      "name": "pitch",
+      "desc": "Playback pitch. Default 1.0",
+      "optional": true,
+      "type": "number"
     }
   ],
   "returns": [],

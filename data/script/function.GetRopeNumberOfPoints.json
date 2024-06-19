@@ -1,0 +1,31 @@
+{
+  "name": "GetRopeNumberOfPoints",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Joint handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "amount",
+      "desc": "Number of points in a rope or zero if invalid",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal joint = FindJoint(\"joint\")",
+      "\tlocal numberPoints = GetRopeNumberOfPoints(joint)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the number of points in the rope given its handle.",
+    "Will return zero if the handle is not a rope"
+  ]
+}

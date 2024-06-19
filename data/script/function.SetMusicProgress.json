@@ -1,0 +1,28 @@
+{
+  "name": "SetMusicProgress",
+  "arguments": [
+    {
+      "name": "progress",
+      "desc": "Progress in seconds. Default 0.0.",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\tPlayMusic(\"about.ogg\")",
+      "end",
+      "",
+      "function tick()",
+      "\tif InputPressed(\"interact\") then",
+      " \t\tSetMusicProgress(GetMusicProgress() - 1.0)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

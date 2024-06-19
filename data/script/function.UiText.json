@@ -12,6 +12,12 @@
       "desc": "Automatically move cursor vertically. Default false.",
       "optional": true,
       "type": "boolean"
+    },
+    {
+      "name": "maxChars",
+      "desc": "Maximum amount of characters. Default 100000.",
+      "optional": true,
+      "type": "number"
     }
   ],
   "returns": [
@@ -29,15 +35,21 @@
     },
     {
       "name": "x",
-      "desc": "End x-position of text. Only valid when \"advance cursor\" is false",
+      "desc": "End x-position of text.",
       "optional": false,
       "type": "number"
     },
     {
       "name": "y",
-      "desc": "End y-position of text. Only valid when \"advance cursor\" is false",
+      "desc": "End y-position of text.",
       "optional": false,
       "type": "number"
+    },
+    {
+      "name": "linkId",
+      "desc": "Link id of clicked link",
+      "optional": false,
+      "type": "string"
     }
   ],
   "examples": [
@@ -49,7 +61,40 @@
       "",
       "--Automatically advance cursor",
       "UiText(\"First line\", true)",
-      "UiText(\"Second line\", true)"
+      "UiText(\"Second line\", true)",
+      "",
+      "",
+      "",
+      "--Using links",
+      "UiFont(\"bold.ttf\", 26)",
+      "UiTranslate(100,100)",
+      "--Using virtual links",
+      "link = \"[[link;label=loc@UI_TEXT_FREE_ROAM_OPTIONS_LINK_NAME;id=options/game;color=#DDDD7FDD;underline=true]]\"",
+      "someText = \"Some text with a link: \" .. link .. \" and some more text\"",
+      "",
+      "w, h, x, y, linkId = UiText(someText)",
+      "if linkId:len() ~= 0 then",
+      "\tif linkId == \"options/game\" then",
+      "\t\tDebugPrint(linkId..\" link clicked\")",
+      "\telseif linkId == \"options/sound\" then",
+      "\t\t--Do something else",
+      "\tend",
+      "end",
+      "UiTranslate(0,50)",
+      "",
+      "--Using game links, id attribute is required, color is optional, same as virtual links",
+      "link = \"[[game://options;label=loc@UI_TEXT_FREE_ROAM_OPTIONS_LINK_NAME;id=game;color=#DDDD7FDD;underline=false]]\"",
+      "someText = \"Some text with a link: \" .. link .. \" and some more text\"",
+      "w, h, x, y, linkId = UiText(someText)",
+      "if linkId:len() ~= 0 then",
+      "\tDebugPrint(linkId..\" link clicked\")",
+      "end",
+      "UiTranslate(0,50)",
+      "",
+      "--Using http/s links is also possible, link will be opened in the default browser",
+      "link = \"[[http://www.example.com;label=loc@SOME_KEY;]]\"",
+      "someText = \"Goto: \" .. link",
+      "UiText(someText)"
     ]
   ],
   "description": [

@@ -5,13 +5,13 @@
       "name": "a",
       "desc": "Vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "b",
       "desc": "Vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "t",
@@ -25,7 +25,7 @@
       "name": "c",
       "desc": "Linearly interpolated vector between a and b, using t",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

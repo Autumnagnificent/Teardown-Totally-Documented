@@ -1,0 +1,25 @@
+{
+  "name": "UiCircle",
+  "arguments": [
+    {
+      "name": "radius",
+      "desc": "Circle radius",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiPush()",
+      "\tUiColor(1, 0, 0)",
+      "\tUiTranslate(UiCenter(), UiMiddle())",
+      "\tUiAlign(\"center middle\")",
+      "\tUiCircle(100)",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Draw a solid circle at cursor position"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "GetFlashlight",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle of the player's flashlight",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "\tlocal flashlight = GetFlashlight()",
+      "\tSetProperty(flashlight, \"color\", Vec(0.5, 0, 1))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the handle of the player's flashlight. You can work with it as with an entity of the Light type."
+  ]
+}

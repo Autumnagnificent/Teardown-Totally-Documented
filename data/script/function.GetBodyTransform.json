@@ -13,7 +13,7 @@
       "name": "transform",
       "desc": "Transform of the body",
       "optional": false,
-      "type": "table"
+      "type": "TTransform"
     }
   ],
   "examples": [

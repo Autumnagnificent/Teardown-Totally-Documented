@@ -1,0 +1,41 @@
+{
+  "name": "GetRopePointPosition",
+  "arguments": [
+    {
+      "name": "joint",
+      "desc": "Joint handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "index",
+      "desc": "The point index, starting at 1",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "pos",
+      "desc": "World position of the point, or nil, if invalid",
+      "optional": false,
+      "type": "TVec"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal joint = FindJoint(\"joint\")",
+      "\tnumberPoints = GetRopeNumberOfPoints(joint)",
+      "",
+      "\tfor pointIndex = 1, numberPoints do",
+      "\t\tDebugCross(GetRopePointPosition(joint, pointIndex))",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Returns the world position of the rope's point.",
+    "Will return nil if the handle is not a rope or the index is not valid"
+  ]
+}

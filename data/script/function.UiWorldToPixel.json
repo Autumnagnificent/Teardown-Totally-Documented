@@ -5,7 +5,7 @@
       "name": "point",
       "desc": "3D world position as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [

@@ -5,7 +5,7 @@
       "name": "p0",
       "desc": "World space point as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "r",

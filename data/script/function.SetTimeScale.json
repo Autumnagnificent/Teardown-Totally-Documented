@@ -3,7 +3,7 @@
   "arguments": [
     {
       "name": "scale",
-      "desc": "Time scale 0.1 to 1.0",
+      "desc": "Time scale 0.0 to 2.0",
       "optional": false,
       "type": "number"
     }
@@ -20,10 +20,11 @@
     ]
   ],
   "description": [
-    "Experimental. Scale time in order to make a slow-motion effect. Audio will",
-    "also be affected. Note that this will affect physics behavior and is not",
-    "intended for gameplay purposes. Calling this function will slow down time",
-    "for the next frame only. Call every frame from tick function to get steady",
-    "slow-motion."
+    "Experimental. Scale time in order to make a slow-motion or acceleration effect. Audio will also be affected.",
+    "(v1.4 and below: this function will affect physics behavior and is not intended for gameplay purposes.)",
+    "Starting from v1.5 this function does not affect physics behavior and rely on rendering interpolation.",
+    "Scaling time up may decrease performance, and is not recommended for gameplay purposes.",
+    "Calling this function will change time scale for the next frame only.",
+    "Call every frame from tick function to get steady slow-motion."
   ]
 }

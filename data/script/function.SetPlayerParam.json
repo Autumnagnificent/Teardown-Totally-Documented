@@ -1,0 +1,37 @@
+{
+  "name": "SetPlayerParam",
+  "arguments": [
+    {
+      "name": "parameter",
+      "desc": "Parameter name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "any"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\t-- The parameter names are case-insensitive, so any of the specified writing styles will be correct:",
+      "\t-- \"JumpSpeed\", \"jumpspeed\", \"jumpSpeed\"",
+      "\tlocal paramName = \"JumpSpeed\"",
+      "\tlocal param = GetPlayerParam(paramName)",
+      "\tDebugWatch(paramName, param)",
+      "",
+      "\tif InputDown(\"shift\") then",
+      "\t\t-- JumpSpeed sets for 1 frame",
+      "\t\tSetPlayerParam(paramName, 10)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "${table:Param name}"
+  ]
+}

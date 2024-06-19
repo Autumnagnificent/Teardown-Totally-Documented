@@ -5,7 +5,7 @@
       "name": "vehicle",
       "desc": "Handle to vehicle or zero to not drive.",
       "optional": false,
-      "type": "value"
+      "type": "number"
     }
   ],
   "returns": [],

@@ -5,7 +5,7 @@
       "name": "vec",
       "desc": "A vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "returns": [
@@ -13,7 +13,7 @@
       "name": "norm",
       "desc": "A vector of length 1.0",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

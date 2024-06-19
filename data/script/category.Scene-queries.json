@@ -16,8 +16,10 @@
     "QueryClosestPoint",
     "QueryPath",
     "QueryRaycast",
+    "QueryRaycastRope",
     "QueryRejectBody",
     "QueryRejectShape",
+    "QueryRejectShapes",
     "QueryRejectVehicle",
     "QueryRequire"
   ]

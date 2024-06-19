@@ -17,13 +17,13 @@
       "name": "point",
       "desc": "World space point",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "dir",
       "desc": "World space direction",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "relVel",

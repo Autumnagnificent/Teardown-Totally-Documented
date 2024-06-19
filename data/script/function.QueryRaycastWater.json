@@ -5,13 +5,13 @@
       "name": "origin",
       "desc": "Raycast origin as world space vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "direction",
       "desc": "Unit length raycast direction as world space vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "maxDist",
@@ -37,7 +37,7 @@
       "name": "hitPos",
       "desc": "Hit point as world space vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [

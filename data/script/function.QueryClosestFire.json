@@ -5,7 +5,7 @@
       "name": "origin",
       "desc": "World space position as vector",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     },
     {
       "name": "maxDist",
@@ -25,7 +25,7 @@
       "name": "pos",
       "desc": "Position of closest fire",
       "optional": false,
-      "type": "table"
+      "type": "TVec"
     }
   ],
   "examples": [
