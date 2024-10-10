@@ -1,29 +1,29 @@
 {
-  "name": "GetBrushSize",
+  "name": "Get",
   "arguments": [
     {
-      "name": "brush",
-      "desc": "Brush handle",
+      "name": "x",
+      "desc": "",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z",
+      "desc": "",
       "optional": false,
       "type": "number"
     }
   ],
   "returns": [
     {
-      "name": "x",
-      "desc": "Size along x axis",
-      "optional": false,
-      "type": "number"
-    },
-    {
-      "name": "y",
-      "desc": "Size along y axis",
-      "optional": false,
-      "type": "number"
-    },
-    {
-      "name": "z",
-      "desc": "Size along z axis",
+      "name": "material",
+      "desc": "",
       "optional": false,
       "type": "number"
     }
@@ -31,17 +31,16 @@
   "examples": [
     [
       "function init()",
+      "\tVox(0,0,0)",
       "\tlocal brush = CreateBrush(\"brush/white.vox\")",
       "\tlocal brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
       "\tMaterial(brick)",
-      "\tVox(0,0,0)",
-      "\tBox(0, 0, 0, 10, 10, 10)",
-      "",
-      "\tlocal xs, ys, zs = GetBrushSize(brush)",
+      "\tSet(0, 0, 0)",
+      "\tMaterial(Get(0, 0, 0))",
       "end"
     ]
   ],
   "description": [
-    "Return brush size in voxels"
+    "Returns the voxel's material id at the specified position"
   ]
 }

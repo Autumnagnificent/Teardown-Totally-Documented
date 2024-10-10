@@ -23,10 +23,15 @@
   "returns": [],
   "examples": [
     [
-      "--Draw box with brush rotated 90 degrees around y axis",
-      "RotateBrush(brush, \"y\", 90)",
-      "Material(brush)",
-      "Box(0, 0, 0, 10, 10, 10)"
+      "function init()",
+      "\tlocal brush = CreateBrush(\"brush/white.vox\")",
+      "\tlocal brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
+      "\t--Draw box with brush rotated 90 degrees around y axis",
+      "\tRotateBrush(brush, \"y\", 90)",
+      "\tMaterial(brick)",
+      "\tVox(0,0,0)",
+      "\tBox(0, 0, 0, 10, 10, 10)",
+      "end"
     ]
   ],
   "description": [

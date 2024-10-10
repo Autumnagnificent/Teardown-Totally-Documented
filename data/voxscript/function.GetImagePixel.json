@@ -42,8 +42,10 @@
   ],
   "examples": [
     [
-      "LoadImage(\"MOD/image.png\")",
-      "local r,g,b,a = GetImagePixel(50, 50)"
+      "function init()",
+      "\tLoadImage(\"MOD/image.png\")",
+      "\tlocal r,g,b,a = GetImagePixel(50, 50)",
+      "end"
     ]
   ],
   "description": [

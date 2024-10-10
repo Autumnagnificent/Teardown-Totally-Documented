@@ -14,13 +14,22 @@
       "type": "[number]"
     }
   ],
-  "returns": [],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Returns random integer from lower to (and including) upper bound.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
   "examples": [
     [
-      "local r = RandomInt(1, 3) --Returns 1, 2, or 3"
+      "function init()",
+      "\tlocal r = RandomInt(1, 3) --Returns 1, 2, or 3",
+      "end"
     ]
   ],
   "description": [
-    "Returns random integer from lower to (and including) upper bound."
+    ""
   ]
 }

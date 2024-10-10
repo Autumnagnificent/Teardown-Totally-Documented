@@ -11,7 +11,9 @@
   "returns": [],
   "examples": [
     [
-      "Randomize(5)"
+      "function init()",
+      "\tlocal r = Randomize(5)",
+      "end"
     ]
   ],
   "description": [

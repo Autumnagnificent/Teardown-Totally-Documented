@@ -28,31 +28,31 @@
     {
       "name": "a",
       "desc": "Alpha",
-      "optional": false,
+      "optional": true,
       "type": "number"
     },
     {
       "name": "reflect",
       "desc": "reflectivity",
-      "optional": false,
+      "optional": true,
       "type": "number"
     },
     {
       "name": "shiny",
       "desc": "Shininess",
-      "optional": false,
+      "optional": true,
       "type": "number"
     },
     {
       "name": "metal",
       "desc": "Metallic",
-      "optional": false,
+      "optional": true,
       "type": "number"
     },
     {
       "name": "emissive",
       "desc": "Emissive",
-      "optional": false,
+      "optional": true,
       "type": "number"
     }
   ],
@@ -66,7 +66,9 @@
   ],
   "examples": [
     [
-      "brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)"
+      "function init()",
+      "\tlocal brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
+      "end"
     ]
   ],
   "description": [

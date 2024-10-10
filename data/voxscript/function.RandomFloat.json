@@ -14,13 +14,22 @@
       "type": "[number]"
     }
   ],
-  "returns": [],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Returns random floating point number between lower and upper bound",
+      "optional": false,
+      "type": "number"
+    }
+  ],
   "examples": [
     [
-      "local r = RandomFloat(-1.0, 1.0)"
+      "function init()",
+      "\tlocal r = RandomFloat(-1.0, 1.0)",
+      "end"
     ]
   ],
   "description": [
-    "Returns random floating point number between lower and upper bound"
+    ""
   ]
 }

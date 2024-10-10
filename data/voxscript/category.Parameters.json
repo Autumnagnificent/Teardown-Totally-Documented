@@ -4,6 +4,8 @@
     "Parameter outside the init function will show up in the editor"
   ],
   "functions": [
+    "GetBool",
+    "GetColor",
     "GetFloat",
     "GetInt",
     "GetString",

@@ -29,8 +29,13 @@
   "returns": [],
   "examples": [
     [
-      "Material(mat)",
-      "Sphere(0, 0, 0, 15)"
+      "function init()",
+      "\tVox(0,0,0)",
+      "\tlocal brush = CreateBrush(\"brush/white.vox\")",
+      "\tlocal brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
+      "\tMaterial(brick)",
+      "\tSphere(0, 0, 0, 15)",
+      "end"
     ]
   ],
   "description": [
