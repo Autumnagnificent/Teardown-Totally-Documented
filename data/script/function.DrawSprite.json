@@ -60,6 +60,12 @@
       "desc": "Additive blending enabled. Default false.",
       "optional": true,
       "type": "boolean"
+    },
+    {
+      "name": "fogAffected",
+      "desc": "Enable distance fog effect. Default false.",
+      "optional": true,
+      "type": "boolean"
     }
   ],
   "returns": [],

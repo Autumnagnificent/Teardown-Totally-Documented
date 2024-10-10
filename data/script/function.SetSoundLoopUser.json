@@ -19,7 +19,7 @@
       "name": "flag",
       "desc": "TRUE if sound applied to gamepad speaker, FALSE otherwise.",
       "optional": false,
-      "type": "bool"
+      "type": "boolean"
     }
   ],
   "examples": [

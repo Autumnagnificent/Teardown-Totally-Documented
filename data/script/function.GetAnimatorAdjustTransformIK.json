@@ -1,0 +1,39 @@
+{
+  "name": "GetAnimatorAdjustTransformIK",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "desc": "Name of the location node",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "World space transform of the animator",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "examples": [
+    [
+      "--This will adjust the target transform so that the grip defined by a location node in editor called \"ik_hand_l\" will reach the target",
+      "local target = Transform(Vec(10, 0, 0), QuatEuler(0, 90, 0))",
+      "local adj = GetAnimatorAdjustTransformIK(animator, \"ik_hand_l\")",
+      "if adj ~= nil then",
+      "    target = TransformToParentTransform(target, adj)",
+      "end",
+      "SetAnimatorTransformIK(animator, \"shoulder_l\", \"hand_l\", target, 1.0, 0.9)"
+    ]
+  ],
+  "description": [
+    "When using IK for a character you can use ik-helpers to define where the"
+  ]
+}

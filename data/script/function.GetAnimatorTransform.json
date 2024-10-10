@@ -1,0 +1,27 @@
+{
+  "name": "GetAnimatorTransform",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "World space transform of the animator",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "examples": [
+    [
+      "local pos = GetAnimatorTransform(animator).pos"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

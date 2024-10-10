@@ -1,0 +1,23 @@
+{
+  "name": "GetPlayerRigHasTag",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "exists",
+      "desc": "Returns true if entity has tag",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "examples": [],
+  "description": [
+    ""
+  ]
+}

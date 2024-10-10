@@ -5,7 +5,7 @@
       "name": "type",
       "desc": "Tile in the particle texture atlas (0-15)",
       "optional": false,
-      "type": "int"
+      "type": "number"
     }
   ],
   "returns": [],

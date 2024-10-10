@@ -18,6 +18,8 @@
     "ClearKey",
     "GetBool",
     "GetColor",
+    "GetEvent",
+    "GetEventCount",
     "GetFloat",
     "GetInt",
     "GetString",

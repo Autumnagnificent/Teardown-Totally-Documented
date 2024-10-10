@@ -1,0 +1,27 @@
+{
+  "name": "DeletePathPlanner",
+  "arguments": [
+    {
+      "name": "id",
+      "desc": "Path planner id",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local paths = {}",
+      "",
+      "function init()",
+      "\tlocal id = CreatePathPlanner()",
+      "\tDeletePathPlanner(id)",
+      "\t-- now calling PathPlannerQuery for 'id' will result in an error",
+      "end"
+    ]
+  ],
+  "description": [
+    "Deletes the path planner with the specified id which can be used to save some memory.",
+    "Calling CreatePathPlanner again can initialize a new path planner with the id previously deleted."
+  ]
+}

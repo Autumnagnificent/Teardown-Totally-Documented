@@ -1,0 +1,54 @@
+{
+  "name": "SpawnLayer",
+  "arguments": [
+    {
+      "name": "xml",
+      "desc": "File name or xml string",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "layer",
+      "desc": "Vox layer name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "transform",
+      "desc": "Spawn transform",
+      "optional": false,
+      "type": "TTransform"
+    },
+    {
+      "name": "allowStatic",
+      "desc": "Allow spawning static shapes and bodies (default false)",
+      "optional": true,
+      "type": "boolean"
+    },
+    {
+      "name": "jointExisting",
+      "desc": "Allow joints to connect to existing scene geometry (default false)",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "entities",
+      "desc": "Indexed table with handles to all spawned entities",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tSpawn(\"MOD/prefab/mycar.xml\", \"some_vox_layer\", Transform(Vec(0, 5, 0)))",
+      "\tSpawn(\"<voxbox size='10 10 10' prop='true' material='wood'/>\", \"some_vox_layer\", Transform(Vec(0, 10, 0)))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Same functionality as Spawn(), except using a specific layer in the vox-file"
+  ]
+}

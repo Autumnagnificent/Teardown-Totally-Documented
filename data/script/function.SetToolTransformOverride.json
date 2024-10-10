@@ -1,0 +1,38 @@
+{
+  "name": "SetToolTransformOverride",
+  "arguments": [
+    {
+      "name": "transform",
+      "desc": "Tool body transform",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "",
+      "\tif GetBool(\"game.thirdperson\") then",
+      "\t\tlocal toolTransform = Transform(Vec(0.3, -0.3, -0.2), Quat(0.0, 0.0, 15.0))",
+      "",
+      "\t\t-- Rotate around point",
+      "\t\tlocal pivotPoint = Vec(-0.01, -0.2, 0.04)",
+      "\t\ttoolTransform.pos = VecSub(toolTransform.pos, pivotPoint)",
+      "\t\tlocal rotation = Transform(Vec(), QuatAxisAngle(Vec(0,0,1), GetPlayerPitch()))",
+      "\t\ttoolTransform = TransformToParentTransform(rotation, toolTransform)",
+      "\t\ttoolTransform.pos = VecAdd(toolTransform.pos, pivotPoint)",
+      "",
+      "\t\tSetToolTransformOverride(toolTransform)",
+      "\telse",
+      "\t\tlocal toolTransform = Transform(Vec(0.3, -0.3, -0.2), Quat(0.0, 0.0, 15.0))",
+      "\t\tSetToolTransform(toolTransform)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "This function serves as an alternative to SetToolTransform, providing full control over tool animation by disabling all internal tool animations. ",
+    "When using this function, you must manually include pitch, sway, and crouch movements in the transform. To maintain this control, call the function every frame from the tick function."
+  ]
+}

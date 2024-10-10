@@ -1,0 +1,25 @@
+{
+  "name": "RequestThirdPerson",
+  "arguments": [
+    {
+      "name": "transition",
+      "desc": "Use transition",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tif useThirdPerson then",
+      "\t\tRequestThirdPerson(true)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Use this function to switch to third-person view, overriding the player's selected first-person view. ",
+    "Call the function continuously to maintain the override."
+  ]
+}

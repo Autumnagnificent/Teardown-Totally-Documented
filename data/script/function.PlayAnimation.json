@@ -1,0 +1,46 @@
+{
+  "name": "PlayAnimation",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "desc": "Animation name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "weight",
+      "desc": "Weight [0,1] of this animation, default is 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "filter",
+      "desc": "Name of the bone and its subtree that will be affected",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to the instance that can be used with PlayAnimationInstance, zero if clip reached its end",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "--This will play a single animation \"Shooting\" with a 80% influence but only on the skeleton starting at bone \"Spine\"",
+      "PlayAnimation(animator, \"Shooting\", 0.8, \"Spine\")"
+    ]
+  ],
+  "description": [
+    "Single animations, one-shot, will be processed after looping animations."
+  ]
+}

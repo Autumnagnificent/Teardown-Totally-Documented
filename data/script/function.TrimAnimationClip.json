@@ -1,0 +1,27 @@
+{
+  "name": "TrimAnimationClip",
+  "arguments": [
+    {
+      "name": "begoffset",
+      "desc": "Time offset from the beginning of the animation",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "endoffset",
+      "desc": "Time offset, positive value means from the beginning and negative value means from the end, zero(default) means at end",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--This will \"remove\" 1s from the beginning and 2s from the end.",
+      "TrimAnimationClip(animator, \"walking\", 1, -2)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

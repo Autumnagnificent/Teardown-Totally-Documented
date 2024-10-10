@@ -22,5 +22,17 @@
   [
     "visible",
     "only hit visible shapes"
+  ],
+  [
+    "animator",
+    "part of an animator hierachy"
+  ],
+  [
+    "player",
+    "part of an player"
+  ],
+  [
+    "tool",
+    "part of a tool"
   ]
 ]

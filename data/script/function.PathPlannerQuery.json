@@ -1,0 +1,67 @@
+{
+  "name": "PathPlannerQuery",
+  "arguments": [
+    {
+      "name": "id",
+      "desc": "Path planner id",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "start",
+      "desc": "World space start point",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "end",
+      "desc": "World space target point",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "maxDist",
+      "desc": "Maximum path length before giving up. Default is infinite.",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "targetRadius",
+      "desc": "Maximum allowed distance to target in meters. Default is 2.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "type",
+      "desc": "Type of path. Can be \"low\", \"standart\", \"water\", \"flying\". Default is \"standart\"",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local paths = {}",
+      "",
+      "function init()",
+      "\tpaths[1] = {",
+      "\t\tid = CreatePathPlanner(),",
+      "\t\tlocation = GetProperty(FindEntity(\"loc1\", true), \"transform\").pos,",
+      "\t}",
+      "",
+      "\tpaths[2] = {",
+      "\t\tid = CreatePathPlanner(),",
+      "\t\tlocation = GetProperty(FindEntity(\"loc2\", true), \"transform\").pos,",
+      "\t}",
+      "",
+      "\tfor i = 1, #paths do",
+      "\t\tPathPlannerQuery(paths[i].id, GetPlayerTransform().pos, paths[i].location)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "It works similarly to QueryPath but several paths can be built simultaneously within the same script.",
+    "The QueryPath automatically creates a path planner with an index of 0 and only works with it."
+  ]
+}

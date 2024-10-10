@@ -1,0 +1,32 @@
+{
+  "name": "RequestFirstPerson",
+  "arguments": [
+    {
+      "name": "transition",
+      "desc": "Use transition",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tif useViewFinder then",
+      "\t\tRequestFirstPerson(true)",
+      "\tend",
+      "end",
+      "",
+      "function draw()",
+      "\tif useViewFinder and !GetBool(\"game.thirdperson\") then",
+      "\t\t-- Draw view finder overlay",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Use this function to switch to first-person view, overriding the player's selected third-person view. ",
+    "This is particularly useful for scenarios like looking through a camera viewfinder or a rifle scope. ",
+    "Call the function continuously to maintain the override."
+  ]
+}

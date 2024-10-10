@@ -21,8 +21,6 @@
       "\tloop = LoadLoop(\"radio/jazz.ogg\")",
       "end",
       "",
-      "local rewindRequested = false",
-      "",
       "function tick()",
       "\tlocal pos = Vec(0, 0, 0)",
       "\tPlayLoop(loop, pos, 1.0)",

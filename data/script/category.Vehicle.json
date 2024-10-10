@@ -9,10 +9,12 @@
     "FindVehicles",
     "GetVehicleBodies",
     "GetVehicleBody",
+    "GetVehicleDrive",
     "GetVehicleDriverPos",
     "GetVehicleExhaustTransforms",
     "GetVehicleHealth",
     "GetVehicleParams",
+    "GetVehicleSteering",
     "GetVehicleTransform",
     "GetVehicleVitalTransforms",
     "SetVehicleParam"

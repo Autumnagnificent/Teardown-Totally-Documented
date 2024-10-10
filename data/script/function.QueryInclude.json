@@ -1,0 +1,28 @@
+{
+  "name": "QueryInclude",
+  "arguments": [
+    {
+      "name": "layers",
+      "desc": "Space separate list of layers",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Raycast all the default layers and include the player layer.",
+      "function tick()",
+      "\tQueryInclude(\"player\")",
+      "\tlocal hit, dist = QueryRaycast(Vec(0, 0, 0), Vec(1, 0, 0), 10)",
+      "\tif hit then",
+      "\t\tDebugPrint(dist)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Set included layers for next query. Queries include all layers except tool and player per default. Available layers are:",
+    "${table:QueryLayer}"
+  ]
+}

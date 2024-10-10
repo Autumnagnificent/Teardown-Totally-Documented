@@ -1,0 +1,16 @@
+{
+  "name": "EndAnimationGroup",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "Ends the group created by BeginAnimationGroup"
+  ]
+}

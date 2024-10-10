@@ -13,31 +13,31 @@
       "name": "value0",
       "desc": "Property value (type depends on property)",
       "optional": false,
-      "type": "varying"
+      "type": "any"
     },
     {
       "name": "value1",
       "desc": "Property value (only some properties)",
       "optional": false,
-      "type": "varying"
+      "type": "any"
     },
     {
       "name": "value2",
       "desc": "Property value (only some properties)",
       "optional": false,
-      "type": "varying"
+      "type": "any"
     },
     {
       "name": "value3",
       "desc": "Property value (only some properties)",
       "optional": false,
-      "type": "varying"
+      "type": "any"
     },
     {
       "name": "value4",
       "desc": "Property value (only some properties)",
       "optional": false,
-      "type": "varying"
+      "type": "any"
     }
   ],
   "examples": [

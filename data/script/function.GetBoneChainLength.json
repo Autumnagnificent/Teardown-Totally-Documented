@@ -1,0 +1,40 @@
+{
+  "name": "GetBoneChainLength",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "begname",
+      "desc": "Name of the start-bone of the chain",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "endname",
+      "desc": "Name of the end-bone of the chain",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "length",
+      "desc": "Length of the bone chain between \"start-bone\" and \"end-bone\"",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local length = GetBoneChainLength(animator, \"shoulder_l\", \"hand_l\")"
+    ]
+  ],
+  "description": [
+    "This will calculate the length of the bone-chain between the endpoints.",
+    "If the skeleton have a chain like this (shoulder_l -> upper_arm_l -> lower_arm_l -> hand_l) it will return the length of the upper_arm_l+lower_arm_l"
+  ]
+}

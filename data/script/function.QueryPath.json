@@ -27,7 +27,7 @@
     },
     {
       "name": "type",
-      "desc": "Type of path. Can be \"low\" or \"standart\". Default is \"standart\"",
+      "desc": "Type of path. Can be \"low\", \"standart\", \"water\", \"flying\". Default is \"standart\"",
       "optional": true,
       "type": "string"
     }
@@ -43,6 +43,8 @@
   "description": [
     "Initiate path planning query. The result will run asynchronously as long as GetPathState",
     "returns \"busy\". An ongoing path query can be aborted with AbortPath. The path planning query",
-    "will use the currently set up query filter, just like the other query functions."
+    "will use the currently set up query filter, just like the other query functions.",
+    "Using the 'water' type allows you to build a path within the water.",
+    "The 'flying' type builds a path in the entire three-dimensional space."
   ]
 }

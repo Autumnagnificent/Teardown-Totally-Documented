@@ -1,0 +1,27 @@
+{
+  "name": "GetVehicleSteering",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "steering",
+      "desc": "Driver steering value -1 to 1",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local steering = GetVehicleSteering(vehicle)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

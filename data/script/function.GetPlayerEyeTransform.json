@@ -1,0 +1,25 @@
+{
+  "name": "GetPlayerEyeTransform",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "Current player eye transform",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal t = GetPlayerEyeTransform()",
+      "\tDebugPrint(TransformStr(t))",
+      "end"
+    ]
+  ],
+  "description": [
+    "The player eye transform is the same as what you get from GetCameraTransform when playing in first-person,",
+    "but if you have set a camera transform manually with SetCameraTransform or playing in third-person, you can retrieve",
+    "the player eye transform with this function."
+  ]
+}

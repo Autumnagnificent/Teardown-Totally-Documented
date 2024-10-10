@@ -1,0 +1,29 @@
+{
+  "name": "GetToolLocationWorldTransform",
+  "arguments": [
+    {
+      "name": "name",
+      "desc": "Name of location",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "location",
+      "desc": "Transform of a tool location in world space or nil if the location is not found or if there is no visible tool body.",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "examples": [
+    [
+      "local muzzle = GetToolLocationWorldTransform(\"muzzle\")",
+      "Shoot(muzzle, direction)"
+    ]
+  ],
+  "description": [
+    "Return transform of a tool location in world space. Locations can be defined using the tool prefab editor. A tool location is defined in tool space and to get the world space transform a tool body is required. ",
+    "If a tool body does not exist this function will return nil."
+  ]
+}

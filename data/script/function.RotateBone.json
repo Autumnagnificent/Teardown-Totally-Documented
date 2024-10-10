@@ -1,0 +1,27 @@
+{
+  "name": "RotateBone",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "weight",
+      "desc": "Weight [0,1] default is 1.0",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--This will offset the existing rotation by QuatEuler(...)",
+      "RotateBone(animator, \"spine\", QuatEuler(0, 5, 0), 1.0)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

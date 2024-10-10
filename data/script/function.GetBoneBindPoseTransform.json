@@ -1,0 +1,33 @@
+{
+  "name": "GetBoneBindPoseTransform",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "desc": "Bone name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "Local space transform of the bone in bindpose",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "examples": [
+    [
+      "local lt = getBindPoseTransform(animator, \"lefthand\")"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

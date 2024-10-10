@@ -1,0 +1,17 @@
+{
+  "name": "SetPlayerHidden",
+  "arguments": [],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\t...",
+      "\tSetCameraTransform(t)",
+      "\tSetPlayerHidden()",
+      "end"
+    ]
+  ],
+  "description": [
+    "Use this function to hide the player character."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "StopAnimationInstance",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "instance",
+      "desc": "Instance handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "This will stop the playing anim-instance"
+  ]
+}

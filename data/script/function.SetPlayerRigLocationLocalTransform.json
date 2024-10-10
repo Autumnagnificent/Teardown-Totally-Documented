@@ -1,0 +1,33 @@
+{
+  "name": "SetPlayerRigLocationLocalTransform",
+  "arguments": [
+    {
+      "name": "rig-id",
+      "desc": "Unique id",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "desc": "Name of location",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "location",
+      "desc": "Rig Local transform of the location",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local someBody = FindBody(\"bodyname\")",
+      "    SetPlayerRigLocationLocalTransform(someBody, \"ik_foot_l\", TransformToLocalTransform(GetBodyTransform(someBody), GetLocationTransform(FindLocation(\"ik_foot_l\"))))"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

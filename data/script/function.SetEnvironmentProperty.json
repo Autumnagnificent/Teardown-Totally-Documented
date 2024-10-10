@@ -11,25 +11,25 @@
       "name": "value0",
       "desc": "Property value (type depends on property)",
       "optional": false,
-      "type": "varying"
+      "type": "any"
     },
     {
       "name": "value1",
       "desc": "Extra property value (only some properties)",
       "optional": true,
-      "type": "varying"
+      "type": "any"
     },
     {
       "name": "value2",
       "desc": "Extra property value (only some properties)",
       "optional": true,
-      "type": "varying"
+      "type": "any"
     },
     {
       "name": "value3",
       "desc": "Extra property value (only some properties)",
       "optional": true,
-      "type": "varying"
+      "type": "any"
     }
   ],
   "returns": [],

@@ -1,0 +1,16 @@
+{
+  "name": "GetAnimationClipLoopPosition",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    ""
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "SetPlayerAnimator",
+  "arguments": [
+    {
+      "name": "animator",
+      "desc": "Handle to animator or zero for no animator",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    ""
+  ]
+}

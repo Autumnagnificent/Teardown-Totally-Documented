@@ -1,0 +1,27 @@
+{
+  "name": "SetAnimatorTransform",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "transform",
+      "desc": "Desired transform",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local t = Transform(Vec(10, 0, 0), QuatEuler(0, 90, 0))",
+      "SetAnimatorTransform(animator, t)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

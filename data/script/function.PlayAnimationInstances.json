@@ -1,0 +1,32 @@
+{
+  "name": "PlayAnimationInstances",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--First we play a single jump animation affecting the whole skeleton",
+      "--Then we play an aiming animation on the upper-body, filter=\"Spine1\", keeping the lower-body unaffected",
+      "--Then we force the single-animations to be processed, this will force the \"jump\" to be processed.",
+      "--Then we overwrite just the spine-bone with a mouse controlled rotation(\"rot\")",
+      "--Result will be a jump animation with the upperbody playing an aiming animation but the pitch of the spine controlled by the mouse(\"rot\")",
+      "",
+      "if InputPressed(\"jump\") then",
+      "\tPlayAnimation(animator, \"Jump\")",
+      "end",
+      "PlayAnimationLoop(animator, \"Pistol Idle\", aimWeight, \"Spine1\")",
+      "PlayAnimationInstances(animator)",
+      "SetBoneRotation(animator, \"Spine1\", rot, 1)"
+    ]
+  ],
+  "description": [
+    "Single animations, one-shot, will be processed after looping animations.",
+    "By calling PlayAnimationInstances you can force it to be processed earlier and be able to \"overwrite\" the result of it if you want"
+  ]
+}

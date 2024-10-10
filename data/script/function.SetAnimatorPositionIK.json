@@ -1,0 +1,56 @@
+{
+  "name": "SetAnimatorPositionIK",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "begname",
+      "desc": "Name of the start-bone of the chain",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "endname",
+      "desc": "Name of the end-bone of the chain",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "target",
+      "desc": "World target position that the \"endname\" bone should reach",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "weight",
+      "desc": "Weight [0,1] of this animation, default is 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "history",
+      "desc": "How much of the previous frames result [0,1] that should be used when start the IK search, default is 0.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "flag",
+      "desc": "TRUE if constraints should be used, default is TRUE",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetAnimatorPositionIK(animator, \"shoulder_l\", \"hand_l\", Vec(10, 0, 0), 1.0, 0.9, true)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

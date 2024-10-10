@@ -1,0 +1,36 @@
+{
+  "name": "QuatDeltaNormals",
+  "arguments": [
+    {
+      "name": "normal0",
+      "desc": "Unit vector",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "normal1",
+      "desc": "Unit vector",
+      "optional": false,
+      "type": "TVec"
+    }
+  ],
+  "returns": [
+    {
+      "name": "quat",
+      "desc": "New quaternion",
+      "optional": false,
+      "type": "TQuat"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\t--Create quaternion representing a rotation between x-axis and y-axis",
+      "\tlocal q = QuatDeltaNormals(Vec(1,0,0), Vec(0,1,0))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Create a quaternion representing a rotation between the input normals"
+  ]
+}

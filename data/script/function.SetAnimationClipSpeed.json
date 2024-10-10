@@ -1,0 +1,21 @@
+{
+  "name": "SetAnimationClipSpeed",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--This will make the clip run 2x as normal speed",
+      "SetAnimationClipSpeed(animator, \"walking\", 2)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}
