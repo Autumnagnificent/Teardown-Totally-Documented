@@ -1,0 +1,27 @@
+{
+  "name": "UnRagdoll",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "time",
+      "desc": "Transition time",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Take control of bodies and do a blend during one sec between the animation state and last physics state",
+      "UnRagdoll(animator, 1.0)"
+    ]
+  ],
+  "description": [
+    "Take control if the prefab bodies and do an optional blend between the current ragdoll state and current animation state"
+  ]
+}

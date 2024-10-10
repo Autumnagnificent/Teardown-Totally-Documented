@@ -1,0 +1,20 @@
+{
+  "name": "SetAnimationClipFade",
+  "arguments": [
+    {
+      "name": "fadeout",
+      "desc": "Fadeout time of the animation",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "SetAnimationClipFade(animator, \"fire\", 0.5, 0.5)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

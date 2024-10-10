@@ -1,0 +1,77 @@
+{
+  "name": "GetPlayerAimInfo",
+  "arguments": [
+    {
+      "name": "position",
+      "desc": "Start position of the search",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "maxdist",
+      "desc": "Max search distance",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "hit",
+      "desc": "TRUE if hit, FALSE otherwise.",
+      "optional": false,
+      "type": "boolean"
+    },
+    {
+      "name": "startpos",
+      "desc": "Player can modify start position when close to walls etc",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "endpos",
+      "desc": "Hit position",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "direction",
+      "desc": "Direction from start position to end position",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "hitnormal",
+      "desc": "Normal of the hitpoint",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "hitdist",
+      "desc": "Distance of the hit",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "hitentity",
+      "desc": "Handle of the entitiy being hit",
+      "optional": false,
+      "type": "handle"
+    },
+    {
+      "name": "hitmaterial",
+      "desc": "Name of the material being hit",
+      "optional": false,
+      "type": "handle"
+    }
+  ],
+  "examples": [
+    [
+      "local muzzle = GetToolLocationWorldTransform(\"muzzle\")",
+      "local _, pos, _, dir = GetPlayerAimInfo(muzzle.pos)",
+      "Shoot(pos, dir)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

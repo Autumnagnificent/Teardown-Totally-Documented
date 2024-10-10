@@ -25,6 +25,16 @@
     "If the value is True, the player does not lose health"
   ],
   [
+    "Friction",
+    "float",
+    "Player body friction"
+  ],
+  [
+    "Restitution",
+    "float",
+    "Player body restitution"
+  ],
+  [
     "FlyMode",
     "boolean &nbsp",
     "If the value is True, the player will fly"

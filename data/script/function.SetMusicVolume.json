@@ -15,8 +15,6 @@
       "\tPlayMusic(\"about.ogg\")",
       "end",
       "",
-      "local rewindRequested = false",
-      "",
       "function tick()",
       "\tif InputDown(\"interact\") then",
       " \t\tSetMusicVolume(0.3)",

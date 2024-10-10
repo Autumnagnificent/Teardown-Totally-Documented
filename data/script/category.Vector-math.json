@@ -12,6 +12,8 @@
     "QuatAlignXZ",
     "QuatAxisAngle",
     "QuatCopy",
+    "QuatDeltaNormals",
+    "QuatDeltaVectors",
     "QuatEuler",
     "QuatLookAt",
     "QuatRotateQuat",

@@ -1,0 +1,16 @@
+{
+  "name": "QueryRejectAnimator",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    "Exclude animator from the next query"
+  ]
+}

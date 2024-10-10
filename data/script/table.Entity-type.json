@@ -9,7 +9,7 @@
   ],
   [
     "Light",
-    "enabled (boolean), color (vector(r, g, b)), intensity (number), transform, size (number), reach (number), unshadowed (number), fogscale (number), fogiter (number), glare (number)"
+    "enabled (boolean), color (vector(r, g, b)), intensity (number), transform, size (number/vector(x,y)), reach (number), unshadowed (number), fogscale (number), fogiter (number), glare (number)"
   ],
   [
     "Location",

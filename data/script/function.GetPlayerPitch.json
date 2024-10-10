@@ -1,0 +1,22 @@
+{
+  "name": "GetPlayerPitch",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "pitch",
+      "desc": "Current player pitch angle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\tlocal pitchRotation = Quat(Vec(1,0,0), GetPlayerPitch())",
+      "end"
+    ]
+  ],
+  "description": [
+    "The player pitch angle is applied to the player camera transform. This value can be used to animate tool pitch movement when using SetToolTransformOverride."
+  ]
+}

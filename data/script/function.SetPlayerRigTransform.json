@@ -1,0 +1,27 @@
+{
+  "name": "SetPlayerRigTransform",
+  "arguments": [
+    {
+      "name": "rig-id",
+      "desc": "Unique id",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "location",
+      "desc": "New world transform",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "local someBody = FindBody(\"bodyname\")",
+      "    SetPlayerRigTransform(someBody, GetBodyTransform(someBody))"
+    ]
+  ],
+  "description": [
+    "This will both update the rig identified by the 'id' and make it active"
+  ]
+}

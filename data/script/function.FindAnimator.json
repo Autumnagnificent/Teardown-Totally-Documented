@@ -1,0 +1,40 @@
+{
+  "name": "FindAnimator",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "global",
+      "desc": "Search in entire scene",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to first animator with specified tag or zero if not found",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "--Search for the first animator in script scope",
+      "local animator = FindAnimator()",
+      "",
+      "--Search for an animator tagged \"anim\" in script scope",
+      "local animator = FindAnimator(\"anim\")",
+      "",
+      "--Search for an animator tagged \"anim2\" in entire scene",
+      "local anim2 = FindAnimator(\"anim2\", true)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

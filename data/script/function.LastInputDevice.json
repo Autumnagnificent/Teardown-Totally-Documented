@@ -18,6 +18,8 @@
       "\t\tDebugPrint(\"Last input was from gamepad\")",
       "\telseif LastInputDevice() == UI_DEVICE_MOUSE then",
       "\t\tDebugPrint(\"Last input was mouse & keyboard\")",
+      "\telseif LastInputDevice() == UI_DEVICE_TOUCHSCREEN then",
+      "\t\tDebugPrint(\"Last input was touchscreen\")",
       "\tend",
       "end"
     ]

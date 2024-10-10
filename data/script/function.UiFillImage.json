@@ -1,0 +1,26 @@
+{
+  "name": "UiFillImage",
+  "arguments": [
+    {
+      "name": "path",
+      "desc": "Path to image (PNG or JPG format)",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiPush()",
+      "\tUiFillImage(\"ui/hud/tutorial/plank-lift.jpg\")",
+      "\tUiTranslate(UiCenter(), UiMiddle())",
+      "\tUiRotate(GetTime())",
+      "\tUiAlign(\"center middle\")",
+      "\tUiRoundedRect(100, 100, 8)",
+      "UiPop()"
+    ]
+  ],
+  "description": [
+    "Image to fill for UiRoundedRect, UiCircle"
+  ]
+}

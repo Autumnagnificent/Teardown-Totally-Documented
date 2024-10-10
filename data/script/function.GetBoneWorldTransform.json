@@ -1,0 +1,39 @@
+{
+  "name": "GetBoneWorldTransform",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "desc": "Bone name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "transform",
+      "desc": "World space transform of the bone",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "examples": [
+    [
+      "local animator = GetPlayerAnimator()",
+      "    local bones = GetBoneNames(animator)",
+      "    for i=1, #bones do",
+      "        local bone = bones[i]",
+      "        local t = GetBoneWorldTransform(animator,bone)",
+      "        DebugCross(t.pos)",
+      "    end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

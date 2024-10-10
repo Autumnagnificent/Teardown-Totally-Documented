@@ -1,0 +1,37 @@
+{
+  "name": "SetToolHandPoseLocalTransform",
+  "arguments": [
+    {
+      "name": "right",
+      "desc": "Transform of right hand relative to the tool body origin, or nil if right hand is not used",
+      "optional": false,
+      "type": "TTransform"
+    },
+    {
+      "name": "left",
+      "desc": "Transform of left hand, or nil if left hand is not used",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "if GetBool(\"game.thirdperson\") then",
+      "\tif aiming then",
+      "\t\tSetToolHandPoseLocalTransform(Transform(Vec(0.2,0.0,0.0), QuatAxisAngle(Vec(0,1,0), 90.0)), Transform(Vec(-0.1, 0.0, -0.4)))",
+      "\telse",
+      "\t\tSetToolHandPoseLocalTransform(Transform(Vec(0.2,0.0,0.0), QuatAxisAngle(Vec(0,1,0), 90.0)), nil)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Use this function to position the character's hands on the currently equipped tool. This function must be called every frame from the tick function. ",
+    "In third-person view, failing to call this function can lead to different outcomes depending on how the tool is animated:",
+    "<ul>",
+    "<li>If the tool's transform is not explicitly set or is set using SetToolTransform, not calling this function will trigger a fallback solution where the right hand is automatically positioned.</li>",
+    "<li>If the tool is animated using the SetToolTransformOverride function, not calling this function will result in the character's animation taking control of the hand movement</li>",
+    "</ul>"
+  ]
+}

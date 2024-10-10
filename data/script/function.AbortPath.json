@@ -1,6 +1,13 @@
 {
   "name": "AbortPath",
-  "arguments": [],
+  "arguments": [
+    {
+      "name": "id",
+      "desc": "Path planner id. Default value is 0.",
+      "optional": true,
+      "type": "number"
+    }
+  ],
   "returns": [],
   "examples": [
     [

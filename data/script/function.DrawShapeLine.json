@@ -47,13 +47,13 @@
       "name": "paint",
       "desc": "Paint mode. Default is false.",
       "optional": true,
-      "type": "bool"
+      "type": "boolean"
     },
     {
       "name": "noOverwrite",
       "desc": "Only fill in voxels if space isn't already occupied. Default is false.",
       "optional": true,
-      "type": "bool"
+      "type": "boolean"
     }
   ],
   "returns": [],

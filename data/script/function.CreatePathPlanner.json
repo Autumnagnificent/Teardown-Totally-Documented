@@ -1,0 +1,39 @@
+{
+  "name": "CreatePathPlanner",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "id",
+      "desc": "Path planner id",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local paths = {}",
+      "",
+      "function init()",
+      "\tpaths[1] = {",
+      "\t\tid = CreatePathPlanner(),",
+      "\t\tlocation = GetProperty(FindEntity(\"loc1\", true), \"transform\").pos,",
+      "\t}",
+      "",
+      "\tpaths[2] = {",
+      "\t\tid = CreatePathPlanner(),",
+      "\t\tlocation = GetProperty(FindEntity(\"loc2\", true), \"transform\").pos,",
+      "\t}",
+      "",
+      "\tfor i = 1, #paths do",
+      "\t\tPathPlannerQuery(paths[i].id, GetPlayerTransform().pos, paths[i].location)",
+      "\tend",
+      "end"
+    ]
+  ],
+  "description": [
+    "Creates a new path planner that can be used to calculate multiple paths in parallel.",
+    "It is supposed to be used together with PathPlannerQuery.",
+    "Returns created path planner id/handler.",
+    "It is recommended to reuse previously created path planners, because they exist throughout the lifetime of the script."
+  ]
+}

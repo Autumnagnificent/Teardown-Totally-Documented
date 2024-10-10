@@ -1,0 +1,28 @@
+{
+  "name": "UiTextDisableWildcards",
+  "arguments": [
+    {
+      "name": "disable",
+      "desc": "Enable or disable wildcard [[...]] substitution support in UiText",
+      "optional": false,
+      "type": "boolean"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "UiFont(\"regular.ttf\", 30)",
+      "UiPush()",
+      "\tUiTextDisableWildcards(true)",
+      "\t-- icon won't be embedded here, text will be left as is",
+      "\tUiText(\"Text with embedded icon image [[menu:menu_accept;iconsize=42,42]]\")",
+      "UiPop()",
+      "",
+      "-- embedding works as expected",
+      "UiText(\"Text with embedded icon image [[menu:menu_accept;iconsize=42,42]]\")"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

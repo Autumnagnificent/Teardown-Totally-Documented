@@ -11,7 +11,7 @@
       "name": "removeResidual",
       "desc": "Remove residual shapes (default false)",
       "optional": false,
-      "type": "bool"
+      "type": "boolean"
     }
   ],
   "returns": [

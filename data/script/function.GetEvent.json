@@ -1,0 +1,36 @@
+{
+  "name": "GetEvent",
+  "arguments": [
+    {
+      "name": "type",
+      "desc": "Event type",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "index",
+      "desc": "Event index (starting with one)",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "returnValues",
+      "desc": "Return values depending on event type",
+      "optional": false,
+      "type": "varying"
+    }
+  ],
+  "examples": [
+    [
+      "local count = GetEventCount(\"playerdead\")",
+      "for i=1, count do",
+      "\tlocal id, attacker = GetEvent(\"playerdead\", i)",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

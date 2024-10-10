@@ -1,0 +1,27 @@
+{
+  "name": "SetToolOffset",
+  "arguments": [
+    {
+      "name": "offset",
+      "desc": "Tool body offset",
+      "optional": false,
+      "type": "TVec"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function init()",
+      "\t--Offset the tool depending on character height",
+      "\tlocal offsetY = 1.7 - characterHeight",
+      "",
+      "\tlocal offset = Vec(0, offsetY, 0)",
+      "\tSetToolOffset(offset)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Apply an additional offset on the visible tool body. This can be used to",
+    "tweak tool placement for different characters. You need to set this every frame from the tick function."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "BeginAnimationGroup",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "weight",
+      "desc": "Weight [0,1] of this group, default is 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "filter",
+      "desc": "Name of the bone and its subtree that will be affected",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--This will blend an entire group with 50% influence",
+      "BeginAnimationGroup(animator, 0.5)",
+      "\tPlayAnimationLoop(...)",
+      "\tPlayAnimationLoop(...)",
+      "EndAnimationGroup(animator)",
+      "",
+      "--You can also create a tree of groups, blending is performed in a depth-first order",
+      "BeginAnimationGroup(animator, 0.5)",
+      "\tPlayAnimationLoop(animator, \"anim_a\", 1.0)",
+      "\tPlayAnimationLoop(animator, \"anim_b\", 0.2)",
+      "\tBeginAnimationGroup(animator, 0.75)",
+      "\t\tPlayAnimationLoop(animator, \"anim_c\", 1.0)",
+      "\t\tPlayAnimationLoop(animator, \"anim_d\", 0.25)",
+      "\tEndAnimationGroup(animator)",
+      "EndAnimationGroup(animator)"
+    ]
+  ],
+  "description": [
+    "You can group looping animations together and use the result of those to blend to target.",
+    "PlayAnimation will not work here since they are processed last separately from blendgroups."
+  ]
+}

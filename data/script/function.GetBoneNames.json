@@ -1,0 +1,31 @@
+{
+  "name": "GetBoneNames",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with bone-names",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "local list = GetBoneNames(animator)",
+      "for i=1, #list do",
+      "\tlocal name = list[i]",
+      "\t..",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

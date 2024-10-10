@@ -1,0 +1,21 @@
+{
+  "name": "SetAnimationClipLoopPosition",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--This will set the current playposition to one second",
+      "SetAnimationClipLoopPosition(animator, \"walking\", 1)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

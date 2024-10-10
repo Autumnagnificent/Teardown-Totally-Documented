@@ -1,0 +1,22 @@
+{
+  "name": "SetPlayerRigTags",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "desc": "Tag value",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [],
+  "description": [
+    ""
+  ]
+}

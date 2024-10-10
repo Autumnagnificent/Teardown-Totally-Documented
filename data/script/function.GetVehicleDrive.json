@@ -1,0 +1,27 @@
+{
+  "name": "GetVehicleDrive",
+  "arguments": [
+    {
+      "name": "vehicle",
+      "desc": "Vehicle handle",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [
+    {
+      "name": "drive",
+      "desc": "Driver drive value -1 to 1",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local drive = GetVehicleDrive(vehicle)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

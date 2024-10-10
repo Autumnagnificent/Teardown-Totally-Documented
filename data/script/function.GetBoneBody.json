@@ -1,0 +1,34 @@
+{
+  "name": "GetBoneBody",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "desc": "Bone name",
+      "optional": false,
+      "type": "string"
+    }
+  ],
+  "returns": [
+    {
+      "name": "handle",
+      "desc": "Handle to the bone's body, or zero if no bone is present.",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "local body = GetBoneBody(animator, \"head\")",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

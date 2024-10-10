@@ -1,0 +1,26 @@
+{
+  "name": "GetToolHandPoseWorldTransform",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "right",
+      "desc": "Transform of right hand in world space, or nil if the right hand is not used",
+      "optional": false,
+      "type": "TTransform"
+    },
+    {
+      "name": "left",
+      "desc": "Transform of left hand, or nil if left hand is not used",
+      "optional": false,
+      "type": "TTransform"
+    }
+  ],
+  "examples": [
+    [
+      "local right, left = GetToolHandPoseWorldTransform()"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

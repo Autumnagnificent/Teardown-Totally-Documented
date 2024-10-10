@@ -1,0 +1,24 @@
+{
+  "name": "ClearPlayerRig",
+  "arguments": [
+    {
+      "name": "rig-id",
+      "desc": "Unique rig-id, -1 means all rigs",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--Clear specific rig",
+      "    ClearPlayerRig(someId)",
+      "    ",
+      "    --Clear all rigs",
+      "    ClearPlayerRig(-1)"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

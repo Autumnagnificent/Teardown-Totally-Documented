@@ -1,0 +1,39 @@
+{
+  "name": "PlayAnimationLoop",
+  "arguments": [
+    {
+      "name": "handle",
+      "desc": "Animator handle",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "desc": "Animation name",
+      "optional": false,
+      "type": "string"
+    },
+    {
+      "name": "weight",
+      "desc": "Weight [0,1] of this animation, default is 1.0",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "filter",
+      "desc": "Name of the bone and its subtree that will be affected",
+      "optional": true,
+      "type": "string"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "--This will play an animation loop \"Walking\" with a 100% influence on the whole skeleton",
+      "PlayAnimationLoop(animator, \"Walking\")"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

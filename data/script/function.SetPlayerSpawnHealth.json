@@ -5,7 +5,7 @@
       "name": "health",
       "desc": "Desired player spawn health (between zero and one)",
       "optional": false,
-      "type": "float"
+      "type": "number"
     }
   ],
   "returns": [],

@@ -13,7 +13,7 @@
       "name": "flag",
       "desc": "is current Haptic playing or not",
       "optional": false,
-      "type": "bool"
+      "type": "boolean"
     }
   ],
   "examples": [

@@ -1,0 +1,36 @@
+{
+  "name": "QuatDeltaVectors",
+  "arguments": [
+    {
+      "name": "vector0",
+      "desc": "Vector",
+      "optional": false,
+      "type": "TVec"
+    },
+    {
+      "name": "vector1",
+      "desc": "Vector",
+      "optional": false,
+      "type": "TVec"
+    }
+  ],
+  "returns": [
+    {
+      "name": "quat",
+      "desc": "New quaternion",
+      "optional": false,
+      "type": "TQuat"
+    }
+  ],
+  "examples": [
+    [
+      "function init()",
+      "\t--Create quaternion representing a rotation between two non-unit vectors aligned along x-axis and y-axis",
+      "\tlocal q = QuatDeltaVectors(Vec(10,0,0), Vec(0,5,0))",
+      "end"
+    ]
+  ],
+  "description": [
+    "Create a quaternion representing a rotation between the input vectors that doesn't need to be of unit-length"
+  ]
+}

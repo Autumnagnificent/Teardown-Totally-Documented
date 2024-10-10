@@ -1,0 +1,28 @@
+{
+  "name": "DebugTransform",
+  "arguments": [
+    {
+      "name": "transform",
+      "desc": "The transform",
+      "optional": false,
+      "type": "TTransform"
+    },
+    {
+      "name": "scale",
+      "desc": "Length of the axis",
+      "optional": true,
+      "type": "number"
+    }
+  ],
+  "returns": [],
+  "examples": [
+    [
+      "function tick()",
+      "\tDebugTransform(GetPlayerCameraTransform(), 0.5)",
+      "end"
+    ]
+  ],
+  "description": [
+    "Draw the axis of the transform"
+  ]
+}

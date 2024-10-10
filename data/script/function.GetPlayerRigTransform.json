@@ -1,0 +1,16 @@
+{
+  "name": "GetPlayerRigTransform",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "location",
+      "desc": "Transform of the current active player-rig, nil otherwise",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [],
+  "description": [
+    ""
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "GetPlayerCrouch",
+  "arguments": [],
+  "returns": [
+    {
+      "name": "recoil",
+      "desc": "Current player crouch",
+      "optional": false,
+      "type": "number"
+    }
+  ],
+  "examples": [
+    [
+      "function tick()",
+      "    local crouch = GetPlayerCrouch()",
+      "    if crouch > 0.0 then",
+      "        ...",
+      "    end",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}

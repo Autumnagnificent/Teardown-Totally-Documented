@@ -1,0 +1,38 @@
+{
+  "name": "FindAnimators",
+  "arguments": [
+    {
+      "name": "tag",
+      "desc": "Tag name",
+      "optional": true,
+      "type": "string"
+    },
+    {
+      "name": "global",
+      "desc": "Search in entire scene",
+      "optional": true,
+      "type": "boolean"
+    }
+  ],
+  "returns": [
+    {
+      "name": "list",
+      "desc": "Indexed table with handles to all animators with specified tag",
+      "optional": false,
+      "type": "table"
+    }
+  ],
+  "examples": [
+    [
+      "--Search for animators tagged \"target\" in script scope",
+      "local targets = FindAnimators(\"target\")",
+      "for i=1, #targets do",
+      "\tlocal target = targets[i]",
+      "\t...",
+      "end"
+    ]
+  ],
+  "description": [
+    ""
+  ]
+}
