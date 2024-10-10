@@ -17,13 +17,17 @@
   "returns": [],
   "examples": [
     [
-      "brickWall = CreateBrush(\"MOD/brickwall.vox\")",
-      "SetMaterial(brickWall)",
-      "Box(0, 0, 0, 10, 10, 10)",
+      "function init()",
+      "\tVox(0,0,0)",
       "",
-      "swedishFlag = CreateBrush(\"MOD/flags.vox:sweden\")",
-      "SetMaterial(swedishFlag)",
-      "Box(0, 0, 0, 20, 15, 1)"
+      "\tbrickWall = CreateBrush(\"MOD/brickwall.vox\")",
+      "\tMaterial(brickWall)",
+      "\tBox(0, 0, 0, 10, 10, 10)",
+      "",
+      "\tswedishFlag = CreateBrush(\"MOD/flags.vox:sweden\")",
+      "\tMaterial(swedishFlag)",
+      "\tBox(0, 0, 0, 20, 15, 1)",
+      "end"
     ]
   ],
   "description": [

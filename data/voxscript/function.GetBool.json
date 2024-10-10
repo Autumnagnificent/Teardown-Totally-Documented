@@ -1,5 +1,5 @@
 {
-  "name": "GetString",
+  "name": "GetBool",
   "arguments": [
     {
       "name": "name",
@@ -10,14 +10,8 @@
     {
       "name": "defaultValue",
       "desc": "Default value",
-      "optional": true,
-      "type": "string"
-    },
-    {
-      "name": "hint",
-      "desc": "hint",
-      "optional": true,
-      "type": "string"
+      "optional": false,
+      "type": "boolean"
     }
   ],
   "returns": [
@@ -25,12 +19,13 @@
       "name": "value",
       "desc": "Parameter value",
       "optional": false,
-      "type": "string"
+      "type": "boolean"
     }
   ],
   "examples": [
     [
-      "local file = GetString(\"file\", \"MOD/test.vox\")"
+      "--Retrieve playsound parameter, or false if omitted",
+      "local parameterPlaySound = GetBoolParam(\"playsound\", false)"
     ]
   ],
   "description": [

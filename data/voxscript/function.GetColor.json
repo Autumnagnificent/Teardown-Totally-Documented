@@ -1,5 +1,5 @@
 {
-  "name": "GetFloat",
+  "name": "GetColor",
   "arguments": [
     {
       "name": "name",
@@ -34,25 +34,25 @@
   ],
   "returns": [
     {
-      "name": "value",
+      "name": "r",
       "desc": "Parameter value",
       "optional": false,
       "type": "number"
     },
     {
-      "name": "value1",
+      "name": "g",
       "desc": "Parameter value",
       "optional": false,
       "type": "number"
     },
     {
-      "name": "value2",
+      "name": "b",
       "desc": "Parameter value",
       "optional": false,
       "type": "number"
     },
     {
-      "name": "value3",
+      "name": "a",
       "desc": "Parameter value",
       "optional": false,
       "type": "number"
@@ -60,7 +60,7 @@
   ],
   "examples": [
     [
-      "local r = GetFloat(\"radius\", 5.2)"
+      "color_r, color_g, color_b = GetColor(\"color\", 0.39, 0.39, 0.39)"
     ]
   ],
   "description": [

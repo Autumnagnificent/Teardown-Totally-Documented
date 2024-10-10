@@ -6,12 +6,20 @@
       "desc": "Path to PNG image",
       "optional": false,
       "type": "string"
+    },
+    {
+      "name": "grassMapPath",
+      "desc": "Path to PNG image",
+      "optional": true,
+      "type": "string"
     }
   ],
   "returns": [],
   "examples": [
     [
-      "LoadImage(\"MOD/image.png\")"
+      "function init()",
+      "\tLoadImage(\"MOD/image.png\")",
+      "end"
     ]
   ],
   "description": [

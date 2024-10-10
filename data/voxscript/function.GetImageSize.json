@@ -17,8 +17,10 @@
   ],
   "examples": [
     [
-      "LoadImage(\"MOD/image.png\")",
-      "local w, h = GetImageSize()"
+      "function init()",
+      "\tLoadImage(\"MOD/image.png\")",
+      "\tlocal w, h = GetImageSize()",
+      "end"
     ]
   ],
   "description": [

@@ -1,9 +1,21 @@
 {
-  "name": "Material",
+  "name": "Set",
   "arguments": [
     {
-      "name": "material",
-      "desc": "Material or brush handle",
+      "name": "x",
+      "desc": "",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "y",
+      "desc": "",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "z",
+      "desc": "",
       "optional": false,
       "type": "number"
     }
@@ -12,19 +24,15 @@
   "examples": [
     [
       "function init()",
+      "\tVox(0,0,0)",
       "\tlocal brush = CreateBrush(\"brush/white.vox\")",
       "\tlocal brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
       "\tMaterial(brick)",
-      "\tVox(0,0,0)",
-      "\tBox(0, 0, 0, 10, 10, 10)",
-      "",
-      "\t--Make box hollow",
-      "\tMaterial(0)",
-      "\tBox(2, 2, 2, 8, 8, 8)",
+      "\tSet(0, 0, 0)",
       "end"
     ]
   ],
   "description": [
-    "Set current material or brush. Pass in zero to remove content."
+    "Sets the single voxel in the specified posistion"
   ]
 }

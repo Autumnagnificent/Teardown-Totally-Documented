@@ -12,12 +12,103 @@
       "desc": "Default value",
       "optional": false,
       "type": "number"
+    },
+    {
+      "name": "defaultValue1",
+      "desc": "Default value",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "defaultValue2",
+      "desc": "Default value",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "defaultValue3",
+      "desc": "Default value",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "defaultValue4",
+      "desc": "Default value",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "defaultValue5",
+      "desc": "Default value",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "defaultValue6",
+      "desc": "Default value",
+      "optional": true,
+      "type": "number"
+    },
+    {
+      "name": "defaultValue7",
+      "desc": "Default value",
+      "optional": true,
+      "type": "number"
     }
   ],
-  "returns": [],
+  "returns": [
+    {
+      "name": "value",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value1",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value2",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value3",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value4",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value5",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value6",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "value7",
+      "desc": "Parameter value",
+      "optional": false,
+      "type": "number"
+    }
+  ],
   "examples": [
     [
-      "steps = GetInt(\"steps\", 5)"
+      "local steps = GetInt(\"steps\", 5)"
     ]
   ],
   "description": [

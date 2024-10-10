@@ -1,39 +1,51 @@
 {
-  "name": "Box",
+  "name": "Line",
   "arguments": [
     {
-      "name": "x0",
+      "name": "xStart",
       "desc": "X start",
       "optional": false,
       "type": "number"
     },
     {
-      "name": "y0",
+      "name": "yStart",
       "desc": "Y start",
       "optional": false,
       "type": "number"
     },
     {
-      "name": "z0",
+      "name": "zStart",
       "desc": "Z start",
       "optional": false,
       "type": "number"
     },
     {
-      "name": "x1",
+      "name": "xEnd",
       "desc": "X end",
       "optional": false,
       "type": "number"
     },
     {
-      "name": "y1",
+      "name": "yEnd",
       "desc": "Y end",
       "optional": false,
       "type": "number"
     },
     {
-      "name": "z1",
+      "name": "zEnd",
       "desc": "Z end",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "thicknessStart",
+      "desc": "",
+      "optional": false,
+      "type": "number"
+    },
+    {
+      "name": "thicknessEnd",
+      "desc": "",
       "optional": false,
       "type": "number"
     }
@@ -42,15 +54,15 @@
   "examples": [
     [
       "function init()",
-      "    Vox(0,0,0)",
-      "    local brush = CreateBrush(\"brush/white.vox\")",
-      "    local brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
-      "    Material(brick)",
-      "    Box(0, 0, 0, 10, 10, 10)",
+      "\tVox(0,0,0)",
+      "\tlocal brush = CreateBrush(\"brush/white.vox\")",
+      "\tlocal brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
+      "\tMaterial(brick)",
+      "\tLine(0, 0, 0, 15)",
       "end"
     ]
   ],
   "description": [
-    "Draw solid box into the current vox shape using the current material"
+    "Draw a line from start point to end point"
   ]
 }

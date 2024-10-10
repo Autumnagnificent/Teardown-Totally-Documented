@@ -28,15 +28,33 @@
     {
       "name": "height",
       "desc": "Height scale",
-      "optional": false,
+      "optional": true,
       "type": "number"
+    },
+    {
+      "name": "isNotHollow",
+      "desc": "Unused parameter, for legacy support",
+      "optional": true,
+      "type": "boolean"
+    },
+    {
+      "name": "cropBorder",
+      "desc": "Use special handling of borders in heightmap. Reduces amount of voxels and their size",
+      "optional": true,
+      "type": "boolean"
     }
   ],
   "returns": [],
   "examples": [
     [
-      "LoadImage(\"MOD/heightmap.png\")",
-      "Heightmap(0, 0, 100, 100, 255)"
+      "function init()",
+      "    Vox(0,0,0)",
+      "    local brush = CreateBrush(\"brush/white.vox\")",
+      "    local brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
+      "    Material(brick)",
+      "    LoadImage(\"MOD/heightmap.png\")",
+      "\tHeightmap(0, 0, 100, 100, 255)",
+      "end"
     ]
   ],
   "description": [

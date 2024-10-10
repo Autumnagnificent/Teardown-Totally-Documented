@@ -17,9 +17,12 @@
   "returns": [],
   "examples": [
     [
-      "FlipBrush(brush, \"x\")",
-      "Material(brush)",
-      "Box(0, 0, 0, 20, 15, 5)"
+      "function init()",
+      "\tlocal brush = CreateBrush(\"brush/white.vox\")",
+      "\tFlipBrush(brush, \"x\")",
+      "\tMaterial(brush)",
+      "\tBox(0, 0, 0, 20, 15, 5)",
+      "end"
     ]
   ],
   "description": [

@@ -4,19 +4,19 @@
     {
       "name": "x",
       "desc": "X position",
-      "optional": false,
+      "optional": true,
       "type": "number"
     },
     {
       "name": "y",
       "desc": "Y position",
-      "optional": false,
+      "optional": true,
       "type": "number"
     },
     {
       "name": "z",
       "desc": "Z position",
-      "optional": false,
+      "optional": true,
       "type": "number"
     },
     {
@@ -41,13 +41,16 @@
   "returns": [],
   "examples": [
     [
-      "--Create vox shape",
-      "Vox(0, 0, 0)",
+      "function init()",
+      "\t--Create vox shape",
+      "    Vox(0,0,0)",
       "",
-      "--We can now fill it with content",
-      "Material(mat)",
-      "Box(0, 0, 0, 10, 10, 10)",
-      "Sphere(10, 10, 10, 5)"
+      "\t--We can now fill it with content",
+      "    local brush = CreateBrush(\"brush/white.vox\")",
+      "    local brick = CreateMaterial(\"masonry\", 0.6, 0.5, 0.3, 0, 0.1, 0, 0)",
+      "    Material(brick)",
+      "    Box(0, 0, 0, 10, 10, 10)",
+      "end"
     ]
   ],
   "description": [
